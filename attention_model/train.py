@@ -108,7 +108,7 @@ def main():
         return [[(START,)] + map(lambda w:(nl_voc2wid[w],), seq) + [(END,)] for seq in seqs]
     
     def lookup_code(seqs):
-        return [[(0, START)] + map(lambda w:(w[0], nl_voc2wid[w[1]]), seq) + [(0, END)] for seq in seqs]
+        return [[(0, START)] + map(lambda w:(tok_type2id[w[0]], nl_voc2wid[w[1]]), seq) + [(0, END)] for seq in seqs]
     
     tokenized_nl_train, tokenized_code_train = read_data(args.train_set)
     tokenized_nl_valid, tokenized_code_valid = read_data(args.valid_set)
