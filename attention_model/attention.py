@@ -9,6 +9,9 @@ from contextlib import contextmanager
 from collections import Iterable
 
 
+DROPOUT_RATE = 0.5
+
+
 # In[2]:
 
 @contextmanager
@@ -40,6 +43,8 @@ class Attender(dy.Saveable):
             WI = W * inputs
             Vsb = dy.affine_transform([b, V, state])
             h = dy.tanh(dy.colwise_add(WI, Vsb))
+            if training:
+                h = dy.dropout(h, DROPOUT_RATE)
             scores = dy.transpose(U * h)
             return dy.softmax(scores)
 
@@ -141,6 +146,10 @@ class Encoder(dy.Saveable):
     
     def encode(self, sequence, training=True):
         seq_embed = self.embedder.embed_sequence(sequence)
+        if training:
+            self.encoder.set_dropout(DROPOUT_RATE)
+        else:
+            self.encoder.disable_dropout()
         return dy.concatenate_cols(self.encoder.initial_state().transduce(seq_embed))
 
 
@@ -165,6 +174,8 @@ class MLP(dy.Saveable):
     def __call__(self, x, training=True):
         with parameters(self.W1, self.b1, self.W2, self.b2, trainable=training) as (W1, b1, W2, b2):
             h = dy.tanh(dy.affine_transform([b1, W1, x]))
+            if training:
+                h = dy.dropout(h, DROPOUT_RATE)
             return dy.affine_transform([b2, W2, h])
 
 
@@ -194,6 +205,10 @@ class Decoder(dy.Saveable):
         self.mlps = components[3:]
     
     def initialize(self, batch_size, training=True):
+        if training:
+            self.decoder.set_dropout(DROPOUT_RATE)
+        else:
+            self.decoder.disable_dropout()
         with parameters(self.dummy_input, trainable=training) as (dummy_input,):
             init_input = dy.concatenate_cols([dummy_input] * batch_size);
             init_input = dy.reshape(init_input, (self.input_dim,), batch_size);
