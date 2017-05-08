@@ -265,13 +265,16 @@ class Translator(dy.Saveable):
 
 # In[14]:
 
-def new_nl2code_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_dim, code_vocab_size, code_embed_dim, num_token_type, code_rnn_layers, code_rnn_state_dim, rnn_token_mlp_dim, rnn_type_mlp_dim, attention_mlp_dim):
+def new_nl2code_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_dim, code_vocab_size, code_embed_dim, num_token_type, tok_embed_dim, code_rnn_layers, code_rnn_state_dim, rnn_token_mlp_dim, rnn_type_mlp_dim, attention_mlp_dim):
     model = dy.Model()
     src_embedder = LookupEmbedder(model, nl_vocab_size, nl_embed_dim, 0)
     encoder = Encoder(model, src_embedder, nl_rnn_layers, nl_rnn_state_dim)
-    trg_onehot = OneHotEmbedder(num_token_type, 0)
-    trg_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
-    trg_embedder = ConcatEmbedder(trg_onehot, trg_lookup)
+    #trg_onehot = OneHotEmbedder(num_token_type, 0)
+    #trg_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
+    #trg_embedder = ConcatEmbedder(trg_onehot, trg_lookup)
+    trg_tok_lookup = OneHotEmbedder(model, num_token_type, tok_embed_dim, 0)
+    trg_code_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
+    trg_embedder = ConcatEmbedder(trg_tok_lookup, trg_code_lookup)
     decoder = Decoder(model, trg_embedder, code_rnn_layers, encoder.state_dim, code_rnn_state_dim, [rnn_type_mlp_dim, rnn_token_mlp_dim])
     attender = Attender(model, encoder.state_dim, decoder.internal_state_dim, attention_mlp_dim)
     translator = Translator(encoder, attender, decoder)
@@ -280,11 +283,14 @@ def new_nl2code_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_d
 
 # In[15]:
 
-def new_code2nl_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_dim, code_vocab_size, code_embed_dim, num_token_type, code_rnn_layers, code_rnn_state_dim, rnn_word_mlp_dim, attention_mlp_dim):
+def new_code2nl_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_dim, code_vocab_size, code_embed_dim, num_token_type, tok_embed_dim, code_rnn_layers, code_rnn_state_dim, rnn_word_mlp_dim, attention_mlp_dim):
     model = dy.Model()
-    src_onehot = OneHotEmbedder(num_token_type, 0)
-    src_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
-    src_embedder = ConcatEmbedder(src_onehot, src_lookup)
+    #src_onehot = OneHotEmbedder(num_token_type, 0)
+    #src_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
+    #src_embedder = ConcatEmbedder(src_onehot, src_lookup)
+    src_tok_lookup = OneHotEmbedder(model, num_token_type, tok_embed_dim, 0)
+    src_code_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
+    src_embedder = ConcatEmbedder(src_tok_lookup, src_code_lookup)
     encoder = Encoder(model, src_embedder, code_rnn_layers, code_rnn_state_dim)
     trg_embedder = LookupEmbedder(model, nl_vocab_size, nl_embed_dim, 0)
     decoder = Decoder(model, trg_embedder, nl_rnn_layers, encoder.state_dim, nl_rnn_state_dim, rnn_word_mlp_dim)

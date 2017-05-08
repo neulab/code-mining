@@ -56,6 +56,7 @@ def main():
     parser.add_argument('--nl_embed_dim', default=256, type=int)
     parser.add_argument('--nl_rnn_layers', default=1, type=int)
     parser.add_argument('--nl_rnn_state_dim', default=512, type=int)
+    parser.add_argument('--tok_embed_dim', default=64, type=int)
     parser.add_argument('--code_embed_dim', default=256, type=int)
     parser.add_argument('--code_rnn_layers', default=1, type=int)
     parser.add_argument('--code_rnn_state_dim', default=512, type=int)
@@ -81,10 +82,10 @@ def main():
     args.num_token_type = len(tok_type2id) + 1 # count the undifined_token for <S> and </S>
     
     if is_nl2code:
-        model, translator = new_nl2code_model(args.nl_vocab_size, args.nl_embed_dim, args.nl_rnn_layers, args.nl_rnn_state_dim, args.code_vocab_size, args.code_embed_dim, args.num_token_type, args.code_rnn_layers, args.code_rnn_state_dim, args.rnn_token_mlp_dim, args.rnn_type_mlp_dim, args.attention_mlp_dim)
+        model, translator = new_nl2code_model(args.nl_vocab_size, args.nl_embed_dim, args.nl_rnn_layers, args.nl_rnn_state_dim, args.code_vocab_size, args.code_embed_dim, args.num_token_type, args.tok_embed_dim, args.code_rnn_layers, args.code_rnn_state_dim, args.rnn_token_mlp_dim, args.rnn_type_mlp_dim, args.attention_mlp_dim)
         config_name = 'nl2code'
     else:
-        model, translator = new_code2nl_model(args.nl_vocab_size, args.nl_embed_dim, args.nl_rnn_layers, args.nl_rnn_state_dim, args.code_vocab_size, args.code_embed_dim, args.num_token_type, args.code_rnn_layers, args.code_rnn_state_dim, args.rnn_word_mlp_dim, args.attention_mlp_dim)
+        model, translator = new_code2nl_model(args.nl_vocab_size, args.nl_embed_dim, args.nl_rnn_layers, args.nl_rnn_state_dim, args.code_vocab_size, args.code_embed_dim, args.num_token_type, args.tok_embed_dim, args.code_rnn_layers, args.code_rnn_state_dim, args.rnn_word_mlp_dim, args.attention_mlp_dim)
         config_name = 'code2nl'
     
     config_name = datetime.now().strftime(config_name + '_%m%d%H%M%S')
