@@ -9,7 +9,7 @@ from contextlib import contextmanager
 from collections import Iterable
 
 
-DROPOUT_RATE = 0.5
+DROPOUT_RATE = 0.7
 
 
 # In[2]:
@@ -272,7 +272,7 @@ def new_nl2code_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_d
     #trg_onehot = OneHotEmbedder(num_token_type, 0)
     #trg_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
     #trg_embedder = ConcatEmbedder(trg_onehot, trg_lookup)
-    trg_tok_lookup = OneHotEmbedder(model, num_token_type, tok_embed_dim, 0)
+    trg_tok_lookup = LookupEmbedder(model, num_token_type, tok_embed_dim, 0)
     trg_code_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
     trg_embedder = ConcatEmbedder(trg_tok_lookup, trg_code_lookup)
     decoder = Decoder(model, trg_embedder, code_rnn_layers, encoder.state_dim, code_rnn_state_dim, [rnn_type_mlp_dim, rnn_token_mlp_dim])
@@ -288,7 +288,7 @@ def new_code2nl_model(nl_vocab_size, nl_embed_dim, nl_rnn_layers, nl_rnn_state_d
     #src_onehot = OneHotEmbedder(num_token_type, 0)
     #src_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
     #src_embedder = ConcatEmbedder(src_onehot, src_lookup)
-    src_tok_lookup = OneHotEmbedder(model, num_token_type, tok_embed_dim, 0)
+    src_tok_lookup = LookupEmbedder(model, num_token_type, tok_embed_dim, 0)
     src_code_lookup = LookupEmbedder(model, code_vocab_size, code_embed_dim, 1)
     src_embedder = ConcatEmbedder(src_tok_lookup, src_code_lookup)
     encoder = Encoder(model, src_embedder, code_rnn_layers, code_rnn_state_dim)
