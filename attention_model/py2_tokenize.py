@@ -74,13 +74,20 @@ def tokenize_name(string, concat_symbol=None):
 
 def tokenize_code(string, concat_symbol=None):
     tokens = []
-    string = string.strip().decode('utf-8').encode('ascii', 'replace').decode('string_escape')
-    for toknum, tokval, _, _, _  in generate_tokens(StringIO(string).readline):
-        tokname = py_token_name[toknum]
-        if tokname == TOKEN_NAME:
-            tokens.extend(tokenize_name(tokval, concat_symbol=concat_symbol))
-        else:
-            tokens.append((token_id[tokname], tokval))
+    string = string.strip().decode('utf-8').encode('ascii', 'replace') #.decode('string_escape')
+    try:
+        for toknum, tokval, _, _, _  in generate_tokens(StringIO(string).readline):
+            tokname = py_token_name[toknum]
+            if tokname == TOKEN_NAME:
+                tokens.extend(tokenize_name(tokval, concat_symbol=concat_symbol))
+            else:
+                tokens.append((token_id[tokname], tokval))
+    except:
+        print '*' * 60 
+        print string
+        print '*' * 60
+        exit(1)
+        
     return tokens
 
 

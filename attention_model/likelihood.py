@@ -50,13 +50,19 @@ def lookup_code(seqs):
 # In[9]:
 
 def bi_likelihood(nl, code):
+    """
+    return bi-directional likelihoods (the larger the better)
+    :param nl:
+    :param code:
+    :return:
+    """
     dy.renew_cg()
     nl = tokenize_nl(nl)
     code = [(token_type, token_literal) for token_type, token_literal in tokenize_code(code) if token_type not in SKIP_TOKENS]
     nl = lookup_nl([nl])
     code = lookup_code([code])
-    nl2code_prob = nl2code_translator.calc_loss(nl, code, training=False)
-    code2nl_prob = code2nl_translator.calc_loss(code, nl, training=False)
+    nl2code_prob = -nl2code_translator.calc_loss(nl, code, training=False)
+    code2nl_prob = -code2nl_translator.calc_loss(code, nl, training=False)
     return (nl2code_prob.value() / sum(map(len, code)), code2nl_prob.value() / sum(map(len, nl)))
 
 

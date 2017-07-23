@@ -126,7 +126,7 @@ def only_value(root):
 
 
 #normalize the code-snippet for exactly match
-def normalize_code(code):
+def normalize_code(code, log_file=None):
     old_code = code
     if from_console(code):
         code = console_extract(code)
@@ -148,19 +148,25 @@ def normalize_code(code):
             result = '\n'.join(result.split('\n')[1:])
         return result
     except Exception as ex:
-        print old_code
-        print '--------------------'
-        print code
-        print '--------------------'
-        print type(ex)
-        print ex
-        print '===================='
-    return None
-
+        if log_file:
+            log_file.write('*' * 30 + '\n')
+            log_file.write('Original:\n')
+            log_file.write(old_code + '\n')
+            log_file.write('*' * 30 + '\n')
+            log_file.write('Normalized:\n')
+            log_file.write(code + '\n')
+        # print old_code
+        # print '--------------------'
+        # print code
+        # print '--------------------'
+        # print type(ex)
+        # print ex
+        # print '===================='
+        return None
 
 # normalize a piece of code selected as the response, or our annotation
 # input code will be normalized by normalize_code first
-print_pattern = re.compile('(if|while|for|with).*(\n    print.*)$')
+print_pattern = re.compile('(if|while|for|with).*\n(    )+print.*$')
 def normalize_code_response(code):
     code = normalize_code(code)
     if code:
@@ -169,7 +175,9 @@ def normalize_code_response(code):
         #     print "it's empty!"
         m = print_pattern.search(code)
         if m:
-            code = code[:m.start(2)].strip() + '\n    pass'
+            code = '\n'.join(code.split('\n')[:-1])
+            code = add_pass(code)
+            code = to_source(ast.parse(code))
 
     return code
 
