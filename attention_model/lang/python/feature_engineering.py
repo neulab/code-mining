@@ -353,8 +353,8 @@ print semi_feature_clf.coef_
 print semi_feature_clf.intercept_
 pickle.dump(semi_feature_clf, open('semi_feature_clf.p', 'wb'))
 #clf = pickle.load(open('semi_feature_clf.p', 'rb'))
-#predict_y = semi_feature_clf.predict(semi_feature_test_X)
-#probas_ = semi_feature_clf.predict_proba(semi_feature_test_X)
+predict_y = semi_feature_clf.predict(semi_feature_test_X)
+probas_ = semi_feature_clf.predict_proba(semi_feature_test_X)
 #print 'recall', recall_score(test_y, predict_y)
 #print 'precision', precision_score(test_y, predict_y)
 #print 'f1', f1_score(test_y, predict_y)
