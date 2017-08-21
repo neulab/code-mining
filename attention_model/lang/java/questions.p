@@ -1569,10 +1569,10 @@ sg10
 I00
 sa(dp469
 g8
-S'assertEquals("   *****", TriangleDrawer.triangleLine(2));\nassertEquals("     *", TriangleDrawer.triangleLine(0));'
+VassertEquals("   *****", TriangleDrawer.triangleLine(2));\u000aassertEquals("     *", TriangleDrawer.triangleLine(0))\u000a
 p470
 sg10
-I01
+I00
 sa(dp471
 g8
 S'public void drawTriangle() {\n    for (int i = 0; i < 5; i++) {\n        printTriangleLine(i);\n    }\n}'

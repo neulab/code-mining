@@ -86,6 +86,8 @@ def tokenize_code(string, concat_symbol=None):
             tokname = token_type2name[type(token)]
             if type(token) == javalang.tokenizer.Identifier:
                 tokens.extend(tokenize_name(tokval, concat_symbol=concat_symbol))
+            elif type(token) == javalang.tokenizer.String:
+                tokens.append((token_id[tokname], '__STRING__'))
             else:
                 tokens.append((token_id[tokname], tokval))
     except:

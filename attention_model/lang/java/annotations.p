@@ -956,7 +956,7 @@ p442
 sg15
 g14
 sg16
-S'E createContents(Class<E> clazz) {\n    return clazz.newInstance();\n}'
+S'return clazz.newInstance();'
 p443
 sg18
 g3
@@ -1021,7 +1021,7 @@ VCreate instance of generic type in Java?
 p473
 sg15
 Nsg16
-S'E createContents() {\n    return factory.create();\n}'
+S'return factory.create();'
 p474
 sg18
 g3
@@ -1076,7 +1076,7 @@ g14
 sg15
 g14
 sg16
-S"public static String capitalizeString(String string) {\n    char[] chars = string.toLowerCase().toCharArray();\n    boolean found = false;\n    for (int i = 0; i < chars.length; i++) {\n        if (!found && Character.isLetter(chars[i])) {\n            chars[i] = Character.toUpperCase(chars[i]);\n            found = true;\n        } else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\\'') {\n            found = false;\n        }\n    }\n    return String.valueOf(chars);\n}"
+S"char[] chars = string.toLowerCase().toCharArray();\nboolean found = false;\nfor (int i = 0; i < chars.length; i++) {\n    if (!found && Character.isLetter(chars[i])) {\n        chars[i] = Character.toUpperCase(chars[i]);\n        found = true;\n    } else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\\'') {\n        found = false;\n    }\n}"
 p498
 sg18
 g3
@@ -1491,7 +1491,7 @@ sg13
 g14
 sg15
 Nsg16
-S'String decodeUTF8(byte[] bytes) {\n    return new String(bytes, UTF8_CHARSET);\n}'
+S'return new String(bytes, UTF8_CHARSET);'
 p686
 sg18
 g3
@@ -1520,7 +1520,7 @@ sg13
 g14
 sg15
 Nsg16
-S'byte[] encodeUTF8(String string) {\n    return string.getBytes(UTF8_CHARSET);\n}'
+S'return string.getBytes(UTF8_CHARSET);'
 p699
 sg18
 g3
@@ -1959,7 +1959,7 @@ sg15
 S'import java.util.*;'
 p902
 sg16
-S'public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {\n    List<Map.Entry<K, V>> list = new LinkedList<Map.Entry<K, V>>(map.entrySet());\n    Collections.sort(list, new Comparator<Map.Entry<K, V>>() {\n\n        public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {\n            return (o1.getValue()).compareTo(o2.getValue());\n        }\n    });\n    Map<K, V> result = new LinkedHashMap<K, V>();\n    for (Map.Entry<K, V> entry : list) {\n        result.put(entry.getKey(), entry.getValue());\n    }\n    return result;\n}'
+S'List<Map.Entry<K, V>> list = new LinkedList<Map.Entry<K, V>>(map.entrySet());\nCollections.sort(list, new Comparator<Map.Entry<K, V>>() {\n\n    public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {\n        return (o1.getValue()).compareTo(o2.getValue());\n    }\n});\nMap<K, V> result = new LinkedHashMap<K, V>();\nfor (Map.Entry<K, V> entry : list) {\n    result.put(entry.getKey(), entry.getValue());\n}'
 p903
 sg18
 g3
@@ -2004,7 +2004,7 @@ sg15
 S'import java.util.*;'
 p924
 sg16
-S'public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {\n    List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());\n    Collections.sort(list, new Comparator<Map.Entry<K, V>>() {\n\n        @Override\n        public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {\n            return (o1.getValue()).compareTo(o2.getValue());\n        }\n    });\n    Map<K, V> result = new LinkedHashMap<>();\n    for (Map.Entry<K, V> entry : list) {\n        result.put(entry.getKey(), entry.getValue());\n    }\n    return result;\n}'
+S'List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());\nCollections.sort(list, new Comparator<Map.Entry<K, V>>() {\n\n    @Override\n    public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {\n        return (o1.getValue()).compareTo(o2.getValue());\n    }\n});\nMap<K, V> result = new LinkedHashMap<>();\nfor (Map.Entry<K, V> entry : list) {\n    result.put(entry.getKey(), entry.getValue());\n}'
 p925
 sg18
 g3
@@ -2048,7 +2048,7 @@ sg15
 S'import java.util.*;'
 p945
 sg16
-S'public static <K, V extends Comparable<? super V>> Map<K, V> sortByValue(Map<K, V> map) {\n    return map.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));\n}'
+S'return map.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));'
 p946
 sg18
 g3
@@ -3080,10 +3080,10 @@ sg13
 VCreating a triangle with for loops
 p1418
 sg15
-S'public void printTriangleLine(int rowNumber) {\n    printSequence(" ", 5 - rowNumber);\n    printSequence("*", 2 * rowNumber + 1);\n    System.out.println();\n}'
+S'printSequence(" ", 5 - rowNumber);\nprintSequence("*", 2 * rowNumber + 1);\nSystem.out.println();'
 p1419
 sg16
-S'public void drawTriangle() {\n    for (int i = 0; i < 5; i++) {\n        printTriangleLine(i);\n    }\n}'
+S'for (int i = 0; i < 5; i++) {\n    printTriangleLine(i);\n}'
 p1420
 sg18
 g3
@@ -3586,7 +3586,7 @@ sg15
 S'import java.io.BufferedReader;\nimport java.io.FileReader;\nimport java.io.IOException;'
 p1644
 sg16
-S'String readFile(String fileName) throws IOException {\n    BufferedReader br = new BufferedReader(new FileReader(fileName));\n    try {\n        StringBuilder sb = new StringBuilder();\n        String line = br.readLine();\n        while (line != null) {\n            sb.append(line);\n            sb.append("\\n");\n            line = br.readLine();\n        }\n        return sb.toString();\n    } finally {\n        br.close();\n    }\n}'
+S'BufferedReader br = new BufferedReader(new FileReader(fileName));\ntry {\n    StringBuilder sb = new StringBuilder();\n    String line = br.readLine();\n    while (line != null) {\n        sb.append(line);\n        sb.append("\\n");\n        line = br.readLine();\n    }\n    return sb.toString();\n} finally {\n    br.close();\n}'
 p1645
 sg18
 g3
@@ -3917,997 +3917,991 @@ sg13
 VRemove HTML tags from a String
 p1792
 sg15
-S'String html;'
-p1793
-sg16
+Nsg16
 S'Jsoup.parse(html).text();'
-p1794
+p1793
 sg18
 g3
-((lp1795
+((lp1794
 VRemove HTML tags from a String
-p1796
-atp1797
-Rp1798
-sa(dp1799
+p1795
+atp1796
+Rp1797
+sa(dp1798
 g2
 g3
-((lp1800
+((lp1799
 Vandroid.text.Html.fromHtml(instruction).toString()\u000a
-p1801
-atp1802
-Rp1803
+p1800
+atp1801
+Rp1802
 sg7
 I240546
 sg8
 g3
-((lp1804
+((lp1803
 Vandroid.text.Html.fromHtml(instruction).toString()\u000a
-p1805
-atp1806
-Rp1807
+p1804
+atp1805
+Rp1806
 sg13
 VRemove HTML tags from a String
-p1808
+p1807
 sg15
 Nsg16
 S'android.text.Html.fromHtml(instruction).toString();'
-p1809
+p1808
 sg18
 g3
-((lp1810
-g1796
-atp1811
-Rp1812
-sa(dp1813
+((lp1809
+g1795
+atp1810
+Rp1811
+sa(dp1812
 g2
 g3
-((lp1814
+((lp1813
 VreplaceAll("\u005c\u005c<[^>]*>","")\u000a
-p1815
-atp1816
-Rp1817
+p1814
+atp1815
+Rp1816
 sg7
 I240546
 sg8
 g3
-((lp1818
+((lp1817
 VreplaceAll("\u005c\u005c<[^>]*>","")\u000a
-p1819
-atp1820
-Rp1821
+p1818
+atp1819
+Rp1820
 sg13
 VRemove HTML tags from a String
-p1822
+p1821
 sg15
 Nsg16
 S'replaceAll("\\\\<[^>]*>", "");'
-p1823
+p1822
 sg18
 g3
-((lp1824
-g1796
-atp1825
-Rp1826
-sa(dp1827
+((lp1823
+g1795
+atp1824
+Rp1825
+sa(dp1826
 g2
 g3
-((lp1828
+((lp1827
 V ArrayList<Dog> list = new ArrayList<Dog>();\u000a Dog e = new Dog();\u000a list.add(e);\u000a System.out.println(list);\u000a
-p1829
+p1828
 aVSystem.out.println(list.get(index))\u000a
-p1830
-atp1831
-Rp1832
+p1829
+atp1830
+Rp1831
 sg7
 I2047003
 sg8
 g3
-((lp1833
+((lp1832
 VSystem.out.println(list.get(index))\u000a
-p1834
-atp1835
-Rp1836
+p1833
+atp1834
+Rp1835
 sg13
 Vprint arraylist element?
-p1837
+p1836
 sg15
 Nsg16
 S'System.out.println(list.get(index));'
-p1838
+p1837
 sg18
 g3
-((lp1839
+((lp1838
 Vprint arraylist element?
-p1840
-atp1841
-Rp1842
-sa(dp1843
+p1839
+atp1840
+Rp1841
+sa(dp1842
 g2
 g3
-((lp1844
-tp1845
-Rp1846
+((lp1843
+tp1844
+Rp1845
 sg7
 I12678781
 sg8
 g3
-((lp1847
+((lp1846
 Vfor (i = 0; i < array.length / 2; i++) {\u000a  int temp = array[i];\u000a  array[i] = array[array.length - 1 - i];\u000a  array[array.length - 1 - i] = temp;\u000a}\u000a
-p1848
-atp1849
-Rp1850
+p1847
+atp1848
+Rp1849
 sg13
 VReversing an Array in Java
-p1851
+p1850
 sg15
 g14
 sg16
 S'for (i = 0; i < array.length / 2; i++) {\n    int temp = array[i];\n    array[i] = array[array.length - 1 - i];\n    array[array.length - 1 - i] = temp;\n}'
-p1852
+p1851
 sg18
 g3
-((lp1853
+((lp1852
 VReversing an Array in Java
-p1854
-atp1855
-Rp1856
-sa(dp1857
+p1853
+atp1854
+Rp1855
+sa(dp1856
 g2
 g3
-((lp1858
-tp1859
-Rp1860
+((lp1857
+tp1858
+Rp1859
 sg7
 I12678781
 sg8
 g3
-((lp1861
+((lp1860
 VCollections.reverse(Arrays.asList(array));\u000a
-p1862
-atp1863
-Rp1864
+p1861
+atp1862
+Rp1863
 sg13
 VReversing an Array in Java
-p1865
+p1864
 sg15
 g14
 sg16
 S'Collections.reverse(Arrays.asList(array));'
-p1866
+p1865
 sg18
 g3
-((lp1867
-g1854
-atp1868
-Rp1869
-sa(dp1870
+((lp1866
+g1853
+atp1867
+Rp1868
+sa(dp1869
 g2
 g3
-((lp1871
-tp1872
-Rp1873
+((lp1870
+tp1871
+Rp1872
 sg7
 I12678781
 sg8
 g3
-((lp1874
+((lp1873
 VList<Integer> list = Arrays.asList(1, 4, 9, 16, 9, 7, 4, 9, 11);\u000aSystem.out.println(list);\u000aCollections.reverse(list);\u000aSystem.out.println(list);\u000a
-p1875
+p1874
 aV[1, 4, 9, 16, 9, 7, 4, 9, 11]\u000a[11, 9, 4, 7, 9, 16, 9, 4, 1]\u000a
-p1876
-atp1877
-Rp1878
+p1875
+atp1876
+Rp1877
 sg13
 VReversing an Array in Java
-p1879
+p1878
 sg15
 g14
 sg16
 S'Collections.reverse(list);'
-p1880
+p1879
 sg18
 g3
-((lp1881
-g1854
-atp1882
-Rp1883
-sa(dp1884
+((lp1880
+g1853
+atp1881
+Rp1882
+sa(dp1883
 g2
 g3
-((lp1885
-tp1886
-Rp1887
+((lp1884
+tp1885
+Rp1886
 sg7
 I2310139
 sg8
 g3
-((lp1888
+((lp1887
 V// the SAX way:\u000aXMLReader myReader = XMLReaderFactory.createXMLReader();\u000amyReader.setContentHandler(handler);\u000amyReader.parse(new InputSource(new URL(url).openStream()));\u000a\u000a// or if you prefer DOM:\u000aDocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\u000aDocumentBuilder db = dbf.newDocumentBuilder();\u000aDocument doc = db.parse(new URL(url).openStream());\u000a
-p1889
-atp1890
-Rp1891
+p1888
+atp1889
+Rp1890
 sg13
 g14
 sg15
 g14
 sg16
 S'XMLReader myReader = XMLReaderFactory.createXMLReader();\nmyReader.setContentHandler(handler);\nmyReader.parse(new InputSource(new URL(url).openStream()));'
-p1892
+p1891
 sg18
 g3
-((lp1893
+((lp1892
 g1461
-atp1894
-Rp1895
-sa(dp1896
+atp1893
+Rp1894
+sa(dp1895
 g2
 g3
-((lp1897
+((lp1896
 Vimport java.util.*;\u000aimport java.util.concurrent.ThreadLocalRandom;\u000a\u000aclass Test\u000a{\u000a  public static void main(String args[])\u000a  {\u000a    int[] solutionArray = { 1, 2, 3, 4, 5, 6, 16, 15, 14, 13, 12, 11 };\u000a\u000a    shuffleArray(solutionArray);\u000a    for (int i = 0; i < solutionArray.length; i++)\u000a    {\u000a      System.out.print(solutionArray[i] + " ");\u000a    }\u000a    System.out.println();\u000a  }\u000a\u000a  // Implementing Fisher\u2013Yates shuffle\u000a  static void shuffleArray(int[] ar)\u000a  {\u000a    // If running on Java 6 or older, use `new Random()` on RHS here\u000a    Random rnd = ThreadLocalRandom.current();\u000a    for (int i = ar.length - 1; i > 0; i--)\u000a    {\u000a      int index = rnd.nextInt(i + 1);\u000a      // Simple swap\u000a      int a = ar[index];\u000a      ar[index] = ar[i];\u000a      ar[i] = a;\u000a    }\u000a  }\u000a}\u000a
-p1898
-atp1899
-Rp1900
+p1897
+atp1898
+Rp1899
 sg7
 I1519736
 sg8
 g3
-((lp1901
+((lp1900
 Vimport java.util.*;\u000aimport java.util.concurrent.ThreadLocalRandom;\u000a\u000aclass Test\u000a{\u000a  public static void main(String args[])\u000a  {\u000a    int[] solutionArray = { 1, 2, 3, 4, 5, 6, 16, 15, 14, 13, 12, 11 };\u000a\u000a    shuffleArray(solutionArray);\u000a    for (int i = 0; i < solutionArray.length; i++)\u000a    {\u000a      System.out.print(solutionArray[i] + " ");\u000a    }\u000a    System.out.println();\u000a  }\u000a\u000a  // Implementing Fisher\u2013Yates shuffle\u000a  static void shuffleArray(int[] ar)\u000a  {\u000a    // If running on Java 6 or older, use `new Random()` on RHS here\u000a    Random rnd = ThreadLocalRandom.current();\u000a    for (int i = ar.length - 1; i > 0; i--)\u000a    {\u000a      int index = rnd.nextInt(i + 1);\u000a      // Simple swap\u000a      int a = ar[index];\u000a      ar[index] = ar[i];\u000a      ar[i] = a;\u000a    }\u000a  }\u000a}\u000a
-p1902
-atp1903
-Rp1904
+p1901
+atp1902
+Rp1903
 sg13
 VRandom shuffling of an array
-p1905
+p1904
 sg15
 S'import java.util.*;\nimport java.util.concurrent.ThreadLocalRandom;'
-p1906
+p1905
 sg16
-S'static void shuffleArray(int[] ar) {\n    Random rnd = ThreadLocalRandom.current();\n    for (int i = ar.length - 1; i > 0; i--) {\n        int index = rnd.nextInt(i + 1);\n        int a = ar[index];\n        ar[index] = ar[i];\n        ar[i] = a;\n    }\n}'
-p1907
+S'Random rnd = ThreadLocalRandom.current();\nfor (int i = ar.length - 1; i > 0; i--) {\n    int index = rnd.nextInt(i + 1);\n    int a = ar[index];\n    ar[index] = ar[i];\n    ar[i] = a;\n}'
+p1906
 sg18
 g3
-((lp1908
+((lp1907
 VRandom shuffling of an array
-p1909
-atp1910
-Rp1911
-sa(dp1912
+p1908
+atp1909
+Rp1910
+sa(dp1911
 g2
 g3
-((lp1913
+((lp1912
 VList<Integer> solution = new ArrayList<>();\u000afor (int i = 1; i <= 6; i++) {\u000a    solution.add(i);\u000a}\u000aCollections.shuffle(solution);\u000a
-p1914
-atp1915
-Rp1916
+p1913
+atp1914
+Rp1915
 sg7
 I1519736
 sg8
 g3
-((lp1917
+((lp1916
 VList<Integer> solution = new ArrayList<>();\u000afor (int i = 1; i <= 6; i++) {\u000a    solution.add(i);\u000a}\u000aCollections.shuffle(solution);\u000a
-p1918
-atp1919
-Rp1920
+p1917
+atp1918
+Rp1919
 sg13
 VRandom shuffling of an array
-p1921
+p1920
 sg15
 S'List<Integer> solution = new ArrayList<>();'
-p1922
+p1921
 sg16
 S'Collections.shuffle(solution);'
-p1923
+p1922
 sg18
 g3
-((lp1924
-g1909
-atp1925
-Rp1926
-sa(dp1927
+((lp1923
+g1908
+atp1924
+Rp1925
+sa(dp1926
 g2
 g3
-((lp1928
-tp1929
-Rp1930
+((lp1927
+tp1928
+Rp1929
 sg7
 I1519736
 sg8
 g3
-((lp1931
+((lp1930
 Vprivate static void shuffleArray(int[] array)\u000a{\u000a    int index;\u000a    Random random = new Random();\u000a    for (int i = array.length - 1; i > 0; i--)\u000a    {\u000a        index = random.nextInt(i + 1);\u000a        if (index != i)\u000a        {\u000a            array[index] ^= array[i];\u000a            array[i] ^= array[index];\u000a            array[index] ^= array[i];\u000a        }\u000a    }\u000a}\u000a
+p1931
+aVprivate static void shuffleArray(int[] array)\u000a{\u000a    int index, temp;\u000a    Random random = new Random();\u000a    for (int i = array.length - 1; i > 0; i--)\u000a    {\u000a        index = random.nextInt(i + 1);\u000a        temp = array[index];\u000a        array[index] = array[i];\u000a        array[i] = temp;\u000a    }\u000a}\u000a
 p1932
-aVprivate static void shuffleArray(int[] array)\u000a{\u000a    int index, temp;\u000a    Random random = new Random();\u000a    for (int i = array.length - 1; i > 0; i--)\u000a    {\u000a        index = random.nextInt(i + 1);\u000a        temp = array[index];\u000a        array[index] = array[i];\u000a        array[i] = temp;\u000a    }\u000a}\u000a
-p1933
-atp1934
-Rp1935
+atp1933
+Rp1934
 sg13
 VRandom shuffling of an array
-p1936
+p1935
 sg15
 g14
 sg16
-S'private static void shuffleArray(int[] array) {\n    int index;\n    Random random = new Random();\n    for (int i = array.length - 1; i > 0; i--) {\n        index = random.nextInt(i + 1);\n        if (index != i) {\n            array[index] ^= array[i];\n            array[i] ^= array[index];\n            array[index] ^= array[i];\n        }\n    }\n}'
-p1937
+S'int index;\nRandom random = new Random();\nfor (int i = array.length - 1; i > 0; i--) {\n    index = random.nextInt(i + 1);\n    if (index != i) {\n        array[index] ^= array[i];\n        array[i] ^= array[index];\n        array[index] ^= array[i];\n    }\n}'
+p1936
 sg18
 g3
-((lp1938
-g1909
-atp1939
-Rp1940
-sa(dp1941
+((lp1937
+g1908
+atp1938
+Rp1939
+sa(dp1940
 g2
 g3
-((lp1942
-tp1943
-Rp1944
+((lp1941
+tp1942
+Rp1943
 sg7
 I1519736
 sg8
 g3
-((lp1945
+((lp1944
 Vprivate static void shuffleArray(int[] array)\u000a{\u000a    int index;\u000a    Random random = new Random();\u000a    for (int i = array.length - 1; i > 0; i--)\u000a    {\u000a        index = random.nextInt(i + 1);\u000a        if (index != i)\u000a        {\u000a            array[index] ^= array[i];\u000a            array[i] ^= array[index];\u000a            array[index] ^= array[i];\u000a        }\u000a    }\u000a}\u000a
-p1946
+p1945
 aVprivate static void shuffleArray(int[] array)\u000a{\u000a    int index, temp;\u000a    Random random = new Random();\u000a    for (int i = array.length - 1; i > 0; i--)\u000a    {\u000a        index = random.nextInt(i + 1);\u000a        temp = array[index];\u000a        array[index] = array[i];\u000a        array[i] = temp;\u000a    }\u000a}\u000a
-p1947
-atp1948
-Rp1949
+p1946
+atp1947
+Rp1948
 sg13
 VRandom shuffling of an array
-p1950
+p1949
 sg15
 g14
 sg16
-S'private static void shuffleArray(int[] array) {\n    int index, temp;\n    Random random = new Random();\n    for (int i = array.length - 1; i > 0; i--) {\n        index = random.nextInt(i + 1);\n        temp = array[index];\n        array[index] = array[i];\n        array[i] = temp;\n    }\n}'
-p1951
+S'int index, temp;\nRandom random = new Random();\nfor (int i = array.length - 1; i > 0; i--) {\n    index = random.nextInt(i + 1);\n    temp = array[index];\n    array[index] = array[i];\n    array[i] = temp;\n}'
+p1950
 sg18
 g3
-((lp1952
-g1909
-atp1953
-Rp1954
-sa(dp1955
+((lp1951
+g1908
+atp1952
+Rp1953
+sa(dp1954
 g2
 g3
-((lp1956
+((lp1955
 VSystem.out.print("hello");\u000aThread.sleep(1000); // Just to give the user a chance to see "hello".\u000aSystem.out.print("\u005cb\u005cb\u005cb\u005cb\u005cb");\u000aSystem.out.print("world");\u000a
-p1957
-atp1958
-Rp1959
+p1956
+atp1957
+Rp1958
 sg7
 I7522022
 sg8
 g3
-((lp1960
+((lp1959
 VSystem.out.print("hello");\u000aThread.sleep(1000); // Just to give the user a chance to see "hello".\u000aSystem.out.print("\u005cb\u005cb\u005cb\u005cb\u005cb");\u000aSystem.out.print("world");\u000a
-p1961
-atp1962
-Rp1963
+p1960
+atp1961
+Rp1962
 sg13
 g14
 sg15
 S'System.out.print("hello");\nThread.sleep(1000);'
-p1964
+p1963
 sg16
 S'System.out.print("\\b\\b\\b\\b\\b");'
-p1965
+p1964
 sg18
 g3
-((lp1966
+((lp1965
 g544
-atp1967
-Rp1968
-sa(dp1969
+atp1966
+Rp1967
+sa(dp1968
 g2
 g3
-((lp1970
-tp1971
-Rp1972
+((lp1969
+tp1970
+Rp1971
 sg7
 I7522022
 sg8
 g3
-((lp1973
+((lp1972
 VSystem.out.print(String.format("\u005c033[2J"));\u000a
-p1974
+p1973
 aVint count = 1; \u000aSystem.out.print(String.format("\u005c033[%dA",count)); // Move up\u000aSystem.out.print("\u005c033[2K"); // Erase line content\u000a
-p1975
-atp1976
-Rp1977
+p1974
+atp1975
+Rp1976
 sg13
 g14
 sg15
 g14
 sg16
 S'System.out.print(String.format("\\033[2J"));'
-p1978
+p1977
 sg18
 g3
-((lp1979
+((lp1978
 g544
-atp1980
-Rp1981
-sa(dp1982
+atp1979
+Rp1980
+sa(dp1981
 g2
 g3
-((lp1983
-tp1984
-Rp1985
+((lp1982
+tp1983
+Rp1984
 sg7
 I320542
 sg8
 g3
-((lp1986
+((lp1985
 Vreturn new File(MyClass.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());\u000a
-p1987
-atp1988
-Rp1989
+p1986
+atp1987
+Rp1988
 sg13
 g14
 sg15
 g14
 sg16
 S'return new File(MyClass.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());'
-p1990
+p1989
 sg18
 g3
-((lp1991
+((lp1990
 VHow to get the path of a running JAR file?
-p1992
-atp1993
-Rp1994
-sa(dp1995
+p1991
+atp1992
+Rp1993
+sa(dp1994
 g2
 g3
-((lp1996
-tp1997
-Rp1998
+((lp1995
+tp1996
+Rp1997
 sg7
 I320542
 sg8
 g3
-((lp1999
+((lp1998
 VString path = Test.class.getProtectionDomain().getCodeSource().getLocation().getPath();\u000aString decodedPath = URLDecoder.decode(path, "UTF-8");\u000a
-p2000
-atp2001
-Rp2002
+p1999
+atp2000
+Rp2001
 sg13
 g14
 sg15
 g14
 sg16
 S'String path = Test.class.getProtectionDomain().getCodeSource().getLocation().getPath();\nString decodedPath = URLDecoder.decode(path, "UTF-8");'
-p2003
+p2002
 sg18
 g3
-((lp2004
-g1992
-atp2005
-Rp2006
-sa(dp2007
+((lp2003
+g1991
+atp2004
+Rp2005
+sa(dp2006
 g2
 g3
-((lp2008
-tp2009
-Rp2010
+((lp2007
+tp2008
+Rp2009
 sg7
 I320542
 sg8
 g3
-((lp2011
+((lp2010
 V/**\u000a * Gets the base location of the given class.\u000a * <p>\u000a * If the class is directly on the file system (e.g.,\u000a * "/path/to/my/package/MyClass.class") then it will return the base directory\u000a * (e.g., "file:/path/to").\u000a * </p>\u000a * <p>\u000a * If the class is within a JAR file (e.g.,\u000a * "/path/to/my-jar.jar!/my/package/MyClass.class") then it will return the\u000a * path to the JAR (e.g., "file:/path/to/my-jar.jar").\u000a * </p>\u000a *\u000a * @param c The class whose location is desired.\u000a * @see FileUtils#urlToFile(URL) to convert the result to a {@link File}.\u000a */\u000apublic static URL getLocation(final Class<?> c) {\u000a    if (c == null) return null; // could not load the class\u000a\u000a    // try the easy way first\u000a    try {\u000a        final URL codeSourceLocation =\u000a            c.getProtectionDomain().getCodeSource().getLocation();\u000a        if (codeSourceLocation != null) return codeSourceLocation;\u000a    }\u000a    catch (final SecurityException e) {\u000a        // NB: Cannot access protection domain.\u000a    }\u000a    catch (final NullPointerException e) {\u000a        // NB: Protection domain or code source is null.\u000a    }\u000a\u000a    // NB: The easy way failed, so we try the hard way. We ask for the class\u000a    // itself as a resource, then strip the class's path from the URL string,\u000a    // leaving the base path.\u000a\u000a    // get the class's raw resource path\u000a    final URL classResource = c.getResource(c.getSimpleName() + ".class");\u000a    if (classResource == null) return null; // cannot find class resource\u000a\u000a    final String url = classResource.toString();\u000a    final String suffix = c.getCanonicalName().replace('.', '/') + ".class";\u000a    if (!url.endsWith(suffix)) return null; // weird URL\u000a\u000a    // strip the class's path from the URL string\u000a    final String base = url.substring(0, url.length() - suffix.length());\u000a\u000a    String path = base;\u000a\u000a    // remove the "jar:" prefix and "!/" suffix, if present\u000a    if (path.startsWith("jar:")) path = path.substring(4, path.length() - 2);\u000a\u000a    try {\u000a        return new URL(path);\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        e.printStackTrace();\u000a        return null;\u000a    }\u000a} \u000a\u000a/**\u000a * Converts the given {@link URL} to its corresponding {@link File}.\u000a * <p>\u000a * This method is similar to calling {@code new File(url.toURI())} except that\u000a * it also handles "jar:file:" URLs, returning the path to the JAR file.\u000a * </p>\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final URL url) {\u000a    return url == null ? null : urlToFile(url.toString());\u000a}\u000a\u000a/**\u000a * Converts the given URL string to its corresponding {@link File}.\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final String url) {\u000a    String path = url;\u000a    if (path.startsWith("jar:")) {\u000a        // remove "jar:" prefix and "!/" suffix\u000a        final int index = path.indexOf("!/");\u000a        path = path.substring(4, index);\u000a    }\u000a    try {\u000a        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\u000a            path = "file:/" + path.substring(5);\u000a        }\u000a        return new File(new URL(path).toURI());\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    catch (final URISyntaxException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    if (path.startsWith("file:")) {\u000a        // pass through the URL as-is, minus "file:" prefix\u000a        path = path.substring(5);\u000a        return new File(path);\u000a    }\u000a    throw new IllegalArgumentException("Invalid URL: " + url);\u000a}\u000a
-p2012
-atp2013
-Rp2014
+p2011
+atp2012
+Rp2013
 sg13
 g14
 sg15
 g14
 sg16
-S'public static URL getLocation(final Class<?> c) {\n    if (c == null)\n        return null;\n    try {\n        final URL codeSourceLocation = c.getProtectionDomain().getCodeSource().getLocation();\n        if (codeSourceLocation != null)\n            return codeSourceLocation;\n    } catch (final SecurityException e) {\n    } catch (final NullPointerException e) {\n    }\n    final URL classResource = c.getResource(c.getSimpleName() + ".class");\n    if (classResource == null)\n        return null;\n    final String url = classResource.toString();\n    final String suffix = c.getCanonicalName().replace(\'.\', \'/\') + ".class";\n    if (!url.endsWith(suffix))\n        return null;\n    final String base = url.substring(0, url.length() - suffix.length());\n    String path = base;\n    if (path.startsWith("jar:"))\n        path = path.substring(4, path.length() - 2);\n    try {\n        return new URL(path);\n    } catch (final MalformedURLException e) {\n        e.printStackTrace();\n        return null;\n    }\n}'
-p2015
+S'if (c == null)\n    return null;\ntry {\n    final URL codeSourceLocation = c.getProtectionDomain().getCodeSource().getLocation();\n    if (codeSourceLocation != null)\n        return codeSourceLocation;\n} catch (final SecurityException e) {\n} catch (final NullPointerException e) {\n}\nfinal URL classResource = c.getResource(c.getSimpleName() + ".class");\nif (classResource == null)\n    return null;\nfinal String url = classResource.toString();\nfinal String suffix = c.getCanonicalName().replace(\'.\', \'/\') + ".class";\nif (!url.endsWith(suffix))\n    return null;\nfinal String base = url.substring(0, url.length() - suffix.length());\nString path = base;\nif (path.startsWith("jar:"))\n    path = path.substring(4, path.length() - 2);\ntry {\n    return new URL(path);\n} catch (final MalformedURLException e) {\n    e.printStackTrace();\n    return null;\n}'
+p2014
 sg18
 g3
-((lp2016
+((lp2015
 V<p>To obtain the <code>File</code> for a given <code>Class</code>, there are two steps:</p>\u000a\u000a<ol>\u000a<li>Convert the <code>Class</code> to a <code>URL</code></li>\u000a<li>Convert the <code>URL</code> to a <code>File</code></li>\u000a</ol>\u000a\u000a<p>It is important to understand both steps, and not conflate them.</p>\u000a\u000a<p>Once you have the <code>File</code>, you can call <code>getParentFile</code> to get the containing folder, if that is what you need.</p>\u000a\u000a<h2>Step 1: <code>Class</code> to <code>URL</code></h2>\u000a\u000a<p>As discussed in other answers, there are two major ways to find a <code>URL</code> relevant to a <code>Class</code>.</p>\u000a\u000a<ol>\u000a<li><p><code>URL url = Bar.class.getProtectionDomain().getCodeSource().getLocation();</code></p></li>\u000a<li><p><code>URL url = Bar.class.getResource(Bar.class.getSimpleName() + ".class");</code></p></li>\u000a</ol>\u000a\u000a<p>Both have pros and cons.</p>\u000a\u000a<p>The <code>getProtectionDomain</code> approach yields the base location of the class (e.g., the containing JAR file). However, it is possible that the Java runtime's security policy will throw <code>SecurityException</code> when calling <code>getProtectionDomain()</code>, so if your application needs to run in a variety of environments, it is best to test in all of them.</p>\u000a\u000a<p>The <code>getResource</code> approach yields the full URL resource path of the class, from which you will need to perform additional string manipulation. It may be a <code>file:</code> path, but it could also be <code>jar:file:</code> or even something nastier like <code>bundleresource://346.fwk2106232034:4/foo/Bar.class</code> when executing within an OSGi framework. Conversely, the <code>getProtectionDomain</code> approach correctly yields a <code>file:</code> URL even from within OSGi.</p>\u000a\u000a<p>Note that both <code>getResource("")</code> and <code>getResource(".")</code> failed in my tests, when the class resided within a JAR file; both invocations returned null. So I recommend the #2 invocation shown above instead, as it seems safer.</p>\u000a\u000a<h2>Step 2: <code>URL</code> to <code>File</code></h2>\u000a\u000a<p>Either way, once you have a <code>URL</code>, the next step is convert to a <code>File</code>. This is its own challenge; see <a href="http://weblogs.java.net/blog/kohsuke/archive/2007/04/how_to_convert.html" rel="noreferrer">Kohsuke Kawaguchi's blog post about it</a> for full details, but in short, you can use <code>new File(url.toURI())</code> as long as the URL is completely well-formed.</p>\u000a\u000a<p>Lastly, I would <em>highly discourage</em> using <code>URLDecoder</code>. Some characters of the URL, <code>:</code> and <code>/</code> in particular, are not valid URL-encoded characters. From the <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLDecoder.html" rel="noreferrer">URLDecoder</a> Javadoc:</p>\u000a\u000a<blockquote>\u000a  <p>It is assumed that all characters in the encoded string are one of the following: "a" through "z", "A" through "Z", "0" through "9", and "-", "_", ".", and "*". The character "%" is allowed but is interpreted as the start of a special escaped sequence.</p>\u000a  \u000a  <p>...</p>\u000a  \u000a  <p>There are two possible ways in which this decoder could deal with illegal strings. It could either leave illegal characters alone or it could throw an IllegalArgumentException. Which approach the decoder takes is left to the implementation.</p>\u000a</blockquote>\u000a\u000a<p>In practice, <code>URLDecoder</code> generally does not throw <code>IllegalArgumentException</code> as threatened above. And if your file path has spaces encoded as <code>%20</code>, this approach may appear to work. However, if your file path has other non-alphameric characters such as <code>+</code> you will have problems with <code>URLDecoder</code> mangling your file path.</p>\u000a\u000a<h2>Working code</h2>\u000a\u000a<p>To achieve these steps, you might have methods like the following:</p>\u000a\u000a<pre><code>/**\u000a * Gets the base location of the given class.\u000a * <p>\u000a * If the class is directly on the file system (e.g.,\u000a * "/path/to/my/package/MyClass.class") then it will return the base directory\u000a * (e.g., "file:/path/to").\u000a * </p>\u000a * <p>\u000a * If the class is within a JAR file (e.g.,\u000a * "/path/to/my-jar.jar!/my/package/MyClass.class") then it will return the\u000a * path to the JAR (e.g., "file:/path/to/my-jar.jar").\u000a * </p>\u000a *\u000a * @param c The class whose location is desired.\u000a * @see FileUtils#urlToFile(URL) to convert the result to a {@link File}.\u000a */\u000apublic static URL getLocation(final Class<?> c) {\u000a    if (c == null) return null; // could not load the class\u000a\u000a    // try the easy way first\u000a    try {\u000a        final URL codeSourceLocation =\u000a            c.getProtectionDomain().getCodeSource().getLocation();\u000a        if (codeSourceLocation != null) return codeSourceLocation;\u000a    }\u000a    catch (final SecurityException e) {\u000a        // NB: Cannot access protection domain.\u000a    }\u000a    catch (final NullPointerException e) {\u000a        // NB: Protection domain or code source is null.\u000a    }\u000a\u000a    // NB: The easy way failed, so we try the hard way. We ask for the class\u000a    // itself as a resource, then strip the class's path from the URL string,\u000a    // leaving the base path.\u000a\u000a    // get the class's raw resource path\u000a    final URL classResource = c.getResource(c.getSimpleName() + ".class");\u000a    if (classResource == null) return null; // cannot find class resource\u000a\u000a    final String url = classResource.toString();\u000a    final String suffix = c.getCanonicalName().replace('.', '/') + ".class";\u000a    if (!url.endsWith(suffix)) return null; // weird URL\u000a\u000a    // strip the class's path from the URL string\u000a    final String base = url.substring(0, url.length() - suffix.length());\u000a\u000a    String path = base;\u000a\u000a    // remove the "jar:" prefix and "!/" suffix, if present\u000a    if (path.startsWith("jar:")) path = path.substring(4, path.length() - 2);\u000a\u000a    try {\u000a        return new URL(path);\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        e.printStackTrace();\u000a        return null;\u000a    }\u000a} \u000a\u000a/**\u000a * Converts the given {@link URL} to its corresponding {@link File}.\u000a * <p>\u000a * This method is similar to calling {@code new File(url.toURI())} except that\u000a * it also handles "jar:file:" URLs, returning the path to the JAR file.\u000a * </p>\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final URL url) {\u000a    return url == null ? null : urlToFile(url.toString());\u000a}\u000a\u000a/**\u000a * Converts the given URL string to its corresponding {@link File}.\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final String url) {\u000a    String path = url;\u000a    if (path.startsWith("jar:")) {\u000a        // remove "jar:" prefix and "!/" suffix\u000a        final int index = path.indexOf("!/");\u000a        path = path.substring(4, index);\u000a    }\u000a    try {\u000a        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\u000a            path = "file:/" + path.substring(5);\u000a        }\u000a        return new File(new URL(path).toURI());\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    catch (final URISyntaxException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    if (path.startsWith("file:")) {\u000a        // pass through the URL as-is, minus "file:" prefix\u000a        path = path.substring(5);\u000a        return new File(path);\u000a    }\u000a    throw new IllegalArgumentException("Invalid URL: " + url);\u000a}\u000a</code></pre>\u000a\u000a<p>You can find these methods in the <a href="https://github.com/scijava/scijava-common" rel="noreferrer">SciJava Common</a> library:</p>\u000a\u000a<ul>\u000a<li><a href="https://github.com/scijava/scijava-common/blob/scijava-common-2.62.1/src/main/java/org/scijava/util/ClassUtils.java#L296-L355" rel="noreferrer">org.scijava.util.ClassUtils</a></li>\u000a<li><a href="https://github.com/scijava/scijava-common/blob/scijava-common-2.62.1/src/main/java/org/scijava/util/FileUtils.java#L221-L268" rel="noreferrer">org.scijava.util.FileUtils</a>.</li>\u000a</ul>\u000a
-p2017
-atp2018
-Rp2019
-sa(dp2020
+p2016
+atp2017
+Rp2018
+sa(dp2019
 g2
 g3
-((lp2021
-tp2022
-Rp2023
+((lp2020
+tp2021
+Rp2022
 sg7
 I320542
 sg8
 g3
-((lp2024
+((lp2023
 V/**\u000a * Gets the base location of the given class.\u000a * <p>\u000a * If the class is directly on the file system (e.g.,\u000a * "/path/to/my/package/MyClass.class") then it will return the base directory\u000a * (e.g., "file:/path/to").\u000a * </p>\u000a * <p>\u000a * If the class is within a JAR file (e.g.,\u000a * "/path/to/my-jar.jar!/my/package/MyClass.class") then it will return the\u000a * path to the JAR (e.g., "file:/path/to/my-jar.jar").\u000a * </p>\u000a *\u000a * @param c The class whose location is desired.\u000a * @see FileUtils#urlToFile(URL) to convert the result to a {@link File}.\u000a */\u000apublic static URL getLocation(final Class<?> c) {\u000a    if (c == null) return null; // could not load the class\u000a\u000a    // try the easy way first\u000a    try {\u000a        final URL codeSourceLocation =\u000a            c.getProtectionDomain().getCodeSource().getLocation();\u000a        if (codeSourceLocation != null) return codeSourceLocation;\u000a    }\u000a    catch (final SecurityException e) {\u000a        // NB: Cannot access protection domain.\u000a    }\u000a    catch (final NullPointerException e) {\u000a        // NB: Protection domain or code source is null.\u000a    }\u000a\u000a    // NB: The easy way failed, so we try the hard way. We ask for the class\u000a    // itself as a resource, then strip the class's path from the URL string,\u000a    // leaving the base path.\u000a\u000a    // get the class's raw resource path\u000a    final URL classResource = c.getResource(c.getSimpleName() + ".class");\u000a    if (classResource == null) return null; // cannot find class resource\u000a\u000a    final String url = classResource.toString();\u000a    final String suffix = c.getCanonicalName().replace('.', '/') + ".class";\u000a    if (!url.endsWith(suffix)) return null; // weird URL\u000a\u000a    // strip the class's path from the URL string\u000a    final String base = url.substring(0, url.length() - suffix.length());\u000a\u000a    String path = base;\u000a\u000a    // remove the "jar:" prefix and "!/" suffix, if present\u000a    if (path.startsWith("jar:")) path = path.substring(4, path.length() - 2);\u000a\u000a    try {\u000a        return new URL(path);\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        e.printStackTrace();\u000a        return null;\u000a    }\u000a} \u000a\u000a/**\u000a * Converts the given {@link URL} to its corresponding {@link File}.\u000a * <p>\u000a * This method is similar to calling {@code new File(url.toURI())} except that\u000a * it also handles "jar:file:" URLs, returning the path to the JAR file.\u000a * </p>\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final URL url) {\u000a    return url == null ? null : urlToFile(url.toString());\u000a}\u000a\u000a/**\u000a * Converts the given URL string to its corresponding {@link File}.\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final String url) {\u000a    String path = url;\u000a    if (path.startsWith("jar:")) {\u000a        // remove "jar:" prefix and "!/" suffix\u000a        final int index = path.indexOf("!/");\u000a        path = path.substring(4, index);\u000a    }\u000a    try {\u000a        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\u000a            path = "file:/" + path.substring(5);\u000a        }\u000a        return new File(new URL(path).toURI());\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    catch (final URISyntaxException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    if (path.startsWith("file:")) {\u000a        // pass through the URL as-is, minus "file:" prefix\u000a        path = path.substring(5);\u000a        return new File(path);\u000a    }\u000a    throw new IllegalArgumentException("Invalid URL: " + url);\u000a}\u000a
-p2025
-atp2026
-Rp2027
+p2024
+atp2025
+Rp2026
 sg13
 g14
 sg15
 g14
 sg16
-S'public static File urlToFile(final URL url) {\n    return url == null ? null : urlToFile(url.toString());\n}'
-p2028
+S'return url == null ? null : urlToFile(url.toString());'
+p2027
 sg18
 g3
-((lp2029
+((lp2028
 V<p>To obtain the <code>File</code> for a given <code>Class</code>, there are two steps:</p>\u000a\u000a<ol>\u000a<li>Convert the <code>Class</code> to a <code>URL</code></li>\u000a<li>Convert the <code>URL</code> to a <code>File</code></li>\u000a</ol>\u000a\u000a<p>It is important to understand both steps, and not conflate them.</p>\u000a\u000a<p>Once you have the <code>File</code>, you can call <code>getParentFile</code> to get the containing folder, if that is what you need.</p>\u000a\u000a<h2>Step 1: <code>Class</code> to <code>URL</code></h2>\u000a\u000a<p>As discussed in other answers, there are two major ways to find a <code>URL</code> relevant to a <code>Class</code>.</p>\u000a\u000a<ol>\u000a<li><p><code>URL url = Bar.class.getProtectionDomain().getCodeSource().getLocation();</code></p></li>\u000a<li><p><code>URL url = Bar.class.getResource(Bar.class.getSimpleName() + ".class");</code></p></li>\u000a</ol>\u000a\u000a<p>Both have pros and cons.</p>\u000a\u000a<p>The <code>getProtectionDomain</code> approach yields the base location of the class (e.g., the containing JAR file). However, it is possible that the Java runtime's security policy will throw <code>SecurityException</code> when calling <code>getProtectionDomain()</code>, so if your application needs to run in a variety of environments, it is best to test in all of them.</p>\u000a\u000a<p>The <code>getResource</code> approach yields the full URL resource path of the class, from which you will need to perform additional string manipulation. It may be a <code>file:</code> path, but it could also be <code>jar:file:</code> or even something nastier like <code>bundleresource://346.fwk2106232034:4/foo/Bar.class</code> when executing within an OSGi framework. Conversely, the <code>getProtectionDomain</code> approach correctly yields a <code>file:</code> URL even from within OSGi.</p>\u000a\u000a<p>Note that both <code>getResource("")</code> and <code>getResource(".")</code> failed in my tests, when the class resided within a JAR file; both invocations returned null. So I recommend the #2 invocation shown above instead, as it seems safer.</p>\u000a\u000a<h2>Step 2: <code>URL</code> to <code>File</code></h2>\u000a\u000a<p>Either way, once you have a <code>URL</code>, the next step is convert to a <code>File</code>. This is its own challenge; see <a href="http://weblogs.java.net/blog/kohsuke/archive/2007/04/how_to_convert.html" rel="noreferrer">Kohsuke Kawaguchi's blog post about it</a> for full details, but in short, you can use <code>new File(url.toURI())</code> as long as the URL is completely well-formed.</p>\u000a\u000a<p>Lastly, I would <em>highly discourage</em> using <code>URLDecoder</code>. Some characters of the URL, <code>:</code> and <code>/</code> in particular, are not valid URL-encoded characters. From the <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLDecoder.html" rel="noreferrer">URLDecoder</a> Javadoc:</p>\u000a\u000a<blockquote>\u000a  <p>It is assumed that all characters in the encoded string are one of the following: "a" through "z", "A" through "Z", "0" through "9", and "-", "_", ".", and "*". The character "%" is allowed but is interpreted as the start of a special escaped sequence.</p>\u000a  \u000a  <p>...</p>\u000a  \u000a  <p>There are two possible ways in which this decoder could deal with illegal strings. It could either leave illegal characters alone or it could throw an IllegalArgumentException. Which approach the decoder takes is left to the implementation.</p>\u000a</blockquote>\u000a\u000a<p>In practice, <code>URLDecoder</code> generally does not throw <code>IllegalArgumentException</code> as threatened above. And if your file path has spaces encoded as <code>%20</code>, this approach may appear to work. However, if your file path has other non-alphameric characters such as <code>+</code> you will have problems with <code>URLDecoder</code> mangling your file path.</p>\u000a\u000a<h2>Working code</h2>\u000a\u000a<p>To achieve these steps, you might have methods like the following:</p>\u000a\u000a<pre><code>/**\u000a * Gets the base location of the given class.\u000a * <p>\u000a * If the class is directly on the file system (e.g.,\u000a * "/path/to/my/package/MyClass.class") then it will return the base directory\u000a * (e.g., "file:/path/to").\u000a * </p>\u000a * <p>\u000a * If the class is within a JAR file (e.g.,\u000a * "/path/to/my-jar.jar!/my/package/MyClass.class") then it will return the\u000a * path to the JAR (e.g., "file:/path/to/my-jar.jar").\u000a * </p>\u000a *\u000a * @param c The class whose location is desired.\u000a * @see FileUtils#urlToFile(URL) to convert the result to a {@link File}.\u000a */\u000apublic static URL getLocation(final Class<?> c) {\u000a    if (c == null) return null; // could not load the class\u000a\u000a    // try the easy way first\u000a    try {\u000a        final URL codeSourceLocation =\u000a            c.getProtectionDomain().getCodeSource().getLocation();\u000a        if (codeSourceLocation != null) return codeSourceLocation;\u000a    }\u000a    catch (final SecurityException e) {\u000a        // NB: Cannot access protection domain.\u000a    }\u000a    catch (final NullPointerException e) {\u000a        // NB: Protection domain or code source is null.\u000a    }\u000a\u000a    // NB: The easy way failed, so we try the hard way. We ask for the class\u000a    // itself as a resource, then strip the class's path from the URL string,\u000a    // leaving the base path.\u000a\u000a    // get the class's raw resource path\u000a    final URL classResource = c.getResource(c.getSimpleName() + ".class");\u000a    if (classResource == null) return null; // cannot find class resource\u000a\u000a    final String url = classResource.toString();\u000a    final String suffix = c.getCanonicalName().replace('.', '/') + ".class";\u000a    if (!url.endsWith(suffix)) return null; // weird URL\u000a\u000a    // strip the class's path from the URL string\u000a    final String base = url.substring(0, url.length() - suffix.length());\u000a\u000a    String path = base;\u000a\u000a    // remove the "jar:" prefix and "!/" suffix, if present\u000a    if (path.startsWith("jar:")) path = path.substring(4, path.length() - 2);\u000a\u000a    try {\u000a        return new URL(path);\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        e.printStackTrace();\u000a        return null;\u000a    }\u000a} \u000a\u000a/**\u000a * Converts the given {@link URL} to its corresponding {@link File}.\u000a * <p>\u000a * This method is similar to calling {@code new File(url.toURI())} except that\u000a * it also handles "jar:file:" URLs, returning the path to the JAR file.\u000a * </p>\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final URL url) {\u000a    return url == null ? null : urlToFile(url.toString());\u000a}\u000a\u000a/**\u000a * Converts the given URL string to its corresponding {@link File}.\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final String url) {\u000a    String path = url;\u000a    if (path.startsWith("jar:")) {\u000a        // remove "jar:" prefix and "!/" suffix\u000a        final int index = path.indexOf("!/");\u000a        path = path.substring(4, index);\u000a    }\u000a    try {\u000a        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\u000a            path = "file:/" + path.substring(5);\u000a        }\u000a        return new File(new URL(path).toURI());\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    catch (final URISyntaxException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    if (path.startsWith("file:")) {\u000a        // pass through the URL as-is, minus "file:" prefix\u000a        path = path.substring(5);\u000a        return new File(path);\u000a    }\u000a    throw new IllegalArgumentException("Invalid URL: " + url);\u000a}\u000a</code></pre>\u000a\u000a<p>You can find these methods in the <a href="https://github.com/scijava/scijava-common" rel="noreferrer">SciJava Common</a> library:</p>\u000a\u000a<ul>\u000a<li><a href="https://github.com/scijava/scijava-common/blob/scijava-common-2.62.1/src/main/java/org/scijava/util/ClassUtils.java#L296-L355" rel="noreferrer">org.scijava.util.ClassUtils</a></li>\u000a<li><a href="https://github.com/scijava/scijava-common/blob/scijava-common-2.62.1/src/main/java/org/scijava/util/FileUtils.java#L221-L268" rel="noreferrer">org.scijava.util.FileUtils</a>.</li>\u000a</ul>\u000a
-p2030
-atp2031
-Rp2032
-sa(dp2033
+p2029
+atp2030
+Rp2031
+sa(dp2032
 g2
 g3
-((lp2034
-tp2035
-Rp2036
+((lp2033
+tp2034
+Rp2035
 sg7
 I320542
 sg8
 g3
-((lp2037
+((lp2036
 V/**\u000a * Gets the base location of the given class.\u000a * <p>\u000a * If the class is directly on the file system (e.g.,\u000a * "/path/to/my/package/MyClass.class") then it will return the base directory\u000a * (e.g., "file:/path/to").\u000a * </p>\u000a * <p>\u000a * If the class is within a JAR file (e.g.,\u000a * "/path/to/my-jar.jar!/my/package/MyClass.class") then it will return the\u000a * path to the JAR (e.g., "file:/path/to/my-jar.jar").\u000a * </p>\u000a *\u000a * @param c The class whose location is desired.\u000a * @see FileUtils#urlToFile(URL) to convert the result to a {@link File}.\u000a */\u000apublic static URL getLocation(final Class<?> c) {\u000a    if (c == null) return null; // could not load the class\u000a\u000a    // try the easy way first\u000a    try {\u000a        final URL codeSourceLocation =\u000a            c.getProtectionDomain().getCodeSource().getLocation();\u000a        if (codeSourceLocation != null) return codeSourceLocation;\u000a    }\u000a    catch (final SecurityException e) {\u000a        // NB: Cannot access protection domain.\u000a    }\u000a    catch (final NullPointerException e) {\u000a        // NB: Protection domain or code source is null.\u000a    }\u000a\u000a    // NB: The easy way failed, so we try the hard way. We ask for the class\u000a    // itself as a resource, then strip the class's path from the URL string,\u000a    // leaving the base path.\u000a\u000a    // get the class's raw resource path\u000a    final URL classResource = c.getResource(c.getSimpleName() + ".class");\u000a    if (classResource == null) return null; // cannot find class resource\u000a\u000a    final String url = classResource.toString();\u000a    final String suffix = c.getCanonicalName().replace('.', '/') + ".class";\u000a    if (!url.endsWith(suffix)) return null; // weird URL\u000a\u000a    // strip the class's path from the URL string\u000a    final String base = url.substring(0, url.length() - suffix.length());\u000a\u000a    String path = base;\u000a\u000a    // remove the "jar:" prefix and "!/" suffix, if present\u000a    if (path.startsWith("jar:")) path = path.substring(4, path.length() - 2);\u000a\u000a    try {\u000a        return new URL(path);\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        e.printStackTrace();\u000a        return null;\u000a    }\u000a} \u000a\u000a/**\u000a * Converts the given {@link URL} to its corresponding {@link File}.\u000a * <p>\u000a * This method is similar to calling {@code new File(url.toURI())} except that\u000a * it also handles "jar:file:" URLs, returning the path to the JAR file.\u000a * </p>\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final URL url) {\u000a    return url == null ? null : urlToFile(url.toString());\u000a}\u000a\u000a/**\u000a * Converts the given URL string to its corresponding {@link File}.\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final String url) {\u000a    String path = url;\u000a    if (path.startsWith("jar:")) {\u000a        // remove "jar:" prefix and "!/" suffix\u000a        final int index = path.indexOf("!/");\u000a        path = path.substring(4, index);\u000a    }\u000a    try {\u000a        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\u000a            path = "file:/" + path.substring(5);\u000a        }\u000a        return new File(new URL(path).toURI());\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    catch (final URISyntaxException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    if (path.startsWith("file:")) {\u000a        // pass through the URL as-is, minus "file:" prefix\u000a        path = path.substring(5);\u000a        return new File(path);\u000a    }\u000a    throw new IllegalArgumentException("Invalid URL: " + url);\u000a}\u000a
-p2038
-atp2039
-Rp2040
+p2037
+atp2038
+Rp2039
 sg13
 g14
 sg15
 g14
 sg16
-S'public static File urlToFile(final String url) {\n    String path = url;\n    if (path.startsWith("jar:")) {\n        final int index = path.indexOf("!/");\n        path = path.substring(4, index);\n    }\n    try {\n        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\n            path = "file:/" + path.substring(5);\n        }\n        return new File(new URL(path).toURI());\n    } catch (final MalformedURLException e) {\n    } catch (final URISyntaxException e) {\n    }\n    if (path.startsWith("file:")) {\n        path = path.substring(5);\n        return new File(path);\n    }\n    throw new IllegalArgumentException("Invalid URL: " + url);\n}'
-p2041
+S'String path = url;\nif (path.startsWith("jar:")) {\n    final int index = path.indexOf("!/");\n    path = path.substring(4, index);\n}\ntry {\n    if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\n        path = "file:/" + path.substring(5);\n    }\n    return new File(new URL(path).toURI());\n} catch (final MalformedURLException e) {\n} catch (final URISyntaxException e) {\n}\nif (path.startsWith("file:")) {\n    path = path.substring(5);\n    return new File(path);\n}\nthrow new IllegalArgumentException("Invalid URL: " + url);'
+p2040
 sg18
 g3
-((lp2042
+((lp2041
 V<p>To obtain the <code>File</code> for a given <code>Class</code>, there are two steps:</p>\u000a\u000a<ol>\u000a<li>Convert the <code>Class</code> to a <code>URL</code></li>\u000a<li>Convert the <code>URL</code> to a <code>File</code></li>\u000a</ol>\u000a\u000a<p>It is important to understand both steps, and not conflate them.</p>\u000a\u000a<p>Once you have the <code>File</code>, you can call <code>getParentFile</code> to get the containing folder, if that is what you need.</p>\u000a\u000a<h2>Step 1: <code>Class</code> to <code>URL</code></h2>\u000a\u000a<p>As discussed in other answers, there are two major ways to find a <code>URL</code> relevant to a <code>Class</code>.</p>\u000a\u000a<ol>\u000a<li><p><code>URL url = Bar.class.getProtectionDomain().getCodeSource().getLocation();</code></p></li>\u000a<li><p><code>URL url = Bar.class.getResource(Bar.class.getSimpleName() + ".class");</code></p></li>\u000a</ol>\u000a\u000a<p>Both have pros and cons.</p>\u000a\u000a<p>The <code>getProtectionDomain</code> approach yields the base location of the class (e.g., the containing JAR file). However, it is possible that the Java runtime's security policy will throw <code>SecurityException</code> when calling <code>getProtectionDomain()</code>, so if your application needs to run in a variety of environments, it is best to test in all of them.</p>\u000a\u000a<p>The <code>getResource</code> approach yields the full URL resource path of the class, from which you will need to perform additional string manipulation. It may be a <code>file:</code> path, but it could also be <code>jar:file:</code> or even something nastier like <code>bundleresource://346.fwk2106232034:4/foo/Bar.class</code> when executing within an OSGi framework. Conversely, the <code>getProtectionDomain</code> approach correctly yields a <code>file:</code> URL even from within OSGi.</p>\u000a\u000a<p>Note that both <code>getResource("")</code> and <code>getResource(".")</code> failed in my tests, when the class resided within a JAR file; both invocations returned null. So I recommend the #2 invocation shown above instead, as it seems safer.</p>\u000a\u000a<h2>Step 2: <code>URL</code> to <code>File</code></h2>\u000a\u000a<p>Either way, once you have a <code>URL</code>, the next step is convert to a <code>File</code>. This is its own challenge; see <a href="http://weblogs.java.net/blog/kohsuke/archive/2007/04/how_to_convert.html" rel="noreferrer">Kohsuke Kawaguchi's blog post about it</a> for full details, but in short, you can use <code>new File(url.toURI())</code> as long as the URL is completely well-formed.</p>\u000a\u000a<p>Lastly, I would <em>highly discourage</em> using <code>URLDecoder</code>. Some characters of the URL, <code>:</code> and <code>/</code> in particular, are not valid URL-encoded characters. From the <a href="http://docs.oracle.com/javase/7/docs/api/java/net/URLDecoder.html" rel="noreferrer">URLDecoder</a> Javadoc:</p>\u000a\u000a<blockquote>\u000a  <p>It is assumed that all characters in the encoded string are one of the following: "a" through "z", "A" through "Z", "0" through "9", and "-", "_", ".", and "*". The character "%" is allowed but is interpreted as the start of a special escaped sequence.</p>\u000a  \u000a  <p>...</p>\u000a  \u000a  <p>There are two possible ways in which this decoder could deal with illegal strings. It could either leave illegal characters alone or it could throw an IllegalArgumentException. Which approach the decoder takes is left to the implementation.</p>\u000a</blockquote>\u000a\u000a<p>In practice, <code>URLDecoder</code> generally does not throw <code>IllegalArgumentException</code> as threatened above. And if your file path has spaces encoded as <code>%20</code>, this approach may appear to work. However, if your file path has other non-alphameric characters such as <code>+</code> you will have problems with <code>URLDecoder</code> mangling your file path.</p>\u000a\u000a<h2>Working code</h2>\u000a\u000a<p>To achieve these steps, you might have methods like the following:</p>\u000a\u000a<pre><code>/**\u000a * Gets the base location of the given class.\u000a * <p>\u000a * If the class is directly on the file system (e.g.,\u000a * "/path/to/my/package/MyClass.class") then it will return the base directory\u000a * (e.g., "file:/path/to").\u000a * </p>\u000a * <p>\u000a * If the class is within a JAR file (e.g.,\u000a * "/path/to/my-jar.jar!/my/package/MyClass.class") then it will return the\u000a * path to the JAR (e.g., "file:/path/to/my-jar.jar").\u000a * </p>\u000a *\u000a * @param c The class whose location is desired.\u000a * @see FileUtils#urlToFile(URL) to convert the result to a {@link File}.\u000a */\u000apublic static URL getLocation(final Class<?> c) {\u000a    if (c == null) return null; // could not load the class\u000a\u000a    // try the easy way first\u000a    try {\u000a        final URL codeSourceLocation =\u000a            c.getProtectionDomain().getCodeSource().getLocation();\u000a        if (codeSourceLocation != null) return codeSourceLocation;\u000a    }\u000a    catch (final SecurityException e) {\u000a        // NB: Cannot access protection domain.\u000a    }\u000a    catch (final NullPointerException e) {\u000a        // NB: Protection domain or code source is null.\u000a    }\u000a\u000a    // NB: The easy way failed, so we try the hard way. We ask for the class\u000a    // itself as a resource, then strip the class's path from the URL string,\u000a    // leaving the base path.\u000a\u000a    // get the class's raw resource path\u000a    final URL classResource = c.getResource(c.getSimpleName() + ".class");\u000a    if (classResource == null) return null; // cannot find class resource\u000a\u000a    final String url = classResource.toString();\u000a    final String suffix = c.getCanonicalName().replace('.', '/') + ".class";\u000a    if (!url.endsWith(suffix)) return null; // weird URL\u000a\u000a    // strip the class's path from the URL string\u000a    final String base = url.substring(0, url.length() - suffix.length());\u000a\u000a    String path = base;\u000a\u000a    // remove the "jar:" prefix and "!/" suffix, if present\u000a    if (path.startsWith("jar:")) path = path.substring(4, path.length() - 2);\u000a\u000a    try {\u000a        return new URL(path);\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        e.printStackTrace();\u000a        return null;\u000a    }\u000a} \u000a\u000a/**\u000a * Converts the given {@link URL} to its corresponding {@link File}.\u000a * <p>\u000a * This method is similar to calling {@code new File(url.toURI())} except that\u000a * it also handles "jar:file:" URLs, returning the path to the JAR file.\u000a * </p>\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final URL url) {\u000a    return url == null ? null : urlToFile(url.toString());\u000a}\u000a\u000a/**\u000a * Converts the given URL string to its corresponding {@link File}.\u000a * \u000a * @param url The URL to convert.\u000a * @return A file path suitable for use with e.g. {@link FileInputStream}\u000a * @throws IllegalArgumentException if the URL does not correspond to a file.\u000a */\u000apublic static File urlToFile(final String url) {\u000a    String path = url;\u000a    if (path.startsWith("jar:")) {\u000a        // remove "jar:" prefix and "!/" suffix\u000a        final int index = path.indexOf("!/");\u000a        path = path.substring(4, index);\u000a    }\u000a    try {\u000a        if (PlatformUtils.isWindows() && path.matches("file:[A-Za-z]:.*")) {\u000a            path = "file:/" + path.substring(5);\u000a        }\u000a        return new File(new URL(path).toURI());\u000a    }\u000a    catch (final MalformedURLException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    catch (final URISyntaxException e) {\u000a        // NB: URL is not completely well-formed.\u000a    }\u000a    if (path.startsWith("file:")) {\u000a        // pass through the URL as-is, minus "file:" prefix\u000a        path = path.substring(5);\u000a        return new File(path);\u000a    }\u000a    throw new IllegalArgumentException("Invalid URL: " + url);\u000a}\u000a</code></pre>\u000a\u000a<p>You can find these methods in the <a href="https://github.com/scijava/scijava-common" rel="noreferrer">SciJava Common</a> library:</p>\u000a\u000a<ul>\u000a<li><a href="https://github.com/scijava/scijava-common/blob/scijava-common-2.62.1/src/main/java/org/scijava/util/ClassUtils.java#L296-L355" rel="noreferrer">org.scijava.util.ClassUtils</a></li>\u000a<li><a href="https://github.com/scijava/scijava-common/blob/scijava-common-2.62.1/src/main/java/org/scijava/util/FileUtils.java#L221-L268" rel="noreferrer">org.scijava.util.FileUtils</a>.</li>\u000a</ul>\u000a
-p2043
-atp2044
-Rp2045
-sa(dp2046
+p2042
+atp2043
+Rp2044
+sa(dp2045
 g2
 g3
-((lp2047
-tp2048
-Rp2049
+((lp2046
+tp2047
+Rp2048
 sg7
 I3395286
 sg8
 g3
-((lp2050
+((lp2049
 VString prefix = "";\u000afor (String serverId : serverIds) {\u000a  sb.append(prefix);\u000a  prefix = ",";\u000a  sb.append(serverId);\u000a}\u000a
-p2051
-atp2052
-Rp2053
+p2050
+atp2051
+Rp2052
 sg13
 VRemove last character of a StringBuilder?
-p2054
+p2053
 sg15
 g14
 sg16
 S'String prefix = "";\nfor (String serverId : serverIds) {\n    sb.append(prefix);\n    prefix = ",";\n    sb.append(serverId);\n}'
-p2055
+p2054
 sg18
 g3
-((lp2056
+((lp2055
 VRemove last character of a StringBuilder?
-p2057
-atp2058
-Rp2059
-sa(dp2060
+p2056
+atp2057
+Rp2058
+sa(dp2059
 g2
 g3
-((lp2061
-tp2062
-Rp2063
+((lp2060
+tp2061
+Rp2062
 sg7
 I3395286
 sg8
 g3
-((lp2064
+((lp2063
 Vsb.setLength(sb.length() - 1);\u000a
-p2065
+p2064
 aV// Concise but harder-to-read version of the above.\u000asb.setLength(Math.max(sb.length() - 1, 0));\u000a
-p2066
+p2065
 aV// Readable version\u000aif (sb.length() > 0) {\u000a   sb.setLength(sb.length() - 1);\u000a}\u000a
-p2067
-atp2068
-Rp2069
+p2066
+atp2067
+Rp2068
 sg13
 VRemove last character of a StringBuilder?
-p2070
+p2069
 sg15
 g14
 sg16
 S'sb.setLength(sb.length() - 1);'
-p2071
+p2070
 sg18
 g3
-((lp2072
-g2057
-atp2073
-Rp2074
-sa(dp2075
+((lp2071
+g2056
+atp2072
+Rp2073
+sa(dp2074
 g2
 g3
-((lp2076
-tp2077
-Rp2078
+((lp2075
+tp2076
+Rp2077
 sg7
 I3395286
 sg8
 g3
-((lp2079
+((lp2078
 Vsb.setLength(sb.length() - 1);\u000a
-p2080
+p2079
 aV// Concise but harder-to-read version of the above.\u000asb.setLength(Math.max(sb.length() - 1, 0));\u000a
-p2081
+p2080
 aV// Readable version\u000aif (sb.length() > 0) {\u000a   sb.setLength(sb.length() - 1);\u000a}\u000a
-p2082
-atp2083
-Rp2084
+p2081
+atp2082
+Rp2083
 sg13
 VRemove last character of a StringBuilder?
-p2085
+p2084
 sg15
 g14
 sg16
 S'if (sb.length() > 0) {\n    sb.setLength(sb.length() - 1);\n}'
-p2086
+p2085
 sg18
 g3
-((lp2087
-g2057
-atp2088
-Rp2089
-sa(dp2090
+((lp2086
+g2056
+atp2087
+Rp2088
+sa(dp2089
 g2
 g3
-((lp2091
-tp2092
-Rp2093
+((lp2090
+tp2091
+Rp2092
 sg7
 I3395286
 sg8
 g3
-((lp2094
+((lp2093
 Vsb.setLength(sb.length() - 1);\u000a
-p2095
+p2094
 aV// Concise but harder-to-read version of the above.\u000asb.setLength(Math.max(sb.length() - 1, 0));\u000a
-p2096
+p2095
 aV// Readable version\u000aif (sb.length() > 0) {\u000a   sb.setLength(sb.length() - 1);\u000a}\u000a
-p2097
-atp2098
-Rp2099
+p2096
+atp2097
+Rp2098
 sg13
 VRemove last character of a StringBuilder?
-p2100
+p2099
 sg15
 g14
 sg16
 S'sb.setLength(Math.max(sb.length() - 1, 0));'
-p2101
+p2100
 sg18
 g3
-((lp2102
-g2057
-atp2103
-Rp2104
-sa(dp2105
+((lp2101
+g2056
+atp2102
+Rp2103
+sa(dp2104
 g2
 g3
-((lp2106
-tp2107
-Rp2108
+((lp2105
+tp2106
+Rp2107
 sg7
 I3395286
 sg8
 g3
-((lp2109
+((lp2108
 Vsb.deleteCharAt(sb.length()-1) \u000a
-p2110
-atp2111
-Rp2112
+p2109
+atp2110
+Rp2111
 sg13
 VRemove last character of a StringBuilder?
-p2113
+p2112
 sg15
 g14
 sg16
 S'sb.deleteCharAt(sb.length() - 1);'
-p2114
+p2113
 sg18
 g3
-((lp2115
-g2057
-atp2116
-Rp2117
-sa(dp2118
+((lp2114
+g2056
+atp2115
+Rp2116
+sa(dp2117
 g2
 g3
-((lp2119
-tp2120
-Rp2121
+((lp2118
+tp2119
+Rp2120
 sg7
 I2369967
 sg8
 g3
-((lp2122
+((lp2121
 Vint arr[] = null;\u000aif (arr == null) {\u000a  System.out.println("array is null");\u000a}\u000a
-p2123
+p2122
 aVObject arr[] = new Object[10];\u000aboolean empty = true;\u000afor (int i=0; i<arr.length; i++) {\u000a  if (arr[i] != null) {\u000a    empty = false;\u000a    break;\u000a  }\u000a}\u000a
-p2124
+p2123
 aVObject arr[] = new Object[10];\u000aboolean empty = true;\u000afor (Object ob : arr) {\u000a  if (ob != null) {\u000a    empty = false;\u000a    break;\u000a  }\u000a}\u000a
-p2125
+p2124
 aVarr = new int[0];\u000aif (arr.length == 0) {\u000a  System.out.println("array is empty");\u000a}\u000a
-p2126
-atp2127
-Rp2128
+p2125
+atp2126
+Rp2127
 sg13
 g14
 sg15
 g14
 sg16
 S'if (arr == null) {\n    System.out.println("array is null");\n}'
-p2129
+p2128
 sg18
 g3
-((lp2130
+((lp2129
 Vhow we check for null array in java
-p2131
-atp2132
-Rp2133
-sa(dp2134
+p2130
+atp2131
+Rp2132
+sa(dp2133
 g2
 g3
-((lp2135
-tp2136
-Rp2137
+((lp2134
+tp2135
+Rp2136
 sg7
 I2369967
 sg8
 g3
-((lp2138
-tp2139
-Rp2140
+((lp2137
+tp2138
+Rp2139
 sg13
 g14
 sg15
 g14
 sg16
 S'ArrayUtils.isNotEmpty(testArrayName);'
-p2141
+p2140
 sg18
 g3
-((lp2142
-g2131
-atp2143
-Rp2144
-sa(dp2145
+((lp2141
+g2130
+atp2142
+Rp2143
+sa(dp2144
 g2
 g3
-((lp2146
+((lp2145
 Vif (i == null || i.length == 0) { }\u000a
-p2147
+p2146
 aVint[] i = ...;\u000aif (i.length == 0) { } // no elements in the array\u000a
-p2148
-atp2149
-Rp2150
+p2147
+atp2148
+Rp2149
 sg7
 I2369967
 sg8
 g3
-((lp2151
+((lp2150
 Vif (i == null || i.length == 0) { }\u000a
-p2152
+p2151
 aVint[] i = ...;\u000aif (i.length == 0) { } // no elements in the array\u000a
-p2153
-atp2154
-Rp2155
+p2152
+atp2153
+Rp2154
 sg13
 g14
 sg15
 Nsg16
 S'if (i.length == 0) {\n}'
-p2156
+p2155
 sg18
 g3
-((lp2157
-g2131
-atp2158
-Rp2159
-sa(dp2160
+((lp2156
+g2130
+atp2157
+Rp2158
+sa(dp2159
 g2
 g3
-((lp2161
+((lp2160
 Vif (i == null || i.length == 0) { }\u000a
-p2162
+p2161
 aVint[] i = ...;\u000aif (i.length == 0) { } // no elements in the array\u000a
-p2163
-atp2164
-Rp2165
+p2162
+atp2163
+Rp2164
 sg7
 I2369967
 sg8
 g3
-((lp2166
+((lp2165
 Vif (i == null || i.length == 0) { }\u000a
-p2167
+p2166
 aVint[] i = ...;\u000aif (i.length == 0) { } // no elements in the array\u000a
-p2168
-atp2169
-Rp2170
+p2167
+atp2168
+Rp2169
 sg13
 g14
 sg15
 Nsg16
 S'if (i == null || i.length == 0) {\n}'
-p2171
+p2170
 sg18
 g3
-((lp2172
-g2131
-atp2173
-Rp2174
-sa(dp2175
+((lp2171
+g2130
+atp2172
+Rp2173
+sa(dp2174
 g2
 g3
-((lp2176
+((lp2175
 VString s = "Hello World!";\u000a\u000a// String => CharSequence conversion:\u000a\u000aCharSequence cs = s;  // String is already a CharSequence\u000a
-p2177
-atp2178
-Rp2179
+p2176
+atp2177
+Rp2178
 sg7
 I1391970
 sg8
 g3
-((lp2180
+((lp2179
 VString s = "Hello World!";\u000a\u000a// String => CharSequence conversion:\u000a\u000aCharSequence cs = s;  // String is already a CharSequence\u000a
-p2181
-atp2182
-Rp2183
+p2180
+atp2181
+Rp2182
 sg13
 g14
 sg15
-S'String s;'
-p2184
-sg16
+Nsg16
 S'CharSequence cs = s;'
-p2185
+p2183
 sg18
 g3
-((lp2186
+((lp2184
 VHow to convert a String to CharSequence?
-p2187
-atp2188
-Rp2189
-sa(dp2190
+p2185
+atp2186
+Rp2187
+sa(dp2188
 g2
 g3
-((lp2191
+((lp2189
 VCharSequence cs = "string";\u000aString s = cs.toString();\u000afoo(s); // prints "string"\u000a\u000apublic void foo(CharSequence cs) { \u000a  System.out.println(cs);\u000a}\u000a
-p2192
-atp2193
-Rp2194
+p2190
+atp2191
+Rp2192
 sg7
 I1391970
 sg8
 g3
-((lp2195
+((lp2193
 VCharSequence cs = "string";\u000aString s = cs.toString();\u000afoo(s); // prints "string"\u000a\u000apublic void foo(CharSequence cs) { \u000a  System.out.println(cs);\u000a}\u000a
-p2196
-atp2197
-Rp2198
+p2194
+atp2195
+Rp2196
 sg13
 g14
 sg15
-S'CharSequence cs;'
-p2199
-sg16
+Nsg16
 S'String s = cs.toString();'
-p2200
+p2197
 sg18
 g3
-((lp2201
-g2187
-atp2202
-Rp2203
-sa(dp2204
+((lp2198
+g2185
+atp2199
+Rp2200
+sa(dp2201
 g2
 g3
-((lp2205
-tp2206
-Rp2207
+((lp2202
+tp2203
+Rp2204
 sg7
 I7347856
 sg8
 g3
-((lp2208
+((lp2205
 VList<String> myList = new ArrayList<String>(Arrays.asList(s.split(",")));\u000a
-p2209
+p2206
 aVString s = "lorem,ipsum,dolor,sit,amet";\u000a\u000aList<String> myList = new ArrayList<String>(Arrays.asList(s.split(",")));\u000a\u000aSystem.out.println(myList);  // prints [lorem, ipsum, dolor, sit, amet]\u000a
-p2210
-atp2211
-Rp2212
+p2207
+atp2208
+Rp2209
 sg13
 g14
 sg15
 g14
 sg16
 S'List<String> myList = new ArrayList<String>(Arrays.asList(s.split(",")));'
-p2213
+p2210
 sg18
 g3
-((lp2214
+((lp2211
 VHow to convert a String into an ArrayList?
-p2215
-atp2216
-Rp2217
-sa(dp2218
+p2212
+atp2213
+Rp2214
+sa(dp2215
 g2
 g3
-((lp2219
-tp2220
-Rp2221
+((lp2216
+tp2217
+Rp2218
 sg7
 I7347856
 sg8
 g3
-((lp2222
+((lp2219
 Vpublic ArrayList<Character> convertStringToArraylist(String str) {\u000a    ArrayList<Character> charList = new ArrayList<Character>();      \u000a    for(int i = 0; i<str.length();i++){\u000a        charList.add(str.charAt(i));\u000a    }\u000a    return charList;\u000a}\u000a
-p2223
+p2220
 aVpublic static ArrayList<String> convertStringArrayToArraylist(String[] strArr){\u000a    ArrayList<String> stringList = new ArrayList<String>();\u000a    for (String s : strArr) {\u000a        stringList.add(s);\u000a    }\u000a    return stringList;\u000a}\u000a
-p2224
-atp2225
-Rp2226
+p2221
+atp2222
+Rp2223
 sg13
 g14
 sg15
 g14
 sg16
 S'ArrayList<String> stringList = new ArrayList<String>();\nfor (String s : strArr) {\n    stringList.add(s);\n}'
-p2227
+p2224
 sg18
 g3
-((lp2228
-g2215
-atp2229
-Rp2230
-sa(dp2231
+((lp2225
+g2212
+atp2226
+Rp2227
+sa(dp2228
 g2
 g3
-((lp2232
-tp2233
-Rp2234
+((lp2229
+tp2230
+Rp2231
 sg7
 I13386107
 sg8
 g3
-((lp2235
+((lp2232
 VString result = str.substring(0, index) + str.substring(index+1);\u000a
-p2236
-atp2237
-Rp2238
+p2233
+atp2234
+Rp2235
 sg13
 g14
 sg15
 g14
 sg16
 S'String result = str.substring(0, index) + str.substring(index + 1);'
-p2239
+p2236
 sg18
 g3
-((lp2240
+((lp2237
 VHow to remove single character from a String
-p2241
-atp2242
-Rp2243
+p2238
+atp2239
+Rp2240
 sa.

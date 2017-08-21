@@ -3,24 +3,22 @@
 
 # In[1]:
 
-from java_tokenize import *
-from collections import Counter, defaultdict
-import re
-import csv
-from itertools import chain
 import argparse
-
-
-# In[2]:
+import csv
+import re
+from collections import Counter, defaultdict
+from itertools import chain
 
 from cloudpickle import dump, load
-# from cPickle import load, dump
+
+from py2_tokenize import *
+
+# In[2]:
 
 
 # In[3]:
 
-# SKIP_TOKENS = {COMMENT, ENDMARKER}
-SKIP_TOKENS = set()
+SKIP_TOKENS = {token_id['COMMENT'], token_id['ENDMARKER']}
 TOKEN_TYPE_COUNT = len(token_id) - len(SKIP_TOKENS)
 
 
@@ -68,9 +66,9 @@ def read_data(path):
                 nl = nl.decode('utf-8').encode('ascii', 'replace').decode('string_escape')
                 code = code.decode('utf-8').encode('ascii', 'replace').replace('##newline##', '\n') #.decode('string_escape')
                 nl = tokenize_nl(nl)
-                tokenzied_code = [(token_type, token_literal) for token_type, token_literal in tokenize_code(code) if token_type not in SKIP_TOKENS]
+                code = [(token_type, token_literal) for token_type, token_literal in tokenize_code(code) if token_type not in SKIP_TOKENS]
                 tokenized_nl_list.append(nl)
-                tokenized_code_list.append(tokenzied_code)
+                tokenized_code_list.append(code)
             except:
                 continue
 
@@ -95,8 +93,9 @@ def main():
     
     tokenized_nl_list, tokenized_code_list = read_data(args.dataset)
     nl_voc2wid, nl_wid2voc = build_vocab(chain(*tokenized_nl_list), args.nl_unk_threshold)
-    code_voc2wid, code_wid2voc = build_vocab(chain(*tokenized_code_list), args.code_unk_threshold)
+    code_voc2wid, code_wid2voc = build_vocab(map(lambda x: x[1], chain(*tokenized_code_list)), args.code_unk_threshold)
     dump((nl_voc2wid, nl_wid2voc, code_voc2wid, code_wid2voc), open(args.save_to, 'wb'))
+
 
 # In[10]:
 

@@ -6,6 +6,7 @@
 from attention import new_nl2code_model, new_code2nl_model, load_model
 from vocab import load_vocabs, read_data, tok_type2id, START, END, UNK
 
+
 # In[45]:
 
 import argparse
@@ -54,15 +55,16 @@ def main():
     parser = argparse.ArgumentParser(description='Train attention model')
     parser.add_argument('--nl_embed_dim', default=256, type=int)
     parser.add_argument('--nl_rnn_layers', default=1, type=int)
-    parser.add_argument('--nl_rnn_state_dim', default=512, type=int)
-    parser.add_argument('--tok_embed_dim', default=64, type=int)
+    parser.add_argument('--nl_rnn_state_dim', default=256, type=int)
     parser.add_argument('--code_embed_dim', default=256, type=int)
     parser.add_argument('--code_rnn_layers', default=1, type=int)
-    parser.add_argument('--code_rnn_state_dim', default=512, type=int)
-    parser.add_argument('--rnn_token_mlp_dim', default=128, type=int)
-    parser.add_argument('--rnn_type_mlp_dim', default=32, type=int)
-    parser.add_argument('--rnn_word_mlp_dim', default=128, type=int)
-    parser.add_argument('--attention_mlp_dim', default=256, type=int)
+    parser.add_argument('--code_rnn_state_dim', default=256, type=int)
+    # parser.add_argument('--rnn_token_mlp_dim', default=128, type=int)
+    # parser.add_argument('--rnn_type_mlp_dim', default=32, type=int)
+    # parser.add_argument('--rnn_word_mlp_dim', default=128, type=int)
+    parser.add_argument('--attention_dim', default=256, type=int)
+    parser.add_argument('--dropout', default=0.5, type=float)
+    parser.add_argument('--rnn_dropout', default=0.2, type=float)
     parser.add_argument('--nl_to_code', default=True, action='store_true')
     parser.add_argument('--code_to_nl', dest='nl_to_code', action='store_false')
     parser.add_argument('--vocab_file', default='./vocab.dmp', type=str)
@@ -73,7 +75,7 @@ def main():
     parser.add_argument('--learning_rate', type=float)
 
     args, unknown = parser.parse_known_args()
-
+    
     is_nl2code = args.nl_to_code
     nl_voc2wid, nl_wid2voc, code_voc2wid, code_wid2voc = load_vocabs(args.vocab_file)
     args.nl_vocab_size = len(nl_wid2voc)
@@ -81,10 +83,10 @@ def main():
     args.num_token_type = len(tok_type2id) + 1 # count the undifined_token for <S> and </S>
     
     if is_nl2code:
-        model, translator = new_nl2code_model(args.nl_vocab_size, args.nl_embed_dim, args.nl_rnn_layers, args.nl_rnn_state_dim, args.code_vocab_size, args.code_embed_dim, args.num_token_type, args.tok_embed_dim, args.code_rnn_layers, args.code_rnn_state_dim, args.rnn_token_mlp_dim, args.rnn_type_mlp_dim, args.attention_mlp_dim)
+        model, translator = new_nl2code_model(args)
         config_name = 'nl2code'
     else:
-        model, translator = new_code2nl_model(args.nl_vocab_size, args.nl_embed_dim, args.nl_rnn_layers, args.nl_rnn_state_dim, args.code_vocab_size, args.code_embed_dim, args.num_token_type, args.tok_embed_dim, args.code_rnn_layers, args.code_rnn_state_dim, args.rnn_word_mlp_dim, args.attention_mlp_dim)
+        model, translator = new_code2nl_model(args)
         config_name = 'code2nl'
     
     config_name = datetime.now().strftime(config_name + '_%m%d%H%M%S')
@@ -105,10 +107,10 @@ def main():
         args.learning_rate = learning_rate
     
     def lookup_nl(seqs):
-        return [[(START,)] + map(lambda w:(nl_voc2wid[w],), seq) + [(END,)] for seq in seqs]
+        return [[START] + map(lambda w:nl_voc2wid[w], seq) + [END] for seq in seqs]
     
     def lookup_code(seqs):
-        return [[(0, START)] + map(lambda w:(tok_type2id[w[0]], code_voc2wid[w]), seq) + [(0, END)] for seq in seqs]
+        return [[START] + map(lambda w:code_voc2wid[w[1]], seq) + [END] for seq in seqs]
     
     tokenized_nl_train, tokenized_code_train = read_data(args.train_set)
     tokenized_nl_valid, tokenized_code_valid = read_data(args.valid_set)
@@ -135,7 +137,10 @@ def main():
             cum_loss += batch_loss.value()
             cum_trg_item_count += sum(map(len, trg_seqs))
         return cum_loss, cum_trg_item_count
-    
+
+    logging.info('config: %s', args)
+    logging.info('nl vocab size: %d, code vocab size: %d' % (len(nl_voc2wid), len(code_voc2wid)))
+
     min_v_cum_loss, v_cum_trg_item_count = validate_loss()
     min_v_cum_perplexity = math.exp(min_v_cum_loss / v_cum_trg_item_count)
     logging.info('epoch %d, #validation item count#\t%d' % (0, v_cum_trg_item_count))

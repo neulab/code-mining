@@ -7,7 +7,7 @@ from collections import defaultdict
 
 import numpy as np
 
-from lang.java.parse_java import normalize_code
+from lang.java.parse_java import normalize_code, parse_annotated_code
 
 sqlite_file = 'java_store.db'
 conn = sqlite3.connect(sqlite_file)
@@ -236,8 +236,9 @@ final_annotations = [a for a in final_annotations if a['post_id'] not in filter_
 
 # normalize annotations
 for a in final_annotations:
-    a['context_ref'] = normalize_code(a['context_ref'])
-    a['snippet_ref'] = normalize_code(a['snippet_ref'])
+    a['context_ref'] = parse_annotated_code(a['context_ref'])
+    a['snippet_ref'] = parse_annotated_code(a['snippet_ref'])
+    assert a['snippet_ref']
     a['intent_ref'] = a['intent_ref'].strip()
 
 pickle.dump(final_annotations, open('annotations.p', 'wb'))

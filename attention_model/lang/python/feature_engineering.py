@@ -103,7 +103,7 @@ print 'num. contiguous code snippets: ', sum(map(len, candidates.values()))
 
 
 #load bi_likelihood feature for candidates
-bi_likelihood = pickle.load(open('bi_likelihood.p', 'rb'))
+bi_likelihood = pickle.load(open('lm_model/bi_likelihood.rnn512.p', 'rb'))
 
 
 def get_score_feature(score=None, all_feat=False):

@@ -83,7 +83,7 @@ print 'num. contiguous code snippets: ', sum(map(len, candidates.values()))
 
 
 #load bi_likelihood feature for candidates
-bi_likelihood = pickle.load(open('bi_likelihood.p', 'rb'))
+bi_likelihood = pickle.load(open('lm_model/bi_likelihood.rnn512.p', 'rb'))
 
 
 def get_score_feature(score=None, all_feat=False):
@@ -128,7 +128,7 @@ def generate_x_y(question_id, question_entry, pos_set):
                 print '========='
                 print code_snippet
                 print question_id
-                raise ex
+                # raise ex
 
             max_code_snippet_id += 1
         # if len(raw_likelihood) == 0:
@@ -224,9 +224,9 @@ for question_id, question in questions.iteritems():
 
 full_features = ['ll_nl2code', 'll_code2nl',
                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
-                 'll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
-                 'll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
-                 'll_page_max_zscore', 'll_page_min_zscore',
+                 #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
+                 #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
+                 #'ll_page_max_zscore', 'll_page_min_zscore',
                  'll_max', 'll_min',
                  'start_of_block', 'end_of_block',
                  'whole_block', 'start_with_assign',
@@ -237,9 +237,9 @@ features_name_pos_map = {name: pos for pos, name in enumerate(full_features)}
 
 semi_features = ['ll_nl2code', 'll_code2nl',
                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
-                 'll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
-                 'll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
-                 'll_page_max_zscore', 'll_page_min_zscore',
+                 #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
+                 #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
+                 #'ll_page_max_zscore', 'll_page_min_zscore',
                  'll_max', 'll_min',
                  ]
 
@@ -257,7 +257,7 @@ def to_feature_vector(feature_map, feature_names):
 
 
 #splite data into traning set and testing set
-train, test = next(KFold(n_splits=5).split(post_list))
+train, test = next(KFold(n_splits=5, shuffle=True, random_state=123).split(post_list))
 print 'num. train questions: %d, num. test questions: %d' % (len(train), len(test))
 print 'test questions ids: ', [post_list[i][0] for i in test]
 
@@ -333,8 +333,8 @@ print semi_feature_clf.coef_
 print semi_feature_clf.intercept_
 pickle.dump(semi_feature_clf, open('semi_feature_clf.p', 'wb'))
 #clf = pickle.load(open('semi_feature_clf.p', 'rb'))
-#predict_y = semi_feature_clf.predict(semi_feature_test_X)
-#probas_ = semi_feature_clf.predict_proba(semi_feature_test_X)
+predict_y = semi_feature_clf.predict(semi_feature_test_X)
+probas_ = semi_feature_clf.predict_proba(semi_feature_test_X)
 #print 'recall', recall_score(test_y, predict_y)
 #print 'precision', precision_score(test_y, predict_y)
 #print 'f1', f1_score(test_y, predict_y)

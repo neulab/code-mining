@@ -5,23 +5,20 @@
 
 import pickle
 
-
-# In[16]:
-
 import dynet as dy
-from py2_tokenize import tokenize_code
-
-
-# In[4]:
 
 from attention import load_model
-from vocab import tokenize_nl, load_vocabs, tok_type2id, START, END, UNK, SKIP_TOKENS
+from py2_tokenize import tokenize_code
+from vocab import tokenize_nl, load_vocabs, tok_type2id, START, END, SKIP_TOKENS
+
+# In[16]:
+# In[4]:
 
 
 # In[2]:
 
-code2nl_model, code2nl_translator = load_model('code2nl_0816223821_model_dmp')
-nl2code_model, nl2code_translator = load_model('nl2code_0816213250_model_dmp')
+code2nl_model, code2nl_translator = load_model('code2nl_0817222402_model_dmp')  # 'code2nl_0816223821_model_dmp' -> bowen retrained
+nl2code_model, nl2code_translator = load_model('nl2code_0817222812_model_dmp')  # 'nl2code_0816213250_model_dmp' -> bowen retrained
 
 
 # In[5]:
@@ -31,30 +28,11 @@ nl_voc2wid, nl_wid2voc, code_voc2wid, code_wid2voc = load_vocabs('vocab.dmp')
 
 # In[6]:
 
-# def lookup_nl(seqs):
-#     return [[(START,)] + map(lambda w:(nl_voc2wid[w],), seq) + [(END,)] for seq in seqs]
-
-
-# # In[7]:
-# 
-# def lookup_code(seqs):
-#     return [[(0, START)] + map(lambda w:(tok_type2id[w[0]], nl_voc2wid[w[1]]), seq) + [(0, END)] for seq in seqs]
-# 
-# 
-# # In[8]:
-# 
-# def lookup_code(seqs):
-#     return [[(0, START)] + map(lambda w:(w[0], nl_voc2wid[w[1]]), seq) + [(0, END)] for seq in seqs]
-
-# def lookup_code(seqs):
-#     return [[(0, START)] + map(lambda w:(tok_type2id[w[0]], nl_voc2wid[w[1]]), seq) + [(0, END)] for seq in seqs]
-
-
 def lookup_nl(seqs):
-    return [[(START,)] + map(lambda w: (nl_voc2wid[w],), seq) + [(END,)] for seq in seqs]
+    return [[START] + map(lambda w: nl_voc2wid[w], seq) + [END] for seq in seqs]
 
 def lookup_code(seqs):
-    return [[(0, START)] + map(lambda w: (tok_type2id[w[0]], code_voc2wid[w]), seq) + [(0, END)] for seq in seqs]
+    return [[START] + map(lambda w: code_voc2wid[w[1]], seq) + [END] for seq in seqs]
 
 
 # In[9]:

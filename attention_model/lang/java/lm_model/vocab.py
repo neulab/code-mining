@@ -3,7 +3,7 @@
 
 # In[1]:
 
-from py2_tokenize import *
+from java_tokenize import *
 from collections import Counter, defaultdict
 import re
 import csv
@@ -14,11 +14,13 @@ import argparse
 # In[2]:
 
 from cloudpickle import dump, load
+# from cPickle import load, dump
 
 
 # In[3]:
 
-SKIP_TOKENS = {token_id['COMMENT'], token_id['ENDMARKER']}
+# SKIP_TOKENS = {COMMENT, ENDMARKER}
+SKIP_TOKENS = set()
 TOKEN_TYPE_COUNT = len(token_id) - len(SKIP_TOKENS)
 
 
@@ -58,19 +60,26 @@ def build_vocab(words, unk_threshold = 0):
 
 def read_data(path):
     tokenized_nl_list, tokenized_code_list = [], []
-    with open(path, 'rUb') as data:
-        csv_data = csv.reader(data, dialect=csv.excel_tab, delimiter='\t')
-        for row in csv_data:
-            qid, rid, nl, code, weight = row
-            try:
+    with open(path, 'r') as f:
+        # csv_data = csv.reader(data, dialect=csv.excel_tab, delimiter='\t')
+        for line in f:
+            # try:
+                row = line.split('\t')
+                qid = int(row[0])
+                rid = int(row[1])
+                nl = row[2]
+                code = row[3]
+                weight = float(row[4])
+                # qid, rid, nl, code, weight = row
                 nl = nl.decode('utf-8').encode('ascii', 'replace').decode('string_escape')
                 code = code.decode('utf-8').encode('ascii', 'replace').replace('##newline##', '\n') #.decode('string_escape')
                 nl = tokenize_nl(nl)
-                code = [(token_type, token_literal) for token_type, token_literal in tokenize_code(code) if token_type not in SKIP_TOKENS]
+                tokenzied_code = [(token_type, token_literal) for token_type, token_literal in tokenize_code(code) if token_type not in SKIP_TOKENS]
                 tokenized_nl_list.append(nl)
-                tokenized_code_list.append(code)
-            except:
-                continue
+                tokenized_code_list.append(tokenzied_code)
+            # except:
+            #     print 'error loading data: ', row, path
+            #     continue
 
     return tokenized_nl_list, tokenized_code_list
 
@@ -90,12 +99,11 @@ def main():
     parser.add_argument('--code_unk_threshold', default=2, type=int)
     parser.add_argument('--save_to', default='./vocab.dmp', type=str)
     args = parser.parse_args()
-    
+
     tokenized_nl_list, tokenized_code_list = read_data(args.dataset)
     nl_voc2wid, nl_wid2voc = build_vocab(chain(*tokenized_nl_list), args.nl_unk_threshold)
-    code_voc2wid, code_wid2voc = build_vocab(chain(*tokenized_code_list), args.code_unk_threshold)
+    code_voc2wid, code_wid2voc = build_vocab(map(lambda x: x[1], chain(*tokenized_code_list)), args.code_unk_threshold)
     dump((nl_voc2wid, nl_wid2voc, code_voc2wid, code_wid2voc), open(args.save_to, 'wb'))
-
 
 # In[10]:
 
