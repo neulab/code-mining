@@ -32,7 +32,7 @@ def normalize_code(code, log_file=None):
         return None
 
 
-print_pattern = re.compile('(if|while|for).*\n(    )+System\.out\.println.*;\n\}$')
+print_pattern = re.compile('^(if|while|for).*\n(    )+System\.out\.println.*;\n\}$')
 # normalize_code_response = normalize_code
 def normalize_code_response(code):
     try:
@@ -81,6 +81,13 @@ def parse_annotated_code(code):
     parsed_code = normalize_code_with_meta(code)
     if parsed_code and parsed_code.type == 'function':
         parsed_code.value = get_function_body(parsed_code.value)
+
+    if parsed_code:
+        m = print_pattern.search(parsed_code.value)
+        if m:
+            new_code = '\n'.join(parsed_code.value.split('\n')[:-2])
+            new_code += '}'
+            parsed_code = normalize_code_with_meta(new_code)
 
     return parsed_code.value if parsed_code else None
 

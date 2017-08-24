@@ -165,18 +165,22 @@ def generate_x_y(question_id, question_entry, pos_set):
                     features['accepted_ans && only_snippet && whole_block'] = features['accepted_ans'] and features['only_snippet'] and features['whole_block']
                     features['!start_with_assign && end_of_block'] = (not features['start_with_assign']) and features['end_of_block']
                     features['start_with_assign && num_lines=1'] = features['start_with_assign'] and num_lines == 1
+                    features['start_with_assign && num_lines=2'] = features['start_with_assign'] and num_lines == 2
                     features['!start_with_assign && num_lines=1'] = (not features['start_with_assign']) and num_lines == 1
+
 
                     label = is_annotated(code, pos_set[question_id])
                     examples.append({'code': code, 'features': features,
                                      'question_id': question_id, 'parent_answer_post_id': post_id, 'code_snippet_id': max_code_snippet_id,
                                      'label': label})
                 # raw_likelihood = {(c, s, e, end_block, full_block, assign, one_value, answer_post_id): bi_likelihood[post_id][c] for c, s, e, end_block, full_block, assign, one_value in sub_contiguous_snippets(code_snippet, True)}
+            except KeyError as ex:
+                raise ex
             except Exception as ex:
                 print '========='
                 print code_snippet
                 print question_id
-                raise ex
+                print ex
 
             max_code_snippet_id += 1
         # if len(raw_likelihood) == 0:
@@ -291,7 +295,7 @@ full_features = ['ll_nl2code', 'll_code2nl',
                  # 'accepted_ans && only_snippet',
                  'accepted_ans && only_snippet && whole_block',
                  '!start_with_assign && end_of_block',
-                 # 'start_with_assign && num_lines=1',
+                 #'start_with_assign && num_lines=2',
                  '!start_with_assign && num_lines=1',
                  # 'num_lines',
                  'post_rank_0', 'post_rank_1', 'post_rank_2'
@@ -315,7 +319,7 @@ binary_features = ['start_of_block', 'end_of_block',
                    # 'accepted_ans && only_snippet',
                    'accepted_ans && only_snippet && whole_block',
                    '!start_with_assign && end_of_block',
-                   # 'start_with_assign && num_lines=1',
+                   #'start_with_assign && num_lines=2',
                    '!start_with_assign && num_lines=1',
                    # 'num_lines',
                    'post_rank_0', 'post_rank_1', 'post_rank_2'
@@ -391,7 +395,7 @@ for fold_id, (train_set, test_set) in enumerate(folds, start=1):
                                                                                len(train_y) - sum(train_y))
     print '[Fold %d] test questions ids: ' % fold_id, [post_list[i][0] for i in test_set]
 
-    classifier = LogisticRegression(C=.8)
+    classifier = LogisticRegression(C=10)
     # classifier = SVC(probability=True, C=0.5, class_weight={1: sum(train_y) * 1.0 / (len(train_y) - sum(train_y))})
     # classifier = MLPClassifier(hidden_layer_sizes=(30, ))
 

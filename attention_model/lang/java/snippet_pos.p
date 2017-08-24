@@ -136,7 +136,7 @@ S'ArrayUtils.isNotEmpty(testArrayName);'
 p72
 aS'if (i == null || i.length == 0) {\n}'
 p73
-aS'if (arr == null) {\n    System.out.println("array is null");\n}'
+aS'if (arr == null) {\n}'
 p74
 aS'if (i.length == 0) {\n}'
 p75

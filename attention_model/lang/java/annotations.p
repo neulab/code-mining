@@ -4538,7 +4538,7 @@ Vcheck for null array
 p2162
 sg15
 Nsg16
-S'if (arr == null) {\n    System.out.println("array is null");\n}'
+S'if (arr == null) {\n}'
 p2163
 sg18
 g3
