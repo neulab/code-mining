@@ -9,7 +9,7 @@ import numpy as np
 
 from lang.java.parse_java import normalize_code, parse_annotated_code
 
-sqlite_file = 'java_store.db'
+sqlite_file = 'store_java.db'
 conn = sqlite3.connect(sqlite_file)
 
 def query(sql):
@@ -43,7 +43,7 @@ annotations = [(post_id, json.loads(annotation_json)) for post_id, annotation_js
 
 #filter out all the annotations which were marked as not_sure
 confident_annotations = [(post_id, annotation) for post_id, annotation in annotations if not annotation['notSure']]
-
+confident_annotations = [(post_id, annotation) for post_id, annotation in annotations if annotation['username'] != u'williamq']
 
 #since we only considered the top 3 answers, but in the database, we stored all the
 #answers for a post, here we just extract all the answer_id which were showed to user
@@ -198,6 +198,7 @@ for a in parsed_confident_annotations:
 
 print error_count
 
+print 'no. annotations before checking parsable: %d' % len(final_annotations)
 with open('normalize_code.txt', 'a') as f:
     for i, a in enumerate(final_annotations):
         context = a['context_ref']
@@ -211,7 +212,7 @@ with open('normalize_code.txt', 'a') as f:
 #so we just skip these posts for now
 passed_count = 0
 failed_count = 0
-falied_list = []
+failed_list = []
 for i, a in enumerate(final_annotations):
     #for code in a['context_text'] | a['snippet_text']:
     context = normalize_code(a['context_ref'])
@@ -224,15 +225,16 @@ for i, a in enumerate(final_annotations):
         passed_count += 1
     else:
         print a['post_id']
-        falied_list.append(a)
+        failed_list.append(a)
         failed_count += 1
 print failed_count, passed_count
 
 
-filter_out_questions = {a['post_id']for a in falied_list}
+filter_out_questions = {a['post_id'] for a in failed_list}
 print filter_out_questions
 
 final_annotations = [a for a in final_annotations if a['post_id'] not in filter_out_questions]
+# final_annotations = [a for a in final_annotations if a not in failed_list]
 
 # normalize annotations
 for a in final_annotations:
@@ -251,6 +253,7 @@ for question_id in annotated_question_ids:
     top_answer_posts = sorted(question_answer_scores[question_id], key=lambda x: -x[0])[:3]
     title = titles[question_id]
     answer_posts = []
+    accepted_answer_post_id = accepted_posts[question_id] if question_id in accepted_posts else None
     for post_rank, (post_score, post_id) in enumerate(top_answer_posts):
         post_content = posts[post_id]
         raw_snippets = list(get_code_list([post_content]))
@@ -274,6 +277,7 @@ for question_id in annotated_question_ids:
 
     entry = {
         'title': title,
+        'accepted_answer_post_id': accepted_answer_post_id,
         'answer_posts': answer_posts
     }
 
@@ -295,4 +299,4 @@ for post_id in posts:
         code = normalize_code(code)
         if code:
             baseline[post_id] = code
-pickle.dump(baseline, open('baseline.p', 'wb'))
+pickle.dump(baseline, open('accept_only_baseline.p', 'wb'))

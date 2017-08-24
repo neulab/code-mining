@@ -9,7 +9,7 @@ import numpy as np
 
 from lang.python.parse_py import normalize_code, normalize_code_response
 
-sqlite_file = 'store.db'
+sqlite_file = 'store_python.db' # 'store.db'
 conn = sqlite3.connect(sqlite_file)
 
 def query(sql):
@@ -240,7 +240,6 @@ for a in final_annotations:
 
 pickle.dump(final_annotations, open('annotations.p', 'wb'))
 
-
 annotated_question_ids = {annotation['post_id'] for annotation in final_annotations}
 # a question denotes an SO page (title + list(answer posts))
 questions = {}
@@ -248,6 +247,7 @@ for question_id in annotated_question_ids:
     top_answer_posts = sorted(question_answer_scores[question_id], key=lambda x: -x[0])[:3]
     title = titles[question_id]
     answer_posts = []
+    accepted_answer_post_id = accepted_posts[question_id] if question_id in accepted_posts else None
     for post_rank, (post_score, post_id) in enumerate(top_answer_posts):
         post_content = posts[post_id]
         raw_snippets = list(get_code_list([post_content]))
@@ -271,15 +271,19 @@ for question_id in annotated_question_ids:
 
     entry = {
         'title': title,
+        'accepted_answer_post_id': accepted_answer_post_id,
         'answer_posts': answer_posts
     }
 
     questions[question_id] = entry
 pickle.dump(questions, open('questions.p', 'wb'))
 
+print 'no. of final annotations: %d' % len(final_annotations)
+print 'no. of questions: %d' % len(questions)
 
-#UW's baseline: extract the only code snippet from the accepted answer
-baseline = {}
+
+# UW's baseline: extract the only code snippet from the accepted answer
+accept_only_baseline = {}
 for post_id in posts:
     if post_id not in accepted_posts:
         continue
@@ -289,5 +293,5 @@ for post_id in posts:
         code = snippets[0]
         code = normalize_code(code)
         if code:
-            baseline[post_id] = code
-pickle.dump(baseline, open('baseline.p', 'wb'))
+            accept_only_baseline[post_id] = code
+pickle.dump(accept_only_baseline, open('accept_only_baseline.p', 'wb'))

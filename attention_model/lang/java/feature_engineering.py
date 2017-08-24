@@ -1,6 +1,12 @@
-import numpy as np
+from itertools import chain
 
-from lang.java.parse_java import start_with_assign, only_value, normalize_code_response, is_annotated, tokenize
+import numpy as np
+from sklearn import preprocessing
+
+from lang.java.lm_model.java_tokenize import tokenize_code
+from lang.java.lm_model.vocab import tokenize_nl
+from lang.java.parse_java import start_with_assign, only_value, normalize_code_response, is_annotated, tokenize, \
+    start_with_import
 
 np.random.seed(1231245)
 np.seterr(all='raise')
@@ -38,6 +44,7 @@ def sub_contiguous_snippets(code_snippet, full_line=True):
                 if key not in sub_snippet_hash:
                     sub_snippet_set.append((normalized_sub_snippet, {'start_of_line': True,
                                                                      'end_of_line': True,
+                                                                     'contains_import': start_with_import(normalized_sub_snippet),
                                                                      'start_of_block': start_of_block,
                                                                      'end_of_block': end_of_block,
                                                                      'whole_block': whole_block,
@@ -52,7 +59,7 @@ def sub_contiguous_snippets(code_snippet, full_line=True):
 #load data
 annotations = pickle.load(open('annotations.p', 'rb'))
 questions = pickle.load(open('questions.p', 'rb'))
-baseline = pickle.load(open('baseline.p', 'rb'))
+acconly_baseline = pickle.load(open('accept_only_baseline.p', 'rb'))
 
 
 #get ground truth for "snippet" annotation
@@ -66,7 +73,7 @@ for a in annotations:
     else:
         positive_snippets[post_id].add(a['snippet_ref'])
 pickle.dump(positive_snippets, open('snippet_pos.p', 'wb'))
-print 'num. labeled snippets: ', sum(map(len, positive_snippets.values()))
+print 'num. unique labeled snippets: ', sum(map(len, positive_snippets.values()))
 
 
 #generate all the snippet candidates
@@ -83,7 +90,7 @@ print 'num. contiguous code snippets: ', sum(map(len, candidates.values()))
 
 
 #load bi_likelihood feature for candidates
-bi_likelihood = pickle.load(open('lm_model/bi_likelihood.rnn512.p', 'rb'))
+bi_likelihood = pickle.load(open('lm_model/bi_likelihood.no_len_normalization.p', 'rb'))
 
 
 def get_score_feature(score=None, all_feat=False):
@@ -103,6 +110,7 @@ def get_score_feature(score=None, all_feat=False):
 def generate_x_y(question_id, question_entry, pos_set):
     examples = []
     answer_post_ids = [e['id'] for e in question_entry['answer_posts']]
+    question_len = len(tokenize_nl(question_entry['title']))
     max_code_snippet_id = 0
     for answer_post in question_entry['answer_posts']:
         # generate contiguous sub-snippets from the current snippet block
@@ -117,8 +125,21 @@ def generate_x_y(question_id, question_entry, pos_set):
                     ll = bi_likelihood[question_id][code]
                     features['ll_nl2code'] = ll[0]
                     features['ll_code2nl'] = ll[1]
+
+                    code_len = len(tokenize_code(code))
+                    features['ll_nl2code_norm'] = features['ll_nl2code'] / code_len
+                    features['ll_code2nl_norm'] = features['ll_code2nl'] / question_len
+
                     features['post_rank_%d' % post_rank] = 1
                     features[get_score_feature(post_score)] = 1
+                    features['accepted_ans'] = question_entry['accepted_answer_post_id'] == post_id
+                    features['only_snippet'] = len(answer_post['snippets']) == 1
+
+                    # combinatory features
+                    features['accepted_ans && only_snippet'] = features['accepted_ans'] and features['only_snippet']
+                    features['accepted_ans && only_snippet && whole_block'] = features['accepted_ans'] and features['only_snippet'] and features['whole_block']
+                    features['!start_with_assign && end_of_block'] = (not features['start_with_assign']) and features['end_of_block']
+
                     label = is_annotated(code, pos_set[question_id])
                     examples.append({'code': code, 'features': features,
                                      'question_id': question_id, 'parent_answer_post_id': post_id, 'code_snippet_id': max_code_snippet_id,
@@ -128,7 +149,7 @@ def generate_x_y(question_id, question_entry, pos_set):
                 print '========='
                 print code_snippet
                 print question_id
-                # raise ex
+                raise ex
 
             max_code_snippet_id += 1
         # if len(raw_likelihood) == 0:
@@ -152,7 +173,14 @@ def generate_x_y(question_id, question_entry, pos_set):
         # default value for z_score
         z_scores = np.zeros((example_num, 2))
     else:
-        z_scores = zscore(likelihoods, axis=0)
+        try:
+            z_scores = zscore(likelihoods, axis=0)
+        except FloatingPointError:
+            z_scores = np.zeros((example_num, 2))
+            print '*' * 30
+            print 'Error computing z-scores'
+            for eid, e in enumerate(examples):
+                print eid, e['code']
 
     max_z = np.amax(z_scores, axis=1)
     max_ll = np.amax(likelihoods, axis=1)
@@ -223,6 +251,7 @@ for question_id, question in questions.iteritems():
 
 
 full_features = ['ll_nl2code', 'll_code2nl',
+                 # 'll_nl2code_norm', 'll_code2nl_norm',
                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
@@ -231,12 +260,18 @@ full_features = ['ll_nl2code', 'll_code2nl',
                  'start_of_block', 'end_of_block',
                  'whole_block', 'start_with_assign',
                  'single_value', 'contains_import',
-                 'post_rank_0', 'post_rank_1', 'post_rank_2'] # + get_score_feature(all_feat=True)
+                 'accepted_ans', 'only_snippet',
+                 'accepted_ans && only_snippet',
+                 # 'accepted_ans && only_snippet && whole_block',
+                 # '!start_with_assign && end_of_block',
+                 'post_rank_0', 'post_rank_1', 'post_rank_2'
+                 ] # + get_score_feature(all_feat=True)
 
 features_name_pos_map = {name: pos for pos, name in enumerate(full_features)}
 
 semi_features = ['ll_nl2code', 'll_code2nl',
                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
+                 # 'll_nl2code_norm', 'll_code2nl_norm',
                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
                  #'ll_page_max_zscore', 'll_page_min_zscore',
@@ -246,7 +281,12 @@ semi_features = ['ll_nl2code', 'll_code2nl',
 binary_features = ['start_of_block', 'end_of_block',
                    'whole_block', 'start_with_assign',
                    'single_value', 'contains_import',
-                   'post_rank_0', 'post_rank_1', 'post_rank_2'] # + get_score_feature(all_feat=True)
+                   'accepted_ans', 'only_snippet',
+                   'accepted_ans && only_snippet',
+                   # 'accepted_ans && only_snippet && whole_block',
+                   # '!start_with_assign && end_of_block',
+                   'post_rank_0', 'post_rank_1', 'post_rank_2'
+                   ] # + get_score_feature(all_feat=True)
 
 
 def to_feature_vector(feature_map, feature_names):
@@ -256,134 +296,248 @@ def to_feature_vector(feature_map, feature_names):
         return np.array(map(lambda name: feature_map[name] if name in feature_map else 0, feature_names))
 
 
-#splite data into traning set and testing set
-train, test = next(KFold(n_splits=5, shuffle=True, random_state=123).split(post_list))
-print 'num. train questions: %d, num. test questions: %d' % (len(train), len(test))
-print 'test questions ids: ', [post_list[i][0] for i in test]
-
-train_examples, train_y = [], []
-for i in train:
-    pid = post_list[i][0]
-    for example in page_examples_map[pid]:
-        label = 1 if example['label'] else 0
-        train_y.append(label)
-        train_examples.append(example)
-
-test_examples, test_y = [], []
-for i in test:
-    pid = post_list[i][0]
-    for example in page_examples_map[pid]:
-        feat_vec = to_feature_vector(example['features'], full_features)
-        label = 1 if example['label'] else 0
-        test_y.append(label)
-        test_examples.append(example)
-
-print 'num. of train examples: %d, num. of test examples: %d' % (len(train_examples), len(test_examples))
-
-
-classifier = LogisticRegression(C=.1)
-# classifier = SVC(probability=True, C=0.5, class_weight={1: sum(train_y) * 1.0 / (len(train_y) - sum(train_y))})
-# classifier = MLPClassifier(hidden_layer_sizes=(30, ))
-
-
-#using all features
+# cross validation
 full_feature_samples = []
-full_feature_train_X = to_feature_vector([e['features'] for e in train_examples], full_features)
-full_feature_test_X = to_feature_vector([e['features'] for e in test_examples], full_features)
+semi_feature_samples = []
+bin_feature_samples = []
 
-#normalize features
-# normalizer = preprocessing.Normalizer().fit(full_feature_train_X)
-# X_all = preprocessing.scale(np.concatenate([full_feature_train_X, full_feature_test_X]))
-# full_feature_train_X = X_all[:len(train_examples)]
-# full_feature_test_X = X_all[len(train_examples):]
+all_examples = list(chain(*page_examples_map.values()))
 
-if np.sum(np.isnan(full_feature_train_X)) > 0:
-    raise RuntimeError('nan in feature vectors!')
+full_feature_weights = np.zeros(len(full_features))
+semi_feature_weights = np.zeros(len(semi_features))
+bin_feature_weights = np.zeros(len(binary_features))
 
-if np.sum(np.isnan(full_feature_test_X)) > 0:
-    raise RuntimeError('nan in feature vectors!')
+fold_num = 5
+folds = KFold(n_splits=fold_num, shuffle=True, random_state=123).split(post_list)
 
-full_feature_clf = classifier.fit(full_feature_train_X, train_y)
-pickle.dump(full_feature_clf, open('full_feature_clf.p', 'wb'))
-#clf = pickle.load(open('full_feature_clf.p', 'rb'))
-predict_y = full_feature_clf.predict(full_feature_test_X)
-probas_ = full_feature_clf.predict_proba(full_feature_test_X)
-for feat_name, feat_weight in zip(full_features, full_feature_clf.coef_.flatten()):
+all_examples = list(chain(*page_examples_map.values()))
+
+full_feature_X = to_feature_vector([e['features'] for e in all_examples], full_features)
+_full_feature_scaler = preprocessing.MinMaxScaler().fit(full_feature_X[:, :2])
+full_feature_scaler = lambda x:x # lambda f: np.concatenate([_full_feature_scaler.transform(f[:, :2]), f[:, 2:]], axis=1)
+
+# semi_feature_X = to_feature_vector([e['features'] for e in all_examples], semi_features)
+semi_feature_scaler = lambda x: x# full_feature_scaler
+
+# bin_feature_X = to_feature_vector([e['features'] for e in all_examples], binary_features)
+bin_feature_scaler = lambda x: x # preprocessing.MinMaxScaler().fit(bin_feature_X)
+
+for fold_id, (train_set, test_set) in enumerate(folds, start=1):
+
+    train_examples, train_y = [], []
+    for i in train_set:
+        pid = post_list[i][0]
+        for example in page_examples_map[pid]:
+            label = 1 if example['label'] else 0
+            train_y.append(label)
+            train_examples.append(example)
+
+    # pos_ids = set(np.argwhere(train_y).flatten())
+    # neg_ids = list(set(range(len(train_y))) - pos_ids)
+    # neg_ids_subset = set(np.random.choice(neg_ids, sum(train_y), replace=False))
+    # train_examples = [train_examples[i] for i in range(len(train_y)) if i in pos_ids or i in neg_ids_subset]
+    # train_y = [train_y[i] for i in range(len(train_y)) if i in pos_ids or i in neg_ids_subset]
+
+    test_examples, test_y = [], []
+    for i in test_set:
+        pid = post_list[i][0]
+        for example in page_examples_map[pid]:
+            feat_vec = to_feature_vector(example['features'], full_features)
+            label = 1 if example['label'] else 0
+            test_y.append(label)
+            test_examples.append(example)
+
+    print '=' * 30 + 'fold %d' % fold_id + '=' * 30
+    print '[Fold %d] num. of train examples: %d, num. of test examples: %d' % (fold_id,
+                                                                               len(train_examples),
+                                                                               len(test_examples))
+    print '[Fold %d] num. of positive training examples: %d, num. of negative training examples: %d' % (fold_id,
+                                                                               sum(train_y),
+                                                                               len(train_y) - sum(train_y))
+    print '[Fold %d] test questions ids: ' % fold_id, [post_list[i][0] for i in test_set]
+
+    classifier = LogisticRegression(C=0.1)
+    # classifier = SVC(probability=True, C=0.5, class_weight={1: sum(train_y) * 1.0 / (len(train_y) - sum(train_y))})
+    # classifier = MLPClassifier(hidden_layer_sizes=(30, ))
+
+    #using all features
+    full_feature_train_X = to_feature_vector([e['features'] for e in train_examples], full_features)
+    full_feature_test_X = to_feature_vector([e['features'] for e in test_examples], full_features)
+
+    #normalize features
+    full_feature_train_X = full_feature_scaler(full_feature_train_X)
+    full_feature_test_X = full_feature_scaler(full_feature_test_X)
+
+    if np.sum(np.isnan(full_feature_train_X)) > 0:
+        raise RuntimeError('nan in feature vectors!')
+
+    if np.sum(np.isnan(full_feature_test_X)) > 0:
+        raise RuntimeError('nan in feature vectors!')
+
+    print ' **** training full model ****'
+
+    full_feature_clf = classifier.fit(full_feature_train_X, train_y) #, sample_weight=[5 if x == 1 else 1 for x in train_y])
+    pickle.dump(full_feature_clf, open('full_feature_clf.p', 'wb'))
+    predict_y = full_feature_clf.predict(full_feature_test_X)
+    probas_ = full_feature_clf.predict_proba(full_feature_test_X)
+
+    for feat_name, feat_weight in zip(full_features, full_feature_clf.coef_.flatten()):
+        print feat_name, feat_weight
+
+    full_feature_weights += full_feature_clf.coef_.flatten()
+
+    # print full_feature_clf.coef_
+    # print full_feature_clf.intercept_
+    #print 'recall', recall_score(test_y, predict_y)
+    #print 'precision', precision_score(test_y, predict_y)
+    #print 'f1', f1_score(test_y, predict_y)
+
+    for predict_label, prob, example in zip(predict_y, probas_, test_examples):
+        full_feature_samples.append({'example': example, 'fold_id': fold_id,
+                                     'predict_label': predict_label, 'probability': prob[1]})
+
+
+    #using nn features
+    semi_feature_selector = np.array([features_name_pos_map[x] for x in semi_features])
+    semi_feature_train_X = full_feature_train_X[:, semi_feature_selector]
+    semi_feature_test_X = full_feature_test_X[:, semi_feature_selector]
+
+    # normalize features
+    semi_feature_train_X = semi_feature_scaler(semi_feature_train_X)
+    semi_feature_test_X = semi_feature_scaler(semi_feature_test_X)
+
+    print ' **** training semi-supervised model ****'
+
+    semi_feature_clf = classifier.fit(semi_feature_train_X, train_y)
+    # print semi_feature_clf.coef_
+    # print semi_feature_clf.intercept_
+    pickle.dump(semi_feature_clf, open('semi_feature_clf.p', 'wb'))
+    predict_y = semi_feature_clf.predict(semi_feature_test_X)
+    probas_ = semi_feature_clf.predict_proba(semi_feature_test_X)
+
+    for feat_name, feat_weight in zip(semi_features, semi_feature_clf.coef_.flatten()):
+        print feat_name, feat_weight
+
+    semi_feature_weights += semi_feature_clf.coef_.flatten()
+
+    #print 'recall', recall_score(test_y, predict_y)
+    #print 'precision', precision_score(test_y, predict_y)
+    #print 'f1', f1_score(test_y, predict_y)
+    for predict_label, prob, example in zip(predict_y, probas_, test_examples):
+        semi_feature_samples.append({'example': example, 'fold_id': fold_id,
+                                     'predict_label': predict_label, 'probability': prob[1]})
+
+
+    #using binary features
+    bin_feature_selector = np.array([features_name_pos_map[x] for x in binary_features])
+    bin_feature_train_X = full_feature_train_X[:, bin_feature_selector]
+    bin_feature_test_X = full_feature_test_X[:, bin_feature_selector]
+
+    # normalize features
+    bin_feature_train_X = bin_feature_scaler(bin_feature_train_X)
+    bin_feature_test_X = bin_feature_scaler(bin_feature_test_X)
+
+    print ' **** training binary model ****'
+
+    bin_feature_clf = classifier.fit(bin_feature_train_X, train_y)
+    # print bin_feature_clf.coef_
+    # print bin_feature_clf.intercept_
+    pickle.dump(bin_feature_clf, open('bin_feature_clf.p', 'wb'))
+    #clf = pickle.load(open('bin_feature_clf.p', 'rb'))
+    predict_y = bin_feature_clf.predict(bin_feature_test_X)
+    probas_ = bin_feature_clf.predict_proba(bin_feature_test_X)
+
+    for feat_name, feat_weight in zip(binary_features, bin_feature_clf.coef_.flatten()):
+        print feat_name, feat_weight
+
+    bin_feature_weights += bin_feature_clf.coef_.flatten()
+
+    #print 'recall', recall_score(test_y, predict_y)
+    #print 'precision', precision_score(test_y, predict_y)
+    #print 'f1', f1_score(test_y, predict_y)
+    for predict_label, prob, example in zip(predict_y, probas_, test_examples):
+        bin_feature_samples.append({'example': example, 'fold_id': fold_id,
+                                    'predict_label': predict_label, 'probability': prob[1]})
+
+full_feature_weights /= fold_num
+semi_feature_weights /= fold_num
+bin_feature_weights /= fold_num
+
+print '*' * 10 + ' averaged full feature weights ' + '*' * 10
+for feat_name, feat_weight in zip(full_features, full_feature_weights):
     print feat_name, feat_weight
 
-# print full_feature_clf.coef_
-# print full_feature_clf.intercept_
-#print 'recall', recall_score(test_y, predict_y)
-#print 'precision', precision_score(test_y, predict_y)
-#print 'f1', f1_score(test_y, predict_y)
-for predict_label, prob, example in zip(predict_y, probas_, test_examples):
-    #full_feature_samples.append((p, pid, questions[pid]['title'], code, x, is_annotated(code, positive_snippets[pid])))
-    full_feature_samples.append({'example': example, 'predict_label': predict_label, 'probability': prob[1]})
+print '*' * 10 + ' averaged binary feature weights ' + '*' * 10
+for feat_name, feat_weight in zip(binary_features, bin_feature_weights):
+    print feat_name, feat_weight
+
+print '*' * 10 + ' averaged semi feature weights ' + '*' * 10
+for feat_name, feat_weight in zip(semi_features, semi_feature_weights):
+    print feat_name, feat_weight
+
 full_feature_samples = sorted(full_feature_samples, key=lambda x:-x['probability'])
-
-
-#using nn features
-semi_feature_selector = np.array([features_name_pos_map[x] for x in semi_features])
-semi_feature_samples = []
-semi_feature_train_X = full_feature_train_X[:, semi_feature_selector]
-semi_feature_test_X = full_feature_test_X[:, semi_feature_selector]
-
-semi_feature_clf = classifier.fit(semi_feature_train_X, train_y)
-print semi_feature_clf.coef_
-print semi_feature_clf.intercept_
-pickle.dump(semi_feature_clf, open('semi_feature_clf.p', 'wb'))
-#clf = pickle.load(open('semi_feature_clf.p', 'rb'))
-predict_y = semi_feature_clf.predict(semi_feature_test_X)
-probas_ = semi_feature_clf.predict_proba(semi_feature_test_X)
-#print 'recall', recall_score(test_y, predict_y)
-#print 'precision', precision_score(test_y, predict_y)
-#print 'f1', f1_score(test_y, predict_y)
-for predict_label, prob, example in zip(predict_y, probas_, test_examples):
-    semi_feature_samples.append({'example': example, 'predict_label': predict_label, 'probability': prob[1]})
 semi_feature_samples = sorted(semi_feature_samples, key=lambda x:-x['probability'])
-
-
-#using eng features
-bin_feature_selector = np.array([features_name_pos_map[x] for x in binary_features])
-bin_feature_samples = []
-bin_feature_train_X = full_feature_train_X[:, bin_feature_selector]
-bin_feature_test_X = full_feature_test_X[:, bin_feature_selector]
-
-bin_feature_clf = classifier.fit(bin_feature_train_X, train_y)
-# print bin_feature_clf.coef_
-# print bin_feature_clf.intercept_
-pickle.dump(bin_feature_clf, open('bin_feature_clf.p', 'wb'))
-#clf = pickle.load(open('bin_feature_clf.p', 'rb'))
-predict_y = bin_feature_clf.predict(bin_feature_test_X)
-probas_ = bin_feature_clf.predict_proba(bin_feature_test_X)
-#print 'recall', recall_score(test_y, predict_y)
-#print 'precision', precision_score(test_y, predict_y)
-#print 'f1', f1_score(test_y, predict_y)
-for predict_label, prob, example in zip(predict_y, probas_, test_examples):
-    bin_feature_samples.append({'example': example, 'predict_label': predict_label, 'probability': prob[1]})
 bin_feature_samples = sorted(bin_feature_samples, key=lambda x:-x['probability'])
 
-
-#baseline approach
-baseline_samples = []
-for tidx in test:
+# accept only baseline
+acconly_baseline_samples = []
+for tidx in xrange(len(post_list)):
     pid = post_list[tidx][0]
-    if pid in baseline:
-        code = normalize_code_response(baseline[pid])
+    if pid in acconly_baseline:
+        code = normalize_code_response(acconly_baseline[pid])
         if code and len(code) > 0:
-            baseline_samples.append({'example': {'title': questions[pid]['title'],
-                                                 'code': code, 'question_id': pid,
-                                                 'label': is_annotated(code, positive_snippets[pid])},
-                                     'predict_label': 1})
+            acconly_baseline_samples.append({'example': {'title': questions[pid]['title'],
+                                                         'code': code, 'question_id': pid,
+                                                         'label': is_annotated(code, positive_snippets[pid])},
+                                             'predict_label': 1})
+
+# accept all baseline
+allpost_baseline_samples = []
+for qid, snippets in post_list:
+    for snippet in snippets:
+        code = normalize_code_response(snippet)
+        if code and len(code) > 0:
+            allpost_baseline_samples.append({'example': {'title': questions[qid]['title'],
+                                                        'code': code, 'question_id': qid,
+                                                        'label': is_annotated(code, positive_snippets[qid])},
+                                            'predict_label': 1})
 
 
 #random selection
 random_samples = []
-random_batch = range(len(test_examples))
+random_batch = range(len(all_examples))
 np.random.shuffle(random_batch)
 for example_id in random_batch:
-    example = test_examples[example_id]
+    example = all_examples[example_id]
     random_samples.append({'example': example})
 
 
-pickle.dump((full_feature_samples, semi_feature_samples, bin_feature_samples, baseline_samples, random_samples), open('samples.added_feat.p', 'wb'))
+pickle.dump((full_feature_samples, semi_feature_samples, bin_feature_samples,
+             acconly_baseline_samples, allpost_baseline_samples, random_samples), open('samples.added_feat.p', 'wb'))
+
+
+# transfer learning
+all_X = np.concatenate([full_feature_train_X, full_feature_test_X], axis=0)
+all_examples = train_examples + test_examples
+py_full_feat_scaler, py_full_feat_clf = pickle.load(open('../python/all_data_full_feat_clf.py.p', 'rb'))
+predict_y = py_full_feat_clf.predict(py_full_feat_scaler.transform(all_X))
+probas_ = py_full_feat_clf.predict_proba(py_full_feat_scaler.transform(all_X))
+transfer_full_feature_samples = []
+for predict_label, prob, example in zip(predict_y, probas_, all_examples):
+    transfer_full_feature_samples.append({'example': example,
+                                          'predict_label': predict_label,
+                                          'probability': prob[1]})
+
+all_X = np.concatenate([bin_feature_train_X, bin_feature_test_X], axis=0)
+py_bin_feat_scaler, py_bin_feat_clf = pickle.load(open('../python/all_data_bin_feat_clf.py.p', 'rb'))
+predict_y = py_bin_feat_clf.predict(py_bin_feat_scaler.transform(all_X))
+probas_ = py_bin_feat_clf.predict_proba(py_bin_feat_scaler.transform(all_X))
+transfer_bin_feature_samples = []
+for predict_label, prob, example in zip(predict_y, probas_, all_examples):
+    transfer_bin_feature_samples.append({'example': example,
+                                         'predict_label': predict_label,
+                                         'probability': prob[1]})
+
+transfer_full_feature_samples = sorted(transfer_full_feature_samples, key=lambda x:-x['probability'])
+transfer_bin_feature_samples = sorted(transfer_bin_feature_samples, key=lambda x:-x['probability'])
+pickle.dump((transfer_full_feature_samples, transfer_bin_feature_samples), open('samples.transfer.p', 'wb'))

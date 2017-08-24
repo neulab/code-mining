@@ -9,9 +9,15 @@ import javalang
 # for token in javalang.tokenizer.tokenize('int asdf = 3;'):
 #     print token
 
-for token in javalang.tokenizer.tokenize(r'asdf.asdf()'):
+from parse_java import normalize_code
+
+for token in javalang.tokenizer.tokenize('ArrayList<String> mylist = new ArrayList<String>();\nmylist.add("asdf\nasdf");'):
     print token
 
 #v1, v2, v3, v4 = load(open('vocab.dmp', 'rb'))
 
-# load_vocabs('vocab.dmp')
+print normalize_code("""
+if (foo == bar) {
+    System.out.println("asdfsaf");
+}
+""")

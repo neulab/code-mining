@@ -1,4 +1,5 @@
 import os
+import re
 
 os.environ['CLASSPATH'] = 'libs/javaparser-core-3.2.10.jar:' \
                           'libs/java_codemining-1.0-SNAPSHOT.jar'
@@ -10,11 +11,16 @@ parser = Parser()
 
 def normalize_code(code, log_file=None):
     try:
-        normalized_code = parser.parse(code)
+        # normalized_code = parser.parse(code)
+        # if normalized_code:
+        #     normalized_code = normalized_code.strip()
+        #
+        # return normalized_code
+        normalized_code = normalize_code_with_meta(code)
         if normalized_code:
-            normalized_code = normalized_code.strip()
+            return normalized_code.value
 
-        return normalized_code
+        return None
     except Exception as ex:
         if log_file:
             log_file.write('*' * 30 + '\n')
@@ -28,9 +34,18 @@ def normalize_code(code, log_file=None):
 
 normalize_code_response = normalize_code
 
-
+print_pattern = re.compile('(if|while|for).*\n(    )+System\.out\.println.*;\n\}$')
 def normalize_code_with_meta(code):
-    return parser.parseCodeWithMetaInfo(code)
+    normalized_code = parser.parseCodeWithMetaInfo(code)
+    if normalized_code:
+        m = print_pattern.search(normalized_code.value)
+        if m:
+            new_code = '\n'.join(normalized_code.value.split('\n')[:-2])
+            new_code += '}'
+            normalized_code = normalize_code_with_meta(new_code)
+
+    return normalized_code
+
 
 
 def get_function_body(parsed_code):
@@ -50,6 +65,11 @@ def start_with_assign(code):
     return result
 
 
+def start_with_import(code):
+    result = parser.startWithImport(code)
+    return result
+
+
 def parse_annotated_code(code):
     parsed_code = normalize_code_with_meta(code)
     if parsed_code and parsed_code.type == 'function':
@@ -65,9 +85,13 @@ def is_annotated(code, annotation_set):
     normalized_code = normalize_code_with_meta(code)
     if normalized_code:
         if normalized_code.type == 'function':
-            normalized_code.value = get_function_body(normalized_code.value)
+            try:
+                normalized_code.value = get_function_body(normalized_code.value)
+            except Exception as ex:
+                print ex
 
         return normalized_code.value in annotation_set
 
     return False
+
 
