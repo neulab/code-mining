@@ -3,6 +3,8 @@ from itertools import chain
 import numpy as np
 from sklearn import preprocessing
 
+from lang.python.lm_model.py2_tokenize import tokenize_code
+from lang.python.lm_model.vocab import tokenize_nl
 from lang.python.parse_py import start_with_assign, only_value, normalize_code_response, is_annotated, tokenize
 
 np.random.seed(1231245)
@@ -122,10 +124,33 @@ def get_score_feature(score=None, all_feat=False):
         return 'post_score_>50'
 
 
+def get_line_num_feature(num_lines=None, all_feat=False):
+    if all_feat:
+        return ['num_lines=0', 'num_lines=1', 'num_lines=2', 'num_lines=3', 'num_lines<=5', 'num_lines<=10',
+                'num_lines<=15', 'num_lines>15']
+    if num_lines == 0:
+        return 'num_lines=0'
+    elif num_lines == 1:
+        return 'num_lines=1'
+    elif num_lines == 2:
+        return 'num_lines=2'
+    elif num_lines == 3:
+        return 'num_lines=3'
+    elif num_lines <= 5:
+        return 'num_lines<=5'
+    elif num_lines <= 10:
+        return 'num_lines<=10'
+    elif num_lines <= 15:
+        return 'num_lines<=15'
+    else:
+        return 'num_lines>15'
+
+
 #generate float vector feature for every candidate
 def generate_x_y(question_id, question_entry, pos_set):
     examples = []
     answer_post_ids = [e['id'] for e in question_entry['answer_posts']]
+    question_len = len(tokenize_nl(question_entry['title']))
     max_code_snippet_id = 0
     for answer_post in question_entry['answer_posts']:
         # generate contiguous sub-snippets from the current snippet block
@@ -140,9 +165,30 @@ def generate_x_y(question_id, question_entry, pos_set):
                     ll = bi_likelihood[question_id][code]
                     features['ll_nl2code'] = ll[0]
                     features['ll_code2nl'] = ll[1]
+
+                    code_len = len(tokenize_code(code))
+                    features['ll_nl2code_norm'] = features['ll_nl2code'] / code_len
+                    features['ll_code2nl_norm'] = features['ll_code2nl'] / question_len
+
+                    num_lines = len(code.split('\n'))
+                    features['num_lines'] = num_lines
+                    features[get_line_num_feature(num_lines)] = 1
+
                     features['post_rank_%d' % post_rank] = 1
                     features[get_score_feature(post_score)] = 1
-                    features['is_accepted_ans'] = question_entry['accepted_answer_post_id'] == post_id
+                    features['accepted_ans'] = question_entry['accepted_answer_post_id'] == post_id
+                    features['only_snippet'] = len(answer_post['snippets']) == 1
+
+                    # combinatory features
+                    features['accepted_ans && only_snippet'] = features['accepted_ans'] and features['only_snippet']
+                    features['accepted_ans && only_snippet && whole_block'] = features['accepted_ans'] and features[
+                        'only_snippet'] and features['whole_block']
+                    features['!start_with_assign && end_of_block'] = (not features['start_with_assign']) and features[
+                        'end_of_block']
+                    features['start_with_assign && num_lines=1'] = features['start_with_assign'] and num_lines == 1
+                    features['!start_with_assign && num_lines=1'] = (not features[
+                        'start_with_assign']) and num_lines == 1
+
                     label = is_annotated(code, pos_set[question_id])
                     examples.append({'code': code, 'features': features,
                                      'question_id': question_id, 'parent_answer_post_id': post_id, 'code_snippet_id': max_code_snippet_id,
@@ -247,8 +293,8 @@ for question_id, question in questions.iteritems():
 
 
 full_features = ['ll_nl2code', 'll_code2nl',
-                 'll_page_zscore_nl2code',
-                 'll_page_zscore_code2nl',
+                 'll_nl2code_norm', 'll_code2nl_norm',
+                 'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
                  #'ll_page_max_zscore', 'll_page_min_zscore',
@@ -256,26 +302,39 @@ full_features = ['ll_nl2code', 'll_code2nl',
                  'start_of_block', 'end_of_block',
                  'whole_block', 'start_with_assign',
                  'single_value', 'contains_import',
-                 'is_accepted_ans',
+                 'accepted_ans', 'only_snippet',
+                 # 'accepted_ans && only_snippet',
+                 'accepted_ans && only_snippet && whole_block',
+                 '!start_with_assign && end_of_block',
+                 # 'start_with_assign && num_lines=1',
+                 '!start_with_assign && num_lines=1',
+                 # 'num_lines',
                  'post_rank_0', 'post_rank_1', 'post_rank_2'
-                 ] # + get_score_feature(all_feat=True)
+                 ] + get_line_num_feature(all_feat=True) # + get_score_feature(all_feat=True)
 
 features_name_pos_map = {name: pos for pos, name in enumerate(full_features)}
 
-semi_features = ['ll_nl2code', 'll_code2nl',
-                 'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
-                 #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
+semi_features = [ 'll_nl2code', 'll_code2nl',
+                  'll_nl2code_norm', 'll_code2nl_norm',
+                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
+                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
                  #'ll_page_max_zscore', 'll_page_min_zscore',
-                 'll_max', 'll_min',
+                    'll_max', 'll_min',
                  ]
 
 binary_features = ['start_of_block', 'end_of_block',
                    'whole_block', 'start_with_assign',
                    'single_value', 'contains_import',
-                   'is_accepted_ans',
+                   'accepted_ans', 'only_snippet',
+                   # 'accepted_ans && only_snippet',
+                   'accepted_ans && only_snippet && whole_block',
+                   '!start_with_assign && end_of_block',
+                   # 'start_with_assign && num_lines=1',
+                   '!start_with_assign && num_lines=1',
+                   # 'num_lines',
                    'post_rank_0', 'post_rank_1', 'post_rank_2'
-                   ] # + get_score_feature(all_feat=True)
+                   ] + get_line_num_feature(all_feat=True) # + get_score_feature(all_feat=True)
 
 
 def to_feature_vector(feature_map, feature_names):

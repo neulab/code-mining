@@ -202,459 +202,457 @@ Rp108
 sI8444710
 g1
 ((lp109
-S'int n = s.length();\nfor (int i = 0; i < (n / 2); ++i) {\n    if (s.charAt(i) != s.charAt(n - i - 1)) {\n        return false;\n    }\n}\nreturn true;'
+S'String workingCopy = removeJunk(stringToTest);\nString reversedCopy = reverse(workingCopy);\nreturn reversedCopy.equalsIgnoreCase(workingCopy);'
 p110
-aS'String workingCopy = removeJunk(stringToTest);\nString reversedCopy = reverse(workingCopy);\nreturn reversedCopy.equalsIgnoreCase(workingCopy);'
-p111
 aS'if (s.equals(new StringBuilder(s).reverse().toString()))\n    ;'
-p112
-atp113
-Rp114
+p111
+atp112
+Rp113
 sI75175
 g1
-((lp115
+((lp114
 S'new Foo<Bar>();'
-p116
+p115
 aS'return clazz.newInstance();'
-p117
+p116
 aS'return factory.create();'
-p118
-atp119
-Rp120
+p117
+atp118
+Rp119
 sI5993779
 g1
-((lp121
+((lp120
 S'String[] tokens = pdfName.split("-|\\\\.");'
-p122
+p121
 aS'String[] tokens = pdfName.split("\\\\W");'
-p123
-atp124
-Rp125
+p122
+atp123
+Rp124
 sI109383
 g1
-((lp126
+((lp125
 S'List<Map.Entry<K, V>> list = new LinkedList<Map.Entry<K, V>>(map.entrySet());\nCollections.sort(list, new Comparator<Map.Entry<K, V>>() {\n\n    public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {\n        return (o1.getValue()).compareTo(o2.getValue());\n    }\n});\nMap<K, V> result = new LinkedHashMap<K, V>();\nfor (Map.Entry<K, V> entry : list) {\n    result.put(entry.getKey(), entry.getValue());\n}'
-p127
+p126
 aS'map = ImmutableSortedMap.copyOf(myOriginalMap, valueComparator);'
-p128
+p127
 aS'return map.entrySet().stream().sorted(Map.Entry.comparingByValue()).collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e1, LinkedHashMap::new));'
-p129
+p128
 aS'List<Map.Entry<K, V>> list = new LinkedList<>(map.entrySet());\nCollections.sort(list, new Comparator<Map.Entry<K, V>>() {\n\n    @Override\n    public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {\n        return (o1.getValue()).compareTo(o2.getValue());\n    }\n});\nMap<K, V> result = new LinkedHashMap<>();\nfor (Map.Entry<K, V> entry : list) {\n    result.put(entry.getKey(), entry.getValue());\n}'
-p130
+p129
 aS'sorted_map.putAll(map);'
-p131
-atp132
-Rp133
+p130
+atp131
+Rp132
 sI1946668
 g1
-((lp134
+((lp133
 S'Collections.sort(unsortedList, new Comparator<Person>() {\n\n    @Override\n    public int compare(Person a, Person b) {\n        return b.getName().compareTo(a.getName());\n    }\n});'
-p135
+p134
 aS'Collections.sort(people, Collections.reverseOrder());'
-p136
+p135
 aS'personList.sort((a, b) -> b.getName().compareTo(a.getName()));'
-p137
+p136
 aS'Collections.sort(unsortedList, new Comparator<Person>() {\n\n    @Override\n    public int compare(Person a, Person b) {\n        return a.getName().compareTo(b.getName());\n    }\n});'
-p138
+p137
 aS'Collections.sort(people, Collections.reverseOrder(new Person.AgeComparator()));'
-p139
+p138
 aS'Collections.sort(personList, (Person a, Person b) -> b.getName().compareTo(a.getName()));'
-p140
+p139
 aS'Collections.sort(people, new Person.AgeComparator());'
-p141
+p140
 aS'Collections.sort(people);'
-p142
-atp143
-Rp144
+p141
+atp142
+Rp143
 sI4340653
 g1
-((lp145
+((lp144
 S'ServletContext context = getContext();\nURL resourceUrl = context.getResource("/WEB-INF/test/foo.txt");'
-p146
+p145
 aS'InputStream resource = getServletContext().getResourceAsStream("/WEB-INF/my.json");'
-p147
+p146
 aS'InputStream resourceContent = context.getResourceAsStream("/WEB-INF/test/foo.txt");'
-p148
+p147
 aS'ServletContext context = getContext();\nString fullPath = context.getRealPath("/WEB-INF/test/foo.txt");'
-p149
-atp150
-Rp151
+p148
+atp149
+Rp150
 sI960431
 g1
-((lp152
+((lp151
 S'int[] intArray = ArrayUtils.toPrimitive(myList.toArray(new Integer[myList.size()]));'
-p153
+p152
 aS'int[] array = list.stream().mapToInt(i -> i).toArray();'
-p154
+p153
 aS'int[] ints = Ints.toArray(list);'
-p155
+p154
 aS'int[] intArray2 = ArrayUtils.toPrimitive(myList.toArray(NO_INTS));'
-p156
-atp157
-Rp158
+p155
+atp156
+Rp157
 sI2525042
 g1
-((lp159
+((lp158
 S'HashMap<String, Object> o = mapper.readValue(from, typeRef);'
-p160
+p159
 aS'Map<String, String> result = new ObjectMapper().readValue(data, TypeFactory.mapType(HashMap.class, String.class, String.class));'
-p161
+p160
 aS'props = new ObjectMapper().readValue(src, HashMap.class);'
-p162
+p161
 aS'props = (HashMap<String, Object>) new ObjectMapper().readValue(src, HashMap.class);'
-p163
+p162
 aS'props = new ObjectMapper().readValue(src, new TypeReference<HashMap<String, Object>>() {\n});'
-p164
+p163
 aS'result = mapper.readValue(data, type);'
-p165
-atp166
-Rp167
+p164
+atp165
+Rp166
 sI2364856
 g1
-((lp168
+((lp167
 S'boolean[] array = new boolean[size];'
-p169
+p168
 aS'Arrays.fill(array, Boolean.FALSE);'
-p170
-atp171
-Rp172
+p169
+atp170
+Rp171
 sI248562
 g1
-((lp173
+((lp172
 S'final String currentUser = principal.getName();'
-p174
-atp175
-Rp176
+p173
+atp174
+Rp175
 sI4967482
 g1
-((lp177
+((lp176
 S'response.sendRedirect(redirectURL);'
-p178
-atp179
-Rp180
+p177
+atp178
+Rp179
 sI2966334
 g1
-((lp181
+((lp180
 S'label.setForeground(Color.RED);'
-p182
+p181
 aS'frame.add(new JLabel("<html>Text color: <font color=\'red\'>red</font></html>"));'
-p183
+p182
 aS'title.setForeground(Color.white);'
-p184
+p183
 aS'label.setForeground(Color.red);'
-p185
-atp186
-Rp187
+p184
+atp185
+Rp186
 sI1383797
 g1
-((lp188
+((lp187
 S'Set<T> keys = new HashSet<T>();\nfor (Entry<T, E> entry : map.entrySet()) {\n    if (Objects.equals(value, entry.getValue())) {\n        keys.add(entry.getKey());\n    }\n}'
-p189
+p188
 aS"Token token = tokenToChar.inverse().get('(');"
-p190
+p189
 aS'for (Entry<Integer, String> entry : testMap.entrySet()) {\n    if (entry.getValue().equals("c")) {\n        System.out.println(entry.getKey());\n    }\n}'
-p191
+p190
 aS'for (Entry<T, E> entry : map.entrySet()) {\n    if (Objects.equals(value, entry.getValue())) {\n        return entry.getKey();\n    }\n}'
-p192
+p191
 aS'return map.entrySet().stream().filter(entry -> Objects.equals(entry.getValue(), value)).map(Map.Entry::getKey).collect(Collectors.toSet());'
-p193
-atp194
-Rp195
+p192
+atp193
+Rp194
 sI4040001
 g1
-((lp196
+((lp195
 S'ArrayList<Integer> numbers = new ArrayList<Integer>();\nwhile (numbers.size() < 4) {\n    int random = randomGenerator.nextInt(4);\n    if (!numbers.contains(random)) {\n        numbers.add(random);\n    }\n}'
-p197
+p196
 aS'Set<Integer> generated = new LinkedHashSet<Integer>();\nwhile (generated.size() < numbersNeeded) {\n    Integer next = rng.nextInt(max) + 1;\n    generated.add(next);\n}'
-p198
+p197
 aS'ArrayList<Integer> list = new ArrayList<Integer>(size);\nfor (int i = 1; i <= size; i++) {\n    list.add(i);\n}\nwhile (list.size() > 0) {\n    int index = rand.nextInt(list.size());\n    System.out.println("Selected: " + list.remove(index));\n}'
-p199
-atp200
-Rp201
+p198
+atp199
+Rp200
 sI20363719
 g1
-((lp202
+((lp201
 S'Map<String, Choice> result = choices.stream().collect(Collectors.toMap(Choice::getName, c -> c));'
-p203
+p202
 aS'Map<String, List<Choice>> result = choices.stream().collect(Collectors.groupingBy(Choice::getName));'
-p204
+p203
 aS'Map<String, Choice> result = choices.stream().collect(Collectors.toMap(Choice::getName, Function.identity()));'
-p205
-atp206
-Rp207
+p204
+atp205
+Rp206
 sI2564298
 g1
-((lp208
+((lp207
 S'String[] errorSoon = new String[2];\nerrorSoon[0] = "foo";\nerrorSoon[1] = "bar";'
-p209
+p208
 aS'String[] errorSoon = { "Hello", "World" };'
-p210
+p209
 aS'String[] errorSoon = new String[2];\nerrorSoon[0] = "Hello";\nerrorSoon[1] = "World";'
-p211
+p210
 aS'String[] errorSoon = new String[100];'
-p212
+p211
 aS'String[] args = new String[] { "firstarg", "secondarg", "thirdarg" };'
-p213
+p212
 aS'String[] errorSoon = { "foo", "bar" };'
-p214
-atp215
-Rp216
+p213
+atp214
+Rp215
 sI4240080
 g1
-((lp217
+((lp216
 S'public static void permutation(String str) {\n    permutation("", str);\n}\nprivate static void permutation(String prefix, String str) {\n    int n = str.length();\n    if (n == 0)\n        System.out.println(prefix);\n    else {\n        for (int i = 0; i < n; i++) permutation(prefix + str.charAt(i), str.substring(0, i) + str.substring(i + 1, n));\n    }\n}'
-p218
+p217
 aS'public static ArrayList<String> permutation(String s) {\n    ArrayList<String> res = new ArrayList<String>();\n    if (s.length() == 1) {\n        res.add(s);\n    } else if (s.length() > 1) {\n        int lastIndex = s.length() - 1;\n        String last = s.substring(lastIndex);\n        String rest = s.substring(0, lastIndex);\n        res = merge(permutation(rest), last);\n    }\n    return res;\n}\npublic static ArrayList<String> merge(ArrayList<String> list, String c) {\n    ArrayList<String> res = new ArrayList<String>();\n    for (String s : list) {\n        for (int i = 0; i <= s.length(); ++i) {\n            String ps = new StringBuffer(s).insert(i, c).toString();\n            res.add(ps);\n        }\n    }\n    return res;\n}'
-p219
-atp220
-Rp221
+p218
+atp219
+Rp220
 sI11409621
 g1
-((lp222
+((lp221
 S'for (int i = 0; i < 5; i++) {\n    printTriangleLine(i);\n}'
-p223
+p222
 aS'for (int i = 1; i < 10; i += 2) {\n    for (int k = 0; k < (4 - i / 2); k++) {\n        System.out.print(" ");\n    }\n    for (int j = 0; j < i; j++) {\n        System.out.print("*");\n    }\n    System.out.println("");\n}'
-p224
+p223
 aS'for (int i = 0; i < 5; i++) System.out.println("    *********".substring(i, 5 + 2 * i));'
-p225
-atp226
-Rp227
+p224
+atp225
+Rp226
 sI3395286
 g1
-((lp228
+((lp227
 S'String prefix = "";\nfor (String serverId : serverIds) {\n    sb.append(prefix);\n    prefix = ",";\n    sb.append(serverId);\n}'
-p229
+p228
 aS'if (sb.length() > 0) {\n    sb.setLength(sb.length() - 1);\n}'
-p230
+p229
 aS'sb.deleteCharAt(sb.length() - 1);'
-p231
+p230
 aS'sb.setLength(sb.length() - 1);'
-p232
+p231
 aS'sb.setLength(Math.max(sb.length() - 1, 0));'
-p233
-atp234
-Rp235
+p232
+atp233
+Rp234
 sI2891361
 g1
-((lp236
+((lp235
 S'TimeZone.setDefault(TimeZone.getTimeZone("UTC"));'
-p237
+p236
 aS'SimpleDateFormat isoFormat = new SimpleDateFormat("yyyy-MM-dd\'T\'HH:mm:ss");\nisoFormat.setTimeZone(TimeZone.getTimeZone("UTC"));\nDate date = isoFormat.parse("2010-05-23T09:01:02");'
-p238
-atp239
-Rp240
+p237
+atp238
+Rp239
 sI7833689
 g1
-((lp241
+((lp240
 S'System.out.println("I\\nam\\na\\nboy");'
-p242
+p241
 aS'String x = "Hello," + System.lineSeparator() + "there";'
-p243
+p242
 aS'System.out.println("I am a boy".replaceAll("\\\\s+", System.getProperty("line.separator")));'
-p244
+p243
 aS'System.out.println("I am a boy".replaceAll("\\\\s+", "\\n"));'
-p245
-atp246
-Rp247
+p244
+atp245
+Rp246
 sI16027229
 g1
-((lp248
+((lp247
 S'BufferedReader br = new BufferedReader(new FileReader(fileName));\ntry {\n    StringBuilder sb = new StringBuilder();\n    String line = br.readLine();\n    while (line != null) {\n        sb.append(line);\n        sb.append("\\n");\n        line = br.readLine();\n    }\n    return sb.toString();\n} finally {\n    br.close();\n}'
-p249
-atp250
-Rp251
+p248
+atp249
+Rp250
 sI1816673
 g1
-((lp252
+((lp251
 S'new File("C:/").exists();'
-p253
+p252
 aS'new File("path/to/file.txt").isFile();'
-p254
+p253
 aS'if (f.exists() && !f.isDirectory()) {\n}'
-p255
+p254
 aS'Path path = Paths.get(filePathString);\nif (Files.exists(path)) {\n}'
-p256
-atp257
-Rp258
+p255
+atp256
+Rp257
 sI473446
 g1
-((lp259
+((lp258
 S'InetAddress.getLocalHost().getHostName();'
-p260
+p259
 aS'System.getProperty("user.name");'
-p261
+p260
 aS'java.net.InetAddress localMachine = java.net.InetAddress.getLocalHost();\nSystem.out.println("Hostname of local machine: " + localMachine.getHostName());'
-p262
-atp263
-Rp264
+p261
+atp262
+Rp263
 sI7522022
 g1
-((lp265
+((lp264
 S'System.out.print(String.format("\\033[2J"));'
-p266
+p265
 aS'System.out.print("\\b\\b\\b\\b\\b");'
-p267
+p266
 aS'Runtime.getRuntime().exec("cls");'
-p268
+p267
 aS'System.out.print(String.format("\\033[%dA", count));\nSystem.out.print("\\033[2K");'
-p269
-atp270
-Rp271
+p268
+atp269
+Rp270
 sI8559092
 g1
-((lp272
+((lp271
 S'ArrayList<String>[] group = new ArrayList[4];'
-p273
+p272
 aS'List<List<Individual>> group = new ArrayList<List<Individual>>(4);'
-p274
+p273
 aS'ArrayList<ArrayList<Individual>> group = new ArrayList<ArrayList<Individual>>(4);'
-p275
+p274
 aS'ArrayList<Individual>[] group = (ArrayList<Individual>[]) new ArrayList[4];'
-p276
-atp277
-Rp278
+p275
+atp276
+Rp277
 sI9102318
 g1
-((lp279
+((lp278
 S'int i = (int) d;'
-p280
+p279
 aS'Long L = Math.round(d);\nint i = Integer.valueOf(L.intValue());'
-p281
+p280
 aS'int i = Integer.valueOf(D.intValue());'
-p282
-atp283
-Rp284
+p281
+atp282
+Rp283
 sI3402735
 g1
-((lp285
+((lp284
 S'new String(Files.readAllBytes(Paths.get(filePath)));'
-p286
+p285
 aS'FileInputStream fisTargetFile = new FileInputStream(new File("test.txt"));\nString targetFileStr = IOUtils.toString(fisTargetFile, "UTF-8");'
-p287
+p286
 aS'String content = new Scanner(new File("filename")).useDelimiter("\\\\Z").next();'
-p288
-atp289
-Rp290
+p287
+atp288
+Rp289
 sI4377842
 g1
-((lp291
+((lp290
 S'float z = (float) x / y;'
-p292
+p291
 aS'double d = (double) x / y;'
-p293
+p292
 aS'float z = x / (float) y;'
-p294
+p293
 aS'float z = x * 1.0 / y;'
-p295
+p294
 aS'float z = (float) x / (float) y;'
-p296
+p295
 aS'float f = (float) x / y;'
-p297
-atp298
-Rp299
+p296
+atp297
+Rp298
 sI5283444
 g1
-((lp300
+((lp299
 S'StringBuilder builder = new StringBuilder();\nfor (String s : arr) {\n    builder.append(s);\n}\nString str = builder.toString();'
-p301
+p300
 aS'String str = Arrays.toString(arr);'
-p302
+p301
 aS'String.join(", ", "Harry", "Ron", "Hermione");'
-p303
+p302
 aS'String joinedString = StringUtils.join(new Object[] { "a", "b", 1 }, "-");'
-p304
+p303
 aS'Joiner.on(", ").skipNulls().join("Harry", null, "Ron", "Hermione");'
-p305
+p304
 aS'String str = String.join(",", arr);'
-p306
-atp307
-Rp308
+p305
+atp306
+Rp307
 sI3605237
 g1
-((lp309
+((lp308
 S'Map<String, String> reversedMap = new TreeMap<String, String>(codes);\nfor (Map.Entry entry : reversedMap.entrySet()) {\n    System.out.println(entry.getKey() + ", " + entry.getValue());\n}'
-p310
+p309
 aS'List<String> keys = new ArrayList<String>(map.keySet());\nCollections.sort(keys, someComparator);\nfor (String key : keys) {\n    System.out.println(key + ": " + map.get(key));\n}'
-p311
-atp312
-Rp313
+p310
+atp311
+Rp312
 sI18441846
 g1
-((lp314
+((lp313
 S'Collections.sort(fruits, new Comparator<Fruit>() {\n\n    @Override\n    public int compare(Fruit fruit2, Fruit fruit1) {\n        return fruit1.fruitName.compareTo(fruit2.fruitName);\n    }\n});'
-p315
+p314
 aS'Collections.sort(fruits, fieldComparator);'
-p316
+p315
 aS'Collections.sort(fruitList);'
-p317
-atp318
-Rp319
+p316
+atp317
+Rp318
 sI112503
 g1
-((lp320
+((lp319
 S'List<String> list = new ArrayList<String>(Arrays.asList(array));\nlist.removeAll(Arrays.asList("a"));\narray = list.toArray(array);'
-p321
+p320
 aS'List<String> list = new ArrayList<>();\nCollections.addAll(list, array);\nlist.removeAll(Arrays.asList("a"));\narray = list.toArray(EMPTY_STRING_ARRAY);'
-p322
+p321
 aS'List<String> list = new ArrayList<>();\nCollections.addAll(list, array);\nlist.removeAll(Arrays.asList("a"));\narray = list.toArray(new String[list.size()]);'
-p323
+p322
 aS'String[] filteredArray = Arrays.stream(array).filter(e -> !e.equals(foo)).toArray(String[]::new);'
-p324
+p323
 aS'List<String> list = new ArrayList<String>(Arrays.asList(array));\nlist.removeAll(Arrays.asList("a"));\narray = list.toArray(new String[0]);'
-p325
-atp326
-Rp327
+p324
+atp325
+Rp326
 sI1519736
 g1
-((lp328
+((lp327
 S'Random rnd = ThreadLocalRandom.current();\nfor (int i = ar.length - 1; i > 0; i--) {\n    int index = rnd.nextInt(i + 1);\n    int a = ar[index];\n    ar[index] = ar[i];\n    ar[i] = a;\n}'
-p329
+p328
 aS'int index;\nRandom random = new Random();\nfor (int i = array.length - 1; i > 0; i--) {\n    index = random.nextInt(i + 1);\n    if (index != i) {\n        array[index] ^= array[i];\n        array[i] ^= array[index];\n        array[index] ^= array[i];\n    }\n}'
-p330
+p329
 aS'int index, temp;\nRandom random = new Random();\nfor (int i = array.length - 1; i > 0; i--) {\n    index = random.nextInt(i + 1);\n    temp = array[index];\n    array[index] = array[i];\n    array[i] = temp;\n}'
-p331
+p330
 aS'Collections.shuffle(solution);'
-p332
-atp333
-Rp334
+p331
+atp332
+Rp333
 sI867194
 g1
-((lp335
+((lp334
 S'if (!resultSet.isBeforeFirst()) {\n}'
-p336
+p335
 aS'if (!resultSet.next()) {\n}'
-p337
-atp338
-Rp339
+p336
+atp337
+Rp338
 sI2310139
 g1
-((lp340
+((lp339
 S'XMLReader myReader = XMLReaderFactory.createXMLReader();\nmyReader.setContentHandler(handler);\nmyReader.parse(new InputSource(new URL(url).openStream()));'
-p341
+p340
 aS'URL url = new URL(urlString);\nURLConnection conn = url.openConnection();\nDocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();\nDocumentBuilder builder = factory.newDocumentBuilder();\nDocument doc = builder.parse(conn.getInputStream());'
-p342
+p341
 aS'DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();\nDocumentBuilder db = dbf.newDocumentBuilder();\nDocument doc = db.parse(new URL(url).openStream());'
-p343
-atp344
-Rp345
+p342
+atp343
+Rp344
 sI454908
 g1
-((lp346
+((lp345
 S'String[] lines = string.split("\\\\r?\\\\n");'
-p347
+p346
 aS'String.split("[\\\\r\\\\n]+");'
-p348
-atp349
-Rp350
+p347
+atp348
+Rp349
 sI12678781
 g1
-((lp351
+((lp350
 S'for (i = 0; i < array.length / 2; i++) {\n    int temp = array[i];\n    array[i] = array[array.length - 1 - i];\n    array[array.length - 1 - i] = temp;\n}'
-p352
+p351
 aS'Collections.reverse(list);'
-p353
+p352
 aS'Collections.reverse(Arrays.asList(array));'
-p354
-atp355
-Rp356
+p353
+atp354
+Rp355
 s.

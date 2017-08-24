@@ -32,20 +32,27 @@ def normalize_code(code, log_file=None):
         return None
 
 
-normalize_code_response = normalize_code
-
 print_pattern = re.compile('(if|while|for).*\n(    )+System\.out\.println.*;\n\}$')
+# normalize_code_response = normalize_code
+def normalize_code_response(code):
+    try:
+        normalized_code = parser.parseCodeWithMetaInfo(code)
+        if normalized_code:
+            m = print_pattern.search(normalized_code.value)
+            if m:
+                new_code = '\n'.join(normalized_code.value.split('\n')[:-2])
+                new_code += '}'
+                normalized_code = normalize_code_with_meta(new_code)
+            if normalized_code:
+                return normalized_code.value
+    except Exception as ex:
+        print code
+
+    return None
+
+
 def normalize_code_with_meta(code):
-    normalized_code = parser.parseCodeWithMetaInfo(code)
-    if normalized_code:
-        m = print_pattern.search(normalized_code.value)
-        if m:
-            new_code = '\n'.join(normalized_code.value.split('\n')[:-2])
-            new_code += '}'
-            normalized_code = normalize_code_with_meta(new_code)
-
-    return normalized_code
-
+    return parser.parseCodeWithMetaInfo(code)
 
 
 def get_function_body(parsed_code):

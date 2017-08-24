@@ -43,7 +43,7 @@ annotations = [(post_id, json.loads(annotation_json)) for post_id, annotation_js
 
 #filter out all the annotations which were marked as not_sure
 confident_annotations = [(post_id, annotation) for post_id, annotation in annotations if not annotation['notSure']]
-confident_annotations = [(post_id, annotation) for post_id, annotation in annotations if annotation['username'] != u'williamq']
+confident_annotations = [(post_id, annotation) for post_id, annotation in confident_annotations if annotation['username'] != u'williamq']
 
 #since we only considered the top 3 answers, but in the database, we stored all the
 #answers for a post, here we just extract all the answer_id which were showed to user

@@ -106,6 +106,27 @@ def get_score_feature(score=None, all_feat=False):
         return 'post_score_>50'
 
 
+def get_line_num_feature(num_lines=None, all_feat=False):
+    if all_feat:
+        return ['num_lines=0', 'num_lines=1', 'num_lines=2', 'num_lines=3', 'num_lines<=5', 'num_lines<=10', 'num_lines<=15', 'num_lines>15']
+    if num_lines == 0:
+        return 'num_lines=0'
+    elif num_lines == 1:
+        return 'num_lines=1'
+    elif num_lines == 2:
+        return 'num_lines=2'
+    elif num_lines == 3:
+        return 'num_lines=3'
+    elif num_lines <= 5:
+        return 'num_lines<=5'
+    elif num_lines <= 10:
+        return 'num_lines<=10'
+    elif num_lines <= 15:
+        return 'num_lines<=15'
+    else:
+        return 'num_lines>15'
+
+
 #generate float vector feature for every candidate
 def generate_x_y(question_id, question_entry, pos_set):
     examples = []
@@ -130,6 +151,10 @@ def generate_x_y(question_id, question_entry, pos_set):
                     features['ll_nl2code_norm'] = features['ll_nl2code'] / code_len
                     features['ll_code2nl_norm'] = features['ll_code2nl'] / question_len
 
+                    num_lines = len(code.split('\n'))
+                    features['num_lines'] = num_lines
+                    features[get_line_num_feature(num_lines)] = 1
+
                     features['post_rank_%d' % post_rank] = 1
                     features[get_score_feature(post_score)] = 1
                     features['accepted_ans'] = question_entry['accepted_answer_post_id'] == post_id
@@ -139,6 +164,8 @@ def generate_x_y(question_id, question_entry, pos_set):
                     features['accepted_ans && only_snippet'] = features['accepted_ans'] and features['only_snippet']
                     features['accepted_ans && only_snippet && whole_block'] = features['accepted_ans'] and features['only_snippet'] and features['whole_block']
                     features['!start_with_assign && end_of_block'] = (not features['start_with_assign']) and features['end_of_block']
+                    features['start_with_assign && num_lines=1'] = features['start_with_assign'] and num_lines == 1
+                    features['!start_with_assign && num_lines=1'] = (not features['start_with_assign']) and num_lines == 1
 
                     label = is_annotated(code, pos_set[question_id])
                     examples.append({'code': code, 'features': features,
@@ -251,7 +278,7 @@ for question_id, question in questions.iteritems():
 
 
 full_features = ['ll_nl2code', 'll_code2nl',
-                 # 'll_nl2code_norm', 'll_code2nl_norm',
+                 'll_nl2code_norm', 'll_code2nl_norm',
                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
@@ -261,32 +288,38 @@ full_features = ['ll_nl2code', 'll_code2nl',
                  'whole_block', 'start_with_assign',
                  'single_value', 'contains_import',
                  'accepted_ans', 'only_snippet',
-                 'accepted_ans && only_snippet',
-                 # 'accepted_ans && only_snippet && whole_block',
-                 # '!start_with_assign && end_of_block',
+                 # 'accepted_ans && only_snippet',
+                 'accepted_ans && only_snippet && whole_block',
+                 '!start_with_assign && end_of_block',
+                 # 'start_with_assign && num_lines=1',
+                 '!start_with_assign && num_lines=1',
+                 # 'num_lines',
                  'post_rank_0', 'post_rank_1', 'post_rank_2'
-                 ] # + get_score_feature(all_feat=True)
+                 ] + get_line_num_feature(all_feat=True) # + get_score_feature(all_feat=True)
 
 features_name_pos_map = {name: pos for pos, name in enumerate(full_features)}
 
-semi_features = ['ll_nl2code', 'll_code2nl',
-                 'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
-                 # 'll_nl2code_norm', 'll_code2nl_norm',
-                 #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
+semi_features = [ 'll_nl2code', 'll_code2nl',
+                  'll_nl2code_norm', 'll_code2nl_norm',
+                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
+                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
                  #'ll_page_max_zscore', 'll_page_min_zscore',
-                 'll_max', 'll_min',
+                  'll_max', 'll_min',
                  ]
 
 binary_features = ['start_of_block', 'end_of_block',
                    'whole_block', 'start_with_assign',
                    'single_value', 'contains_import',
                    'accepted_ans', 'only_snippet',
-                   'accepted_ans && only_snippet',
-                   # 'accepted_ans && only_snippet && whole_block',
-                   # '!start_with_assign && end_of_block',
+                   # 'accepted_ans && only_snippet',
+                   'accepted_ans && only_snippet && whole_block',
+                   '!start_with_assign && end_of_block',
+                   # 'start_with_assign && num_lines=1',
+                   '!start_with_assign && num_lines=1',
+                   # 'num_lines',
                    'post_rank_0', 'post_rank_1', 'post_rank_2'
-                   ] # + get_score_feature(all_feat=True)
+                   ] + get_line_num_feature(all_feat=True) # + get_score_feature(all_feat=True)
 
 
 def to_feature_vector(feature_map, feature_names):
@@ -313,14 +346,16 @@ folds = KFold(n_splits=fold_num, shuffle=True, random_state=123).split(post_list
 all_examples = list(chain(*page_examples_map.values()))
 
 full_feature_X = to_feature_vector([e['features'] for e in all_examples], full_features)
-_full_feature_scaler = preprocessing.MinMaxScaler().fit(full_feature_X[:, :2])
-full_feature_scaler = lambda x:x # lambda f: np.concatenate([_full_feature_scaler.transform(f[:, :2]), f[:, 2:]], axis=1)
+_full_feature_scaler = preprocessing.StandardScaler().fit(full_feature_X[:, :])
+full_feature_scaler = lambda f: f # _full_feature_scaler.transform(f) # lambda f: np.concatenate([_full_feature_scaler.transform(f[:, :8]), f[:, 8:]], axis=1)
 
-# semi_feature_X = to_feature_vector([e['features'] for e in all_examples], semi_features)
-semi_feature_scaler = lambda x: x# full_feature_scaler
+semi_feature_X = to_feature_vector([e['features'] for e in all_examples], semi_features)
+_semi_feature_scaler = preprocessing.StandardScaler().fit(semi_feature_X[:, :])
+semi_feature_scaler = lambda f: f # _semi_feature_scaler.transform(f)
 
-# bin_feature_X = to_feature_vector([e['features'] for e in all_examples], binary_features)
-bin_feature_scaler = lambda x: x # preprocessing.MinMaxScaler().fit(bin_feature_X)
+bin_feature_X = to_feature_vector([e['features'] for e in all_examples], binary_features)
+_bin_feature_scaler = preprocessing.StandardScaler().fit(bin_feature_X[:, :])
+bin_feature_scaler = lambda f: f # _bin_feature_scaler.transform(f)
 
 for fold_id, (train_set, test_set) in enumerate(folds, start=1):
 
@@ -356,7 +391,7 @@ for fold_id, (train_set, test_set) in enumerate(folds, start=1):
                                                                                len(train_y) - sum(train_y))
     print '[Fold %d] test questions ids: ' % fold_id, [post_list[i][0] for i in test_set]
 
-    classifier = LogisticRegression(C=0.1)
+    classifier = LogisticRegression(C=.8)
     # classifier = SVC(probability=True, C=0.5, class_weight={1: sum(train_y) * 1.0 / (len(train_y) - sum(train_y))})
     # classifier = MLPClassifier(hidden_layer_sizes=(30, ))
 
