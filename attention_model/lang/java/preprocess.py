@@ -4,9 +4,11 @@ import re
 import sqlite3
 from HTMLParser import HTMLParser
 from collections import defaultdict
+from itertools import chain
 
 import numpy as np
 
+from lang.java.lm_model.java_tokenize import tokenize_code
 from lang.java.parse_java import normalize_code, parse_annotated_code
 
 sqlite_file = 'store_java.db'
@@ -38,12 +40,12 @@ for post_id, parent_id, score in query('select id, parent_id, score from post wh
 
 
 #get all the user annotations (saved in json format), note that for one post there maybe multiple annotations
-annotations = [(post_id, json.loads(annotation_json)) for post_id, annotation_json in query('select post_id, annotation_json from annotation')]
+annotations = [(post_id, json.loads(annotation_json)) for post_id, annotation_json in query('select post_id, annotation_json from annotation where user_id <> 3')]
 
 
 #filter out all the annotations which were marked as not_sure
 confident_annotations = [(post_id, annotation) for post_id, annotation in annotations if not annotation['notSure']]
-confident_annotations = [(post_id, annotation) for post_id, annotation in confident_annotations if annotation['username'] != u'williamq']
+# confident_annotations = [(post_id, annotation) for post_id, annotation in confident_annotations if annotation['username'] != u'williamq']
 
 #since we only considered the top 3 answers, but in the database, we stored all the
 #answers for a post, here we just extract all the answer_id which were showed to user
@@ -127,7 +129,10 @@ def parse_selection(post_id, selection, is_code):
 def parse_selections(post_id, selections, is_code=True):
     if selections is None:
         return []
-    return [parse_selection(post_id, s, is_code) for s in selections if not s['target'].startswith('comment')]
+    for s in selections:
+        if s['html'] is None or len(s['html']) == 0:
+            print 'html error!!!'
+    return [parse_selection(post_id, s, is_code) for s in selections if not s['target'].startswith('comment') and s['html']]
 
 
 #parse annotation record
@@ -233,30 +238,27 @@ print failed_count, passed_count
 filter_out_questions = {a['post_id'] for a in failed_list}
 print filter_out_questions
 
-final_annotations = [a for a in final_annotations if a['post_id'] not in filter_out_questions]
-# final_annotations = [a for a in final_annotations if a not in failed_list]
-
-# normalize annotations
-for a in final_annotations:
-    a['context_ref'] = parse_annotated_code(a['context_ref'])
-    a['snippet_ref'] = parse_annotated_code(a['snippet_ref'])
-    assert a['snippet_ref']
-    a['intent_ref'] = a['intent_ref'].strip()
-
-pickle.dump(final_annotations, open('annotations.p', 'wb'))
-
+# final_annotations = [a for a in final_annotations if a['post_id'] not in filter_out_questions]
+final_annotations = [a for a in final_annotations if a not in failed_list]
 
 annotated_question_ids = {annotation['post_id'] for annotation in final_annotations}
+
+annot_is_full_block = 0.
+full_block_weired_cases = 0.
+
 # a question denotes an SO page (title + list(answer posts))
 questions = {}
 for question_id in annotated_question_ids:
     top_answer_posts = sorted(question_answer_scores[question_id], key=lambda x: -x[0])[:3]
     title = titles[question_id]
     answer_posts = []
+    question_annotations = [a for a in final_annotations if a['post_id'] == question_id]
     accepted_answer_post_id = accepted_posts[question_id] if question_id in accepted_posts else None
+    raw_snippets_set = set()
     for post_rank, (post_score, post_id) in enumerate(top_answer_posts):
         post_content = posts[post_id]
         raw_snippets = list(get_code_list([post_content]))
+        raw_snippets_set.update([s.strip() for s in raw_snippets])
         snippets = []
         for i, snippet in enumerate(raw_snippets):
             normalized_snippet = normalize_code(snippet)
@@ -266,6 +268,21 @@ for question_id in annotated_question_ids:
                 snippets.append({'code': snippet, 'is_normalized': False})
 
         answer_posts.append({'id': post_id, 'score': post_score, 'rank': post_rank, 'snippets':snippets})
+
+    for annotation in question_annotations:
+        annot_raw_snippet = annotation['snippet_ref'].strip()
+        if annot_raw_snippet in raw_snippets_set:
+            annot_is_full_block += 1.
+        else:
+            test = False
+            for raw_snippet in raw_snippets_set:
+                if annot_raw_snippet in raw_snippet:
+                    test = True
+            if not test:
+                print '++++'
+                print annot_raw_snippet, question_id
+                full_block_weired_cases += 1
+                print '++++'
 
     # normalized_snippets = set()
     # for s in answer_posts:
@@ -284,8 +301,25 @@ for question_id in annotated_question_ids:
     questions[question_id] = entry
 pickle.dump(questions, open('questions.p', 'wb'))
 
+print 'no. raw annotations: %d' % len(annotations)
+print 'no. raw questions: %d' % len(set(a[0] for a in annotations))
 print 'no. questions: %d' % len(questions)
+print 'no. answer posts: %d' % len(list(chain(*[x['answer_posts'] for x in questions.values()])))
+print 'no. code blocks: %d' % len(list(chain(*[chain(*[y['snippets'] for y in x['answer_posts']]) for x in questions.values()])))
 print 'no. annotations: %d' % len(final_annotations)
+print 'ratio of full blocks: %d/%d=%f' % (annot_is_full_block + full_block_weired_cases - 4, len(final_annotations), (annot_is_full_block + full_block_weired_cases - 4) / len(final_annotations))
+print 'ratio of annotations that has context: %f' % (len([a for a in final_annotations if a['context_ref']]) / float(len(final_annotations)))
+
+# normalize annotations
+for a in final_annotations:
+    a['context_ref'] = parse_annotated_code(a['context_ref'])
+    a['snippet_ref'] = parse_annotated_code(a['snippet_ref'])
+    assert a['snippet_ref']
+    a['intent_ref'] = a['intent_ref'].strip()
+
+print 'avg. annotated code len: %f' % (sum(len(tokenize_code(a['snippet_ref'])) for a in final_annotations) / float(len(final_annotations)))
+pickle.dump(final_annotations, open('annotations.p', 'wb'))
+
 
 #UW's baseline: extract the only code snippet from the accepted answer
 baseline = {}

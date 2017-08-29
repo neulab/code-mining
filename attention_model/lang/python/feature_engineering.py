@@ -167,6 +167,7 @@ def generate_x_y(question_id, question_entry, pos_set):
                     features['ll_code2nl'] = ll[1]
 
                     code_len = len(tokenize_code(code))
+                    features['code_len'] = code_len
                     features['ll_nl2code_norm'] = features['ll_nl2code'] / code_len
                     features['ll_code2nl_norm'] = features['ll_code2nl'] / question_len
 
@@ -567,3 +568,30 @@ for example_id in random_batch:
 
 pickle.dump((full_feature_samples, semi_feature_samples, bin_feature_samples,
              acconly_baseline_samples, allpost_baseline_samples, random_samples), open('samples.added_feat.p', 'wb'))
+
+
+# transfer learning
+all_X = np.concatenate([full_feature_train_X, full_feature_test_X], axis=0)
+all_examples = train_examples + test_examples
+py_full_feat_scaler, py_full_feat_clf = pickle.load(open('../java/all_data_full_feat_clf.java.p', 'rb'))
+predict_y = py_full_feat_clf.predict(py_full_feat_scaler.transform(all_X))
+probas_ = py_full_feat_clf.predict_proba(py_full_feat_scaler.transform(all_X))
+transfer_full_feature_samples = []
+for predict_label, prob, example in zip(predict_y, probas_, all_examples):
+    transfer_full_feature_samples.append({'example': example,
+                                          'predict_label': predict_label,
+                                          'probability': prob[1]})
+
+all_X = np.concatenate([bin_feature_train_X, bin_feature_test_X], axis=0)
+py_bin_feat_scaler, py_bin_feat_clf = pickle.load(open('../java/all_data_bin_feat_clf.java.p', 'rb'))
+predict_y = py_bin_feat_clf.predict(py_bin_feat_scaler.transform(all_X))
+probas_ = py_bin_feat_clf.predict_proba(py_bin_feat_scaler.transform(all_X))
+transfer_bin_feature_samples = []
+for predict_label, prob, example in zip(predict_y, probas_, all_examples):
+    transfer_bin_feature_samples.append({'example': example,
+                                         'predict_label': predict_label,
+                                         'probability': prob[1]})
+
+transfer_full_feature_samples = sorted(transfer_full_feature_samples, key=lambda x:-x['probability'])
+transfer_bin_feature_samples = sorted(transfer_bin_feature_samples, key=lambda x:-x['probability'])
+pickle.dump((transfer_full_feature_samples, transfer_bin_feature_samples), open('samples.transfer.p', 'wb'))

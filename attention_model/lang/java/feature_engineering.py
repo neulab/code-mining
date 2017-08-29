@@ -90,7 +90,7 @@ print 'num. contiguous code snippets: ', sum(map(len, candidates.values()))
 
 
 #load bi_likelihood feature for candidates
-bi_likelihood = pickle.load(open('lm_model/bi_likelihood.no_len_normalization.p', 'rb'))
+bi_likelihood = pickle.load(open('lm_model/bi_likelihood.no_len_normalization.0824.rnn512.p', 'rb'))  # bi_likelihood.no_len_normalization.p
 
 
 def get_score_feature(score=None, all_feat=False):
@@ -148,6 +148,7 @@ def generate_x_y(question_id, question_entry, pos_set):
                     features['ll_code2nl'] = ll[1]
 
                     code_len = len(tokenize_code(code))
+                    features['code_len'] = code_len
                     features['ll_nl2code_norm'] = features['ll_nl2code'] / code_len
                     features['ll_code2nl_norm'] = features['ll_code2nl'] / question_len
 
@@ -282,9 +283,9 @@ for question_id, question in questions.iteritems():
 
 
 full_features = ['ll_nl2code', 'll_code2nl',
-                 'll_nl2code_norm', 'll_code2nl_norm',
+                  'll_nl2code_norm', 'll_code2nl_norm',
                  'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
-                 #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
+                 # 'll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
                  #'ll_page_max_zscore', 'll_page_min_zscore',
                  'll_max', 'll_min',
@@ -306,7 +307,7 @@ features_name_pos_map = {name: pos for pos, name in enumerate(full_features)}
 semi_features = [ 'll_nl2code', 'll_code2nl',
                   'll_nl2code_norm', 'll_code2nl_norm',
                   'll_page_zscore_nl2code', 'll_page_zscore_code2nl',
-                  #'ll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
+                 # 'll_snippet_zscore_nl2code', 'll_snippet_zscore_code2nl',
                  #'ll_answer_post_zscore_nl2code', 'll_answer_post_zscore_code2nl',
                  #'ll_page_max_zscore', 'll_page_min_zscore',
                   'll_max', 'll_min',
@@ -351,7 +352,7 @@ all_examples = list(chain(*page_examples_map.values()))
 
 full_feature_X = to_feature_vector([e['features'] for e in all_examples], full_features)
 _full_feature_scaler = preprocessing.StandardScaler().fit(full_feature_X[:, :])
-full_feature_scaler = lambda f: f # _full_feature_scaler.transform(f) # lambda f: np.concatenate([_full_feature_scaler.transform(f[:, :8]), f[:, 8:]], axis=1)
+full_feature_scaler = lambda f: f #_full_feature_scaler.transform(f) # lambda f: np.concatenate([_full_feature_scaler.transform(f[:, :8]), f[:, 8:]], axis=1)
 
 semi_feature_X = to_feature_vector([e['features'] for e in all_examples], semi_features)
 _semi_feature_scaler = preprocessing.StandardScaler().fit(semi_feature_X[:, :])
@@ -395,7 +396,7 @@ for fold_id, (train_set, test_set) in enumerate(folds, start=1):
                                                                                len(train_y) - sum(train_y))
     print '[Fold %d] test questions ids: ' % fold_id, [post_list[i][0] for i in test_set]
 
-    classifier = LogisticRegression(C=10)
+    classifier = LogisticRegression(C=50)
     # classifier = SVC(probability=True, C=0.5, class_weight={1: sum(train_y) * 1.0 / (len(train_y) - sum(train_y))})
     # classifier = MLPClassifier(hidden_layer_sizes=(30, ))
 
@@ -553,6 +554,31 @@ for example_id in random_batch:
 
 pickle.dump((full_feature_samples, semi_feature_samples, bin_feature_samples,
              acconly_baseline_samples, allpost_baseline_samples, random_samples), open('samples.added_feat.p', 'wb'))
+
+
+# we then train a classifier on the whole dataset
+train_X = np.concatenate([full_feature_train_X, full_feature_test_X], axis=0)
+train_y = np.concatenate([train_y, test_y], axis=0)
+scaler = preprocessing.StandardScaler().fit(train_X)
+all_data_full_feat_clf = classifier.fit(scaler.fit_transform(train_X), train_y)
+pickle.dump((scaler, all_data_full_feat_clf), open('all_data_full_feat_clf.java.p', 'wb'))
+
+print '*' * 10 + ' all data: full feature weights ' + '*' * 10
+with open('all_data_full_feat_clf.weights.txt', 'w') as f:
+    for feat_name, feat_weight in zip(full_features, all_data_full_feat_clf.coef_.flatten()):
+        print feat_name, feat_weight
+        f.write('%s\t%f\n' % (feat_name, feat_weight))
+
+train_X = np.concatenate([bin_feature_train_X, bin_feature_test_X], axis=0)
+scaler = preprocessing.StandardScaler().fit(train_X)
+all_data_bin_feat_clf = classifier.fit(scaler.fit_transform(train_X), train_y)
+pickle.dump((scaler, all_data_full_feat_clf), open('all_data_bin_feat_clf.java.p', 'wb'))
+
+print '*' * 10 + ' all data: binary feature weights ' + '*' * 10
+with open('all_data_bin_feat_clf.weights.txt', 'w') as f:
+    for feat_name, feat_weight in zip(binary_features, all_data_bin_feat_clf.coef_.flatten()):
+        print feat_name, feat_weight
+        f.write('%s\t%f\n' % (feat_name, feat_weight))
 
 
 # transfer learning

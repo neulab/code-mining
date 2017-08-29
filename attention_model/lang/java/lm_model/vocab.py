@@ -63,7 +63,7 @@ def read_data(path):
     with open(path, 'r') as f:
         # csv_data = csv.reader(data, dialect=csv.excel_tab, delimiter='\t')
         for line in f:
-            # try:
+            try:
                 row = line.split('\t')
                 qid = int(row[0])
                 rid = int(row[1])
@@ -77,9 +77,9 @@ def read_data(path):
                 tokenzied_code = [(token_type, token_literal) for token_type, token_literal in tokenize_code(code) if token_type not in SKIP_TOKENS]
                 tokenized_nl_list.append(nl)
                 tokenized_code_list.append(tokenzied_code)
-            # except:
-            #     print 'error loading data: ', row, path
-            #     continue
+            except:
+                print 'error loading data: ', row, path
+                continue
 
     return tokenized_nl_list, tokenized_code_list
 
