@@ -513,7 +513,14 @@ train_X = np.concatenate([full_feature_train_X, full_feature_test_X], axis=0)
 train_y = np.concatenate([train_y, test_y], axis=0)
 scaler = preprocessing.StandardScaler().fit(train_X)
 all_data_full_feat_clf = classifier.fit(scaler.fit_transform(train_X), train_y)
+
 pickle.dump((scaler, all_data_full_feat_clf), open('all_data_full_feat_clf.py.p', 'wb'))
+
+# train a classifier on full model without scaling
+# train_X = np.concatenate([full_feature_train_X, full_feature_test_X], axis=0)
+# train_y = np.concatenate([train_y, test_y], axis=0)
+# all_data_full_feat_clf = classifier.fit(scaler.fit_transform(train_X), train_y)
+# pickle.dump((scaler, all_data_full_feat_clf), open('all_data_full_feat_clf.py.p', 'wb'))
 
 print '*' * 10 + ' all data: full feature weights ' + '*' * 10
 with open('all_data_full_feat_clf.weights.txt', 'w') as f:

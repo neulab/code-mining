@@ -3,7 +3,7 @@ import pickle
 import re
 import sqlite3
 from HTMLParser import HTMLParser
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from itertools import chain
 
 import numpy as np
@@ -142,6 +142,7 @@ def parse_annotation(post_id, annotation):
         'intent': parse_selections(post_id, annotation['question'], is_code=False),
         'context': parse_selections(post_id, annotation['context']),
         'snippet': parse_selections(post_id, annotation['snippet']),
+        'rewritten_intent': a['intent'].strip()
     }
 
 
@@ -177,6 +178,7 @@ error_count = 0
 for a in parsed_confident_annotations:
     aa = {
         'post_id': a['post_id'],
+        'rewritten_intent': a['rewritten_intent'],
         'intent_ref': '\n'.join(unescape(text) for _, text, _ in a['intent']),
         'context_ref': '\n'.join(unescape(text) if text.strip() == text_ref.strip() else unescape(text_ref) for _, text, text_ref in a['context']),
         'snippet_ref': '\n'.join(unescape(text) if text.strip() == text_ref.strip() else unescape(text_ref) for _, text, text_ref in a['snippet']),
@@ -242,6 +244,22 @@ print filter_out_questions
 final_annotations = [a for a in final_annotations if a not in failed_list]
 
 annotated_question_ids = {annotation['post_id'] for annotation in final_annotations}
+
+# dump our annotation
+published_annotations = defaultdict(list)
+for annot in final_annotations:
+    question_id = annot['post_id']
+    title = titles[question_id]
+    published_annotations[question_id].append(OrderedDict([
+        ('intent', annot['intent_ref'].strip()),
+        ('rewritten_intent', annot['rewritten_intent'].strip()),
+        ('context', annot['context_ref']),
+        ('code_snippet', annot['snippet_ref']),
+    ]))
+published_annotations = map(lambda (k, v): OrderedDict([('question_id', k), ('title', titles[k]), ('annotations', v)]),
+                            published_annotations.iteritems())
+json.dump(published_annotations, open('java.labeled', 'w'), indent=4)
+
 
 annot_is_full_block = 0.
 full_block_weired_cases = 0.

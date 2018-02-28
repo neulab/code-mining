@@ -3,7 +3,7 @@ import pickle
 import re
 import sqlite3
 from HTMLParser import HTMLParser
-from collections import defaultdict
+from collections import defaultdict, OrderedDict
 from itertools import chain
 
 import numpy as np
@@ -46,12 +46,15 @@ annotations = [(post_id, json.loads(annotation_json)) for post_id, annotation_js
 #filter out all the annotations which were marked as not_sure
 confident_annotations = [(post_id, annotation) for post_id, annotation in annotations if not annotation['notSure']]
 
-
 #since we only considered the top 3 answers, but in the database, we stored all the
 #answers for a post, here we just extract all the answer_id which were showed to user
 annotated_questions = {}
 for post_id, annotation in confident_annotations:
     annotated_questions[post_id] = set(sorted(question_answer_scores[post_id], key=lambda x:-x[0])[:3])
+
+with open('pre_annotated_questions.txt', 'w') as f:
+    for qid in annotated_questions:
+        f.write('%d\n' % qid)
 
 
 #get char-based offsets i.e (start_of_code_snippet, end_of_code_snippet) for all
@@ -139,6 +142,7 @@ def parse_annotation(post_id, annotation):
         'intent': parse_selections(post_id, annotation['question'], is_code=False),
         'context': parse_selections(post_id, annotation['context']),
         'snippet': parse_selections(post_id, annotation['snippet']),
+        'rewritten_intent': a['intent'].strip()
     }
 
 
@@ -174,6 +178,7 @@ error_count = 0
 for a in parsed_confident_annotations:
     aa = {
         'post_id': a['post_id'],
+        'rewritten_intent': a['rewritten_intent'],
         'intent_ref': '\n'.join(unescape(text) for _, text, _ in a['intent']),
         'context_ref': '\n'.join(unescape(text) if text.strip() == text_ref.strip() else unescape(text_ref) for _, text, text_ref in a['context']),
         'snippet_ref': '\n'.join(unescape(text) if text.strip() == text_ref.strip() else unescape(text_ref) for _, text, text_ref in a['snippet']),
@@ -236,8 +241,84 @@ print filter_out_questions
 final_annotations = [a for a in final_annotations if a['post_id'] not in filter_out_questions]
 annotated_question_ids = {annotation['post_id'] for annotation in final_annotations}
 
+# dump our annotation
+published_annotations = defaultdict(list)
+for annot in final_annotations:
+    question_id = annot['post_id']
+    title = titles[question_id]
+    published_annotations[question_id].append(OrderedDict([
+        ('intent', annot['intent_ref'].strip()),
+        ('rewritten_intent', annot['rewritten_intent'].strip()),
+        ('context', annot['context_ref']),
+        ('code_snippet', annot['snippet_ref']),
+    ]))
+published_annotations = map(lambda (k, v): OrderedDict([('question_id', k), ('title', titles[k]), ('annotations', v)]),
+                            published_annotations.iteritems())
+json.dump(published_annotations, open('python.labeled', 'w'), indent=4)
+
 annot_is_full_block = 0.
 full_block_weired_cases = 0.
+
+
+# a question denotes an SO page (title + list(answer posts))
+questions = []
+
+
+for question_id in annotated_question_ids:
+    top_answer_posts = sorted(question_answer_scores[question_id], key=lambda x: -x[0])[:3]
+    title = titles[question_id]
+    answer_posts = []
+    question_annotations = [a for a in final_annotations if a['post_id'] == question_id]
+    accepted_answer_post_id = accepted_posts[question_id] if question_id in accepted_posts else None
+    raw_snippets_set = set()
+    for post_rank, (post_score, post_id) in enumerate(top_answer_posts):
+        post_content = posts[post_id]
+        raw_snippets = list(get_code_list([post_content]))
+        raw_snippets_set.update([s.strip() for s in raw_snippets])
+        snippets = []
+        for i, snippet in enumerate(raw_snippets):
+            # normalized_snippet = normalize_code(snippet)
+            # if normalized_snippet and len(normalized_snippet) > 0:
+            #     snippets.append({'code': normalized_snippet, 'is_normalized': True})
+            # else:
+            snippets.append(snippet)
+
+        answer_posts.append({'id': post_id, 'score': post_score, 'rank': post_rank, 'snippets': snippets})
+
+    for annotation in question_annotations:
+        annot_raw_snippet = annotation['snippet_ref'].strip()
+        if annot_raw_snippet in raw_snippets_set:
+            annot_is_full_block += 1.
+        else:
+            test = False
+            for raw_snippet in raw_snippets_set:
+                if annot_raw_snippet in raw_snippet:
+                    test = True
+            if not test:
+                print '++++'
+                print annot_raw_snippet, question_id
+                full_block_weired_cases += 1
+                print '++++'
+
+    # normalized_snippets = set()
+    # for s in answer_posts:
+    #     ss = normalize_code(s)
+    #     if ss:
+    #         normalized_snippets.add(ss)
+    #     else:
+    #         normalized_snippets.add(s)
+
+
+
+    entry = {
+        'id': question_id,
+        'title': title,
+        'accepted_answer_post_id': accepted_answer_post_id,
+        'answer_posts': answer_posts
+    }
+
+    questions.append(entry)
+json.dump(questions, open('questions.py.first_annot.json', 'w'), indent=2)
 
 # a question denotes an SO page (title + list(answer posts))
 questions = {}

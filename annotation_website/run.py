@@ -17,7 +17,6 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from sqlitedict import SqliteDict
 from collections import defaultdict
 
-
 class User(object):
 
     def __init__(self, email, password, name):
@@ -61,6 +60,12 @@ action2decision = {'save': 'Saved', 'discard': 'Discarded', 'skip': 'Skipped'}
 
 SUPER_USER_EMAIL = 'conala@cs.cmu.edu'
 
+# get shared examples to annotate
+shared_tasks = set()
+for line in open('shared_tasks.tsv'):
+    question_id, answer_id, rank = [int(d) for d in line.strip().split()[:3]]
+    shared_tasks.add((question_id, answer_id, rank))
+
 if SUPER_USER_EMAIL not in users:
     users[SUPER_USER_EMAIL] = User(SUPER_USER_EMAIL, 'test123', 'Admin')
 
@@ -90,10 +95,41 @@ def get_annotations(email, cache={}):
     return cache[email]
 
 def get_next_task(email, max_rank):
+    # get all currently annotated data
+    annotations = get_annotations(email)
+    annotated_data = set([(question_id, answer_id, rank) for (question_id, answer_id, rank), _ in annotations.itervalues()])
+
+    # read in common tasks that have not been annotated yet
+    remaining_shared_tasks = shared_tasks - annotated_data
+    if remaining_shared_tasks:
+        return list(remaining_shared_tasks)[0]
+    else:
+        return get_next_unshared_task(email, max_rank)
+
+    # tasks = sqlite3.connect('tasks.sqlite')
+    # try:
+    #     now = int(time.time())
+    #     watermark = now - 5 * 60
+    #     cursor = tasks.cursor()
+    #     cursor.execute('''
+    #         SELECT
+    #             `question_id`,
+    #             `answer_id`,
+    #             `rank`
+    #         FROM
+    #             `tasks`
+    #         ''')
+    #     all_tasks = cursor.fetchall()
+    #     remaining_tasks = [x for x in all_tasks if x not in annotated_data]
+    # finally:
+    #     tasks.close()
+    # return remaining_tasks[0]
+
+def get_next_unshared_task(email, max_rank):
     tasks = sqlite3.connect('tasks.sqlite')
     try:
         now = int(time.time())
-        watermark = now - 5 * 60
+        watermark = now - 10
         cursor = tasks.cursor()
         cursor.execute('''
             SELECT
