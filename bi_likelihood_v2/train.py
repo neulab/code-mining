@@ -162,9 +162,8 @@ def main():
             epoch_cum_loss += batch_loss_value
             epoch_cum_trg_item_count += batch_trg_item_count
             epoch_cum_perplexity = math.exp(epoch_cum_loss / epoch_cum_trg_item_count)
-            if batch_id % 10 == 0:
+            if batch_id % 100 == 0:
                 logging.info('epoch %d, batch %d, batch_per_item_loss %f, epoch_cum_perplexity %f' %                              (epoch, batch_id, batch_per_item_loss, epoch_cum_perplexity))
-                break
     
         epoch_cum_perplexity = math.exp(epoch_cum_loss / epoch_cum_trg_item_count)
         logging.info('epoch %d, #training item count#\t%d' % (epoch, epoch_cum_trg_item_count))
@@ -172,17 +171,16 @@ def main():
         logging.info('epoch %d, #training per item loss#\t%f' % (epoch, epoch_cum_loss / epoch_cum_trg_item_count))
         logging.info('epoch %d, #training perplexity#\t%f' % (epoch, epoch_cum_perplexity))
         
-        # v_cum_loss, v_cum_trg_item_count = validate_loss()
-        # v_cum_perplexity = math.exp(v_cum_loss / v_cum_trg_item_count)
-        # logging.info('epoch %d, #validation item count#\t%d' % (epoch, v_cum_trg_item_count))
-        # logging.info('epoch %d, #validation total loss#\t%f' % (epoch, v_cum_loss))
-        # logging.info('epoch %d, #validation per item loss#\t%f' % (epoch, v_cum_loss / v_cum_trg_item_count))
-        # logging.info('epoch %d, #validation perplexity#\t%f' % (epoch, v_cum_perplexity))
+        v_cum_loss, v_cum_trg_item_count = validate_loss()
+        v_cum_perplexity = math.exp(v_cum_loss / v_cum_trg_item_count)
+        logging.info('epoch %d, #validation item count#\t%d' % (epoch, v_cum_trg_item_count))
+        logging.info('epoch %d, #validation total loss#\t%f' % (epoch, v_cum_loss))
+        logging.info('epoch %d, #validation per item loss#\t%f' % (epoch, v_cum_loss / v_cum_trg_item_count))
+        logging.info('epoch %d, #validation perplexity#\t%f' % (epoch, v_cum_perplexity))
         
-        # if v_cum_loss < min_v_cum_loss:
-        if True:
-            # min_v_cum_loss = v_cum_loss
-            # min_v_cum_perplexity = v_cum_perplexity
+        if v_cum_loss < min_v_cum_loss:
+            min_v_cum_loss = v_cum_loss
+            min_v_cum_perplexity = v_cum_perplexity
             dmp_name = config_name + '_model_dmp'
             model.save(dmp_name+'.data')
             with open(dmp_name+'.meta', 'wb') as f:
