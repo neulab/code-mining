@@ -11,10 +11,13 @@ import argparse
 from attention import new_nl2code_model, new_code2nl_model, load_model
 from py2_tokenize import tokenize_code
 from vocab import tokenize_nl, load_vocabs, tok_type2id, START, END, SKIP_TOKENS
+import dynet as dy
 
 import argparse
 
 parser = argparse.ArgumentParser()
+parser.add_argument('--dynet_mem', type=str)
+parser.add_argument('--dynet-gpus', type=int)
 parser.add_argument('--code2nl_prefix', help='model prefix (no extensions) for code2nl', type=str)
 parser.add_argument('--nl2code_prefix', help='model prefix (no extensions) for code2nl', type=str)
 args = parser.parse_args()
@@ -43,10 +46,10 @@ def parse_args(filename):
     return nsargs
       
 nl2code_model, nl2code_translator = new_nl2code_model(parse_args(args.nl2code_prefix+'.meta'))
-nl2code_model.populate(nl2code_prefix+'.data')
+nl2code_model.populate(args.nl2code_prefix+'.data')
 
 code2nl_model, code2nl_translator = new_code2nl_model(parse_args(args.code2nl_prefix+'.meta'))
-code2nl_model.populate(code2nl_prefix+'.data')
+code2nl_model.populate(args.code2nl_prefix+'.data')
 
 
 # In[5]:
