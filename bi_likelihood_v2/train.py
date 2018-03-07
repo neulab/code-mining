@@ -140,12 +140,7 @@ def main():
     logging.info('config: %s', args)
     logging.info('nl vocab size: %d, code vocab size: %d' % (len(nl_voc2wid), len(code_voc2wid)))
 
-    # min_v_cum_loss, v_cum_trg_item_count = validate_loss()
-    # min_v_cum_perplexity = math.exp(min_v_cum_loss / v_cum_trg_item_count)
-    # logging.info('epoch %d, #validation item count#\t%d' % (0, v_cum_trg_item_count))
-    # logging.info('epoch %d, #validation total loss#\t%f' % (0, min_v_cum_loss))
-    # logging.info('epoch %d, #validation per item loss#\t%f' % (0, min_v_cum_loss / v_cum_trg_item_count))
-    # logging.info('epoch %d, #validation perplexity#\t%f' % (0, min_v_cum_perplexity))
+    min_v_cum_loss = 1e20
     
     for epoch in count(1):
         epoch_cum_loss = 0.0
