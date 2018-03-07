@@ -12,6 +12,13 @@ from attention import new_nl2code_model, new_code2nl_model, load_model
 from py2_tokenize import tokenize_code
 from vocab import tokenize_nl, load_vocabs, tok_type2id, START, END, SKIP_TOKENS
 
+import argparse
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--code2nl_prefix', help='model prefix (no extensions) for code2nl', type=str)
+parser.add_argument('--nl2code_prefix', help='model prefix (no extensions) for code2nl', type=str)
+args = parser.parse_args()
+
 # In[16]:
 # In[4]:
 
@@ -24,7 +31,7 @@ argtypes = {'nl_vocab_size': 'int', 'nl_embed_dim': 'int',
             'code_rnn_layers': 'int', 'code_rnn_state_dim': 'int'}
 def parse_args(filename):
   with open(filename, 'r') as f:
-    args = argparse.Namespace()
+    nsargs = argparse.Namespace()
     for line in f:
       k, v = line.strip().split('\t')
       kt = argtypes.get(k[2:], 'str')
@@ -32,15 +39,13 @@ def parse_args(filename):
         v = int(v)
       elif kt == 'float':
         v = float(v)
-      setattr(args, k[2:], v)
-    return args
+      setattr(nsargs, k[2:], v)
+    return nsargs
       
-nl2code_prefix = 'nl2code_0307000201_model_dmp'
-nl2code_model, nl2code_translator = new_nl2code_model(parse_args(nl2code_prefix+'.meta'))
+nl2code_model, nl2code_translator = new_nl2code_model(parse_args(args.nl2code_prefix+'.meta'))
 nl2code_model.populate(nl2code_prefix+'.data')
 
-code2nl_prefix = 'code2nl_0307000046_model_dmp'
-code2nl_model, code2nl_translator = new_code2nl_model(parse_args(code2nl_prefix+'.meta'))
+code2nl_model, code2nl_translator = new_code2nl_model(parse_args(args.code2nl_prefix+'.meta'))
 code2nl_model.populate(code2nl_prefix+'.data')
 
 
