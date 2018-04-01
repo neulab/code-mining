@@ -1,0 +1,4016 @@
+[
+    {
+        "question_id": 3061761, 
+        "title": "Numpy array dimensions", 
+        "annotations": [
+            {
+                "intent": "Numpy array dimensions", 
+                "rewritten_intent": "get the dimensions of numpy array `a`", 
+                "context": "", 
+                "code_snippet": " a.shape\n"
+            }, 
+            {
+                "intent": "Numpy array dimensions", 
+                "rewritten_intent": "get the dimensions of numpy array `a`", 
+                "context": "import numpy as N    \n", 
+                "code_snippet": " N.shape(a)\n"
+            }, 
+            {
+                "intent": "Numpy array dimensions", 
+                "rewritten_intent": "get the dimensions of array `a`", 
+                "context": " a = [[1,2],[1,2]]\n", 
+                "code_snippet": " N.shape(a)\n"
+            }, 
+            {
+                "intent": "Numpy array dimensions", 
+                "rewritten_intent": "get the dimensions of numpy array `a`", 
+                "context": "", 
+                "code_snippet": "In [5]: a.shape\nOut[5]: (2, 2)  # both the first and second axis have 2 (columns/rows/pages/blocks/...) data\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 379906, 
+        "title": "Parse String to Float or Int", 
+        "annotations": [
+            {
+                "intent": "Parse String to Float or Int", 
+                "rewritten_intent": "parse string `a` to float", 
+                "context": "", 
+                "code_snippet": " float(a)\n"
+            }, 
+            {
+                "intent": "Parse String to Float or Int", 
+                "rewritten_intent": "Parse String `s` to Float or Int", 
+                "context": "", 
+                "code_snippet": "\n    try:\n        return int(s)\n    except ValueError:\n        return float(s)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3437059, 
+        "title": "Does Python have a string contains substring method?", 
+        "annotations": [
+            {
+                "intent": "string contains substring", 
+                "rewritten_intent": "check if \"blah\" is in string `somestring`", 
+                "context": "", 
+                "code_snippet": "if \"blah\" not in somestring: \n    "
+            }, 
+            {
+                "intent": "string contains substring", 
+                "rewritten_intent": "check if string `needle` is in `haystack`", 
+                "context": "", 
+                "code_snippet": "if needle in haystack:"
+            }, 
+            {
+                "intent": "string contains substring", 
+                "rewritten_intent": "check if string \"substring\" is in string", 
+                "context": "", 
+                "code_snippet": "string.find(\"substring\")"
+            }, 
+            {
+                "intent": "string contains substring method", 
+                "rewritten_intent": "check if string `s` contains \"is\"", 
+                "context": "s = \"This be a string\"\n", 
+                "code_snippet": "\nif s.find(\"is\") == -1:\n    print \"No 'is' here!\"\nelse:\n    print \"Found 'is' in the string.\"\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4265988, 
+        "title": "Generate random numbers with a given (numerical) distribution", 
+        "annotations": [
+            {
+                "intent": "Generate random numbers with a given (numerical) distribution", 
+                "rewritten_intent": "generate a random number in 1 to 7 with a given distribution [0.1, 0.05, 0.05, 0.2, 0.4, 0.2]", 
+                "context": "", 
+                "code_snippet": "numpy.random.choice(numpy.arange(1, 7), p=[0.1, 0.05, 0.05, 0.2, 0.4, 0.2])\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 6886493, 
+        "title": "Get all object attributes in Python?", 
+        "annotations": [
+            {
+                "intent": "Get all object attributes", 
+                "rewritten_intent": "Get all object attributes of object `obj`", 
+                "context": "\n\nobj = MyObj()\n", 
+                "code_snippet": "\nprint(obj.__dict__)\n\n"
+            }, 
+            {
+                "intent": "Get all object attributes", 
+                "rewritten_intent": "Get all object attributes of an object", 
+                "context": "", 
+                "code_snippet": "dir()"
+            }, 
+            {
+                "intent": "Get all object attributes", 
+                "rewritten_intent": "Get all object attributes of an object", 
+                "context": "", 
+                "code_snippet": "dir()"
+            }
+        ]
+    }, 
+    {
+        "question_id": 843277, 
+        "title": "How do I check if a variable exists?", 
+        "annotations": [
+            {
+                "intent": "check if a variable exists", 
+                "rewritten_intent": "check if a local variable `myVar` exists", 
+                "context": "", 
+                "code_snippet": " 'myVar' in locals()"
+            }, 
+            {
+                "intent": "check if a variable exists", 
+                "rewritten_intent": "check if a global variable `myVar` exists", 
+                "context": "", 
+                "code_snippet": " 'myVar' in globals()"
+            }, 
+            {
+                "intent": "check if a variable exists", 
+                "rewritten_intent": "check if object `obj` has attribute 'attr_name'", 
+                "context": "", 
+                "code_snippet": " hasattr(obj, 'attr_name')"
+            }, 
+            {
+                "intent": "check if a variable exists", 
+                "rewritten_intent": "check if a local variable 'myVar' exists", 
+                "context": "", 
+                "code_snippet": "if 'myVar' in locals():\n  "
+            }, 
+            {
+                "intent": "check if a variable exists", 
+                "rewritten_intent": "check if a global variable 'myVar' exists", 
+                "context": "", 
+                "code_snippet": "if 'myVar' in globals():\n  "
+            }
+        ]
+    }, 
+    {
+        "question_id": 546321, 
+        "title": "How do I calculate the date six months from the current date using the datetime Python module?", 
+        "annotations": [
+            {
+                "intent": "How do I calculate the date six months from the current date", 
+                "rewritten_intent": "get the date 6 months from today", 
+                "context": "from datetime import date\n\n\nfrom dateutil.relativedelta import relativedelta\n\n", 
+                "code_snippet": "\n\nsix_months = date.today() + relativedelta(months=+6)\n"
+            }, 
+            {
+                "intent": "How do I calculate the date six months from the current date", 
+                "rewritten_intent": "get the date 1 month from today", 
+                "context": "from datetime import date\nfrom dateutil.relativedelta import relativedelta\n\n", 
+                "code_snippet": " date(2010,12,31)+relativedelta(months=+1)\n  "
+            }, 
+            {
+                "intent": "How do I calculate the date six months from the current date", 
+                "rewritten_intent": "get the date 2 months from today", 
+                "context": "from datetime import date\nfrom dateutil.relativedelta import relativedelta\n\n", 
+                "code_snippet": " date(2010,12,31)+relativedelta(months=+2)\n  "
+            }, 
+            {
+                "intent": "calculate the date six months from the current date", 
+                "rewritten_intent": "calculate the date six months from the current date", 
+                "context": "import datetime\n", 
+                "code_snippet": "\nprint (datetime.date.today() + datetime.timedelta(6*365/12)).isoformat()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 237079, 
+        "title": "How to get file creation & modification date/times in Python?", 
+        "annotations": [
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get modified time of file `file`", 
+                "context": "import os.path, time\n", 
+                "code_snippet": " time.ctime(os.path.getmtime(file))\n"
+            }, 
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get creation time of file `file`", 
+                "context": "import os.path, time\n", 
+                "code_snippet": " time.ctime(os.path.getctime(file))\n"
+            }, 
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get modification time of file `filename`", 
+                "context": "import os\nimport datetime\n", 
+                "code_snippet": "\n    t = os.path.getmtime(filename)\n    "
+            }, 
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get modification time of file `path`", 
+                "context": "", 
+                "code_snippet": "os.path.getmtime(path)"
+            }, 
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get modified time of file `file`", 
+                "context": "", 
+                "code_snippet": "\nprint \"last modified: %s\" % time.ctime(os.path.getmtime(file))\n"
+            }, 
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get the creation time of file `file`", 
+                "context": "", 
+                "code_snippet": "\nprint \"created: %s\" % time.ctime(os.path.getctime(file))\n"
+            }, 
+            {
+                "intent": "get file creation & modification date/times in", 
+                "rewritten_intent": "get the creation time of file `path_to_file`", 
+                "context": "", 
+                "code_snippet": "\n        return os.path.getctime(path_to_file)\n    "
+            }
+        ]
+    }, 
+    {
+        "question_id": 6159900, 
+        "title": "Correct way to write line to file in Python", 
+        "annotations": [
+            {
+                "intent": "write line to file", 
+                "rewritten_intent": "write line \"hi there\" to file `f`", 
+                "context": "from __future__ import print_function\n", 
+                "code_snippet": "\nprint(\"hi there\", file=f)\n"
+            }, 
+            {
+                "intent": "write line to file", 
+                "rewritten_intent": "write line \"hi there\" to file `myfile`", 
+                "context": "", 
+                "code_snippet": "f = open('myfile','w')\n\n\nf.write('hi there\\n') \n\nf.close() "
+            }, 
+            {
+                "intent": "write line to file", 
+                "rewritten_intent": "write line \"Hello\" to file `somefile.txt`", 
+                "context": "", 
+                "code_snippet": ">>> with open('somefile.txt', 'a') as the_file:\n...     the_file.write('Hello\\n')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 899103, 
+        "title": "Writing a list to a file with Python", 
+        "annotations": [
+            {
+                "intent": "Writing a list to a file with Python", 
+                "rewritten_intent": "writing items in list `thelist` to file `thefile`", 
+                "context": "thefile = open('test.txt', 'w')", 
+                "code_snippet": "for item in thelist:\n  thefile.write(\"%s\\n\" % item)\n"
+            }, 
+            {
+                "intent": "Writing a list to a file with Python", 
+                "rewritten_intent": "writing items in list `thelist` to file `thefile`", 
+                "context": "thefile = open('test.txt', 'w')", 
+                "code_snippet": "for item in thelist:\n  print>>thefile, item\n"
+            }, 
+            {
+                "intent": "Writing a list to a file with Python", 
+                "rewritten_intent": "serialize `itemlist` to file `outfile`", 
+                "context": "import pickle\n\n", 
+                "code_snippet": "\n\npickle.dump(itemlist, outfile)\n"
+            }, 
+            {
+                "intent": "Writing a list to a file with Python", 
+                "rewritten_intent": "writing items in list `itemlist` to file `outfile`", 
+                "context": "", 
+                "code_snippet": "outfile.write(\"\\n\".join(itemlist))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3939361, 
+        "title": "Remove specific characters from a string in python", 
+        "annotations": [
+            {
+                "intent": "Remove specific characters from a string", 
+                "rewritten_intent": "Remove characters \"!@#$\" from a string `line`", 
+                "context": "", 
+                "code_snippet": " line.translate(None, '!@#$')\n"
+            }, 
+            {
+                "intent": "Remove specific characters from a string", 
+                "rewritten_intent": "Remove characters \"!@#$\" from a string `line`", 
+                "context": "import re\n", 
+                "code_snippet": "\nline = re.sub('[!@#$]', '', line)\n"
+            }, 
+            {
+                "intent": "Remove specific characters from a string", 
+                "rewritten_intent": "Remove string \"1\" from string `string`", 
+                "context": "", 
+                "code_snippet": " string.replace(\"1\",\"\")\n"
+            }, 
+            {
+                "intent": "Remove specific characters from a string", 
+                "rewritten_intent": "Remove character `char` from a string `a`", 
+                "context": " a = \"a!b@c#d$\"\n", 
+                "code_snippet": "     a = a.replace(char,\"\")\n"
+            }, 
+            {
+                "intent": "Remove specific characters from a string", 
+                "rewritten_intent": "Remove characters in `b` from a string `a`", 
+                "context": "", 
+                "code_snippet": " for char in b:\n...     a = a.replace(char,\"\")\n"
+            }, 
+            {
+                "intent": "Remove specific characters from a string", 
+                "rewritten_intent": "Remove characters in '!@#$' from a string `line`", 
+                "context": "import string\n", 
+                "code_snippet": "\nline = line.translate(string.maketrans('', ''), '!@#$')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 9001509, 
+        "title": "How can I sort a dictionary by key?", 
+        "annotations": [
+            {
+                "intent": "sort a dictionary by key", 
+                "rewritten_intent": "sort dictionary `d` by key", 
+                "context": " d = {2:3, 1:89, 4:5, 3:0}\n\n", 
+                "code_snippet": " od = collections.OrderedDict(sorted(d.items()))\n\n"
+            }, 
+            {
+                "intent": "sort a dictionary by key", 
+                "rewritten_intent": "sort a dictionary `d` by key", 
+                "context": " from collections import OrderedDict\n\n\n d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}\n\n", 
+                "code_snippet": " OrderedDict(sorted(d.items(), key=lambda t: t[0]))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2990121, 
+        "title": "How do I loop through a Python list by twos?", 
+        "annotations": [
+            {
+                "intent": "loop through a Python list by twos", 
+                "rewritten_intent": "loop through 0 to 10 with step 2", 
+                "context": "", 
+                "code_snippet": "for i in xrange(0,10,2):\n  print(i)\n"
+            }, 
+            {
+                "intent": "loop through a Python list by twos", 
+                "rewritten_intent": "loop through `mylist` with step 2", 
+                "context": "mylist = [1,2,3,4,5,6,7,8,9,10]\n", 
+                "code_snippet": "\nfor i in mylist[::2]:\n    print i"
+            }
+        ]
+    }, 
+    {
+        "question_id": 26443308, 
+        "title": "Find last occurrence of character in string Python", 
+        "annotations": [
+            {
+                "intent": "Find last occurrence of character", 
+                "rewritten_intent": "Find last occurrence of character '}' in string \"abcd}def}\"", 
+                "context": "", 
+                "code_snippet": " \"abcd}def}\".rfind('}')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4174941, 
+        "title": "How to sort a list of lists by a specific index of the inner list?", 
+        "annotations": [
+            {
+                "intent": "sort a list of lists by a specific index of the inner list", 
+                "rewritten_intent": "sort a list of lists `L` by index 2 of the inner list", 
+                "context": " from operator import itemgetter\n\n L=[[0, 1, 'f'], [4, 2, 't'], [9, 4, 'afsd']]\n", 
+                "code_snippet": " sorted(L, key=itemgetter(2))\n"
+            }, 
+            {
+                "intent": "sort a list of lists by a specific index of the inner list", 
+                "rewritten_intent": "sort a list of lists `l` by index 2 of the inner list", 
+                "context": " l = [[0, 1, 'f'], [4, 2, 't'], [9, 4, 'afsd']]\n", 
+                "code_snippet": " l.sort(key=lambda x: x[2])\n"
+            }, 
+            {
+                "intent": "sort a list of lists by a specific index", 
+                "rewritten_intent": "sort list `l` by index 2 of the item", 
+                "context": "", 
+                "code_snippet": " sorted(l, key=lambda x: x[2])\n"
+            }, 
+            {
+                "intent": "sort a list of lists by a specific index", 
+                "rewritten_intent": "sort a list of lists `list_to_sort` by indices 2,0,1 of the inner list", 
+                "context": "", 
+                "code_snippet": "sorted_list = sorted(list_to_sort, key=itemgetter(2,0,1))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3207219, 
+        "title": "How to list all files of a directory in Python", 
+        "annotations": [
+            {
+                "intent": "list all files of a directory", 
+                "rewritten_intent": "list all files of a directory `mypath`", 
+                "context": "from os import listdir\nfrom os.path import isfile, join\n", 
+                "code_snippet": "\nonlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]\n"
+            }, 
+            {
+                "intent": "list all files of a directory", 
+                "rewritten_intent": "list all files of a directory `mypath`", 
+                "context": "from os import walk\n\n", 
+                "code_snippet": "\n\nf = []\nfor (dirpath, dirnames, filenames) in walk(mypath):\n    f.extend(filenames)\n    break\n"
+            }, 
+            {
+                "intent": "list all files of a directory", 
+                "rewritten_intent": "list all \".txt\" files of a directory \"/home/adam/\"", 
+                "context": "import glob\n", 
+                "code_snippet": "\nprint glob.glob(\"/home/adam/*.txt\")\n"
+            }, 
+            {
+                "intent": "list all files of a directory", 
+                "rewritten_intent": "list all files of a directory \"somedirectory\"", 
+                "context": "import os\n", 
+                "code_snippet": "\nos.listdir(\"somedirectory\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2972212, 
+        "title": "Creating an empty list in Python", 
+        "annotations": [
+            {
+                "intent": "Creating an empty list", 
+                "rewritten_intent": "Creating an empty list `l`", 
+                "context": "", 
+                "code_snippet": "l=[]"
+            }, 
+            {
+                "intent": "Creating an empty list", 
+                "rewritten_intent": "Creating an empty list `l`", 
+                "context": "", 
+                "code_snippet": "l=list()"
+            }, 
+            {
+                "intent": "Creating an empty list", 
+                "rewritten_intent": "Creating an empty list", 
+                "context": "", 
+                "code_snippet": "list()"
+            }, 
+            {
+                "intent": "Creating an empty list", 
+                "rewritten_intent": "Creating an empty list", 
+                "context": "", 
+                "code_snippet": "[]"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3964681, 
+        "title": "Find all files in directory with extension .txt in Python", 
+        "annotations": [
+            {
+                "intent": "Find all files in directory with extension .txt", 
+                "rewritten_intent": "Find all files in directory \"/mydir\" with extension \".txt\"", 
+                "context": "import glob, os\n", 
+                "code_snippet": "\nos.chdir(\"/mydir\")\nfor file in glob.glob(\"*.txt\"):\n    print(file)\n"
+            }, 
+            {
+                "intent": "Find all files in directory with extension .txt", 
+                "rewritten_intent": "Find all files in directory \"/mydir\" with extension \".txt\"", 
+                "context": "import os\n", 
+                "code_snippet": "\nfor file in os.listdir(\"/mydir\"):\n    if file.endswith(\".txt\"):\n        print(file)\n"
+            }, 
+            {
+                "intent": "Find all files in directory with extension .txt", 
+                "rewritten_intent": "Find all files in directory \"/mydir\" with extension \".txt\"", 
+                "context": "import os\n", 
+                "code_snippet": "\nfor root, dirs, files in os.walk(\"/mydir\"):\n    for file in files:\n        if file.endswith(\".txt\"):\n             print(os.path.join(root, file))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1514553, 
+        "title": "How to declare an array in Python?", 
+        "annotations": [
+            {
+                "intent": "declare an array", 
+                "rewritten_intent": "declare an array `variable`", 
+                "context": "", 
+                "code_snippet": "variable = []\n"
+            }, 
+            {
+                "intent": "declare an array", 
+                "rewritten_intent": "declare an array with element 'i'", 
+                "context": "from array import array\n", 
+                "code_snippet": "\nintarray = array('i')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 21887754, 
+        "title": "numpy concatenate two arrays vertically", 
+        "annotations": [
+            {
+                "intent": "numpy concatenate two arrays vertically", 
+                "rewritten_intent": "numpy concatenate two arrays `a` and `b` along the first axis", 
+                "context": "a = np.array([[1,5,9],[2,6,10]])\nb = np.array([[3,7,11],[4,8,12]])\n", 
+                "code_snippet": "print concatenate((a,b),axis=0)\n"
+            }, 
+            {
+                "intent": "numpy concatenate two arrays vertically", 
+                "rewritten_intent": "numpy concatenate two arrays `a` and `b` along the second axis", 
+                "context": "a = np.array([[1,5,9],[2,6,10]])\nb = np.array([[3,7,11],[4,8,12]])\n", 
+                "code_snippet": "print concatenate((a,b),axis=1)\n"
+            }, 
+            {
+                "intent": "numpy concatenate two arrays vertically", 
+                "rewritten_intent": "numpy concatenate two arrays `a` and `b` along the first axis", 
+                "context": "import numpy as np\na = np.array([1,2,3])\nb = np.array([4,5,6])\n", 
+                "code_snippet": "\nc = np.r_[a[None,:],b[None,:]]\n"
+            }, 
+            {
+                "intent": "numpy concatenate two arrays vertically", 
+                "rewritten_intent": "numpy concatenate two arrays `a` and `b` along the first axis", 
+                "context": "a = np.array([1,2,3])\nb = np.array([4,5,6])\n", 
+                "code_snippet": "\nnp.array((a,b))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 13571134, 
+        "title": "How to recursively go through all subdirectories and read files?", 
+        "annotations": [
+            {
+                "intent": "recursively go through all subdirectories and read files", 
+                "rewritten_intent": "recursively go through all subdirectories and files in `rootdir`", 
+                "context": "", 
+                "code_snippet": "\n    for root, subFolders, files in os.walk(rootdir):\n        "
+            }
+        ]
+    }, 
+    {
+        "question_id": 2612802, 
+        "title": "How to clone or copy a list?", 
+        "annotations": [
+            {
+                "intent": "copy a list", 
+                "rewritten_intent": "copy list `old_list` as `new_list`", 
+                "context": "", 
+                "code_snippet": "new_list = old_list[:]\n"
+            }, 
+            {
+                "intent": "copy a list", 
+                "rewritten_intent": "copy list `old_list` as `new_list`", 
+                "context": "", 
+                "code_snippet": "new_list = list(old_list)\n"
+            }, 
+            {
+                "intent": "copy a list", 
+                "rewritten_intent": "copy list `old_list` as `new_list`", 
+                "context": "import copy\n", 
+                "code_snippet": "\nnew_list = copy.copy(old_list)\n"
+            }, 
+            {
+                "intent": "copy a list", 
+                "rewritten_intent": "deep copy list `old_list` as `new_list`", 
+                "context": "import copy\n", 
+                "code_snippet": "\nnew_list = copy.deepcopy(old_list)\n"
+            }, 
+            {
+                "intent": "copy a list", 
+                "rewritten_intent": "make a copy of list `old_list`", 
+                "context": "", 
+                "code_snippet": "[i for i in old_list]"
+            }
+        ]
+    }, 
+    {
+        "question_id": 610883, 
+        "title": "How to know if an object has an attribute in Python", 
+        "annotations": [
+            {
+                "intent": "know if an object has an attribute", 
+                "rewritten_intent": "check if object `a` has property 'property'", 
+                "context": "", 
+                "code_snippet": "if hasattr(a, 'property'):\n    "
+            }, 
+            {
+                "intent": "know if an object has an attribute", 
+                "rewritten_intent": "check if object `a` has property 'property'", 
+                "context": "", 
+                "code_snippet": "if hasattr(a, 'property'):\n    "
+            }, 
+            {
+                "intent": "know if an object has an attribute", 
+                "rewritten_intent": "get the value of attribute 'property' of object `a` with default value 'default value'", 
+                "context": "", 
+                "code_snippet": "getattr(a, 'property', 'default value')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 402504, 
+        "title": "How to determine the variable type in Python?", 
+        "annotations": [
+            {
+                "intent": "determine the variable type", 
+                "rewritten_intent": "get the type of `i`", 
+                "context": "", 
+                "code_snippet": " type(i)\n"
+            }, 
+            {
+                "intent": "determine the variable type", 
+                "rewritten_intent": "determine the type of variable `v`", 
+                "context": " v = 10\n", 
+                "code_snippet": " type(v)\n"
+            }, 
+            {
+                "intent": "determine the variable type", 
+                "rewritten_intent": "determine the type of variable `v`", 
+                "context": " v = 100000000000000\n", 
+                "code_snippet": " type(v)\n"
+            }, 
+            {
+                "intent": "determine the variable type", 
+                "rewritten_intent": "determine the type of variable `v`", 
+                "context": " v = -10\n", 
+                "code_snippet": " type(v)\n"
+            }, 
+            {
+                "intent": "determine the variable type", 
+                "rewritten_intent": "determine the type of variable `v`", 
+                "context": " v = 'hi'\n", 
+                "code_snippet": " type(v)\n"
+            }, 
+            {
+                "intent": "determine the variable type", 
+                "rewritten_intent": "get the type of variable `variable_name`", 
+                "context": "", 
+                "code_snippet": "print type(variable_name)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 275018, 
+        "title": "How can I remove (chomp) a newline in Python?", 
+        "annotations": [
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove trailing newline in string \"test string\\n\"", 
+                "context": "", 
+                "code_snippet": " 'test string\\n'.rstrip()\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove trailing newline in string 'test string \\n\\n'", 
+                "context": "", 
+                "code_snippet": " 'test string \\n\\n'.rstrip('\\n')\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string `s`", 
+                "context": "", 
+                "code_snippet": " s.strip()\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string `s` on the right side", 
+                "context": "", 
+                "code_snippet": " s.rstrip()\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string `s` on the left side", 
+                "context": "", 
+                "code_snippet": " s.lstrip()\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string 'Mac EOL\\r'", 
+                "context": "", 
+                "code_snippet": " 'Mac EOL\\r'.rstrip('\\r\\n')\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string 'Windows EOL\\r\\n' on the right side", 
+                "context": "", 
+                "code_snippet": " 'Windows EOL\\r\\n'.rstrip('\\r\\n')\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string 'Unix EOL\\n' on the right side", 
+                "context": "", 
+                "code_snippet": " 'Unix EOL\\n'.rstrip('\\r\\n')\n"
+            }, 
+            {
+                "intent": "remove (chomp) a newline", 
+                "rewritten_intent": "remove newline in string \"Hello\\n\\n\\n\" on the right side", 
+                "context": "", 
+                "code_snippet": " \"Hello\\n\\n\\n\".rstrip(\"\\n\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 364621, 
+        "title": "How to get item's position in a list?", 
+        "annotations": [
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item 1 in `testlist`", 
+                "context": "", 
+                "code_snippet": " [i for i,x in enumerate(testlist) if x == 1]\n"
+            }, 
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item 1 in `testlist`", 
+                "context": "", 
+                "code_snippet": "\n>>> [i for i,x in enumerate(testlist) if x == 1]\n"
+            }, 
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item 1 in `testlist`", 
+                "context": "", 
+                "code_snippet": ">>> for i in [i for i,x in enumerate(testlist) if x == 1]:\n...     print i\n"
+            }, 
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item 1 in `testlist`", 
+                "context": "", 
+                "code_snippet": "\n>>> for i in (i for i,x in enumerate(testlist) if x == 1):\n...     print i\n"
+            }, 
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item 1 in `testlist`", 
+                "context": "", 
+                "code_snippet": ">>> gen = (i for i,x in enumerate(testlist) if x == 1)\n>>> for i in gen: print i\n"
+            }, 
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item `element` in list `testlist`", 
+                "context": "", 
+                "code_snippet": "print testlist.index(element)\n"
+            }, 
+            {
+                "intent": "get item's position in a list", 
+                "rewritten_intent": "get the position of item `element` in list `testlist`", 
+                "context": "", 
+                "code_snippet": "try:\n    print testlist.index(element)\nexcept ValueError:\n    pass\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 952914, 
+        "title": "Making a flat list out of list of lists in Python", 
+        "annotations": [
+            {
+                "intent": "Making a flat list out of list of lists", 
+                "rewritten_intent": "make a flat list from list of lists `sublist`", 
+                "context": "", 
+                "code_snippet": "[item for sublist in l for item in sublist]\n"
+            }, 
+            {
+                "intent": "Making a flat list out of list of lists", 
+                "rewritten_intent": "make a flat list from list of lists `list2d`", 
+                "context": " import itertools\n\n list2d = [[1,2,3],[4,5,6], [7], [8,9]]\n", 
+                "code_snippet": " list(itertools.chain(*list2d))\n"
+            }, 
+            {
+                "intent": "Making a flat list out of list of lists", 
+                "rewritten_intent": "make a flat list from list of lists `list2d`", 
+                "context": "import itertools\nlist2d = [[1,2,3],[4,5,6], [7], [8,9]]", 
+                "code_snippet": "list(itertools.chain.from_iterable(list2d))"
+            }
+        ]
+    }, 
+    {
+        "question_id": 276052, 
+        "title": "How to get current CPU and RAM usage in Python?", 
+        "annotations": [
+            {
+                "intent": "get current CPU and RAM usage", 
+                "rewritten_intent": "get current CPU and RAM usage", 
+                "context": "\nimport psutil\n", 
+                "code_snippet": "psutil.cpu_percent()\npsutil.virtual_memory()"
+            }, 
+            {
+                "intent": "get current CPU and RAM usage", 
+                "rewritten_intent": "get current RAM usage of current program", 
+                "context": "import os\nimport psutil\n", 
+                "code_snippet": "\npid = os.getpid()\npy = psutil.Process(pid)\nmemoryUse = py.memory_info()[0]/2.**30  "
+            }, 
+            {
+                "intent": "get current CPU and RAM usage", 
+                "rewritten_intent": "print cpu and memory usage", 
+                "context": "from __future__ import print_function\nimport psutil\n", 
+                "code_snippet": "\nprint(psutil.cpu_percent())\nprint(psutil.virtual_memory()) #  physical memory usage\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 5137497, 
+        "title": "Find current directory and file's directory", 
+        "annotations": [
+            {
+                "intent": "Find current directory and file's directory", 
+                "rewritten_intent": "find the current directory", 
+                "context": "import os\n", 
+                "code_snippet": " os.getcwd()\n"
+            }, 
+            {
+                "intent": "Find current directory and file's directory", 
+                "rewritten_intent": "find the current directory", 
+                "context": "", 
+                "code_snippet": " os.path.realpath(__file__)\n"
+            }, 
+            {
+                "intent": "Find current directory and file's directory", 
+                "rewritten_intent": "get the directory name of `path`", 
+                "context": "", 
+                "code_snippet": "os.path.dirname(path)"
+            }, 
+            {
+                "intent": "Find current directory and file's directory", 
+                "rewritten_intent": "get the canonical path of file `path`", 
+                "context": "", 
+                "code_snippet": "os.path.realpath(path)"
+            }, 
+            {
+                "intent": "Find current directory", 
+                "rewritten_intent": "Find name of current directory", 
+                "context": "import os \n", 
+                "code_snippet": " \ndir_path = os.path.dirname(os.path.realpath(__file__))\n"
+            }, 
+            {
+                "intent": "Find current directory", 
+                "rewritten_intent": "Find current directory", 
+                "context": "import os\n", 
+                "code_snippet": "\ncwd = os.getcwd()\n"
+            }, 
+            {
+                "intent": "Find current directory", 
+                "rewritten_intent": "Find the full path of current directory", 
+                "context": "import os\n\n", 
+                "code_snippet": "\nfull_path = os.path.realpath(__file__)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 930397, 
+        "title": "Getting the last element of a list in Python", 
+        "annotations": [
+            {
+                "intent": "Getting the last element of a list", 
+                "rewritten_intent": "Getting the last element of list `some_list`", 
+                "context": "", 
+                "code_snippet": "some_list[-1]"
+            }, 
+            {
+                "intent": "Getting the last element of a list", 
+                "rewritten_intent": "Getting the second to last element of list `some_list`", 
+                "context": "", 
+                "code_snippet": " some_list[-2] "
+            }, 
+            {
+                "intent": "gets the nth-to-last element", 
+                "rewritten_intent": "gets the `n` th-to-last element in list `some_list`", 
+                "context": "", 
+                "code_snippet": "some_list[-n]"
+            }, 
+            {
+                "intent": "Getting the last element of a list", 
+                "rewritten_intent": "get the last element in list `alist`", 
+                "context": "", 
+                "code_snippet": "\nalist[-1]   "
+            }, 
+            {
+                "intent": "Getting the last element of a list", 
+                "rewritten_intent": "get the last element in list `astr`", 
+                "context": "", 
+                "code_snippet": "\nastr[-1]    "
+            }
+        ]
+    }, 
+    {
+        "question_id": 961632, 
+        "title": "Converting integer to string in Python?", 
+        "annotations": [
+            {
+                "intent": "Converting integer to string", 
+                "rewritten_intent": "convert `i` to string", 
+                "context": "", 
+                "code_snippet": "str(i)\n"
+            }, 
+            {
+                "intent": "Converting integer to string", 
+                "rewritten_intent": "convert `a` to string", 
+                "context": "", 
+                "code_snippet": "a.__str__()\n"
+            }, 
+            {
+                "intent": "Converting integer to string", 
+                "rewritten_intent": "convert `a` to string", 
+                "context": "", 
+                "code_snippet": "str(a)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1712227, 
+        "title": "How to get the size of a list", 
+        "annotations": [
+            {
+                "intent": "get the size of a list", 
+                "rewritten_intent": "get the size of list `items`", 
+                "context": "", 
+                "code_snippet": "len(items)\n"
+            }, 
+            {
+                "intent": "get the size of a list", 
+                "rewritten_intent": "get the size of a list `[1,2,3]`", 
+                "context": "", 
+                "code_snippet": " len([1,2,3])\n"
+            }, 
+            {
+                "intent": "get the size of a list", 
+                "rewritten_intent": "get the size of object `items`", 
+                "context": "", 
+                "code_snippet": "items.__len__()\n"
+            }, 
+            {
+                "intent": "get the size of a list", 
+                "rewritten_intent": "function to get the size of object", 
+                "context": "", 
+                "code_snippet": "len()"
+            }, 
+            {
+                "intent": "get the size of a list", 
+                "rewritten_intent": "get the size of list `s`", 
+                "context": "", 
+                "code_snippet": "len(s)"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1720421, 
+        "title": "How to append list to second list (concatenate lists)", 
+        "annotations": [
+            {
+                "intent": "concatenate lists", 
+                "rewritten_intent": "concatenate lists `listone` and `listtwo`", 
+                "context": "", 
+                "code_snippet": " listone + listtwo\n"
+            }, 
+            {
+                "intent": "concatenate lists", 
+                "rewritten_intent": "iterate items in lists `listone` and `listtwo`", 
+                "context": "import itertools\n", 
+                "code_snippet": "\nfor item in itertools.chain(listone, listtwo):\n   "
+            }
+        ]
+    }, 
+    {
+        "question_id": 16196712, 
+        "title": "python to wait for shell command to complete", 
+        "annotations": [
+            {
+                "intent": "wait for shell command to complete", 
+                "rewritten_intent": "wait for shell command `p` evoked by  subprocess.Popen to complete", 
+                "context": "p = subprocess.Popen(['unrar', 'e', '%s/%s' % (root, i), testfolder],\n        bufsize=2048, stdin=subprocess.PIPE)\np.stdin.write('e')\n", 
+                "code_snippet": "\np.wait()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 209513, 
+        "title": "Convert hex string to int in Python", 
+        "annotations": [
+            {
+                "intent": "Convert hex string to int", 
+                "rewritten_intent": "Convert hex string \"deadbeef\" to integer", 
+                "context": "", 
+                "code_snippet": " int(\"deadbeef\", 16)\n"
+            }, 
+            {
+                "intent": "Convert hex string to int", 
+                "rewritten_intent": "Convert hex string \"a\" to integer", 
+                "context": "", 
+                "code_snippet": " int(\"a\", 16)\n"
+            }, 
+            {
+                "intent": "Convert hex string to int", 
+                "rewritten_intent": "Convert hex string \"0xa\" to integer", 
+                "context": "", 
+                "code_snippet": " int(\"0xa\",16)\n"
+            }, 
+            {
+                "intent": "Convert hex string to int", 
+                "rewritten_intent": "Convert hex string `s` to integer", 
+                "context": "", 
+                "code_snippet": "int(s, 16)\n"
+            }, 
+            {
+                "intent": "Convert hex string to int", 
+                "rewritten_intent": "Convert hex string `hexString` to int", 
+                "context": "", 
+                "code_snippet": "int(hexString, 16)"
+            }
+        ]
+    }, 
+    {
+        "question_id": 642154, 
+        "title": "How to convert strings into integers in Python?", 
+        "annotations": [
+            {
+                "intent": "convert strings into integers", 
+                "rewritten_intent": "convert string \"1\" into integer", 
+                "context": "", 
+                "code_snippet": " int(\"1\") "
+            }, 
+            {
+                "intent": "convert strings into integers", 
+                "rewritten_intent": "function to convert strings into integers", 
+                "context": "", 
+                "code_snippet": "int()"
+            }, 
+            {
+                "intent": "convert strings into integers", 
+                "rewritten_intent": "convert items in `T1` to integers", 
+                "context": "", 
+                "code_snippet": "T2 = [map(int, x) for x in T1]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 7961363, 
+        "title": "Removing duplicates in lists", 
+        "annotations": [
+            {
+                "intent": "Removing duplicates in lists", 
+                "rewritten_intent": "Removing duplicates in list `t`", 
+                "context": " t = [1, 2, 3, 1, 2, 5, 6, 7, 8]\n", 
+                "code_snippet": " list(set(t))\n"
+            }, 
+            {
+                "intent": "Removing duplicates in lists", 
+                "rewritten_intent": "Removing duplicates in list `source_list`", 
+                "context": "", 
+                "code_snippet": "list(set(source_list))"
+            }, 
+            {
+                "intent": "Removing duplicates in lists", 
+                "rewritten_intent": "Removing duplicates in list `abracadabra`", 
+                "context": " from collections import OrderedDict\n", 
+                "code_snippet": " list(OrderedDict.fromkeys('abracadabra'))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2269827, 
+        "title": "How to convert an int to a hex string?", 
+        "annotations": [
+            {
+                "intent": "convert an int to a hex string", 
+                "rewritten_intent": "convert an int 65 to hex string", 
+                "context": "", 
+                "code_snippet": " hex(65)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 6996603, 
+        "title": "Delete a file or folder in Python", 
+        "annotations": [
+            {
+                "intent": "Delete a file or folder", 
+                "rewritten_intent": "delete an empty directory", 
+                "context": "", 
+                "code_snippet": "os.rmdir()"
+            }, 
+            {
+                "intent": "Delete a file or folder", 
+                "rewritten_intent": "recursively delete all contents in directory `path`", 
+                "context": "", 
+                "code_snippet": "shutil.rmtree(path, ignore_errors=False, onerror=None)\n"
+            }, 
+            {
+                "intent": "Delete a file or folder", 
+                "rewritten_intent": "recursively remove folder `name`", 
+                "context": "", 
+                "code_snippet": "os.removedirs(name)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 663171, 
+        "title": "Is there a way to substring a string in Python?", 
+        "annotations": [
+            {
+                "intent": "get a new string from the 3rd character to the end of the string", 
+                "rewritten_intent": "get a new string from the 3rd character to the end of the string `x`", 
+                "context": ">>> x = \"Hello World!\"\n", 
+                "code_snippet": "\n>>> x[2:]\n"
+            }, 
+            {
+                "intent": "substring a string", 
+                "rewritten_intent": "get a new string including the first two characters of string `x`", 
+                "context": ">>> x = \"Hello World!\"\n", 
+                "code_snippet": "\n>>> x[:2]\n"
+            }, 
+            {
+                "intent": "substring a string", 
+                "rewritten_intent": "get a new string including all but the last character of string `x`", 
+                "context": ">>> x = \"Hello World!\"\n", 
+                "code_snippet": "\n>>> x[:-2]\n"
+            }, 
+            {
+                "intent": "substring a string", 
+                "rewritten_intent": "get a new string including the last two characters of string `x`", 
+                "context": ">>> x = \"Hello World!\"\n", 
+                "code_snippet": "\n>>> x[-2:]\n"
+            }, 
+            {
+                "intent": "substring a string", 
+                "rewritten_intent": "get a new string with the 3rd to the second-to-last characters of string `x`", 
+                "context": ">>> x = \"Hello World!\"\n", 
+                "code_snippet": "\n>>> x[2:-2]\n"
+            }, 
+            {
+                "intent": "reversing a string", 
+                "rewritten_intent": "reverse a string `some_string`", 
+                "context": "", 
+                "code_snippet": "some_string[::-1]\n"
+            }, 
+            {
+                "intent": "selecting alternate characters", 
+                "rewritten_intent": "select alternate characters of \"H-e-l-l-o- -W-o-r-l-d\"", 
+                "context": "", 
+                "code_snippet": "\"H-e-l-l-o- -W-o-r-l-d\"[::2] "
+            }, 
+            {
+                "intent": "substring a string", 
+                "rewritten_intent": "select a substring of `s` beginning at `beginning` of length `LENGTH`", 
+                "context": "", 
+                "code_snippet": "s = s[ beginning : beginning + LENGTH]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 9257094, 
+        "title": "How to change a string into uppercase", 
+        "annotations": [
+            {
+                "intent": "change a string into uppercase", 
+                "rewritten_intent": "change string `s` to upper case", 
+                "context": "", 
+                "code_snippet": " s.upper()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 730764, 
+        "title": "Try/Except in Python: How do you properly ignore Exceptions?", 
+        "annotations": [
+            {
+                "intent": "do a try-except without handling the exception", 
+                "rewritten_intent": "call `doSomething()` in a try-except without handling the exception", 
+                "context": "", 
+                "code_snippet": "try:\n  doSomething()\nexcept: \n  pass\n"
+            }, 
+            {
+                "intent": "do a try-except without handling the exception", 
+                "rewritten_intent": "call `doSomething()` in a try-except without handling the exception", 
+                "context": "", 
+                "code_snippet": "try:\n  doSomething()\nexcept Exception: \n  pass\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 70797, 
+        "title": "Python: user input and commandline arguments", 
+        "annotations": [
+            {
+                "intent": "user input and commandline arguments", 
+                "rewritten_intent": "print \"Please enter something: \" to console, and read user input to `var`", 
+                "context": "", 
+                "code_snippet": "var = raw_input(\"Please enter something: \")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4706499, 
+        "title": "How do you append to a file in Python?", 
+        "annotations": [
+            {
+                "intent": "append to a file", 
+                "rewritten_intent": "append line \"appended text\" to file \"test.txt\"", 
+                "context": "", 
+                "code_snippet": "with open(\"test.txt\", \"a\") as myfile:\n    myfile.write(\"appended text\")\n"
+            }, 
+            {
+                "intent": "append to a file", 
+                "rewritten_intent": "append line \"cool beans...\" to file \"foo\"", 
+                "context": "", 
+                "code_snippet": "with open(\"foo\", \"a\") as f:\n    f.write(\"cool beans...\")\n"
+            }, 
+            {
+                "intent": "append to a file", 
+                "rewritten_intent": "append to file 'test1' content 'koko'", 
+                "context": "", 
+                "code_snippet": "\n>>> with open('test1','ab') as f:\n        f.write('koko')\n"
+            }, 
+            {
+                "intent": "append to a file", 
+                "rewritten_intent": "append to file 'test' content 'koko'", 
+                "context": "", 
+                "code_snippet": " open(\"test\",\"a+b\").write(\"koko\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 22676, 
+        "title": "How do I download a file over HTTP using Python?", 
+        "annotations": [
+            {
+                "intent": "download a file over HTTP", 
+                "rewritten_intent": "download a file \"http://www.example.com/songs/mp3.mp3\" over HTTP and save to \"mp3.mp3\"", 
+                "context": "import urllib\n", 
+                "code_snippet": "\nurllib.urlretrieve (\"http://www.example.com/songs/mp3.mp3\", \"mp3.mp3\")\n"
+            }, 
+            {
+                "intent": "download a file over HTTP", 
+                "rewritten_intent": "download a file `url` over HTTP and save to `file_name`", 
+                "context": "import urllib2\n\nurl = \"http://download.thinkbroadband.com/10MB.zip\"\n\nfile_name = url.split('/')[-1]\n", 
+                "code_snippet": "\nu = urllib2.urlopen(url)\nf = open(file_name, 'wb')\nmeta = u.info()\nfile_size = int(meta.getheaders(\"Content-Length\")[0])\nprint \"Downloading: %s Bytes: %s\" % (file_name, file_size)\n\nfile_size_dl = 0\nblock_sz = 8192\nwhile True:\n    buffer = u.read(block_sz)\n    if not buffer:\n        break\n\n    file_size_dl += len(buffer)\n    f.write(buffer)\n    status = r\"%10d  [%3.2f%%]\" % (file_size_dl, file_size_dl * 100. / file_size)\n    status = status + chr(8)*(len(status)+1)\n    print status,\n\nf.close()\n"
+            }, 
+            {
+                "intent": "download a file over HTTP", 
+                "rewritten_intent": "download a file 'http://www.example.com/' over HTTP", 
+                "context": "import urllib2\n", 
+                "code_snippet": "\nresponse = urllib2.urlopen('http://www.example.com/')\nhtml = response.read()\n"
+            }, 
+            {
+                "intent": "download a file over HTTP", 
+                "rewritten_intent": "download a file `url` over HTTP", 
+                "context": ">>> import requests\n>>> \n>>> url = \"http://download.thinkbroadband.com/10MB.zip\"\n", 
+                "code_snippet": "\n>>> r = requests.get(url)\n"
+            }, 
+            {
+                "intent": "download a file over HTTP", 
+                "rewritten_intent": "download a file `url` over HTTP and save to \"10MB\"", 
+                "context": "from tqdm import tqdm\nimport requests\n\nurl = \"http://download.thinkbroadband.com/10MB.zip\"\n", 
+                "code_snippet": "\nresponse = requests.get(url, stream=True)\n\nwith open(\"10MB\", \"wb\") as handle:\n    for data in tqdm(response.iter_content()):\n        handle.write(data)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 11709079, 
+        "title": "Parsing HTML using Python", 
+        "annotations": [
+            {
+                "intent": "Parsing HTML", 
+                "rewritten_intent": "Parsing HTML string `html` using BeautifulSoup", 
+                "context": "try: \n    from BeautifulSoup import BeautifulSoup\nexcept ImportError:\n    from bs4 import BeautifulSoup\n", 
+                "code_snippet": "\nparsed_html = BeautifulSoup(html)\nprint parsed_html.body.find('div', attrs={'class':'container'}).text\n"
+            }, 
+            {
+                "intent": "Parsing HTML", 
+                "rewritten_intent": "Parsing webpage 'http://www.google.com/' using BeautifulSoup", 
+                "context": "import urllib2\nfrom BeautifulSoup import BeautifulSoup\n\n", 
+                "code_snippet": "\n\npage = urllib2.urlopen('http://www.google.com/')\nsoup = BeautifulSoup(page)\n\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 739993, 
+        "title": "How can I get a list of locally installed Python modules?", 
+        "annotations": [
+            {
+                "intent": "get a list of locally installed Python modules", 
+                "rewritten_intent": "get a list of locally installed Python modules", 
+                "context": "", 
+                "code_snippet": "help('modules')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 9210525, 
+        "title": "How do I convert hex to decimal in Python?", 
+        "annotations": [
+            {
+                "intent": "convert hex to decimal", 
+                "rewritten_intent": "convert hex string `s` to decimal", 
+                "context": "s = \"6a48f82d8e828ce82b82\"\n", 
+                "code_snippet": "i = int(s, 16)\n"
+            }, 
+            {
+                "intent": "convert hex to decimal", 
+                "rewritten_intent": "convert hex string \"0xff\" to decimal", 
+                "context": "", 
+                "code_snippet": " int(\"0xff\", 16)\n"
+            }, 
+            {
+                "intent": "convert hex to decimal", 
+                "rewritten_intent": "convert hex string \"FFFF\" to decimal", 
+                "context": "", 
+                "code_snippet": " int(\"FFFF\", 16)\n"
+            }, 
+            {
+                "intent": "convert hex to decimal", 
+                "rewritten_intent": "convert hex string '0xdeadbeef' to decimal", 
+                "context": "", 
+                "code_snippet": " ast.literal_eval('0xdeadbeef')\n"
+            }, 
+            {
+                "intent": "convert hex to decimal", 
+                "rewritten_intent": "convert hex string 'deadbeef' to decimal", 
+                "context": "", 
+                "code_snippet": " int('deadbeef', 16)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 6797984, 
+        "title": "How to convert string to lowercase in Python?", 
+        "annotations": [
+            {
+                "intent": "convert string to lowercase", 
+                "rewritten_intent": "convert string `s` to lowercase", 
+                "context": "", 
+                "code_snippet": "s.lower()"
+            }, 
+            {
+                "intent": "convert string to lowercase", 
+                "rewritten_intent": "convert utf-8 string `s` to lowercase", 
+                "context": "", 
+                "code_snippet": " s.decode('utf-8').lower()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1207457, 
+        "title": "Convert a Unicode string to a string in Python (containing extra symbols)", 
+        "annotations": [
+            {
+                "intent": "Convert a Unicode string to a string", 
+                "rewritten_intent": "Convert a Unicode string `title` to a 'ascii' string", 
+                "context": "title = u\"Kl\u00fcft skr\u00e4ms inf\u00f6r p\u00e5 f\u00e9d\u00e9ral \u00e9lectoral gro\u00dfe\"\n\n\nimport unicodedata\n", 
+                "code_snippet": "\nunicodedata.normalize('NFKD', title).encode('ascii','ignore')\n"
+            }, 
+            {
+                "intent": "Convert a Unicode string to a string", 
+                "rewritten_intent": "Convert a Unicode string `a` to a 'ascii' string", 
+                "context": " a=u\"aaa\u00e0\u00e7\u00e7\u00e7\u00f1\u00f1\u00f1\"\n", 
+                "code_snippet": " a.encode('ascii','ignore')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3294889, 
+        "title": "Iterating over dictionaries using for loops in Python", 
+        "annotations": [
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating over a dictionary `d` using for loops", 
+                "context": "", 
+                "code_snippet": "for key, value in d.iteritems():\n"
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating over a dictionary `d` using for loops", 
+                "context": "", 
+                "code_snippet": "for key, value in d.items():\n"
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating key and items over dictionary `d`", 
+                "context": "", 
+                "code_snippet": "for letter, number in d.items():\n    "
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating key and items over dictionary `d`", 
+                "context": "", 
+                "code_snippet": "for k,v in d.items():\n    "
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "get keys and items of dictionary `d`", 
+                "context": "", 
+                "code_snippet": " d.items()\n"
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "get keys and items of dictionary `d` as a list", 
+                "context": "", 
+                "code_snippet": "list(d.items())"
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating key and items over dictionary `d`", 
+                "context": "", 
+                "code_snippet": "for k,v in d.items():\n    print k, 'corresponds to', v\n"
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating key and items over dictionary `d`", 
+                "context": "", 
+                "code_snippet": "for letter, number in d.items():\n    print letter, 'corresponds to', number\n"
+            }, 
+            {
+                "intent": "Iterating over dictionaries using for loops", 
+                "rewritten_intent": "Iterating key and items over dictionary `d`", 
+                "context": "", 
+                "code_snippet": "for letter, number in d.items():\n    print '{0} corresponds to {1}'.format(letter, number)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 7571635, 
+        "title": "Fastest way to check if a value exist in a list", 
+        "annotations": [
+            {
+                "intent": "check if a value exist in a list", 
+                "rewritten_intent": "check if 7 is in `a`", 
+                "context": "", 
+                "code_snippet": "7 in a\n"
+            }, 
+            {
+                "intent": "check if a value exist in a list", 
+                "rewritten_intent": "check if 'a' is in list `a`", 
+                "context": "a = [1,2,3,4,'a','b','c']\n", 
+                "code_snippet": " 'a' in a\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1093322, 
+        "title": "How do I check what version of Python is running my script?", 
+        "annotations": [
+            {
+                "intent": "check what version of Python is running", 
+                "rewritten_intent": "check python version", 
+                "context": " import sys\n", 
+                "code_snippet": "sys.version"
+            }, 
+            {
+                "intent": "check what version of Python is running", 
+                "rewritten_intent": "check python version", 
+                "context": "", 
+                "code_snippet": " sys.version_info\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 5618878, 
+        "title": "How to convert list to string", 
+        "annotations": [
+            {
+                "intent": "convert list to string", 
+                "rewritten_intent": "concatenating values in `list1` to a string", 
+                "context": "", 
+                "code_snippet": "\nstr1 = ''.join(list1)\n"
+            }, 
+            {
+                "intent": "convert list to string", 
+                "rewritten_intent": "concatenating values in list `L` to a string, separate by space", 
+                "context": "", 
+                "code_snippet": " \" \".join(str(x) for x in L)\n"
+            }, 
+            {
+                "intent": "convert list to string", 
+                "rewritten_intent": "concatenating values in `list1` to a string", 
+                "context": "list1 = [1, 2, 3]\n", 
+                "code_snippet": "\nstr1 = ''.join(str(e) for e in list1)\n"
+            }, 
+            {
+                "intent": "convert list to string", 
+                "rewritten_intent": "concatenating values in list `L` to a string", 
+                "context": "L = ['L','O','L']\n", 
+                "code_snippet": "\nmakeitastring = ''.join(map(str, L))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3277503, 
+        "title": "How to read a file line by line into a list with Python", 
+        "annotations": [
+            {
+                "intent": "read a file line by line into a list", 
+                "rewritten_intent": "read file `fname` line by line into a list `content`", 
+                "context": "", 
+                "code_snippet": "with open(fname) as f:\n    content = f.readlines()\n"
+            }, 
+            {
+                "intent": "read a file line by line into a list", 
+                "rewritten_intent": "read file 'filename' line by line into a list `lines`", 
+                "context": "", 
+                "code_snippet": "with open('filename') as f:\n    lines = f.readlines()\n"
+            }, 
+            {
+                "intent": "read a file line by line into a list", 
+                "rewritten_intent": "read file 'filename' line by line into a list `lines`", 
+                "context": "", 
+                "code_snippet": "lines = [line.rstrip('\\n') for line in open('filename')]\n"
+            }, 
+            {
+                "intent": "read a file line by line into a list", 
+                "rewritten_intent": "read file \"file.txt\" line by line into a list `array`", 
+                "context": "", 
+                "code_snippet": "with open(\"file.txt\", \"r\") as ins:\n    array = []\n    for line in ins:\n        array.append(line)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 5844672, 
+        "title": "Delete an element from a dictionary", 
+        "annotations": [
+            {
+                "intent": "Delete an element from a dictionary", 
+                "rewritten_intent": "Delete an element `key` from a dictionary `d`", 
+                "context": "", 
+                "code_snippet": "del d[key]\n"
+            }, 
+            {
+                "intent": "Delete an element from a dictionary", 
+                "rewritten_intent": "Delete an element 0 from a dictionary `a`", 
+                "context": "", 
+                "code_snippet": "\n>>> {i:a[i] for i in a if i!=0}\n"
+            }, 
+            {
+                "intent": "Delete an element from a dictionary", 
+                "rewritten_intent": "Delete an element \"hello\" from a dictionary `lol`", 
+                "context": " >>>lol = {\"hello\":\"gdbye\"}\n ", 
+                "code_snippet": "\n >>>lol.pop(\"hello\")\n    "
+            }, 
+            {
+                "intent": "Delete an element from a dictionary", 
+                "rewritten_intent": "Delete an element with key `key` dictionary `r`", 
+                "context": "\n    r = dict(d)\n    ", 
+                "code_snippet": "\n    del r[key]\n    "
+            }
+        ]
+    }, 
+    {
+        "question_id": 1400608, 
+        "title": "How to empty a list in Python?", 
+        "annotations": [
+            {
+                "intent": "empty a list", 
+                "rewritten_intent": "empty a list `lst`", 
+                "context": "", 
+                "code_snippet": "del lst[:]\n"
+            }, 
+            {
+                "intent": "empty a list", 
+                "rewritten_intent": "empty a list `lst`", 
+                "context": "lst1 = [1, 2, 3]\n", 
+                "code_snippet": "\ndel lst1[:]\n"
+            }, 
+            {
+                "intent": "empty a list", 
+                "rewritten_intent": "empty a list `lst`", 
+                "context": "", 
+                "code_snippet": "lst[:] = []\n"
+            }, 
+            {
+                "intent": "empty a list", 
+                "rewritten_intent": "empty a list `alist`", 
+                "context": "", 
+                "code_snippet": "alist[:] = []\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 16296643, 
+        "title": "Convert tuple to list and back", 
+        "annotations": [
+            {
+                "intent": "Convert tuple to list", 
+                "rewritten_intent": "Convert tuple `t` to list", 
+                "context": " t = ('my', 'name', 'is', 'mr', 'tuple')\n", 
+                "code_snippet": " list(t)\n"
+            }, 
+            {
+                "intent": "Convert tuple to list", 
+                "rewritten_intent": "Convert list `t` to tuple", 
+                "context": " l = ['my', 'name', 'is', 'mr', 'list']\n", 
+                "code_snippet": " tuple(l)\n"
+            }, 
+            {
+                "intent": "Convert tuple to list and back", 
+                "rewritten_intent": "Convert tuple `level1` to list", 
+                "context": "", 
+                "code_snippet": "level1 = map(list, level1)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4004550, 
+        "title": "Converting string series to float list in python", 
+        "annotations": [
+            {
+                "intent": "Converting string series to float list", 
+                "rewritten_intent": "Converting string lists `s` to float list", 
+                "context": "s = '5.2 5.6 5.3'\n", 
+                "code_snippet": "\nfloats = [float(x) for x in s.split()]\n"
+            }, 
+            {
+                "intent": "Converting string series to float list", 
+                "rewritten_intent": "Converting string lists `s` to float list", 
+                "context": "", 
+                "code_snippet": "floats = map(float, s.split())\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 10543303, 
+        "title": "number of values in a list greater than a certain number", 
+        "annotations": [
+            {
+                "intent": "number of values in a list greater than a certain number", 
+                "rewritten_intent": "get the number of values in list `j` that is greater than 5", 
+                "context": " j = [4, 5, 6, 7, 1, 3, 7, 5]\n", 
+                "code_snippet": " sum(i > 5 for i in j)\n"
+            }, 
+            {
+                "intent": "number of values in a list greater than a certain number", 
+                "rewritten_intent": "get the number of values in list `j` that is greater than 5", 
+                "context": " j = [4, 5, 6, 7, 1, 3, 7, 5]\n", 
+                "code_snippet": " len([1 for i in j if i > 5])\n"
+            }, 
+            {
+                "intent": "number of values in a list greater than a certain number", 
+                "rewritten_intent": "get the number of values in list `j` that is greater than `i`", 
+                "context": "import numpy as np\n", 
+                "code_snippet": "\nj = np.array(j)\nsum(j > i)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 674764, 
+        "title": "Examples for string find in Python", 
+        "annotations": [
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 'World' in `x`", 
+                "context": " x = \"Hello World\"\n", 
+                "code_snippet": " x.find('World')\n"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 'Aloha' in `x`", 
+                "context": " x = \"Hello World\"\n", 
+                "code_snippet": " x.find('Aloha')"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 'cc' in string 'sdfasdf'", 
+                "context": "", 
+                "code_snippet": " 'sdfasdf'.index('cc')\n"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 'df' in string 'sdfasdf'", 
+                "context": "", 
+                "code_snippet": " 'sdfasdf'.index('df')\n"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 'a' in string `str`", 
+                "context": "str = \"abcdefioshgoihgs sijsiojs \"", 
+                "code_snippet": "str.find('a')"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 'g' in string `str`", 
+                "context": "str = \"abcdefioshgoihgs sijsiojs \"", 
+                "code_snippet": "str.find('g')"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 's' in string `str` starting from index 11", 
+                "context": "", 
+                "code_snippet": "str.find('s',11)"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 's' in string `str` starting from index 15", 
+                "context": "str = \"abcdefioshgoihgs sijsiojs \"", 
+                "code_snippet": "str.find('s',15)"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 's' in string `str` starting from index 16", 
+                "context": "str = \"abcdefioshgoihgs sijsiojs \"", 
+                "code_snippet": "str.find('s',16)"
+            }, 
+            {
+                "intent": "string find", 
+                "rewritten_intent": "find the index of sub string 's' in string `str` starting from index 11 and ending at index 14", 
+                "context": "str = \"abcdefioshgoihgs sijsiojs \"", 
+                "code_snippet": "str.find('s',11,14)"
+            }
+        ]
+    }, 
+    {
+        "question_id": 432842, 
+        "title": "How do you get the logical xor of two variables in Python?", 
+        "annotations": [
+            {
+                "intent": "get the logical xor of two variables", 
+                "rewritten_intent": "get logical xor of `a` and `b`", 
+                "context": "", 
+                "code_snippet": "bool(a) != bool(b)\n"
+            }, 
+            {
+                "intent": "get the logical xor of two variables", 
+                "rewritten_intent": "get logical xor of `a` and `b`", 
+                "context": "", 
+                "code_snippet": "(a and not b) or (not a and b)\n"
+            }, 
+            {
+                "intent": "get the logical xor of two variables", 
+                "rewritten_intent": "get logical xor of `a` and `b`", 
+                "context": "", 
+                "code_snippet": "bool(a) ^ bool(b)\n"
+            }, 
+            {
+                "intent": "get the logical xor of two variables", 
+                "rewritten_intent": "get logical xor of `a` and `b`", 
+                "context": "from operator import xor\n", 
+                "code_snippet": "\nxor(bool(a), bool(b))\n"
+            }, 
+            {
+                "intent": "get the logical xor of two variables", 
+                "rewritten_intent": "get the logical xor of two variables `str1` and `str2`", 
+                "context": "", 
+                "code_snippet": "\n    return bool(str1) ^ bool(str2)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1303243, 
+        "title": "How to find out if a Python object is a string?", 
+        "annotations": [
+            {
+                "intent": "find out if a Python object is a string", 
+                "rewritten_intent": "check if object `obj` is a string", 
+                "context": "", 
+                "code_snippet": "isinstance(obj, basestring)"
+            }, 
+            {
+                "intent": "find out if a Python object is a string", 
+                "rewritten_intent": "check if object `o` is a string", 
+                "context": "", 
+                "code_snippet": "isinstance(o, basestring)\n"
+            }, 
+            {
+                "intent": "find out if a Python object is a string", 
+                "rewritten_intent": "check if object `o` is a string", 
+                "context": "", 
+                "code_snippet": "type(o) is str\n"
+            }, 
+            {
+                "intent": "find out if a Python object is a string", 
+                "rewritten_intent": "check if object `o` is a string", 
+                "context": "", 
+                "code_snippet": "isinstance(o, str)\n"
+            }, 
+            {
+                "intent": "find out if a Python object is a string", 
+                "rewritten_intent": "check if `obj_to_test` is a string", 
+                "context": "", 
+                "code_snippet": "isinstance(obj_to_test, str)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 163542, 
+        "title": "Python - How do I pass a string into subprocess.Popen (using the stdin argument)?", 
+        "annotations": [
+            {
+                "intent": "pass a string into subprocess.Popen", 
+                "rewritten_intent": "set the stdin of the process 'grep f' to be b'one\\ntwo\\nthree\\nfour\\nfive\\nsix\\n'", 
+                "context": "from subprocess import Popen, PIPE, STDOUT\n\n", 
+                "code_snippet": "\n\np = Popen(['grep', 'f'], stdout=PIPE, stdin=PIPE, stderr=STDOUT)    \ngrep_stdout = p.communicate(input=b'one\\ntwo\\nthree\\nfour\\nfive\\nsix\\n')[0]\n"
+            }, 
+            {
+                "intent": "pass a string into subprocess.Popen", 
+                "rewritten_intent": "set the stdin of the process 'grep f' to be 'one\\ntwo\\nthree\\nfour\\nfive\\nsix\\n'", 
+                "context": "", 
+                "code_snippet": " p = subprocess.Popen(['grep','f'],stdout=subprocess.PIPE,stdin=subprocess.PIPE)\n\n p.stdin.write('one\\ntwo\\nthree\\nfour\\nfive\\nsix\\n')\n\n p.communicate()[0]\n\n p.stdin.close()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4383571, 
+        "title": "Importing files from different folder in Python", 
+        "annotations": [
+            {
+                "intent": "Importing files from different folder", 
+                "rewritten_intent": "Importing file `file` from folder '/path/to/application/app/folder'", 
+                "context": "\nimport sys\n", 
+                "code_snippet": "\nsys.path.insert(0, '/path/to/application/app/folder')\n\nimport file\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 11801309, 
+        "title": "How to loop over files with Python?", 
+        "annotations": [
+            {
+                "intent": "loop over files", 
+                "rewritten_intent": "loop over files in directory '.'", 
+                "context": "import os  \n", 
+                "code_snippet": "  \nfor fn in os.listdir('.'):\n     if os.path.isfile(fn):\n        print (fn)\n"
+            }, 
+            {
+                "intent": "loop over files", 
+                "rewritten_intent": "loop over files in directory `source`", 
+                "context": "source = '/home/test/py_test/'\n", 
+                "code_snippet": "\nfor root, dirs, filenames in os.walk(source):\n    for f in filenames:\n        print f\n        "
+            }
+        ]
+    }, 
+    {
+        "question_id": 306400, 
+        "title": "How do I randomly select an item from a list using Python?", 
+        "annotations": [
+            {
+                "intent": "randomly select an item from a list", 
+                "rewritten_intent": "randomly select an item from list `foo`", 
+                "context": "import random\n\n\n\n\nfoo = ['a', 'b', 'c', 'd', 'e']\n", 
+                "code_snippet": "random.choice(foo)"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3996904, 
+        "title": "Generate random integers between 0 and 9", 
+        "annotations": [
+            {
+                "intent": "Generate random integers between 0 and 9", 
+                "rewritten_intent": "Generate a random integer between 0 and 9", 
+                "context": "from random import randint\n", 
+                "code_snippet": "randint(0,9)"
+            }, 
+            {
+                "intent": "Generate random integers between 0 and 9", 
+                "rewritten_intent": "Generate a random integer between `a` and `b`", 
+                "context": "", 
+                "code_snippet": "random.randint(a, b)\n"
+            }, 
+            {
+                "intent": "Generate random integers between 0 and 9", 
+                "rewritten_intent": "Generate random integers between 0 and 9", 
+                "context": "import random\n", 
+                "code_snippet": "\nprint(random.randint(0,9))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 627435, 
+        "title": "How to remove an element from a list by index in Python?", 
+        "annotations": [
+            {
+                "intent": "remove an element from a list by index", 
+                "rewritten_intent": "remove the last element in list `a`", 
+                "context": "", 
+                "code_snippet": " del a[-1]\n"
+            }, 
+            {
+                "intent": "remove an element from a list by index", 
+                "rewritten_intent": "remove the element in list `a` with index 1", 
+                "context": "a = ['a', 'b', 'c', 'd']\n", 
+                "code_snippet": "\na.pop(1)\n\n"
+            }, 
+            {
+                "intent": "remove an element from a list by index", 
+                "rewritten_intent": "remove the last element in list `a`", 
+                "context": "", 
+                "code_snippet": "\na.pop()\n\n"
+            }, 
+            {
+                "intent": "remove an element from a list by index", 
+                "rewritten_intent": "remove the element in list `a` at index `index`", 
+                "context": "", 
+                "code_snippet": "\n    a.pop(index)\n"
+            }, 
+            {
+                "intent": "remove an element from a list by index", 
+                "rewritten_intent": "remove the element in list `a` at index `index`", 
+                "context": "", 
+                "code_snippet": "\n    del a[index]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1773805, 
+        "title": "How can I parse a YAML file in Python", 
+        "annotations": [
+            {
+                "intent": "parse a YAML file", 
+                "rewritten_intent": "parse a YAML file \"example.yaml\"", 
+                "context": "\n\nimport yaml\n\n", 
+                "code_snippet": "\n\nwith open(\"example.yaml\", 'r') as stream:\n    try:\n        print(yaml.load(stream))\n    except yaml.YAMLError as exc:\n        print(exc)\n"
+            }, 
+            {
+                "intent": "parse a YAML file", 
+                "rewritten_intent": "parse a YAML file \"example.yaml\"", 
+                "context": "import ruamel.yaml as yaml\n\n", 
+                "code_snippet": "\n\nwith open(\"example.yaml\") as stream:\n    try:\n        print(yaml.load(stream))\n    except yaml.YAMLError as exc:\n        print(exc)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 10406130, 
+        "title": "Check if something is not in a list in Python", 
+        "annotations": [
+            {
+                "intent": "Check if something is not in a list", 
+                "rewritten_intent": "Check if 3 is not in a list [2, 3, 4]", 
+                "context": "", 
+                "code_snippet": " 3 not in [2, 3, 4]\n"
+            }, 
+            {
+                "intent": "Check if something is not in a list", 
+                "rewritten_intent": "Check if tuple (2, 3) is not in a list [(2, 3), (5, 6), (9, 1)]", 
+                "context": "", 
+                "code_snippet": " (2, 3) not in [(2, 3), (5, 6), (9, 1)]\n"
+            }, 
+            {
+                "intent": "Check if something is not in a list", 
+                "rewritten_intent": "Check if tuple (2, 3) is not in a list [(2, 7), (7, 3), \"hi\"]", 
+                "context": "", 
+                "code_snippet": " (2, 3) not in [(2, 7), (7, 3), \"hi\"]\n"
+            }, 
+            {
+                "intent": "Check if something is not in a list", 
+                "rewritten_intent": "Check if 3 is not in the list [4,5,6]", 
+                "context": "", 
+                "code_snippet": " 3 not in [4, 5, 6]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1185524, 
+        "title": "How to trim whitespace (including tabs)?", 
+        "annotations": [
+            {
+                "intent": "trim whitespace", 
+                "rewritten_intent": "trim whitespace in string `s`", 
+                "context": "", 
+                "code_snippet": " s.strip()\n"
+            }, 
+            {
+                "intent": "trim whitespace (including tabs)", 
+                "rewritten_intent": "trim whitespace (including tabs) in `s` on the left side", 
+                "context": "", 
+                "code_snippet": "s = s.lstrip()\n"
+            }, 
+            {
+                "intent": "trim whitespace (including tabs)", 
+                "rewritten_intent": "trim whitespace (including tabs) in `s` on the right side", 
+                "context": "", 
+                "code_snippet": "s = s.rstrip()\n"
+            }, 
+            {
+                "intent": "trim whitespace (including tabs)", 
+                "rewritten_intent": "trim characters ' \\t\\n\\r' in `s`", 
+                "context": "", 
+                "code_snippet": "s = s.strip(' \\t\\n\\r')\n"
+            }, 
+            {
+                "intent": "trim whitespace (including tabs)", 
+                "rewritten_intent": "trim whitespaces (including tabs) in string `s`", 
+                "context": "import re\n", 
+                "code_snippet": "\nprint re.sub('[\\s+]', '', s)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 354038, 
+        "title": "How do I check if a string is a number (float) in Python?", 
+        "annotations": [
+            {
+                "intent": "check if a string is a number (float)", 
+                "rewritten_intent": "check if string `a` is an integer", 
+                "context": " a = \"03523\"\n", 
+                "code_snippet": " a.isdigit()\n"
+            }, 
+            {
+                "intent": "check if a string is a number", 
+                "rewritten_intent": "function to check if a string is a number", 
+                "context": "", 
+                "code_snippet": "isdigit()"
+            }, 
+            {
+                "intent": "check if a string is a number", 
+                "rewritten_intent": "check if string `b` is a number", 
+                "context": " b = \"963spam\"\n", 
+                "code_snippet": " b.isdigit()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2600191, 
+        "title": "How can I count the occurrences of a list item in Python?", 
+        "annotations": [
+            {
+                "intent": "count the occurrences of a list item", 
+                "rewritten_intent": "count the occurrences of item \"a\" in list `l`", 
+                "context": "", 
+                "code_snippet": " l.count(\"a\")\n"
+            }, 
+            {
+                "intent": "count the occurrences of a list item", 
+                "rewritten_intent": "count the occurrences of items in list `l`", 
+                "context": " l = [\"a\",\"b\",\"b\"]\n\n from collections import Counter\n", 
+                "code_snippet": " Counter(l)\n"
+            }, 
+            {
+                "intent": "count the occurrences of a list item", 
+                "rewritten_intent": "count the occurrences of items in list `l`", 
+                "context": " l = [\"a\",\"b\",\"b\"]\n", 
+                "code_snippet": " [[x,l.count(x)] for x in set(l)]\n"
+            }, 
+            {
+                "intent": "count the occurrences of a list item", 
+                "rewritten_intent": "count the occurrences of items in list `l`", 
+                "context": " l = [\"a\",\"b\",\"b\"]\n", 
+                "code_snippet": " dict((x,l.count(x)) for x in set(l))\n"
+            }, 
+            {
+                "intent": "count the occurrences of a list item", 
+                "rewritten_intent": "count the occurrences of item \"b\" in list `l`", 
+                "context": " l = [\"a\",\"b\",\"b\"]\n", 
+                "code_snippet": " l.count(\"b\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4940032, 
+        "title": "Search for string in txt file Python", 
+        "annotations": [
+            {
+                "intent": "Search for string in txt file", 
+                "rewritten_intent": "Search for string 'blabla' in txt file 'example.txt'", 
+                "context": "", 
+                "code_snippet": "if 'blabla' in open('example.txt').read():\n    print \"true\"\n"
+            }, 
+            {
+                "intent": "Search for string in txt file", 
+                "rewritten_intent": "Search for string 'blabla' in txt file 'example.txt'", 
+                "context": "import mmap\n", 
+                "code_snippet": "\nf = open('example.txt')\ns = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)\nif s.find('blabla') != -1:\n    print 'true'\n"
+            }, 
+            {
+                "intent": "Search for string in txt file", 
+                "rewritten_intent": "Search for string `blabla` in txt file 'example.txt'", 
+                "context": "", 
+                "code_snippet": "\n        datafile = file('example.txt')\n        found = False #this isn't really necessary \n        for line in datafile:\n            if blabla in line:\n                #found = True #not necessary \n                return True\n        return False #because you finished the search without finding anything\n\n\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 845058, 
+        "title": "How to get line count cheaply in Python?", 
+        "annotations": [
+            {
+                "intent": "get line count", 
+                "rewritten_intent": "get line count of file 'myfile.txt'", 
+                "context": "", 
+                "code_snippet": " sum(1 for line in open('myfile.txt'))\n"
+            }, 
+            {
+                "intent": "get line count", 
+                "rewritten_intent": "get line count of file `filename`", 
+                "context": "", 
+                "code_snippet": "\n\ndef bufcount(filename):\n    f = open(filename)                  \n    lines = 0\n    buf_size = 1024 * 1024\n    read_f = f.read # loop optimization\n\n    buf = read_f(buf_size)\n    while buf:\n        lines += buf.count('\\n')\n        buf = read_f(buf_size)\n\n    return lines\n\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 6416131, 
+        "title": "Python add new item to dictionary", 
+        "annotations": [
+            {
+                "intent": "add new item to dictionary", 
+                "rewritten_intent": "add key \"item3\" and value \"3\" to dictionary `default_data `", 
+                "context": "", 
+                "code_snippet": "default_data['item3'] = 3\n"
+            }, 
+            {
+                "intent": "add new item to dictionary", 
+                "rewritten_intent": "add key \"item3\" and value \"3\" to dictionary `default_data `", 
+                "context": "", 
+                "code_snippet": "default_data.update({'item3': 3})\n"
+            }, 
+            {
+                "intent": "add new item to dictionary", 
+                "rewritten_intent": "add key value pairs 'item4' , 4 and 'item5' , 5 to dictionary `default_data`", 
+                "context": "", 
+                "code_snippet": "default_data.update({'item4': 4, 'item5': 5})\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 53513, 
+        "title": "Best way to check if a list is empty", 
+        "annotations": [
+            {
+                "intent": "check if a list is empty", 
+                "rewritten_intent": "check if list `a` is empty", 
+                "context": "", 
+                "code_snippet": "if not a:\n  "
+            }, 
+            {
+                "intent": "check if a list is empty", 
+                "rewritten_intent": "check if list `seq` is empty", 
+                "context": "", 
+                "code_snippet": "if not seq:"
+            }, 
+            {
+                "intent": "check if a list is empty", 
+                "rewritten_intent": "check if list `li` is empty", 
+                "context": "", 
+                "code_snippet": "if len(li) == 0:\n    "
+            }
+        ]
+    }, 
+    {
+        "question_id": 849674, 
+        "title": "Simple threading in Python 2.6 using thread.start_new_thread()", 
+        "annotations": [
+            {
+                "intent": "Simple threading in Python 2.6 using thread.start_new_thread()", 
+                "rewritten_intent": "start a new thread for `myfunction` with parameters 'MyStringHere' and 1", 
+                "context": "import thread\n\n\ndef myfunction(mystring,*args):\n    print mystring\n\n\n", 
+                "code_snippet": "\n\n        thread.start_new_thread(myfunction,('MyStringHere',1))\n\n    "
+            }, 
+            {
+                "intent": "Simple threading in Python 2.6 using thread.start_new_thread()", 
+                "rewritten_intent": "start a new thread for `myfunction` with parameters 'MyStringHere' and 1", 
+                "context": "import thread\n\n\ndef myfunction(mystring,*args):\n    print mystring\n\n\n", 
+                "code_snippet": "\n\n        thread.start_new_thread(myfunction,('MyStringHere',1))\n\n    "
+            }
+        ]
+    }, 
+    {
+        "question_id": 8270092, 
+        "title": "Python remove all whitespace in a string", 
+        "annotations": [
+            {
+                "intent": "remove all whitespace in a string", 
+                "rewritten_intent": "remove all whitespace in a string `sentence`", 
+                "context": "", 
+                "code_snippet": "\nsentence.replace(\" \", \"\")\n"
+            }, 
+            {
+                "intent": "remove all whitespace in a string", 
+                "rewritten_intent": "remove all whitespace in a string `sentence`", 
+                "context": "import re\n", 
+                "code_snippet": "\npattern = re.compile(r'\\s+')\nsentence = re.sub(pattern, '', sentence)\n"
+            }, 
+            {
+                "intent": "remove all whitespace in a string", 
+                "rewritten_intent": "remove whitespace in string `sentence` from beginning and end", 
+                "context": "", 
+                "code_snippet": " sentence.strip()\n"
+            }, 
+            {
+                "intent": "remove all whitespace in a string", 
+                "rewritten_intent": "remove all whitespaces in string `sentence`", 
+                "context": "", 
+                "code_snippet": "sentence = re.sub(r\"\\s+\", \"\", sentence, flags=re.UNICODE)\n"
+            }, 
+            {
+                "intent": "remove all whitespace in a string", 
+                "rewritten_intent": "remove all whitespaces in a string `sentence`", 
+                "context": "", 
+                "code_snippet": "sentence = ''.join(sentence.split())\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 227459, 
+        "title": "ASCII value of a character in Python", 
+        "annotations": [
+            {
+                "intent": "get the <a href=\"http://en.wikipedia.org/wiki/ASCII\" rel=\"nofollow noreferrer\">ASCII</a> value of a character as an int", 
+                "rewritten_intent": "get the ASCII value of a character 'a' as an int", 
+                "context": "", 
+                "code_snippet": " ord('a')\n"
+            }, 
+            {
+                "intent": "get the <a href=\"http://en.wikipedia.org/wiki/ASCII\" rel=\"nofollow noreferrer\">ASCII</a> value of a character as an int", 
+                "rewritten_intent": "get the ASCII value of a character u'\u3042' as an int", 
+                "context": "", 
+                "code_snippet": " ord(u'\u3042')\n"
+            }, 
+            {
+                "intent": "get the <a href=\"http://en.wikipedia.org/wiki/ASCII\" rel=\"nofollow noreferrer\">ASCII</a> value of a character as an int", 
+                "rewritten_intent": "get the ASCII value of a character as an int", 
+                "context": "", 
+                "code_snippet": "ord()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 931092, 
+        "title": "Reverse a string in Python", 
+        "annotations": [
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse a string 'hello world'", 
+                "context": "", 
+                "code_snippet": " 'hello world'[::-1]\n"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse list `s`", 
+                "context": "", 
+                "code_snippet": "s[::-1]"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse string 'foo'", 
+                "context": "", 
+                "code_snippet": "''.join(reversed('foo'))"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse a string `string`", 
+                "context": "", 
+                "code_snippet": " ''.join(reversed(string))\n"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse a string \"foo\"", 
+                "context": "", 
+                "code_snippet": "'foo'[::-1]\n"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse a string `a_string`", 
+                "context": "", 
+                "code_snippet": " a_string[::-1]\n"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse a string `a_string`", 
+                "context": "", 
+                "code_snippet": "def reversed_string(a_string):\n    return a_string[::-1]\n"
+            }, 
+            {
+                "intent": "Reverse a string", 
+                "rewritten_intent": "Reverse a string `s`", 
+                "context": "", 
+                "code_snippet": "''.join(reversed(s))"
+            }
+        ]
+    }, 
+    {
+        "question_id": 415511, 
+        "title": "How to get current time in Python", 
+        "annotations": [
+            {
+                "intent": "get current time", 
+                "rewritten_intent": "get current date and time", 
+                "context": " import datetime\n", 
+                "code_snippet": " datetime.datetime.now()\n"
+            }, 
+            {
+                "intent": "get current time", 
+                "rewritten_intent": "get current time", 
+                "context": " import datetime\n", 
+                "code_snippet": " datetime.datetime.now().time()\n"
+            }, 
+            {
+                "intent": "get current time", 
+                "rewritten_intent": "get current time in pretty format", 
+                "context": " from time import gmtime, strftime\n", 
+                "code_snippet": " strftime(\"%Y-%m-%d %H:%M:%S\", gmtime())\n"
+            }, 
+            {
+                "intent": "get current time", 
+                "rewritten_intent": "get current time in string format", 
+                "context": " from datetime import datetime\n", 
+                "code_snippet": " str(datetime.now())\n"
+            }, 
+            {
+                "intent": "get current time", 
+                "rewritten_intent": "get current time", 
+                "context": "", 
+                "code_snippet": " datetime.datetime.time(datetime.datetime.now())\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 14043934, 
+        "title": "python time offset", 
+        "annotations": [
+            {
+                "intent": "time offset", 
+                "rewritten_intent": "substract 1 hour and 10 minutes from current time", 
+                "context": " import datetime\n", 
+                "code_snippet": " t = datetime.datetime.now()\n\n t - datetime.timedelta(hours=1, minutes=10)\n"
+            }, 
+            {
+                "intent": "time offset", 
+                "rewritten_intent": "subtract 1 hour and 10 minutes from time object `t`", 
+                "context": "", 
+                "code_snippet": " t - datetime.timedelta(hours=1, minutes=10)\n"
+            }, 
+            {
+                "intent": "time offset", 
+                "rewritten_intent": "add 1 hour and 2 minutes to time object `t`", 
+                "context": "", 
+                "code_snippet": " dt = datetime.datetime.combine(datetime.date.today(), t)\n"
+            }, 
+            {
+                "intent": "time offset", 
+                "rewritten_intent": "subtract 5 hours from the time object `dt`", 
+                "context": "", 
+                "code_snippet": " dt -= datetime.timedelta(hours=5)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3940128, 
+        "title": "How can I reverse a list in python?", 
+        "annotations": [
+            {
+                "intent": "reverse a list", 
+                "rewritten_intent": "reverse a list `L`", 
+                "context": "", 
+                "code_snippet": " L[::-1]\n"
+            }, 
+            {
+                "intent": "reverse a list", 
+                "rewritten_intent": "reverse a list `array`", 
+                "context": "", 
+                "code_snippet": " reversed(array)"
+            }, 
+            {
+                "intent": "reverse a list", 
+                "rewritten_intent": "reverse a list `L`", 
+                "context": "", 
+                "code_snippet": " L.reverse()\n"
+            }, 
+            {
+                "intent": "reverse a list", 
+                "rewritten_intent": "reverse a list `array`", 
+                "context": "", 
+                "code_snippet": "list(reversed(array))"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1949318, 
+        "title": "Checking if a website is up via Python", 
+        "annotations": [
+            {
+                "intent": "Checking if a website is up", 
+                "rewritten_intent": "Check the status code of url \"http://www.stackoverflow.com\"", 
+                "context": "", 
+                "code_snippet": " urllib.urlopen(\"http://www.stackoverflow.com\").getcode()\n"
+            }, 
+            {
+                "intent": "Checking if a website is up", 
+                "rewritten_intent": "Check the status code of url \"www.python.org\"", 
+                "context": "import httplib\n", 
+                "code_snippet": "\nconn = httplib.HTTPConnection(\"www.python.org\")\nconn.request(\"HEAD\", \"/\")\nr1 = conn.getresponse()\nprint r1.status, r1.reason\n"
+            }, 
+            {
+                "intent": "Checking if a website is up", 
+                "rewritten_intent": "Check the status code of url `url`", 
+                "context": "import requests\n\n", 
+                "code_snippet": "\n    r = requests.head(url)\n    return r.status_code == 200\n"
+            }, 
+            {
+                "intent": "Checking if a website is up", 
+                "rewritten_intent": "Checking if website \"http://www.stackoverflow.com\" is up", 
+                "context": "", 
+                "code_snippet": " print urllib.urlopen(\"http://www.stackoverflow.com\").getcode()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2052390, 
+        "title": "Manually raising (throwing) an exception in Python", 
+        "annotations": [
+            {
+                "intent": "manually throw/raise an exception", 
+                "rewritten_intent": "manually throw/raise a `ValueError` exception with the message 'A very specific bad thing happened'", 
+                "context": "", 
+                "code_snippet": "raise ValueError('A very specific bad thing happened')\n"
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "throw an exception \"I know Python!\"", 
+                "context": "", 
+                "code_snippet": "raise Exception('I know Python!') "
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "Manually throw an exception \"I know python!\"", 
+                "context": "", 
+                "code_snippet": "raise Exception(\"I know python!\")\n"
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "throw a ValueError with message 'represents a hidden bug, do not catch this'", 
+                "context": "", 
+                "code_snippet": "\n        raise ValueError('represents a hidden bug, do not catch this')\n        "
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "throw an Exception with message 'This is the exception you expect to handle'", 
+                "context": "", 
+                "code_snippet": "\n        raise Exception('This is the exception you expect to handle')\n    "
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "throw a value error with message 'A very specific bad thing happened', 'foo', 'bar', 'baz'", 
+                "context": "", 
+                "code_snippet": "raise ValueError('A very specific bad thing happened')\n"
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "throw a runtime error with message 'specific message'", 
+                "context": "", 
+                "code_snippet": "    raise RuntimeError('specific message') "
+            }, 
+            {
+                "intent": "Manually raising (throwing) an exception", 
+                "rewritten_intent": "throw an assertion error with message \"Unexpected value of 'distance'!\", distance", 
+                "context": "", 
+                "code_snippet": "\n    raise AssertionError(\"Unexpected value of 'distance'!\", distance)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2331943, 
+        "title": "How to decode JSON with Python", 
+        "annotations": [
+            {
+                "intent": "decode JSON", 
+                "rewritten_intent": "decode JSON string `u` to a dictionary", 
+                "context": "\nimport json\n\n", 
+                "code_snippet": " json.load(u)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 273192, 
+        "title": "How to check if a directory exists and create it if necessary?", 
+        "annotations": [
+            {
+                "intent": "check if a directory exists and create it if necessary", 
+                "rewritten_intent": "check if directory `directory ` exists and create it if necessary", 
+                "context": "", 
+                "code_snippet": "if not os.path.exists(directory):\n    os.makedirs(directory)\n"
+            }, 
+            {
+                "intent": "check if a directory exists and create it if necessary", 
+                "rewritten_intent": "check if a directory `path` exists and create it if necessary", 
+                "context": "", 
+                "code_snippet": "try: \n    os.makedirs(path)\nexcept OSError:\n    if not os.path.isdir(path):\n        raise\n"
+            }, 
+            {
+                "intent": "check if a directory exists and create it if necessary", 
+                "rewritten_intent": "check if a directory `path` exists and create it if necessary", 
+                "context": "import distutils.dir_util\n", 
+                "code_snippet": "\ndistutils.dir_util.mkpath(path)\n"
+            }, 
+            {
+                "intent": "check if a directory exists and create it if necessary", 
+                "rewritten_intent": "check if a directory `path` exists and create it if necessary", 
+                "context": "", 
+                "code_snippet": "\n    try:\n        os.makedirs(path)\n    except OSError as exception:\n        if exception.errno != errno.EEXIST:\n            raise\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 14931769, 
+        "title": "How to get all combination of n binary value?", 
+        "annotations": [
+            {
+                "intent": "get all combination of n binary value", 
+                "rewritten_intent": "get all combination of n binary values", 
+                "context": "", 
+                "code_snippet": "\nlst = list(itertools.product([0, 1], repeat=n))\n"
+            }, 
+            {
+                "intent": "get all combination of n binary value", 
+                "rewritten_intent": "get all combination of n binary values", 
+                "context": "", 
+                "code_snippet": "lst = map(list, itertools.product([0, 1], repeat=n))\n"
+            }, 
+            {
+                "intent": "get all combination of n binary value", 
+                "rewritten_intent": "get all combination of 3 binary values", 
+                "context": "", 
+                "code_snippet": "bin = [0,1]\n[ (x,y,z) for x in bin for y in bin for z in bin ]\n"
+            }, 
+            {
+                "intent": "get all combination of n binary value", 
+                "rewritten_intent": "get all combination of 3 binary values", 
+                "context": "import itertools\n", 
+                "code_snippet": "\nlst = list(itertools.product([0, 1], repeat=3))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3518778, 
+        "title": "How to read csv into record array in numpy?", 
+        "annotations": [
+            {
+                "intent": "read csv into record array in numpy", 
+                "rewritten_intent": "read csv file 'my_file.csv' into numpy array", 
+                "context": "from numpy import genfromtxt\n", 
+                "code_snippet": "\nmy_data = genfromtxt('my_file.csv', delimiter=',')\n"
+            }, 
+            {
+                "intent": "read csv into record array in numpy", 
+                "rewritten_intent": "read csv file 'myfile.csv' into array", 
+                "context": "import pandas as pd\n", 
+                "code_snippet": "\ndf=pd.read_csv('myfile.csv', sep=',',header=None)\n"
+            }, 
+            {
+                "intent": "read csv into record array in numpy", 
+                "rewritten_intent": "read csv file 'myfile.csv' into array", 
+                "context": "\n\nimport numpy as np\n", 
+                "code_snippet": "\nnp.genfromtxt('myfile.csv',delimiter=',')\n"
+            }, 
+            {
+                "intent": "read csv into record array", 
+                "rewritten_intent": "read csv file 'myfile.csv' into array", 
+                "context": "", 
+                "code_snippet": "np.genfromtxt('myfile.csv',delimiter=',',dtype=None)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4020539, 
+        "title": "Process escape sequences in a string in Python", 
+        "annotations": [
+            {
+                "intent": "Process escape sequences in a string", 
+                "rewritten_intent": "decode escape sequences in string `myString`", 
+                "context": "", 
+                "code_snippet": " myString.decode('string_escape') "
+            }
+        ]
+    }, 
+    {
+        "question_id": 21129020, 
+        "title": "How to fix: \"UnicodeDecodeError: 'ascii' codec can't decode byte\"", 
+        "annotations": [
+            {
+                "intent": "How to fix: \"UnicodeDecodeError: 'ascii' codec can't decode byte\"", 
+                "rewritten_intent": "set the default encoding to 'utf-8'", 
+                "context": "  \nimport sys  \n\n", 
+                "code_snippet": "  \nsys.setdefaultencoding('utf8')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1854, 
+        "title": "Python: What OS am I running on?", 
+        "annotations": [
+            {
+                "intent": "What OS am I running on", 
+                "rewritten_intent": "get os name", 
+                "context": "", 
+                "code_snippet": " import platform\n\n platform.system()\n"
+            }, 
+            {
+                "intent": "What OS am I running on", 
+                "rewritten_intent": "get os version", 
+                "context": "", 
+                "code_snippet": " import platform\n\n platform.release()\n"
+            }, 
+            {
+                "intent": "What OS am I running on", 
+                "rewritten_intent": "get the name of the OS", 
+                "context": " import os\n", 
+                "code_snippet": " print os.name\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 613183, 
+        "title": "Sort a Python dictionary by value", 
+        "annotations": [
+            {
+                "intent": "Sort a Python dictionary by value", 
+                "rewritten_intent": "Sort dictionary `x` by value in ascending order", 
+                "context": "import operator\n\n\nx = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}\n", 
+                "code_snippet": " sorted(x.items(), key=operator.itemgetter(1))\n"
+            }, 
+            {
+                "intent": "Sort a Python dictionary by value", 
+                "rewritten_intent": "Sort dictionary `dict1` by value in ascending order", 
+                "context": "", 
+                "code_snippet": "sorted(dict1, key=dict1.get)"
+            }, 
+            {
+                "intent": "Sort a Python dictionary by value", 
+                "rewritten_intent": "Sort dictionary `d` by value in descending order", 
+                "context": "", 
+                "code_snippet": " sorted(d, key=d.get, reverse=True)"
+            }, 
+            {
+                "intent": "Sort a Python dictionary by value", 
+                "rewritten_intent": "Sort dictionary `d` by value in ascending order", 
+                "context": "", 
+                "code_snippet": "sorted(d.items(), key=lambda x: x[1])"
+            }
+        ]
+    }, 
+    {
+        "question_id": 31818050, 
+        "title": "Python 2.7: round number to nearest integer", 
+        "annotations": [
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number `x` to nearest integer", 
+                "context": "", 
+                "code_snippet": "int(round(x))\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number `h` to nearest integer", 
+                "context": "", 
+                "code_snippet": "h = int(round(h))\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 32.268907563 up to 3 decimal points", 
+                "context": "", 
+                "code_snippet": " round(32.268907563, 3)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number `value` up to `significantDigit` decimal places", 
+                "context": "", 
+                "code_snippet": "round(value,significantDigit)"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 1.0005 up to 3 decimal places", 
+                "context": "", 
+                "code_snippet": " round(1.0005,3)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 2.0005 up to 3 decimal places", 
+                "context": "", 
+                "code_snippet": " round(2.0005,3)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 3.0005 up to 3 decimal places", 
+                "context": "", 
+                "code_snippet": " round(3.0005,3)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 4.0005 up to 3 decimal places", 
+                "context": "", 
+                "code_snippet": " round(4.0005,3)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 8.005 up to 2 decimal places", 
+                "context": "", 
+                "code_snippet": " round(8.005,2)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 7.005 up to 2 decimal places", 
+                "context": "", 
+                "code_snippet": " round(7.005,2)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 6.005 up to 2 decimal places", 
+                "context": "", 
+                "code_snippet": " round(6.005,2)\n"
+            }, 
+            {
+                "intent": "round number to nearest integer", 
+                "rewritten_intent": "round number 1.005 up to 2 decimal places", 
+                "context": "", 
+                "code_snippet": " round(1.005,2)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3501382, 
+        "title": "Checking whether a variable is an integer or not", 
+        "annotations": [
+            {
+                "intent": "Checking whether a variable is an integer", 
+                "rewritten_intent": "check if `x` is an integer", 
+                "context": "", 
+                "code_snippet": "\nisinstance( x, int ) "
+            }, 
+            {
+                "intent": "Checking whether a variable is an integer", 
+                "rewritten_intent": "check if `x` is an integer", 
+                "context": "", 
+                "code_snippet": "\ntype( x ) == int "
+            }
+        ]
+    }, 
+    {
+        "question_id": 89228, 
+        "title": "Calling an external command in Python", 
+        "annotations": [
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"ls -l\"", 
+                "context": "from subprocess import call\n", 
+                "code_snippet": "from subprocess import call\n"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"some_command with args\"", 
+                "context": "", 
+                "code_snippet": "\nos.system(\"some_command with args\")"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"some_command < input_file | another_command > output_file\"", 
+                "context": "", 
+                "code_snippet": "os.system(\"some_command < input_file | another_command > output_file\")  \n"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"some_command with args\"", 
+                "context": "", 
+                "code_snippet": "stream = os.popen(\"some_command with args\")"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"echo Hello World\"", 
+                "context": "", 
+                "code_snippet": "print subprocess.Popen(\"echo Hello World\", shell=True, stdout=subprocess.PIPE).stdout.read()\n"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"echo Hello World\"", 
+                "context": "", 
+                "code_snippet": "print os.popen(\"echo Hello World\").read()\n"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"echo Hello World\"", 
+                "context": "", 
+                "code_snippet": "return_code = subprocess.call(\"echo Hello World\", shell=True)  \n"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"ls\"", 
+                "context": "import subprocess\n\n", 
+                "code_snippet": "\n\np = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\nfor line in p.stdout.readlines():\n    print line,\nretval = p.wait()\n"
+            }, 
+            {
+                "intent": "Calling an external command", 
+                "rewritten_intent": "Calling an external command \"ls -l\"", 
+                "context": "from subprocess import call\n", 
+                "code_snippet": "\ncall([\"ls\", \"-l\"])\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 493386, 
+        "title": "How to print in Python without newline or space?", 
+        "annotations": [
+            {
+                "intent": "print in Python without newline or space", 
+                "rewritten_intent": "print \".\" without newline", 
+                "context": "import sys\n", 
+                "code_snippet": "\nsys.stdout.write('.')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 311627, 
+        "title": "How to print date in a regular format in Python?", 
+        "annotations": [
+            {
+                "intent": "print date in a regular format", 
+                "rewritten_intent": "print current date and time in a regular format", 
+                "context": "import datetime\n", 
+                "code_snippet": " datetime.datetime.now().strftime(\"%Y-%m-%d %H:%M\")\n"
+            }, 
+            {
+                "intent": "print date in a regular format", 
+                "rewritten_intent": "print current date and time in a regular format", 
+                "context": "import time\n", 
+                "code_snippet": " time.strftime(\"%Y-%m-%d %H:%M\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1024847, 
+        "title": "Add key to a dictionary in Python?", 
+        "annotations": [
+            {
+                "intent": "Add key to a dictionary", 
+                "rewritten_intent": "Add key \"mynewkey\" to dictionary `d` with value \"mynewvalue\"", 
+                "context": "", 
+                "code_snippet": " d['mynewkey'] = 'mynewvalue'\n"
+            }, 
+            {
+                "intent": "Add key to a dictionary", 
+                "rewritten_intent": "Add key 'a' to dictionary `data` with value 1", 
+                "context": "", 
+                "code_snippet": "\ndata.update({'a':1})\n"
+            }, 
+            {
+                "intent": "Add key to a dictionary", 
+                "rewritten_intent": "Add key 'a' to dictionary `data` with value 1", 
+                "context": "", 
+                "code_snippet": "\ndata.update(dict(a=1))\n"
+            }, 
+            {
+                "intent": "Add key to a dictionary", 
+                "rewritten_intent": "Add key 'a' to dictionary `data` with value 1", 
+                "context": "", 
+                "code_snippet": "\ndata.update(a=1)\n\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 120656, 
+        "title": "Directory listing in Python", 
+        "annotations": [
+            {
+                "intent": "Directory listing", 
+                "rewritten_intent": "list all files in directory \".\"", 
+                "context": "import os\n\n", 
+                "code_snippet": "\n\nfor dirname, dirnames, filenames in os.walk('.'):\n    # print path to all subdirectories first.\n    for subdirname in dirnames:\n        print(os.path.join(dirname, subdirname))\n\n    # print path to all filenames.\n    for filename in filenames:\n        print(os.path.join(dirname, filename))\n\n    "
+            }, 
+            {
+                "intent": "Directory listing", 
+                "rewritten_intent": "list all files in directory `path`", 
+                "context": "", 
+                "code_snippet": "os.listdir(path)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1823058, 
+        "title": "How to print number with commas as thousands separators?", 
+        "annotations": [
+            {
+                "intent": "print number with commas as thousands separators", 
+                "rewritten_intent": "print number `value` as thousands separators", 
+                "context": "", 
+                "code_snippet": "\"{:,}\".format(value)\n"
+            }, 
+            {
+                "intent": "print number with commas as thousands separators", 
+                "rewritten_intent": "print number 1255000 as thousands separators", 
+                "context": ">>> import locale\n", 
+                "code_snippet": "\n>>> locale.setlocale(locale.LC_ALL, 'en_US')\n\n\n>>> locale.format(\"%d\", 1255000, grouping=True)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2150739, 
+        "title": "ISO Time (ISO 8601) in Python?", 
+        "annotations": [
+            {
+                "intent": "ISO Time (ISO 8601) in Python", 
+                "rewritten_intent": "get current datetime in ISO format", 
+                "context": "import datetime\n", 
+                "code_snippet": "\ndatetime.datetime.now().isoformat()\n"
+            }, 
+            {
+                "intent": "ISO Time (ISO 8601) in Python", 
+                "rewritten_intent": "get UTC datetime in ISO format", 
+                "context": "import datetime\n", 
+                "code_snippet": "\ndatetime.datetime.utcnow().isoformat()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4641765, 
+        "title": "Add to integers in a list", 
+        "annotations": [
+            {
+                "intent": "Add to integers in a list", 
+                "rewritten_intent": "append 4 to list `foo`", 
+                "context": "foo = [1,2,3,4,5]\n", 
+                "code_snippet": "\nfoo.append( 4 )\n"
+            }, 
+            {
+                "intent": "Add to integers in a list", 
+                "rewritten_intent": "append a list [8, 7] to list `foo`", 
+                "context": "foo = [1,2,3,4,5]\n", 
+                "code_snippet": "\nfoo.append( [8,7] )    \n"
+            }, 
+            {
+                "intent": "Add to integers in a list", 
+                "rewritten_intent": "insert 77 to index 2 of list `x`", 
+                "context": "x = [2,5,10]\n", 
+                "code_snippet": "\nx.insert(2, 77)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1747817, 
+        "title": "Create a dictionary with list comprehension in Python", 
+        "annotations": [
+            {
+                "intent": "Create a dictionary with list comprehension", 
+                "rewritten_intent": "Create a dictionary `d` from list `iterable`", 
+                "context": "", 
+                "code_snippet": "d = dict((key, value) for (key, value) in iterable)\n"
+            }, 
+            {
+                "intent": "Create a dictionary with list comprehension", 
+                "rewritten_intent": "Create a dictionary `d` from list `iterable`", 
+                "context": "", 
+                "code_snippet": "d = {key: value for (key, value) in iterable}\n"
+            }, 
+            {
+                "intent": "Create a dictionary with list comprehension", 
+                "rewritten_intent": "Create a dictionary `d` from list of key value pairs `iterable`", 
+                "context": "", 
+                "code_snippet": "d = {k:v for k, v in iterable}\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2793324, 
+        "title": "Is there a simple way to delete a list element by value in python?", 
+        "annotations": [
+            {
+                "intent": "delete a list element by value", 
+                "rewritten_intent": "remove item \"b\" in list `a`", 
+                "context": "", 
+                "code_snippet": " a.remove('b')\n"
+            }, 
+            {
+                "intent": "delete a list element by value", 
+                "rewritten_intent": "remove item `c` in list `a`", 
+                "context": "", 
+                "code_snippet": "\n    a.remove(c)\n"
+            }, 
+            {
+                "intent": "delete a list element by value", 
+                "rewritten_intent": "delete the element 6 from list `a`", 
+                "context": "a=[1,2,3,4]\n", 
+                "code_snippet": "\n    a.remove(6)\n"
+            }, 
+            {
+                "intent": "delete a list element by value", 
+                "rewritten_intent": "delete the element 6 from list `a`", 
+                "context": "", 
+                "code_snippet": "\n    a.remove(6)\n"
+            }, 
+            {
+                "intent": "delete a list element by value", 
+                "rewritten_intent": "delete the element `c` from list `a`", 
+                "context": "", 
+                "code_snippet": "if c in a:\n    a.remove(c)\n"
+            }, 
+            {
+                "intent": "delete a list element by value", 
+                "rewritten_intent": "delete the element `c` from list `a`", 
+                "context": "", 
+                "code_snippet": "try:\n    a.remove(c)\nexcept ValueError:\n    pass\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 3523048, 
+        "title": "Add another tuple to a tuple of tuples", 
+        "annotations": [
+            {
+                "intent": "Add another tuple to a tuple", 
+                "rewritten_intent": "Add a tuple with value `another_choice` to a tuple `my_choices`", 
+                "context": "", 
+                "code_snippet": "final_choices = (another_choice,) + my_choices\n"
+            }, 
+            {
+                "intent": "Add another tuple to a tuple", 
+                "rewritten_intent": "Add a tuple with value `another_choice` to a tuple `my_choices`", 
+                "context": "", 
+                "code_snippet": "\nfinal_choices = (another_choice,) + my_choices\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 123198, 
+        "title": "How do I copy a file in python?", 
+        "annotations": [
+            {
+                "intent": "copy a file", 
+                "rewritten_intent": "copy a file from `src` to `dst`", 
+                "context": "from shutil import copyfile\n\n", 
+                "code_snippet": "\n\ncopyfile(src, dst)\n"
+            }, 
+            {
+                "intent": "copy a file", 
+                "rewritten_intent": "copy file \"/dir/file.ext\" to \"/new/dir/newname.ext\"", 
+                "context": "import shutil\n", 
+                "code_snippet": "\nshutil.copy2('/dir/file.ext', '/new/dir/newname.ext')\n"
+            }, 
+            {
+                "intent": "copy a file", 
+                "rewritten_intent": "copy file '/dir/file.ext' to '/new/dir'", 
+                "context": "", 
+                "code_snippet": "shutil.copy2('/dir/file.ext', '/new/dir')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1602934, 
+        "title": "Check if a given key already exists in a dictionary", 
+        "annotations": [
+            {
+                "intent": "Check if a given key already exists in a dictionary", 
+                "rewritten_intent": "Check if key 'key1' in `dict`", 
+                "context": "", 
+                "code_snippet": " 'key1' in dict"
+            }, 
+            {
+                "intent": "Check if a given key already exists in a dictionary", 
+                "rewritten_intent": "Check if key 'a' in `d`", 
+                "context": "", 
+                "code_snippet": "\n'a' in d "
+            }, 
+            {
+                "intent": "Check if a given key already exists in a dictionary", 
+                "rewritten_intent": "Check if key 'c' in `d`", 
+                "context": "", 
+                "code_snippet": "\n'c' in d "
+            }, 
+            {
+                "intent": "Check if a given key already exists in a dictionary", 
+                "rewritten_intent": "Check if a given key 'key1' exists in dictionary `dict`", 
+                "context": "", 
+                "code_snippet": "if 'key1' in dict:\n  "
+            }, 
+            {
+                "intent": "Check if a given key already exists in a dictionary", 
+                "rewritten_intent": "Check if a given key `key` exists in dictionary `d`", 
+                "context": "", 
+                "code_snippet": "\n    if key in d:\n        "
+            }
+        ]
+    }, 
+    {
+        "question_id": 9573244, 
+        "title": "Most elegant way to check if the string is empty in Python?", 
+        "annotations": [
+            {
+                "intent": "check if the string is empty", 
+                "rewritten_intent": "check if the string `myString` is empty", 
+                "context": "", 
+                "code_snippet": "if not myString:\n"
+            }, 
+            {
+                "intent": "Most elegant way to check if the string is empty", 
+                "rewritten_intent": "check if string `some_string` is empty", 
+                "context": "", 
+                "code_snippet": "if not some_string:\n"
+            }, 
+            {
+                "intent": "Most elegant way to check if the string is empty", 
+                "rewritten_intent": "check if string `my_string` is empty", 
+                "context": "", 
+                "code_snippet": "if not my_string:\n"
+            }, 
+            {
+                "intent": "check if the string is empty", 
+                "rewritten_intent": "check if string `my_string` is empty", 
+                "context": "", 
+                "code_snippet": "if some_string:\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 743806, 
+        "title": "Split string into a list in Python", 
+        "annotations": [
+            {
+                "intent": "Split string into a list", 
+                "rewritten_intent": "split string `text` by space", 
+                "context": "", 
+                "code_snippet": " text.split()      \n"
+            }, 
+            {
+                "intent": "Split string into a list", 
+                "rewritten_intent": "split string `text` by \",\"", 
+                "context": "", 
+                "code_snippet": " text.split(\",\")   \n"
+            }, 
+            {
+                "intent": "Split string into a list", 
+                "rewritten_intent": "Split string `line` into a list by whitespace", 
+                "context": " line=\"a sentence with a few words\"\n", 
+                "code_snippet": " line.split()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 518021, 
+        "title": "Getting the length of an array in Python", 
+        "annotations": [
+            {
+                "intent": "Getting the length of an array", 
+                "rewritten_intent": "Get the length of list `my_list`", 
+                "context": "", 
+                "code_snippet": "\nlen(my_list)\n"
+            }, 
+            {
+                "intent": "Getting the length of an array", 
+                "rewritten_intent": "Getting the length of array `l`", 
+                "context": "l = [1,2,3,4]\n", 
+                "code_snippet": "\nlen(l) "
+            }, 
+            {
+                "intent": "Getting the length of an array", 
+                "rewritten_intent": "Getting the length of array `s`", 
+                "context": "\ns = 'abcde'\n", 
+                "code_snippet": "\nlen(s) "
+            }, 
+            {
+                "intent": "Getting the length of an array", 
+                "rewritten_intent": "Getting the length of `my_tuple`", 
+                "context": "my_tuple = (1,2,3,4,5)\n", 
+                "code_snippet": "\nlen(my_tuple)\n"
+            }, 
+            {
+                "intent": "Getting the length of an array", 
+                "rewritten_intent": "Getting the length of `my_string`", 
+                "context": "my_string = 'hello world'\n", 
+                "code_snippet": "\nlen(my_string)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 19339, 
+        "title": "Transpose/Unzip Function (inverse of zip)?", 
+        "annotations": [
+            {
+                "intent": "inverse of zip", 
+                "rewritten_intent": "unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`", 
+                "context": "", 
+                "code_snippet": " zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])\n"
+            }, 
+            {
+                "intent": "inverse of zip", 
+                "rewritten_intent": "unzip the list `[('a', 1), ('b', 2), ('c', 3), ('d', 4)]`", 
+                "context": "", 
+                "code_snippet": " zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])\n"
+            }, 
+            {
+                "intent": "inverse of zip", 
+                "rewritten_intent": "unzip list `original`", 
+                "context": "", 
+                "code_snippet": "result = ([ a for a,b in original ], [ b for a,b in original ])\n"
+            }, 
+            {
+                "intent": "inverse of zip", 
+                "rewritten_intent": "unzip list `original` and return a generator", 
+                "context": "", 
+                "code_snippet": "result = (( a for a,b in original ), ( b for a,b in original ))\n"
+            }, 
+            {
+                "intent": "inverse of zip", 
+                "rewritten_intent": "unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]`", 
+                "context": "", 
+                "code_snippet": " zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )])\n"
+            }, 
+            {
+                "intent": "inverse of zip", 
+                "rewritten_intent": "unzip list `[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )]` and fill empty results with None", 
+                "context": "", 
+                "code_snippet": " map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )])\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 510348, 
+        "title": "How can I make a time delay in Python?", 
+        "annotations": [
+            {
+                "intent": "make a time delay", 
+                "rewritten_intent": "delay for \"5\" seconds", 
+                "context": "import time\n", 
+                "code_snippet": "\ntime.sleep(5) "
+            }, 
+            {
+                "intent": "make a time delay", 
+                "rewritten_intent": "make a 60 seconds time delay", 
+                "context": "import time \n", 
+                "code_snippet": "\n    time.sleep(60)  "
+            }, 
+            {
+                "intent": "make a time delay", 
+                "rewritten_intent": "make a 0.1 seconds time delay", 
+                "context": "from time import sleep\n", 
+                "code_snippet": "\nsleep(0.1) "
+            }, 
+            {
+                "intent": "make a time delay", 
+                "rewritten_intent": "make a 60 seconds time delay", 
+                "context": "import time\n", 
+                "code_snippet": "\ntime.sleep(60)\n"
+            }, 
+            {
+                "intent": "make a time delay", 
+                "rewritten_intent": "make a 0.1 seconds time delay", 
+                "context": "import time\n", 
+                "code_snippet": "\ntime.sleep(0.1) \n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2151517, 
+        "title": "Pythonic Way to Create Union of All Values Contained in Multiple Lists", 
+        "annotations": [
+            {
+                "intent": "Create Union of All Values Contained in Multiple Lists", 
+                "rewritten_intent": "get the union set from list of lists `results_list`", 
+                "context": ">>> results_list = [[1,2,3], [1,2,4]]\n", 
+                "code_snippet": "\n>>> results_union = set().union(*results_list)\n"
+            }, 
+            {
+                "intent": "Create Union of All Values Contained in Multiple Lists", 
+                "rewritten_intent": "get the union of values in list of lists `result_list`", 
+                "context": "   import itertools\n\n   ", 
+                "code_snippet": "\n\n   return list(set(itertools.chain(*result_list)))\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 82831, 
+        "title": "How do I check whether a file exists using Python?", 
+        "annotations": [
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a file `fname` exists", 
+                "context": "import os.path\n", 
+                "code_snippet": "\nos.path.isfile(fname) \n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether file \"/path/to/file\" exists", 
+                "context": "from pathlib import Path\n\n", 
+                "code_snippet": "\n\nmy_file = Path(\"/path/to/file\")\nif my_file.is_file():\n    # file exists\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether file `file_path` exists", 
+                "context": "import os.path\n", 
+                "code_snippet": "\nos.path.exists(file_path)\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a file \"/etc/password.txt\" exists", 
+                "context": "", 
+                "code_snippet": " print os.path.isfile(\"/etc/password.txt\")\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a file \"/etc\" exists", 
+                "context": "", 
+                "code_snippet": " print os.path.isfile(\"/etc\")\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a path \"/does/not/exist\" exists", 
+                "context": "", 
+                "code_snippet": " print os.path.exists(\"/does/not/exist\")\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a file \"/does/not/exist\" exists", 
+                "context": "", 
+                "code_snippet": " print os.path.isfile(\"/does/not/exist\")\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a path \"/etc\" exists", 
+                "context": "", 
+                "code_snippet": " print os.path.exists(\"/etc\")\n"
+            }, 
+            {
+                "intent": "check whether a file exists", 
+                "rewritten_intent": "check whether a path \"/etc/password.txt\" exists", 
+                "context": "", 
+                "code_snippet": " print os.path.exists(\"/etc/password.txt\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 510357, 
+        "title": "Python read a single character from the user", 
+        "annotations": [
+            {
+                "intent": "read a single character from the user", 
+                "rewritten_intent": "read a single character from stdin", 
+                "context": "", 
+                "code_snippet": "sys.stdin.read(1)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1450393, 
+        "title": "How do you read from stdin in Python?", 
+        "annotations": [
+            {
+                "intent": "read from stdin", 
+                "rewritten_intent": "read line by line from stdin", 
+                "context": "import fileinput\n\n", 
+                "code_snippet": "\n\nfor line in fileinput.input():\n    pass\n"
+            }, 
+            {
+                "intent": "read from stdin", 
+                "rewritten_intent": "read line by line from stdin", 
+                "context": "import sys\n\n", 
+                "code_snippet": "\n\nfor line in sys.stdin:\n    print line\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2759067, 
+        "title": "Rename Files in Python", 
+        "annotations": [
+            {
+                "intent": "Rename Files", 
+                "rewritten_intent": "Rename file from `src` to `dst`", 
+                "context": "", 
+                "code_snippet": "os.rename(src, dst)"
+            }
+        ]
+    }, 
+    {
+        "question_id": 15411107, 
+        "title": "Delete a dictionary item if the key exists", 
+        "annotations": [
+            {
+                "intent": "Delete a dictionary item if the key exists", 
+                "rewritten_intent": "Delete an item with key \"key\" from `mydict`", 
+                "context": "", 
+                "code_snippet": " mydict.pop(\"key\", None)\n"
+            }, 
+            {
+                "intent": "Delete a dictionary item if the key exists", 
+                "rewritten_intent": "Delete an item with key `key` from `mydict`", 
+                "context": "", 
+                "code_snippet": "\n    del mydict[key]\n"
+            }, 
+            {
+                "intent": "Delete a dictionary item if the key exists", 
+                "rewritten_intent": "Delete an item with key `key` from `mydict`", 
+                "context": "", 
+                "code_snippet": "try:\n    del mydict[key]\nexcept KeyError:\n    pass\n\ntry:\n    del mydict[key]\nexcept KeyError:\n    pass\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 466345, 
+        "title": "Converting string into datetime", 
+        "annotations": [
+            {
+                "intent": "Converting string into datetime", 
+                "rewritten_intent": "parse string \"Jun 1 2005  1:33PM\" into datetime by format \"%b %d %Y %I:%M%p\"", 
+                "context": "from datetime import datetime\n\n", 
+                "code_snippet": " datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')\n"
+            }, 
+            {
+                "intent": "Converting string into datetime", 
+                "rewritten_intent": "parse string \"Aug 28 1999 12:00AM\" into datetime", 
+                "context": "from dateutil import parser\n", 
+                "code_snippet": " parser.parse(\"Aug 28 1999 12:00AM\")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 13368659, 
+        "title": "How can I loop through an IP address range in python", 
+        "annotations": [
+            {
+                "intent": "loop through an IP address range", 
+                "rewritten_intent": "loop through the IP address range \"192.168.x.x\"", 
+                "context": "", 
+                "code_snippet": "for i in range(256):\n    for j in range(256):\n        ip = \"192.168.%d.%d\" % (i, j)\n        print ip\n"
+            }, 
+            {
+                "intent": "loop through an IP address range", 
+                "rewritten_intent": "loop through the IP address range \"192.168.x.x\"", 
+                "context": "", 
+                "code_snippet": "for i,j in product(range(256),range(256)):\n    print \"192.168.{0}.{1}\".format(i,j)\n"
+            }, 
+            {
+                "intent": "loop through an IP address range", 
+                "rewritten_intent": "loop through the IP address range \"192.168.x.x\"", 
+                "context": "from netaddr import iter_iprange\n", 
+                "code_snippet": "\ngenerator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 10973614, 
+        "title": "Convert JSON array to Python list", 
+        "annotations": [
+            {
+                "intent": "Convert JSON array to Python list", 
+                "rewritten_intent": "Convert JSON array `array` to Python object", 
+                "context": "import json\n\n\n\n\narray = '{\"fruits\": [\"apple\", \"banana\", \"orange\"]}'\n", 
+                "code_snippet": "\ndata  = json.loads(array)\n"
+            }, 
+            {
+                "intent": "Convert JSON array to Python list", 
+                "rewritten_intent": "Convert JSON array `array` to Python object", 
+                "context": "\nimport json\narray = '{\"fruits\": [\"apple\", \"banana\", \"orange\"]}'\n", 
+                "code_snippet": "\ndata  = json.loads(array)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4135344, 
+        "title": "Is there any direct way to generate pdf from markdown file by python", 
+        "annotations": [
+            {
+                "intent": "generate pdf from markdown file", 
+                "rewritten_intent": "generate pdf file `output_filename` from markdown file `input_filename`", 
+                "context": "from markdown import markdown\nimport pdfkit\n\ninput_filename = 'README.md'\noutput_filename = 'README.pdf'\n\n", 
+                "code_snippet": "\n\nwith open(input_filename, 'r') as f:\n    html_text = markdown(f.read(), output_format='html4')\n\npdfkit.from_string(html_text, output_filename)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 8177079, 
+        "title": "Python: take the content of a list and append it to another list", 
+        "annotations": [
+            {
+                "intent": "take the content of a list and append it to another list", 
+                "rewritten_intent": "append list `list1` to `list2`", 
+                "context": "", 
+                "code_snippet": "list2.extend(list1)\n"
+            }, 
+            {
+                "intent": "take the content of a list and append it to another list", 
+                "rewritten_intent": "append list `mylog` to `list1`", 
+                "context": "", 
+                "code_snippet": "list1.extend(mylog)\n"
+            }, 
+            {
+                "intent": "take the content of a list and append it to another list", 
+                "rewritten_intent": "append list `a` to `c`", 
+                "context": "", 
+                "code_snippet": " c.extend(a)\n"
+            }, 
+            {
+                "intent": "take the content of a list and append it to another list", 
+                "rewritten_intent": "append items in list `mylog` to `list1`", 
+                "context": "", 
+                "code_snippet": "for line in mylog:\n    list1.append(line)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 455612, 
+        "title": "Limiting floats to two decimal points", 
+        "annotations": [
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "print float `a` with two decimal points", 
+                "context": "", 
+                "code_snippet": " print(\"%.2f\" % a)\n  "
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "print float `a` with two decimal points", 
+                "context": "", 
+                "code_snippet": " print(\"{0:.2f}\".format(a))\n  "
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "print float `a` with two decimal points", 
+                "context": "", 
+                "code_snippet": " print(\"{0:.2f}\".format(round(a,2)))\n  "
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "print float `a` with two decimal points", 
+                "context": "", 
+                "code_snippet": " print(\"%.2f\" % round(a,2))\n  "
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "limit float 13.9499999 to two decimal points", 
+                "context": "", 
+                "code_snippet": " \"%.2f\" % 13.9499999\n"
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "limit float 3.14159 to two decimal points", 
+                "context": "", 
+                "code_snippet": " \"%.2f\" % 3.14159\n"
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "limit float 13.949999999999999 to two decimal points", 
+                "context": "", 
+                "code_snippet": "float(\"{0:.2f}\".format(13.949999999999999))\n"
+            }, 
+            {
+                "intent": "Limiting floats to two decimal points", 
+                "rewritten_intent": "limit float 13.949999999999999 to two decimal points", 
+                "context": "", 
+                "code_snippet": "\"{0:.2f}\".format(13.949999999999999)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 73663, 
+        "title": "Terminating a Python script", 
+        "annotations": [
+            {
+                "intent": "Terminating a Python script", 
+                "rewritten_intent": "terminate the program", 
+                "context": "import sys\n", 
+                "code_snippet": "\nsys.exit()\n"
+            }, 
+            {
+                "intent": "Terminating a Python script", 
+                "rewritten_intent": "terminate the program", 
+                "context": "", 
+                "code_snippet": "\n  quit()\n"
+            }, 
+            {
+                "intent": "Terminating a Python script", 
+                "rewritten_intent": "Terminating a Python script with error message \"some error message\"", 
+                "context": "", 
+                "code_snippet": "sys.exit(\"some error message\")"
+            }
+        ]
+    }, 
+    {
+        "question_id": 319426, 
+        "title": "How do I do a case insensitive string comparison in Python?", 
+        "annotations": [
+            {
+                "intent": "case insensitive string comparison", 
+                "rewritten_intent": "case insensitive comparison of strings `string1` and `string2`", 
+                "context": "string1 = 'Hello'\nstring2 = 'hello'\n\n", 
+                "code_snippet": "\n\nif string1.lower() == string2.lower():\n    print \"The strings are the same (case insensitive)\"\nelse:\n    print \"The strings are not the same (case insensitive)\"\n"
+            }, 
+            {
+                "intent": "case insensitive string comparison", 
+                "rewritten_intent": "case insensitive string comparison between `string1` and `string2`", 
+                "context": "string1 = 'Hello'\nstring2 = 'hello'\n\n", 
+                "code_snippet": "\n\nif string1.lower() == string2.lower():\n    "
+            }, 
+            {
+                "intent": "case insensitive string comparison", 
+                "rewritten_intent": "case insensitive string comparison between `string1` and `string2`", 
+                "context": "", 
+                "code_snippet": "string1.lower() == string2.lower()\n"
+            }, 
+            {
+                "intent": "case insensitive string comparison", 
+                "rewritten_intent": "case insensitive string comparison between `first` and `second`", 
+                "context": "", 
+                "code_snippet": " first.lower() == second.lower()\n"
+            }, 
+            {
+                "intent": "case insensitive string comparison", 
+                "rewritten_intent": "case insensitive comparison between strings `first` and `second`", 
+                "context": "", 
+                "code_snippet": " first.upper() == second.upper()\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1476, 
+        "title": "How do you express binary literals in Python?", 
+        "annotations": [
+            {
+                "intent": "express binary literals", 
+                "rewritten_intent": "convert 173 to binary string", 
+                "context": "", 
+                "code_snippet": "bin(173)"
+            }, 
+            {
+                "intent": "express binary literals", 
+                "rewritten_intent": "convert binary string '01010101111' to integer", 
+                "context": "", 
+                "code_snippet": " int('01010101111',2)\n"
+            }, 
+            {
+                "intent": "express binary literals", 
+                "rewritten_intent": "convert binary string '010101' to integer", 
+                "context": "", 
+                "code_snippet": " int('010101', 2)\n"
+            }, 
+            {
+                "intent": "express binary literals", 
+                "rewritten_intent": "convert binary string '0b0010101010' to integer", 
+                "context": "", 
+                "code_snippet": " int('0b0010101010', 2)\n"
+            }, 
+            {
+                "intent": "express binary literals", 
+                "rewritten_intent": "convert 21 to binary string", 
+                "context": "", 
+                "code_snippet": " bin(21)\n"
+            }, 
+            {
+                "intent": "express binary literals", 
+                "rewritten_intent": "convert binary string '11111111' to integer", 
+                "context": "", 
+                "code_snippet": " int('11111111',2)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 42950, 
+        "title": "Get Last Day of the Month in Python", 
+        "annotations": [
+            {
+                "intent": "Get Last Day of the Month", 
+                "rewritten_intent": "Get Last Day of the first month in 2002", 
+                "context": " import calendar\n", 
+                "code_snippet": " calendar.monthrange(2002,1)\n"
+            }, 
+            {
+                "intent": "Get Last Day of the Month", 
+                "rewritten_intent": "Get Last Day of the second month in 2002", 
+                "context": " import calendar\n", 
+                "code_snippet": " calendar.monthrange(2008,2)\n"
+            }, 
+            {
+                "intent": "Get Last Day of the Month", 
+                "rewritten_intent": "Get Last Day of the second month in 2100", 
+                "context": " import calendar\n", 
+                "code_snippet": " calendar.monthrange(2100,2)\n"
+            }, 
+            {
+                "intent": "Get Last Day of the Month", 
+                "rewritten_intent": "Get Last Day of the month `month` in year `year`", 
+                "context": "", 
+                "code_snippet": "calendar.monthrange(year, month)[1]\n"
+            }, 
+            {
+                "intent": "Get Last Day of the Month", 
+                "rewritten_intent": "Get Last Day of the second month in year 2012", 
+                "context": ">>> from calendar import monthrange\n", 
+                "code_snippet": "\n>>> monthrange(2012, 2)\n"
+            }, 
+            {
+                "intent": "Get Last Day of the Month", 
+                "rewritten_intent": "Get Last Day of the first month in year 2000", 
+                "context": ">>> import datetime\n", 
+                "code_snippet": "\n>>> datetime.date (2000, 2, 1) - datetime.timedelta (days = 1)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 761804, 
+        "title": "Trimming a string in Python", 
+        "annotations": [
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "trim string \" Hello \"", 
+                "context": "", 
+                "code_snippet": " ' Hello '.strip()\n"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "trim string `myString `", 
+                "context": "", 
+                "code_snippet": "myString.strip()\n"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming a string \" Hello \"", 
+                "context": "", 
+                "code_snippet": " ' Hello '.strip()\n"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming a string \" Hello\"", 
+                "context": "", 
+                "code_snippet": " ' Hello'.strip()\n"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming a string \"Bob has a cat\"", 
+                "context": "", 
+                "code_snippet": " 'Bob has a cat'.strip()\n"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming a string \"          Hello        \"", 
+                "context": "", 
+                "code_snippet": " '          Hello        '.strip()  "
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming a string `str`", 
+                "context": "", 
+                "code_snippet": "str.strip()"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming \"\\n\" from string `myString`", 
+                "context": "", 
+                "code_snippet": "myString.strip('\\n')"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "left trimming \"\\n\\r\" from string `myString`", 
+                "context": "", 
+                "code_snippet": "myString.lstrip('\\n\\r')"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "right trimming \"\\n\\t\" from string `myString`", 
+                "context": "", 
+                "code_snippet": "myString.rstrip('\\n\\t')"
+            }, 
+            {
+                "intent": "Trimming a string", 
+                "rewritten_intent": "Trimming a string \"  Hello\\n\" by space", 
+                "context": "", 
+                "code_snippet": " \"  Hello\\n\".strip(\" \")\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4476373, 
+        "title": "Simple URL GET/POST function in Python", 
+        "annotations": [
+            {
+                "intent": "Simple URL GET/POST function", 
+                "rewritten_intent": "request http url `url`", 
+                "context": "import requests\n", 
+                "code_snippet": "\nr = requests.get(url)\n\n"
+            }, 
+            {
+                "intent": "Simple URL GET/POST function", 
+                "rewritten_intent": "request http url `url` with parameters `payload`", 
+                "context": "import requests\n\n\npayload = {'key1': 'value1', 'key2': 'value2'}\n\n", 
+                "code_snippet": "\nr = requests.get(url, params=payload)\n\n"
+            }, 
+            {
+                "intent": "Simple URL GET/POST function", 
+                "rewritten_intent": "post request url `url` with parameters `payload`", 
+                "context": "import requests\nurl = 'https://...'\npayload = {'key1': 'value1', 'key2': 'value2'}\n\n", 
+                "code_snippet": "\nr = requests.post(url, data=payload)\n\n"
+            }, 
+            {
+                "intent": "Simple URL GET/POST", 
+                "rewritten_intent": "make an HTTP post request with data `post_data`", 
+                "context": "", 
+                "code_snippet": "\npost_response = requests.post(url='http://httpbin.org/post', json=post_data)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 247770, 
+        "title": "Retrieving python module path", 
+        "annotations": [
+            {
+                "intent": "Retrieving python module path", 
+                "rewritten_intent": "get the path of module `a_module`", 
+                "context": "import a_module\n", 
+                "code_snippet": "\nprint a_module.__file__\n"
+            }, 
+            {
+                "intent": "Retrieving python module path", 
+                "rewritten_intent": "get the path of the current python module", 
+                "context": "\nimport os\n", 
+                "code_snippet": "\nprint os.getcwd()\n"
+            }, 
+            {
+                "intent": "Retrieving python module path", 
+                "rewritten_intent": "get the path of the python module `amodule`", 
+                "context": "", 
+                "code_snippet": "path = os.path.abspath(amodule.__file__)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4906977, 
+        "title": "Access environment variables from Python", 
+        "annotations": [
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "Access environment variable \"HOME\"", 
+                "context": "import os\n", 
+                "code_snippet": " os.environ['HOME']\n"
+            }, 
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "get value of environment variable \"HOME\"", 
+                "context": "import os\n", 
+                "code_snippet": " os.environ['HOME']\n"
+            }, 
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "print all environment variables", 
+                "context": "import os\n", 
+                "code_snippet": "\nprint os.environ\n"
+            }, 
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "get all environment variables", 
+                "context": "", 
+                "code_snippet": "os.environ\n"
+            }, 
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "get value of the environment variable 'KEY_THAT_MIGHT_EXIST'", 
+                "context": "", 
+                "code_snippet": "\nprint os.environ.get('KEY_THAT_MIGHT_EXIST')\n\n"
+            }, 
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "get value of the environment variable 'KEY_THAT_MIGHT_EXIST' with default value `default_value`", 
+                "context": "", 
+                "code_snippet": "\nprint os.getenv('KEY_THAT_MIGHT_EXIST', default_value)\n"
+            }, 
+            {
+                "intent": "Access environment variables", 
+                "rewritten_intent": "get value of the environment variable 'HOME' with default value '/home/username/'", 
+                "context": "", 
+                "code_snippet": "print os.environ.get('HOME','/home/username/')\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1186789, 
+        "title": "What is the best way to call a Python script from another Python script?", 
+        "annotations": [
+            {
+                "intent": "call a Python script from another Python script", 
+                "rewritten_intent": "call a Python script \"test2.py\"", 
+                "context": "", 
+                "code_snippet": "execfile(\"test2.py\")\n"
+            }, 
+            {
+                "intent": "call a Python script from another Python script", 
+                "rewritten_intent": "call a Python script \"test1.py\"", 
+                "context": "import subprocess\n\n", 
+                "code_snippet": "\n\nsubprocess.call(\"test1.py\", shell=True)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 2407398, 
+        "title": "How to merge lists into a list of tuples in Python?", 
+        "annotations": [
+            {
+                "intent": "merge lists into a list of tuples", 
+                "rewritten_intent": "merge lists `list_a` and `list_b` into a list of tuples", 
+                "context": " list_a = [1, 2, 3, 4]\n\n list_b = [5, 6, 7, 8]\n", 
+                "code_snippet": " zip(list_a, list_b)\n"
+            }, 
+            {
+                "intent": "merge lists into a list of tuples", 
+                "rewritten_intent": "merge lists `a` and `a` into a list of tuples", 
+                "context": "", 
+                "code_snippet": "list(zip(a, b))"
+            }
+        ]
+    }, 
+    {
+        "question_id": 364519, 
+        "title": "In Python, how do I iterate over a dictionary in sorted order?", 
+        "annotations": [
+            {
+                "intent": "iterate over a dictionary in sorted order", 
+                "rewritten_intent": "iterate over a dictionary `d` in sorted order", 
+                "context": " d = {\"x\":2, \"h\":15, \"a\":2222}\n", 
+                "code_snippet": " it = iter(sorted(d.iteritems()))\n"
+            }, 
+            {
+                "intent": "iterate over a dictionary in sorted order", 
+                "rewritten_intent": "iterate over a dictionary `d` in sorted order", 
+                "context": " d = {\"x\":2, \"h\":15, \"a\":2222}\n", 
+                "code_snippet": "\n>>> for key, value in sorted(d.iteritems()):\n>>>     print(key, value)\n"
+            }, 
+            {
+                "intent": "iterate over a dictionary in sorted order", 
+                "rewritten_intent": "iterate over a dictionary `dict` in sorted order", 
+                "context": "", 
+                "code_snippet": "return sorted(dict.iteritems())\n"
+            }, 
+            {
+                "intent": "iterate over a dictionary in sorted order", 
+                "rewritten_intent": "iterate over a dictionary `dict` in sorted order", 
+                "context": "", 
+                "code_snippet": "return iter(sorted(dict.iteritems()))\n"
+            }, 
+            {
+                "intent": "iterate over a dictionary in sorted order", 
+                "rewritten_intent": "iterate over a dictionary `foo` in sorted order", 
+                "context": "", 
+                "code_snippet": "for k,v in sorted(foo.items()):\n    print k, v\n"
+            }, 
+            {
+                "intent": "iterate over a dictionary in sorted order", 
+                "rewritten_intent": "iterate over a dictionary `foo` sorted by the key", 
+                "context": "", 
+                "code_snippet": "for k in sorted(foo.keys()):\n    print k, foo[k]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 1038824, 
+        "title": "How do I remove a substring from the end of a string in Python?", 
+        "annotations": [
+            {
+                "intent": "remove a substring from the end of a string", 
+                "rewritten_intent": "remove a substring \".com\" from the end of string `url`", 
+                "context": "url = 'abcdc.com'\n", 
+                "code_snippet": "\nif url.endswith('.com'):\n    url = url[:-4]\n"
+            }, 
+            {
+                "intent": "remove a substring from the end of a string", 
+                "rewritten_intent": "remove a substring \".com\" from the end of string `url`", 
+                "context": "import re\nurl = 'abcdc.com'\n", 
+                "code_snippet": "\nurl = re.sub('\\.com$', '', url)\n"
+            }, 
+            {
+                "intent": "remove a substring from the end of a string", 
+                "rewritten_intent": "remove a substring \".com\" from the end of string `url`", 
+                "context": "url = 'abcdc.com'\n", 
+                "code_snippet": "\nprint url.replace('.com','')\n"
+            }, 
+            {
+                "intent": "remove a substring from the end of a string", 
+                "rewritten_intent": "remove a substring `suffix` from the end of string `text`", 
+                "context": "", 
+                "code_snippet": "\n    if not text.endswith(suffix):\n        return text\n    return text[:len(text)-len(suffix)]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 19602931, 
+        "title": "Basic http file downloading and saving to disk in python?", 
+        "annotations": [
+            {
+                "intent": "http file downloading and saving", 
+                "rewritten_intent": "download \"http://randomsite.com/file.gz\" from http and save as \"file.gz\"", 
+                "context": "import urllib\n\n", 
+                "code_snippet": "\n\ntestfile = urllib.URLopener()\ntestfile.retrieve(\"http://randomsite.com/file.gz\", \"file.gz\")\n"
+            }, 
+            {
+                "intent": "http file downloading and saving", 
+                "rewritten_intent": "download file from http url \"http://randomsite.com/file.gz\" and save as \"file.gz\"", 
+                "context": "import urllib\n", 
+                "code_snippet": "\nurllib.urlretrieve (\"http://randomsite.com/file.gz\", \"file.gz\")\n"
+            }, 
+            {
+                "intent": "http file downloading and saving", 
+                "rewritten_intent": "download file from http url `file_url`", 
+                "context": "import wget\n\n\n\n\nfile_url = 'http://johndoe.com/download.zip'\n\n", 
+                "code_snippet": "\n\nfile_name = wget.download(file_url)\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 4588628, 
+        "title": "Find indices of elements equal to zero from numpy array", 
+        "annotations": [
+            {
+                "intent": "Find indices of elements equal to zero from numpy array", 
+                "rewritten_intent": "Find indices of elements equal to zero from numpy array `x`", 
+                "context": " x = numpy.array([1,0,2,0,3,0,4,5,6,7,8])\n", 
+                "code_snippet": " numpy.where(x == 0)[0]\n"
+            }
+        ]
+    }, 
+    {
+        "question_id": 16387069, 
+        "title": "Open images? Python", 
+        "annotations": [
+            {
+                "intent": "Open images", 
+                "rewritten_intent": "Open image 'picture.jpg'", 
+                "context": "from PIL import Image\n\n", 
+                "code_snippet": "\n\nimg = Image.open('picture.jpg')\nimg.show()\n"
+            }, 
+            {
+                "intent": "Open images", 
+                "rewritten_intent": "Open image \"picture.jpg\"", 
+                "context": "", 
+                "code_snippet": "\n    img = Image.open(\"picture.jpg\")\n    Img.show\n"
+            }
+        ]
+    }
+]

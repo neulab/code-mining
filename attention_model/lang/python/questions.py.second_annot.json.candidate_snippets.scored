@@ -1,0 +1,6141 @@
+(dp0
+I14110721
+(dp1
+S"df.set_index(['STK_ID', 'RPT_Date'], inplace=True)"
+p2
+(F-0.6223997539944119
+F-1.8860645294189453
+tp3
+ssI10280963
+(dp4
+S"fout.write('{0}\\n'.format(line))"
+p5
+(F-1.680891330425556
+F-2.542564630508423
+tp6
+ssI27471109
+(dp7
+S'sys.exit()'
+p8
+(F-0.941319397517613
+F-1.4483250512017145
+tp9
+ssI3651589
+(dp10
+S'html = """<div id="header">\n<h1></h1>\n<p>\nlocalhost OpenWrt Backfire<br />\nLoad: 0.00 0.00 0.00<br />\nHostname: localhost\n</p>\n</div>"""\nsoup = BeautifulSoup(html)\nfor each in soup.findAll(name=\'p\'):\n    pass'
+p11
+(F-1.14651858422064
+F-4.120543479919434
+tp12
+ssI26951687
+(dp13
+S'f.write(str(l))'
+p14
+(F-1.6668007590553977
+F-1.6590813856858473
+tp15
+ssI20353033
+(dp16
+S"return item.getElementsByTagName('title')[0].data"
+p17
+(F-1.9376275804307725
+F-2.8947680791219077
+tp18
+ssI7542794
+(dp19
+S'zip(sequence[::2], sequence[1::2])'
+p20
+(F-1.649564642655222
+F-3.007340325249566
+tp21
+ssI11520012
+(dp22
+S'ctypes.POINTER(ctypes.POINTER(ctypes.c_int))'
+p23
+(F-0.7119398678050322
+F-3.5975677490234377
+tp24
+ssI19736589
+(dp25
+S"float('a lot')"
+p26
+(F-1.5403431256612141
+F-2.5196590423583984
+tp27
+ssI8376335
+(dp28
+S'plt.show()'
+p29
+(F-0.6099713870457241
+F-3.100551986694336
+tp30
+ssI7374851
+(dp31
+S"{'word3_1': 'word3', 'word3_3': 'word3', 'word3_2': 'word3', 'contr':\n    'contracting', 'contract': 'contracting', 'contractor': 'contracting',\n    'contra': 'contracting', 'identify': 'identification', 'contractors':\n    'contracting', 'word3_n': 'word3', 'ID': 'identification'}"
+p32
+(F-0.9088348388671875
+F-3.1152360439300537
+tp33
+ssI27076628
+(dp34
+S'url.append(hxs.select(\'//a[@class="df"]/@href\').extract())'
+p35
+(F-1.3490528779871322
+F-2.505536651611328
+tp36
+ssI10969113
+(dp37
+S"imshow(z, origin='lower', extent=[-4, 4, -1, 1], aspect=4)"
+p38
+(F-1.785623005458287
+F-2.4938244539148666
+tp39
+ssI8371887
+(dp40
+S'[[1], [2], [3], [1, 2], [1, 3], [2, 3], [1, 2, 3]]'
+p41
+(F-1.058836215879859
+F-1.950404080477628
+tp42
+ssI24348700
+(dp43
+S"[{'device': 'a', 'iface': ['i3', 'i4', 'i2', 'i1']}, {'device': 'b',\n    'iface': ['i7', 'i5']}]"
+p44
+(F-0.9813560909695096
+F-3.1673714773995534
+tp45
+ssI35491870
+(dp46
+S"browser.find_element_by_name('search-result-1').click()"
+p47
+(F-0.3512102762858073
+F-2.647214344569615
+tp48
+ssI1394721
+(dp49
+S"img = urllib2.urlopen('http://example.com/image.jpg').read()"
+p50
+(F-1.049034527369908
+F-1.9614872932434082
+tp51
+ssI24815963
+(dp52
+S'[(a + b) for a, b in zip(*a_list)]'
+p53
+(F-1.427883511497861
+F-1.9831438700358073
+tp54
+ssI35711012
+(dp55
+S'cv2.waitKey(0)'
+p56
+(F-0.9882397121853299
+F-2.5998668670654297
+tp57
+ssI24440870
+(dp58
+S"lines = [x for x in f if x and not x.strip().startswith('!')]"
+p59
+(F-1.4272669982910156
+F-2.995818194221048
+tp60
+ssI18231335
+(dp61
+S"time.mktime(time.strptime(date, '%Y%m%d%H%M%S'))"
+p62
+(F-0.9279827117919922
+F-2.008529281616211
+tp63
+ssI8556589
+(dp64
+S'glScalef(2.0, 2.0, 2.0)'
+p65
+(F-2.7927639701149682
+F-3.7988878885904946
+tp66
+ssI8474670
+(dp67
+S'datetime.datetime.combine(datetime.date(2011, 1, 1), datetime.time(10, 23))'
+p68
+(F-1.390326772417341
+F-3.1486031668526784
+tp69
+ssI29225008
+(dp70
+S'"""\xf0\x9f\x8c\x80""".decode(\'utf8\')'
+p71
+(F-1.1995265483856201
+F-1.8423945563180106
+tp72
+ssI26282033
+(dp73
+S"print 'standard deviation of B:', np.std(B)"
+p74
+(F-2.5316151705655185
+F-2.0161375318254744
+tp75
+ssI25632435
+(dp76
+S'datap += sock.recv(sizeof(message) - amount_received)'
+p77
+(F-3.4902411068187043
+F-3.81916251549354
+tp78
+ssI13336628
+(dp79
+S"html = open('led.html', 'r').read()"
+p80
+(F-0.9690099443708148
+F-2.5356521606445312
+tp81
+ssI8302942
+(dp82
+S't.forward(60)'
+p83
+(F-2.461275339126587
+F-2.616816433993253
+tp84
+ssI13477942
+(dp85
+S'"""""".join(test.split(\'-\', 3))'
+p86
+(F-1.5791020711263022
+F-3.2017339070638022
+tp87
+ssI13447226
+(dp88
+S'collections.Counter(itertools.chain.from_iterable(a.keys()))'
+p89
+(F-1.238557361421131
+F-2.5852715969085693
+tp90
+ssI24350779
+(dp91
+S'sum(string.count(c) for c in substring)'
+p92
+(F-2.3502156575520834
+F-1.6403289794921876
+tp93
+ssI29974589
+(dp94
+S'fields.Date.to_string(date_obj)'
+p95
+(F-3.4329561505998885
+F-2.9774302314309513
+tp96
+ssI9533507
+(dp97
+S'class MyAdminForm(forms.ModelForm):\n    new_field = forms.FileField()'
+p98
+(F-1.4560158069317157
+F-2.822126041759144
+tp99
+ssI19845132
+(dp100
+S'denormalized.append(x)'
+p101
+(F-1.851401925086975
+F-2.70804179798473
+tp102
+ssI26186033
+(dp103
+S"df.to_csv('test.csv', index=False, quoting=csv.QUOTE_NONE)"
+p104
+(F-0.9602650729092684
+F-4.762901306152344
+tp105
+ssI2584589
+(dp106
+S"glob.glob('D:\\\\bluetooth\\\\*.jpg')"
+p107
+(F-1.2082421779632568
+F-3.2147184099469865
+tp108
+ssI40494435
+(dp109
+S'np.linalg.pinv(M.toarray())'
+p110
+(F-2.5047571999686107
+F-2.793034871419271
+tp111
+ssI10498132
+(dp112
+S'[k for k in d if d[k] > 6]'
+p113
+(F-1.6292879581451416
+F-2.854007085164388
+tp114
+ssI4403289
+(dp115
+S"urllib.urlretrieve('http://www.example.com/songs/mp3.mp3',\n    '/home/download/mp3.mp3')"
+p116
+(F-1.354724103754217
+F-1.263153076171875
+tp117
+ssI25458779
+(dp118
+S'value.total_seconds()'
+p119
+(F-2.3149342007107205
+F-2.316084384918213
+tp120
+ssI11114589
+(dp121
+S"parser.add_argument('--foo', help=argparse.SUPPRESS)"
+p122
+(F-1.305011510848999
+F-4.1665191650390625
+tp123
+ssI33816670
+(dp124
+S'output_file.write(data)'
+p125
+(F-1.9090946197509766
+F-3.6521820068359374
+tp126
+ssI31855632
+(dp127
+S"p.__dict__['_values']"
+p128
+(F-2.7613594055175783
+F-2.5656327334317295
+tp129
+ssI28145763
+(dp130
+S"print datetime.strptime(a[:10], '%Y-%m-%d')"
+p131
+(F-1.8407049814860026
+F-1.6726760864257812
+tp132
+ssI33549670
+(dp133
+S'print tweet.text'
+p134
+(F-1.7568559646606445
+F-2.6295650800069175
+tp135
+ssI5750887
+(dp136
+S'win32gui.DeleteObject(self.font.GetSafeHandle())'
+p137
+(F-3.316299887264476
+F-3.692748478480748
+tp138
+ssI14813289
+(dp139
+S'pd.DataFrame(preprocessing.scale(data), index=data.index, columns=data.columns)'
+p140
+(F-2.4251185197096605
+F-4.789754486083984
+tp141
+ssI4722794
+(dp142
+S"print tree.find('//{http://www.opengis.net/gml}upperCorner').text"
+p143
+(F-1.43279014934193
+F-2.6632478502061634
+tp144
+ssI16384109
+(dp145
+S'list(itertools.product([1, 5, 8], [0.5, 4]))'
+p146
+(F-1.5420314954674763
+F-2.119739825908954
+tp147
+ssI18742632
+(dp148
+S'return super(MyModelAdmin, self).formfield_for_foreignkey(db_field, request,\n    **kwargs)'
+p149
+(F-1.861208234514509
+F-2.8322291056315105
+tp150
+ssI27964435
+(dp151
+S"response = requests.post('index.php', data=payload)"
+p152
+(F-1.279367446899414
+F-3.1112848009381975
+tp153
+ssI14166132
+(dp154
+S"[f.write('\\n      ' + x) for x in Lorem_list]"
+p155
+(F-2.1560579935709634
+F-2.9201800697728206
+tp156
+ssI10768507
+(dp157
+S'self.app.terminate()'
+p158
+(F-1.95527097913954
+F-2.6502703030904136
+tp159
+ssI11697828
+(dp160
+S"out.write('\\r\\n')"
+p161
+(F-1.5001784563064575
+F-3.0095205307006836
+tp162
+ssI25415809
+(dp163
+S"app = webapp2.WSGIApplication([('/', MainPage)], debug=True)"
+p164
+(F-1.1098920648748225
+F-2.847159459040715
+tp165
+ssI9988226
+(dp166
+S'datetime.datetime.utcfromtimestamp(epoch)'
+p167
+(F-1.6202381134033204
+F-2.866014289855957
+tp168
+ssI24037507
+(dp169
+S"mydf['CigarNum'] = pd.to_numeric(mydf['CigarNum'], errors='coerce')"
+p170
+(F-2.161906675858931
+F-3.401426141912287
+tp171
+ssI16705670
+(dp172
+S'd.keys()'
+p173
+(F-1.7027557918003626
+F-2.6534584045410154
+tp174
+ssI9879687
+(dp175
+S'admin.site.register(Post, PostAdmin)'
+p176
+(F-1.6005216745229869
+F-2.5256991068522137
+tp177
+ssI10832008
+(dp178
+S'[tuple(x) for x in l]'
+p179
+(F-0.9933115641276041
+F-1.03289000193278
+tp180
+ssI33745033
+(dp181
+S"deltae = float(line.split('|')[0].strip().split('=')[1].strip())"
+p182
+(F-1.1360422372817993
+F-3.3476492229260897
+tp183
+ssI22187589
+(dp184
+S'print repr(patient)'
+p185
+(F-4.186994007655552
+F-3.007005310058594
+tp186
+ssI7045264
+(dp187
+S"im.save('somefile.png', 'PNG')"
+p188
+(F-1.0027586936950683
+F-3.132259750366211
+tp189
+ssI21158033
+(dp190
+S'type(cur.fetchone())'
+p191
+(F-2.2015872955322267
+F-3.3550033569335938
+tp192
+ssI1450132
+(dp193
+S"urllib2.urlopen('http://www.google.com')"
+p194
+(F-1.0017476081848145
+F-3.1267284393310546
+tp195
+ssI10301589
+(dp196
+S"d['Key1'].append((2.3232, 13.5232, 1325.123))"
+p197
+(F-1.3373194301829618
+F-3.0417057384144175
+tp198
+ssI23269526
+(dp199
+S'my_variable = 10'
+p200
+(F-3.3121850149972096
+F-2.859889507293701
+tp201
+ssI10905758
+(dp202
+S'output[tuple(sorted(key))].append(value)'
+p203
+(F-2.26743922514074
+F-1.9136619567871094
+tp204
+ssI30625963
+(dp205
+S'fig.set_size_inches(10, 5)'
+p206
+(F-1.5955916813441686
+F-2.600811004638672
+tp207
+ssI6422700
+(dp208
+S'[(0, 1), (1, 2), (2, 3), (3, 100), (4, 5)]'
+p209
+(F-0.995753779555812
+F-2.184755325317383
+tp210
+ssI33093809
+(dp211
+S'Counter(chain(list1, list2, list3))'
+p212
+(F-2.0521944486177883
+F-1.8187877948467548
+tp213
+ssI14811507
+(dp214
+S'plt.show()'
+p215
+(F-0.7109405653817313
+F-1.9854682286580403
+tp216
+ssI15003828
+(dp217
+S'g.sum().reset_index()'
+p218
+(F-1.4578613868126502
+F-3.7346038818359375
+tp219
+ssI4390942
+(dp220
+S"sys.stdout.write('456\\n')"
+p221
+(F-0.9452960968017579
+F-2.5463510401108684
+tp222
+ssI4341942
+(dp223
+S'a, b, c'
+p224
+(F-2.5048841748918806
+F-1.871536374092102
+tp225
+ssI33409207
+(dp226
+S'exec \'s = "{}"{}\'.format(w, sli)'
+p227
+(F-2.217821814797141
+F-3.0737592523748223
+tp228
+ssI39423763
+(dp229
+S'f.close()'
+p230
+(F-0.902749947139195
+F-2.558454786028181
+tp231
+ssI14304628
+(dp232
+S"a, b, c = input('Type in a command').split()"
+p233
+(F-1.2638791799545288
+F-3.2067112922668457
+tp234
+ssI19159226
+(dp235
+S"return HttpResponseRedirect(reverse('thank_you', kwargs={'id': docrequest.id}))"
+p236
+(F-1.6259456981312146
+F-4.389706293741862
+tp237
+ssI33094687
+(dp238
+S"[['MGM', '1'], ['MGD', '1'], ['V1', '3'], ['AuD', '1']]"
+p239
+(F-0.5686952802870009
+F-1.6297572209284856
+tp240
+ssI1583293
+(dp241
+S't.my_func(1)'
+p242
+(F-3.1905941009521483
+F-4.215479070490057
+tp243
+ssI20177086
+(dp244
+S"{u'count': 13, u'shorts': [u'cat', u'dog', u'fox'], u'longs':\n    u'supercalifragilisticexpialidocious', u'mosts': [u'dog', u'fox'],\n    u'supercalifragilisticexpialidocious': 1, u'fox': 4, u'dog': 4, u'cat':\n    3, u'avglen': u'5.6923076923076925', u'frogger': 1}"
+p245
+(F-1.4603682926722936
+F-3.6225147247314453
+tp246
+ssI2345151
+(dp247
+S'file.write(cPickle.dumps(self.__dict__))'
+p248
+(F-1.9655369652642145
+F-2.901017275723544
+tp249
+ssI17049794
+(dp250
+S'result.setdefault(key, []).append(value)'
+p251
+(F-1.204765796661377
+F-1.9593664805094402
+tp252
+ssI2371779
+(dp253
+S"cur.execute('INSERT INTO mylog (binaryfield) VALUES (%(bytes)s)', {'bytes':\n    bytes})"
+p254
+(F-2.1742881774902343
+F-3.9820926666259764
+tp255
+ssI837828
+(dp256
+S'super(test, self).save(*args, **kwargs)'
+p257
+(F-1.2391260932473576
+F-1.7117685838179155
+tp258
+ssI17436870
+(dp259
+S'list(zip([4, 3, 2, 1], [1, 2, 3, 4]))'
+p260
+(F-1.3836696766040943
+F-3.1072456359863283
+tp261
+ssI24062151
+(dp262
+S'[(i * j) for i, j in zip(a, b)]'
+p263
+(F-1.3218894958496095
+F-3.5680824279785157
+tp264
+ssI3162314
+(dp265
+S"os.rename('TMP', filename)"
+p266
+(F-1.199158000946045
+F-2.495293753487723
+tp267
+ssI17819851
+(dp268
+S"out.write('Added ' + line.strip())"
+p269
+(F-1.5578141893659319
+F-2.779806137084961
+tp270
+ssI29053132
+(dp271
+S'plt.show()'
+p272
+(F-0.7471291678292411
+F-3.5992431640625
+tp273
+ssI7632589
+(dp274
+S"utls.convertMp4ToMp3('AwesomeKoalaBeat.mp4', 'AwesomeKoalaBeat.mp3',\n    '../../tmp/', 320000, utls.callbackPrint, efsize)"
+p275
+(F-3.0058428955078127
+F-5.155995262993707
+tp276
+ssI1335507
+(dp277
+S"subprocess.call('read -t 30', shell=True)"
+p278
+(F-0.8809293111165365
+F-3.015702247619629
+tp279
+ssI16849109
+(dp280
+S"re.sub('\\\\d+', '', strs)"
+p281
+(F-1.0985441207885742
+F-2.7986292839050293
+tp282
+ssI9363670
+(dp283
+S'dict((k, v) for k, v in d.items() if len(v) > 1)'
+p284
+(F-1.053458814267759
+F-2.930689725008878
+tp285
+ssI14720377
+(dp286
+S'pygame.quit()'
+p287
+(F-0.6256920950753349
+F-1.8422710418701171
+tp288
+ssI21272794
+(dp289
+S"Field('user_id', 'reference auth_user', requires=None)"
+p290
+(F-2.409568945566813
+F-4.710131905295632
+tp291
+ssI11599226
+(dp292
+S'"""""".join(\'{:08b}\'.format(ord(c)) for c in \'hello\')'
+p293
+(F-1.0074125289916993
+F-1.4300811474139874
+tp294
+ssI28375264
+(dp295
+S'plotSizer.Add(self, canvas, proportion=1, flag=wx.EXPAND)'
+p296
+(F-1.6045159839448475
+F-2.652739933558873
+tp297
+ssI32067809
+(dp298
+S"plt.scatter(x, y, c='black')"
+p299
+(F-0.8842266627720424
+F-3.5664356776646207
+tp300
+ssI7575779
+(dp301
+S"[(m.start(), m.end()) for m in re.finditer('AAT.*?(?:ATG|TTT|ATC)', s)]"
+p302
+(F-1.44688047681536
+F-3.061143636703491
+tp303
+ssI18940132
+(dp304
+S"hex(5368074490326629923568L)[2:].decode('hex')"
+p305
+(F-1.6171615600585938
+F-3.0295848846435547
+tp306
+ssI23426086
+(dp307
+S'self.button_1.config(state=DISABLED)'
+p308
+(F-2.108988489423479
+F-1.800271715436663
+tp309
+ssI17334507
+(dp310
+S'str(datetime.timedelta(0, 175, 941041))'
+p311
+(F-2.825999704996745
+F-3.269681930541992
+tp312
+ssI24557809
+(dp313
+S'""",""".join([str(item) for item in x])'
+p314
+(F-1.0240527882295496
+F-2.8579540252685547
+tp315
+ssI17547507
+(dp316
+S'{}.update(1, 2)'
+p317
+(F-2.3835995414040307
+F-2.356858117239816
+tp318
+ssI12966132
+(dp319
+S"sys.path.append('<path to root of source>')\nos.environ['DJANGO_SETTINGS_MODULE'] = 'myproject.settings'"
+p320
+(F-0.9350338986045436
+F-3.3461873796251087
+tp321
+ssI10301687
+(dp322
+S"c.write(''.join(line for line in a if not line in b_lines))"
+p323
+(F-2.466782569885254
+F-3.7741204833984376
+tp324
+ssI35109113
+(dp325
+S'np.concatenate((X1[:, ([0, 1, 2])], X2), axis=1)'
+p326
+(F-2.2166106125404097
+F-2.73772459763747
+tp327
+ssI25221377
+(dp328
+S'plt.show()'
+p329
+(F-0.7582086154392788
+F-2.5010403224400113
+tp330
+ssI9300226
+(dp331
+S'res[field0].append((field1, field2))'
+p332
+(F-2.5115206400553385
+F-2.768866856892904
+tp333
+ssI23275779
+(dp334
+S"print [item for items in Temp for item in items.split(',')]"
+p335
+(F-2.226232829846834
+F-2.9236698150634766
+tp336
+ssI19202314
+(dp337
+S"put_file('v13', 'rob', '/tmp/dir', 'file.bin', data)"
+p338
+(F-1.8603410720825195
+F-1.9265738593207464
+tp339
+ssI8130828
+(dp340
+S'print re.findall(pattern, text, re.DOTALL)'
+p341
+(F-1.3699078877766928
+F-3.802583932876587
+tp342
+ssI2969870
+(dp343
+S'root.mainloop()'
+p344
+(F-1.1511314937046595
+F-4.977941724989149
+tp345
+ssI14168335
+(dp346
+S'print data.text'
+p347
+(F-2.2434520721435547
+F-2.235251646775466
+tp348
+ssI32333870
+(dp349
+S'plt.show()'
+p350
+(F-0.6469296727861676
+F-2.6798698902130127
+tp351
+ssI31291670
+(dp352
+S"return ''.join(self.string)"
+p353
+(F-1.9732121554287998
+F-3.158313963148329
+tp354
+ssI3152151
+(dp355
+S"r = {(m.group('tag'), m.group('ip')) for m in re.finditer(\n    '(?P<tag>\\\\S+)\\\\[.+?@(?P<ip>(?:\\\\d{1,3}\\\\.?){4})', line)}"
+p356
+(F-1.4254705255681819
+F-4.40898191011869
+tp357
+ssI12615963
+(dp358
+S'data += ser.read(n)'
+p359
+(F-2.1331928253173826
+F-2.8740392412458147
+tp360
+ssI26566942
+(dp361
+S'lines = [tuple(row) for row in csv.reader(yourfile)]'
+p362
+(F-2.092733885112562
+F-2.650775909423828
+tp363
+ssI4655526
+(dp364
+S"sys.path.append(os.path.join(os.path.dirname(__file__), '..', '..'))"
+p365
+(F-0.5661081949869792
+F-2.133032480875651
+tp366
+ssI36626721
+(dp367
+S'print [sum(map(float, sublist)) for sublist in p]'
+p368
+(F-2.5508689880371094
+F-3.267229504055447
+tp369
+ssI34744613
+(dp370
+S'datetime.timedelta(0, 2857)'
+p371
+(F-1.9554664611816406
+F-3.1086976187569753
+tp372
+ssI15655207
+(dp373
+S'plt.show()'
+p374
+(F-1.5165087836129325
+F-1.8720048904418944
+tp375
+ssI3156264
+(dp376
+S'mp.unmount()'
+p377
+(F-2.1473520823887418
+F-2.206061363220215
+tp378
+ssI17365289
+(dp379
+S"return send_file(path_to_file, mimetype='audio/wav', as_attachment=True,\n    attachment_filename='test.wav')"
+p380
+(F-2.3188878377278646
+F-3.99963116645813
+tp381
+ssI19182963
+(dp382
+S'global firstevent'
+p383
+(F-2.243781566619873
+F-3.433472224644252
+tp384
+ssI33005870
+(dp385
+S'xreadlines()'
+p386
+(F-1.6359222412109375
+F-2.530524492263794
+tp387
+ssI26896687
+(dp388
+S'[1, 3], [0, 2]'
+p389
+(F-1.8187550764817457
+F-3.120037976433249
+tp390
+ssI32149809
+(dp391
+S"print 'Master Volume (step): %d / %d' % (volst, nstep)"
+p392
+(F-1.5046485900878905
+F-5.433513934795673
+tp393
+ssI8888628
+(dp394
+S"print u''.join([c for c in line if c])"
+p395
+(F-2.1891847498276653
+F-3.4058543613978793
+tp396
+ssI23372086
+(dp397
+S'QuizList.append(line.split(None, 1)[0])'
+p398
+(F-1.6850461457905017
+F-2.037398444281684
+tp399
+ssI16630071
+(dp400
+S"ids = [tweet['id_str'] for tweet in tweets if 'id_str' in tweet]"
+p401
+(F-2.0910862816704645
+F-2.220066937533292
+tp402
+ssI1022264
+(dp403
+S"[i.capitalize() for i in s.split('-')]"
+p404
+(F-1.5339828067355685
+F-2.9539804458618164
+tp405
+ssI8624507
+(dp406
+S"return Article.objects.order_by('-date')"
+p407
+(F-1.3387181208683894
+F-2.890713373819987
+tp408
+ssI10914109
+(dp409
+S'[c.text for c in doc.xpath(\'//table[@class="CE_13"][1]//tr/td[5]\')]'
+p410
+(F-1.4635906219482422
+F-1.9999326070149739
+tp411
+ssI26434613
+(dp412
+S"match = re.search('.{%d}%s' % (index, pattern), s)"
+p413
+(F-1.7882904476589627
+F-3.025671852959527
+tp414
+ssI31445314
+(dp415
+S'df3 = pandas.DataFrame(header, data)'
+p416
+(F-2.3589035914494443
+F-2.667922782897949
+tp417
+ssI19546507
+(dp418
+S"x.groupby('ID1').apply(lambda df: (df['ID2'].irow(0), df['score'].irow(0)))"
+p419
+(F-1.5835049947102864
+F-5.3451524622300095
+tp420
+ssI28309828
+(dp421
+S"table.loc['row3']"
+p422
+(F-2.3884360790252686
+F-1.79324587653665
+tp423
+ssI25839942
+(dp424
+S'shutil.move(os.path.join(root, filename), os.path.join(targetDir, filename))'
+p425
+(F-1.0228785810799434
+F-2.844226292201451
+tp426
+ssI2191687
+(dp427
+S'graph.out_edges([my_node])'
+p428
+(F-2.992298126220703
+F-3.2588399251302085
+tp429
+ssI15591758
+(dp430
+S"cur.execute('INSERT INTO anzahlids (tweetid) VALUES (%s)', (len(some_ids),))"
+p431
+(F-1.5893567403157551
+F-3.1145523918999567
+tp432
+ssI18980700
+(dp433
+S"return os.path.join('profilbilder', str(instance.id), filename)"
+p434
+(F-1.6309017181396483
+F-3.836481366838728
+tp435
+ssI2943314
+(dp436
+S"HourEntries.objects.filter(date__month=this_month).aggregate(Sum('quantity'))"
+p437
+(F-2.1281515268179088
+F-4.249658312116351
+tp438
+ssI5079779
+(dp439
+S"some_call(1, 2, 'hi', kw1='frob')"
+p440
+(F-2.3270115852355957
+F-5.5416249361905185
+tp441
+ssI17846613
+(dp442
+S'mask_fewest(a, 2, 10)'
+p443
+(F-2.5763231913248696
+F-2.552617390950521
+tp444
+ssI26812763
+(dp445
+S"df = pd.DataFrame({'Buy/Sell': np.random.randint(2, size=N), 'Trader': np.\n    random.randint(1000, size=N)})"
+p446
+(F-1.7515484037853422
+F-4.111938953399658
+tp447
+ssI28395870
+(dp448
+S"soup.find_all('p', onclick=re.compile('.'))"
+p449
+(F-1.3898119675485712
+F-4.463265419006348
+tp450
+ssI3940721
+(dp451
+S"[''.join(g) for k, g in itertools.groupby('AAABBBCDEEEEBBBAA')]"
+p452
+(F-1.6117012387230283
+F-1.9772605895996094
+tp453
+ssI27537779
+(dp454
+S"return redirect('user_view', service_name=service.service_name)"
+p455
+(F-2.8823031257180607
+F-2.13965106010437
+tp456
+ssI6015721
+(dp457
+S"os.path.normpath(os.path.join(path, '..'))"
+p458
+(F-0.9064489665784334
+F-2.511664072672526
+tp459
+ssI36931963
+(dp460
+S"d.to_csv('output.csv')"
+p461
+(F-1.4741790771484375
+F-2.5140958513532365
+tp462
+ssI3142012
+(dp463
+S'{k: l[v] for k, v in exist.items()}'
+p464
+(F-1.1909951210021972
+F-2.1099435488382974
+tp465
+ssI32379264
+(dp466
+S"text_file = open(os.path.join(cwd, 'folderName', 'textFile.txt'), 'w')"
+p467
+(F-1.428795524265455
+F-3.144966349882238
+tp468
+ssI24347012
+(dp469
+S"m[(m['b'] > 120) & (m['c'] == 7.3)]"
+p470
+(F-1.873470826582475
+F-3.4657211303710938
+tp471
+ssI1249670
+(dp472
+S"clean = ''.join(l[:-1] for l in open('thefile.txt'))"
+p473
+(F-1.7683427984064275
+F-3.4671953837076823
+tp474
+ssI18391435
+(dp475
+S'df.join(df2.set_index(df.index[:len(df2)]))'
+p476
+(F-2.0284388860066733
+F-4.6072138468424475
+tp477
+ssI35426700
+(dp478
+S"logging.basicConfig(format=\n    '%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)"
+p479
+(F-2.544087939792209
+F-5.116263996471059
+tp480
+ssI20111758
+(dp481
+S"logging.basicConfig(level=logging.DEBUG, format=\n    '%(asctime)s %(levelname)s %(message)s', datefmt='%H:%M:%S')"
+p482
+(F-1.7962500832297585
+F-2.6344221115112303
+tp483
+ssI17194109
+(dp484
+S'plt.plot(x, y)'
+p485
+(F-0.7602709293365478
+F-2.9572410583496094
+tp486
+ssI10383763
+(dp487
+S"config.add_view(yourview, route_name='home1')"
+p488
+(F-2.0414552688598633
+F-3.5863444805145264
+tp489
+ssI16257012
+(dp490
+S'str(journals[position]).rstrip()'
+p491
+(F-2.7771682739257812
+F-4.915421999417818
+tp492
+ssI8858008
+(dp493
+S"shutil.move('path/to/current/file.foo', 'path/to/new/destination/for/file.foo')"
+p494
+(F-1.2041155815124511
+F-1.3186522589789496
+tp495
+ssI33427870
+(dp496
+S'driver.quit()'
+p497
+(F-0.8499571936471122
+F-2.840594972882952
+tp498
+ssI31826335
+(dp499
+S'img_str = base64.b64encode(buffer.getvalue())'
+p500
+(F-1.4962536096572876
+F-2.1219566890171597
+tp501
+ssI23792033
+(dp502
+S"product_df['month_num'] = product_df.groupby('product_desc').cumcount() + 1"
+p503
+(F-2.1629079735797383
+F-3.1513519287109375
+tp504
+ssI3858851
+(dp505
+S'print shell.SHGetFolderPath(0, shellcon.CSIDL_MYPICTURES, None, 0)'
+p506
+(F-2.3253836198286577
+F-4.665567125592913
+tp507
+ssI25967012
+(dp508
+S"b = int('0' + s[1:], 16)"
+p509
+(F-2.050973653793335
+F-2.2999713604266825
+tp510
+ssI18667942
+(dp511
+S"return [[' ' for j in range(7)] for i in range(7)]"
+p512
+(F-1.4487537037242542
+F-3.1707461964000356
+tp513
+ssI13662632
+(dp514
+S"{'group #2': [['1', '2', '3', '4'], ['5', '6', '7', '8']], 'group #1': [[\n    'a', 'b', 'c', 'd'], ['e', 'f', 'g', 'h']]}"
+p515
+(F-0.9803101466252253
+F-1.4312631289164226
+tp516
+ssI36463687
+(dp517
+S"return 'STEAM_0:{}:{}'.format(x, (y - x) // 2)"
+p518
+(F-2.0942533156451058
+F-2.8015308380126953
+tp519
+ssI15909293
+(dp520
+S"plt.scatter(millionspins, millions, c='b', marker='+')"
+p521
+(F-1.0833013322618272
+F-2.813310146331787
+tp522
+ssI3359151
+(dp523
+S"for elem in xml.xpath('//foo'):\n    elem.getparent().remove(elem)"
+p524
+(F-0.9800613403320313
+F-2.205047845840454
+tp525
+ssI19409335
+(dp526
+S"df.loc[msk, ['EntryDate', 'ExitDate']]"
+p527
+(F-2.4525675092424666
+F-4.387902577718099
+tp528
+ssI17508794
+(dp529
+S's.send(data, flags=socket.MSG_OOB | socket.MSG_DONTROUTE)'
+p530
+(F-2.959680037064986
+F-4.285540008544922
+tp531
+ssI15906207
+(dp532
+S'sorted(dic.items(), key=lambda x: sum(x[1]))'
+p533
+(F-1.0943832397460938
+F-2.5023507012261286
+tp534
+ssI12751293
+(dp535
+S"r = requests.get(url, auth=HTTPDigestAuth('user', 'pass'))"
+p536
+(F-1.532120114281064
+F-2.8378555297851564
+tp537
+ssI36458942
+(dp538
+S'print lxml.etree.tostring(doc)'
+p539
+(F-1.2865942174738103
+F-2.2304902510209517
+tp540
+ssI13306613
+(dp541
+S"csv_writer.writerow(['Facility_id', 'Name', 'Account Number', 'Street'])"
+p542
+(F-0.8953845765855577
+F-2.6444002787272134
+tp543
+ssI19683779
+(dp544
+S"subprocess.Popen(['python', 'script.py'] + myList)"
+p545
+(F-1.507225799560547
+F-2.551211430476262
+tp546
+ssI31074758
+(dp547
+S'sb.barplot(x=idx, y=values, palette=clrs)'
+p548
+(F-2.6830592685275607
+F-2.8672346227309284
+tp549
+ssI14559687
+(dp550
+S'return x, y, z'
+p551
+(F-2.4891223907470703
+F-5.150498130104759
+tp552
+ssI18328008
+(dp553
+S"conn.request('POST', '/collect',\n    'v=1&tid=UA-XXXXXX-Y&cid=666&t=event&ec=game&ea=start&ev=0')"
+p554
+(F-1.24235226557805
+F-2.4419304529825845
+tp555
+ssI19556809
+(dp556
+S'X = [[float(Fraction(x)) for x in line.split()] for line in f.readlines()[1:R]]'
+p557
+(F-2.189811494615343
+F-4.352039136384663
+tp558
+ssI797132
+(dp559
+S"print ' :%2s' % ':'"
+p560
+(F-1.6614185969034831
+F-1.8172268867492676
+tp561
+ssI15921613
+(dp562
+S'super(Add, self).__init__()'
+p563
+(F-1.1967473711286272
+F-2.1008673447829027
+tp564
+ssI23527887
+(dp565
+S'print wb.get_sheet_names()'
+p566
+(F-1.1593918800354004
+F-2.8278702327183316
+tp567
+ssI26118613
+(dp568
+S"pip.main(['install', 'packagename'])"
+p569
+(F-1.4148731231689453
+F-2.407789866129557
+tp570
+ssI22000086
+(dp571
+S"print f.format('{0} is positive, {1} is negative, {2} is a string', 3, -2, '-4'\n    )"
+p572
+(F-2.599084741928998
+F-3.677045610215929
+tp573
+ssI31845109
+(dp574
+S"url('^follow/(?<user_profile_id>[\\\\d]+)/$', views.follow_user)"
+p575
+(F-2.5189975102742515
+F-3.030825614929199
+tp576
+ssI3040335
+(dp577
+S'[item for item in itertools.chain(*conditions.values())]'
+p578
+(F-2.4699913827996505
+F-4.8208728366427955
+tp579
+ssI9128414
+(dp580
+S'np.array([(k + tuple(v)) for k, v in d.iteritems() if len(v) == 1])'
+p581
+(F-1.4719950732062845
+F-5.052787780761719
+tp582
+ssI129507
+(dp583
+S'self.assertRaises(SomeCoolException, mymod.myfunc)'
+p584
+(F-3.304315694173177
+F-3.2158682686941966
+tp585
+ssI32057828
+(dp586
+S"records = [{'a': i, 'b': j} for i in range(2) for j in range(2)]"
+p587
+(F-1.6453627224626213
+F-3.4484092712402346
+tp588
+ssI13291942
+(dp589
+S'axes_ticks.append(ax.get_xaxis().get_ticklocs())'
+p590
+(F-1.6503986011851917
+F-3.570999993218316
+tp591
+ssI37196264
+(dp592
+S'fig.subplots_adjust(wspace=0.05, hspace=0.05)'
+p593
+(F-1.7107975482940674
+F-2.4067569732666017
+tp594
+ssI39195113
+(dp595
+S'x = np.array([np.array(Image.open(fname)) for fname in filelist])'
+p596
+(F-2.1225430415226865
+F-1.5670369466145833
+tp597
+ssI36721132
+(dp598
+S"mqttc.publish('$aws/things/thirdthing/shadow/update', payload)"
+p599
+(F-1.6799503326416017
+F-2.9929822285970054
+tp600
+ssI8729071
+(dp601
+S"s.sendmail(msg.get('From'), recipients, msg.as_string())"
+p602
+(F-1.6977240520974863
+F-2.7793241228376115
+tp603
+ssI6081008
+(dp604
+S"numpy.savetxt('foo.csv', a, delimiter=',')"
+p605
+(F-1.2046612330845423
+F-1.5716496467590333
+tp606
+ssI4770289
+(dp607
+S"[['LEVEL 1', 'SUBJECT A', 'GROUP X', 'COMMENT i'], ['LEVEL 1', 'SUBJECT A',\n    'GROUP X', 'COMMENT ii'], ['LEVEL 1', 'SUBJECT A', 'GROUP X',\n    'COMMENT iii'], ['LEVEL 1', 'SUBJECT A', 'GROUP Y', 'COMMENT iv'], [\n    'LEVEL 1', 'SUBJECT A', 'GROUP Y', 'COMMENT v'], ['LEVEL 1',\n    'SUBJECT A', 'GROUP Y', 'COMMENT vi'], ['LEVEL 2', 'SUBJECT B',\n    'GROUP Z', 'COMMENT vii'], ['LEVEL 2', 'SUBJECT B', 'GROUP Z',\n    'COMMENT viii'], ['LEVEL 2', 'SUBJECT B', 'GROUP Z', 'COMMENT ix'], [\n    'LEVEL 2', 'SUBJECT C', 'GROUP X2', 'COMMENT x'], ['LEVEL 2',\n    'SUBJECT C', 'GROUP X2', 'COMMENT xi'], ['LEVEL 2', 'SUBJECT C',\n    'GROUP X2', 'COMMENT xii'], ['LEVEL 2', 'SUBJECT C', 'GROUP X2',\n    'COMMENT xiii'], ['LEVEL 2', 'SUBJECT C', 'GROUP Y2', 'COMMENT xiv'], [\n    'LEVEL 2', 'SUBJECT C', 'GROUP Y2', 'COMMENT xv'], ['LEVEL 2',\n    'SUBJECT C', 'GROUP Y2', 'COMMENT xvi']]"
+p608
+(F-1.0048055594308036
+F-2.5466441104286597
+tp609
+ssI24138226
+(dp610
+S'words = len(line.split())'
+p611
+(F-1.595049222310384
+F-1.794849819607205
+tp612
+ssI34273779
+(dp613
+S'((0 <= df) & (df <= 1)).all()'
+p614
+(F-3.076961115786904
+F-3.0351063121448862
+tp615
+ssI33978870
+(dp616
+S"return render_template('zapa.html', states=states)"
+p617
+(F-2.9800291794996996
+F-5.420278761121962
+tp618
+ssI16805289
+(dp619
+S'base64.b64encode(photo_data)'
+p620
+(F-2.4381362915039064
+F-3.9199112483433316
+tp621
+ssI10267132
+(dp622
+S'panel.SetSizerAndFit(grid)'
+p623
+(F-2.022463711825284
+F-2.1536109106881276
+tp624
+ssI27802109
+(dp625
+S'np.ptp(A, 0)[0, col]'
+p626
+(F-2.934706115722656
+F-4.154040943492543
+tp627
+ssI20773377
+(dp628
+S"dbc.executemany('insert into fruitTable (fruit) values (?)', zip(fruitNameList)\n    )"
+p629
+(F-3.4008359909057617
+F-2.677447098952073
+tp630
+ssI27832109
+(dp631
+S"print ' question ' + random.choice(wordlists1) + ' question ' + random.choice(\n    wordlists2)"
+p632
+(F-1.6556058611188615
+F-3.557430903116862
+tp633
+ssI26953132
+(dp634
+S'print calendar.isleap(1900)'
+p635
+(F-4.24092780219184
+F-2.406016985575358
+tp636
+ssI18197008
+(dp637
+S'laplacian(range(7), [0, 0, 0, 4, 8, 8, 8])'
+p638
+(F-1.9913874816894532
+F-3.379134750366211
+tp639
+ssI651794
+(dp640
+S"mydict['foo', 'bar', 'baz']"
+p641
+(F-2.4959438323974608
+F-1.45971399195054
+tp642
+ssI35058435
+(dp643
+S'print [str(i) for i in df.index.values]'
+p644
+(F-1.1851467805750229
+F-2.643148275522085
+tp645
+ssI17177109
+(dp646
+S'OrderedDict([(u\'to\', u\'Tove\'), (u\'from\', u\'Jani\'), (u\'heading\', u\'Reminder\'\n    ), (u\'body\', u"Don\'t forget me this weekend!")])'
+p647
+(F-1.0683645009994507
+F-2.9901496342250278
+tp648
+ssI22741526
+(dp649
+S'""" """.join(word[0] for word in word_list)'
+p650
+(F-1.6860369514016544
+F-2.126904042561849
+tp651
+ssI35653721
+(dp652
+S"df.to_csv('H:/Q{0}/{1}.csv'.format(quarter, file_name))"
+p653
+(F-1.9980585198653371
+F-3.784088134765625
+tp654
+ssI13935132
+(dp655
+S'print p.communicate()[0]'
+p656
+(F-1.3321331197565252
+F-2.5107032457987466
+tp657
+ssI3275293
+(dp658
+S"setup(windows=['__main__.py'], options={'py2exe': {'includes': ['sip']}})"
+p659
+(F-1.5255236625671387
+F-4.52223725752397
+tp660
+ssI17216033
+(dp661
+S"['sony', 'samsung', 'apple', 'toshiba', 'cant recall', 'dont know', 'no answer'\n    ]"
+p662
+(F-1.2523236804538302
+F-3.4373152596609935
+tp663
+ssI35938851
+(dp664
+S'G[0][:] = [0] * 101'
+p665
+(F-1.9140174865722657
+F-2.658787863595145
+tp666
+ssI22979109
+(dp667
+S"df.loc['61.245.160.0':'61.245.175.255']"
+p668
+(F-1.8985603332519532
+F-3.371646245320638
+tp669
+ssI36155942
+(dp670
+S'sum(n < 0 for n in df.values.flatten())'
+p671
+(F-2.1064635382758246
+F-3.3140132904052733
+tp672
+ssI11924012
+(dp673
+S'min(enumerate(lst), key=lambda x: abs(x[1]))'
+p674
+(F-1.3885787617076526
+F-2.7770648532443576
+tp675
+ssI30605870
+(dp676
+S'plt.show()'
+p677
+(F-0.9052747317722866
+F-2.813722610473633
+tp678
+ssI25729589
+(dp679
+S'html_content = listing.prettify()'
+p680
+(F-2.856800772927024
+F-2.3709132454612036
+tp681
+ssI13263414
+(dp682
+S"final = [x.split(':') for x in ':'.join(l).split(':,:')]"
+p683
+(F-1.2277157123272235
+F-3.0908994674682617
+tp684
+ssI30597687
+(dp685
+S"app.run(host='0.0.0.0', port=int(port))"
+p686
+(F-1.3333770527559168
+F-2.2932381629943848
+tp687
+ssI32577071
+(dp688
+S'subprocess.call(command, shell=True)'
+p689
+(F-0.9138812224070231
+F-3.1593011220296225
+tp690
+ssI12333628
+(dp691
+S"[x[x.index('>') + 1:x.index('<')] for x in lis]"
+p692
+(F-1.5997364337627704
+F-3.2516685485839845
+tp693
+ssI18676293
+(dp694
+S"lst = [s for s in lst if not s.startswith('-')]"
+p695
+(F-1.3735536274157072
+F-2.9734490712483725
+tp696
+ssI13779526
+(dp697
+S'print [s for s in list if sub in s]'
+p698
+(F-1.9654620034354073
+F-1.9846538967556424
+tp699
+ssI17547851
+(dp700
+S'p = [1.0, 2.0, 3.0]'
+p701
+(F-2.233144586736506
+F-2.8305594704367896
+tp702
+ssI28979794
+(dp703
+S'df[df == 1].stack().index.tolist()'
+p704
+(F-1.8498001098632812
+F-2.6759634751539965
+tp705
+ssI31633507
+(dp706
+S'plt.show()'
+p707
+(F-0.6703347478594098
+F-2.7657203674316406
+tp708
+ssI9921109
+(dp709
+S'combinations.append((a, b, c, d, e, f, g, h, i, j))'
+p710
+(F-2.250272069658552
+F-2.7748870849609375
+tp711
+ssI19804758
+(dp712
+S'self.setStyleSheet(stylesheet)'
+p713
+(F-1.9738269805908204
+F-2.800752639770508
+tp714
+ssI373335
+(dp715
+S"schedule.every().day.at('10:30').do(job)"
+p716
+(F-1.3399154261538857
+F-2.412134023813101
+tp717
+ssI18526809
+(dp718
+S'print string[::-1]'
+p719
+(F-1.803887939453125
+F-4.538413184029715
+tp720
+ssI23560794
+(dp721
+S"config.add_route('sitemap', '/sitemap.xml')"
+p722
+(F-1.505017916361491
+F-1.9803492228190105
+tp723
+ssI9849435
+(dp724
+S"self.c.setopt(self.c.COOKIEFILE, 'cookie.txt')\nself.c.setopt(self.c.COOKIEJAR, 'cookie.txt')"
+p725
+(F-0.9693379555979083
+F-3.20509164983576
+tp726
+ssI11922012
+(dp727
+S"{'connection': 'close', 'content-encoding': 'gzip', 'content-length':\n    '1162', 'content-type': 'text/html; charset=UTF-8', 'date':\n    'Sun, 12 Aug 2012 12:49:44 GMT', 'last-modified':\n    'Wed, 09 Feb 2011 17:13:15 GMT', 'server': 'Apache/2.2.3 (CentOS)',\n    'vary': 'Accept-Encoding'}"
+p728
+(F-1.3997271611140325
+F-4.667149353027344
+tp729
+ssI9448029
+(dp730
+S'array([1L, 2L, 3L, 4L, 5L])'
+p731
+(F-2.2162439823150635
+F-3.958004421657986
+tp732
+ssI2970207
+(dp733
+S"cv.NamedWindow('camera', 1)"
+p734
+(F-1.8477462421764026
+F-3.0724588121686662
+tp735
+ssI5341794
+(dp736
+S'for i in range(len(mylist)):\n    pass'
+p737
+(F-0.9802117067224839
+F-1.300524075826009
+tp738
+ssI23249507
+(dp739
+S"self.cursor.execute(\n    'INSERT INTO Bristol(BristolCountry, BristolQualification) VALUES (%s, %s)'\n    , (item['BristolCountry'], ''.join([s.encode('utf-8') for s in item[\n    'BristolQualification']])))"
+p740
+(F-1.80802228974133
+F-4.770999615009014
+tp741
+ssI5868132
+(dp742
+S"[u'foo', {u'bar': [u'baz', None, 1.0, 2]}]"
+p743
+(F-2.4343862031635486
+F-3.859391106499566
+tp744
+ssI24959589
+(dp745
+S'myTable.__table__.c'
+p746
+(F-2.9418230056762695
+F-3.1420116424560547
+tp747
+ssI17218151
+(dp748
+S"[['1', '2.6814E+03', '3.3117E+02', '1.6616E+03', '-1.1814E+02',\n    '1.8312E+03', '3.5247E+03', '2.5879E+02', '-3.8350E+03', '0.0000E+00'],\n    ['0.0', '2.5785E+04', '6.8687E+01', '-6.7273E+04', '-7.6310E+03',\n    '-1.8316E+03', '-5.7811E+04', '0.0000E+00', '0.0000E+00', '0.0000E+00'],\n    ['4.9', '1.3300E+04', '0.0000E+00', '0.0000E+00', '0.0000E+00',\n    '9.0000E+01', '9.0000E+01', '9.0000E+01', '0.0000E+00', '1.1911E+02'],\n    [], ['rolling', '2.6814E+03', '3.3117E+02', '1.6616E+03', '-1.1814E+02',\n    '1.8312E+03', '3.5247E+03', '2.5879E+02', '-3.8350E+03', '0.0000E+00'],\n    ['averages', '2.5785E+04', '6.8687E+01', '-6.7273E+04', '-7.6310E+03',\n    '-1.8316E+03', '-5.7811E+04', '0.0000E+00', '0.0000E+00', '0.0000E+00'],\n    ['1.3300E+04', '0.0000E+00', '0.0000E+00', '0.0000E+00', '9.0000E+01',\n    '9.0000E+01', '9.0000E+01', '0.0000E+00', '1.1911E+02']]"
+p749
+(F-0.6918117497243038
+F-4.024071780118075
+tp750
+ssI4270700
+(dp751
+S'return PIL.Image.open(fname)'
+p752
+(F-1.8685098127885298
+F-3.373211200420673
+tp753
+ssI31928942
+(dp754
+S'session.get(url, cookies=cookie)'
+p755
+(F-1.786118507385254
+F-4.126466230912642
+tp756
+ssI7942589
+(dp757
+S'data = mysocket.recv(1024)'
+p758
+(F-2.1232629776000977
+F-2.447533130645752
+tp759
+ssI7979632
+(dp760
+S"print arr.astype('|S10')"
+p761
+(F-1.8600680033365886
+F-2.1756894247872487
+tp762
+ssI3293809
+(dp763
+S"bar = tarfile.open(fileobj=baz.extractfile('bar.tgz'))"
+p764
+(F-3.4694851146024814
+F-4.32320499420166
+tp765
+ssI33243763
+(dp766
+S'df.code_x.apply(lambda x: str(int(x)).zfill(6))'
+p767
+(F-2.0486525022066555
+F-4.385131412082249
+tp768
+ssI852414
+(dp769
+S'Article.objects.filter(query)'
+p770
+(F-1.5620824813842773
+F-3.070679004375751
+tp771
+ssI1223289
+(dp772
+S'os.write(fd, os.linesep)'
+p773
+(F-2.118263562520345
+F-3.3232076009114584
+tp774
+ssI1360507
+(dp775
+S'[(k, [x[1] for x in v]) for k, v in dict1.items()]'
+p776
+(F-1.3480788639613561
+F-3.277416467666626
+tp777
+ssI16638589
+(dp778
+S"pickle.dump(test, open('test_file.pkl', 'wb'))"
+p779
+(F-1.2885734558105468
+F-3.8340771993001304
+tp780
+ssI6914687
+(dp781
+S"send_mail('test email', 'hello world', 'your@email.com', ['test@email.com'])"
+p782
+(F-1.0875226259231567
+F-3.5889556884765623
+tp783
+ssI23515779
+(dp784
+S'sorted(myDict.items(), key=lambda i: i[1][0], reverse=True)'
+p785
+(F-0.7507203647068569
+F-2.54569673538208
+tp786
+ssI23597700
+(dp787
+S"ax.scatter3D(data[:, (1)], data[:, (2)], data[:, (7)], c='r', marker='0')"
+p788
+(F-2.108718313821932
+F-4.709890885786577
+tp789
+ssI29788809
+(dp790
+S"self._callmethod('set_proxy', (arg,))"
+p791
+(F-2.127383598914513
+F-2.351523208618164
+tp792
+ssI10359435
+(dp793
+S'all(i > j for i, j in zip(a, b))'
+p794
+(F-1.8853372272692228
+F-3.699553934733073
+tp795
+ssI6623887
+(dp796
+S"s.rsplit(' ', 1)[0]"
+p797
+(F-1.1827999995304987
+F-1.5578320821126301
+tp798
+ssI28134033
+(dp799
+S'numpy.random.choice((1, -1), p=[0.2, 0.8])'
+p800
+(F-2.35155901701554
+F-4.604209899902344
+tp801
+ssI37986963
+(dp802
+S"os.environ['PYSPARK_SUBMIT_ARGS'] = pyspark_submit_args"
+p803
+(F-2.2262657710484097
+F-3.722694743763317
+tp804
+ssI10683029
+(dp805
+S"[(1, 'a'), (2, 'd'), (5, 'e')]"
+p806
+(F-1.3048161097935267
+F-1.4237971835666232
+tp807
+ssI31836828
+(dp808
+S'self.cj.load()'
+p809
+(F-2.8744273715549045
+F-2.895953416824341
+tp810
+ssI1045151
+(dp811
+S'a, b = b, b + a'
+p812
+(F-1.9992230155251243
+F-3.735421074761285
+tp813
+ssI1157794
+(dp814
+S"time.strftime('%m/%d/%Y', dt)"
+p815
+(F-1.2605476379394531
+F-3.9336891174316406
+tp816
+ssI11893414
+(dp817
+S'plt.colorbar()'
+p818
+(F-1.3064092908586775
+F-2.408205032348633
+tp819
+ssI24599207
+(dp820
+S'len(pairs[2])'
+p821
+(F-2.678768581814236
+F-1.7950982313889723
+tp822
+ssI25975086
+(dp823
+S"url('^getdata_json$', 'views.myajaxview', name='getdata_json')"
+p824
+(F-1.3045268853505452
+F-4.51293420791626
+tp825
+ssI9523887
+(dp826
+S'validator = lxml.etree.XMLSchema(xsd)'
+p827
+(F-2.933362814096304
+F-5.278036934988839
+tp828
+ssI4225721
+(dp829
+S'self.browser.open(self.url)'
+p830
+(F-1.3362213770548503
+F-1.9822359085083008
+tp831
+ssI17984029
+(dp832
+S'self.setGeometry(300, 300, 400, 200)'
+p833
+(F-1.3096763610839843
+F-3.7478880882263184
+tp834
+ssI19428029
+(dp835
+S'print numpy.corrcoef(a, b)'
+p836
+(F-1.7984135367653586
+F-2.603221199729226
+tp837
+ssI22698687
+(dp838
+S'arr[arr[:, (1)].argsort()]'
+p839
+(F-1.9719572628245634
+F-2.6525259017944336
+tp840
+ssI2310851
+(dp841
+S'pyplot.draw()'
+p842
+(F-1.7100560324532645
+F-4.81598881312779
+tp843
+ssI13058758
+(dp844
+S'master.mainloop()'
+p845
+(F-1.6571649823869978
+F-4.52251091003418
+tp846
+ssI17242828
+(dp847
+S"subprocess.check_call(['/my/file/path/programname.sh', 'arg1', 'arg2', arg3])"
+p848
+(F-1.743533452351888
+F-2.614138970008263
+tp849
+ssI11824589
+(dp850
+S'main.run()'
+p851
+(F-1.6489545277186803
+F-2.3993490007188587
+tp852
+ssI5213033
+(dp853
+S'sorted(l, key=sum)'
+p854
+(F-1.6744083404541015
+F-2.6862446467081704
+tp855
+ssI28927779
+(dp856
+S"plt.bar(x, y, color=sns.color_palette('BuGn_r', len(x)))"
+p857
+(F-1.3469608013446515
+F-3.835311542857777
+tp858
+ssI10386132
+(dp859
+S"os.system(cpstr % {'pass': 'userpassword', 'from': './build/bin/myapp',\n    'to': '/bin/myapp'})"
+p860
+(F-1.7027873163637908
+F-3.2270836463341346
+tp861
+ssI16272086
+(dp862
+S'view.setWindowFlags(Qt.FramelessWindowHint)'
+p863
+(F-1.4304763248988561
+F-5.0174407958984375
+tp864
+ssI32499151
+(dp865
+S"INTERP = os.path.join(os.getcwd(), 'myvenv/bin/python')\nsys.path.append(INTERP)"
+p866
+(F-0.9236269350405093
+F-3.7115833282470705
+tp867
+ssI9210589
+(dp868
+S'workers.append(gevent.spawn(worker, random.randint(1, 100000)))'
+p869
+(F-1.910169081254439
+F-2.560912662082248
+tp870
+ssI32424670
+(dp871
+S"ax.plot_surface(x, y, z, rstride=4, cstride=4, color='b', linewidth=0,\n    alpha=0.5)"
+p872
+(F-1.2969156537737165
+F-2.7649795532226564
+tp873
+ssI4510435
+(dp874
+S'response = urllib.request.urlopen(url)\nencoding = response.headers.get_content_charset()'
+p875
+(F-2.1358406360332785
+F-3.669559054904514
+tp876
+ssI15799012
+(dp877
+S"proc = subprocess.Popen(['./program_name', 'arg1', 'arg2', 'etc'], env=environ)"
+p878
+(F-1.2458397258411755
+F-3.1458666483561197
+tp879
+ssI26514151
+(dp880
+S'curs.execute(\n    "select table_name from information_schema.tables WHERE table_schema=\'public\' AND table_type=\'BASETABLE\'"\n    )'
+p881
+(F-1.6781623840332032
+F-2.8053057743952823
+tp882
+ssI35672809
+(dp883
+S"glob.glob('./*.txt')"
+p884
+(F-1.078643798828125
+F-1.4857039133707681
+tp885
+ssI15034151
+(dp886
+S"os.chdir('..')"
+p887
+(F-0.6574878692626953
+F-2.707718276977539
+tp888
+ssI16466670
+(dp889
+S"df.fillna(df['CLOSE'])"
+p890
+(F-1.633946505459872
+F-3.575002431869507
+tp891
+ssI10900207
+(dp892
+S"sums['a'] += 1.0"
+p893
+(F-3.12184476852417
+F-3.7317848205566406
+tp894
+ssI16173809
+(dp895
+S'print "Randy\'s phone # is %s" % people[\'Randy\'][\'phone\']'
+p896
+(F-1.9051744143168132
+F-2.8325207233428955
+tp897
+ssI6009589
+(dp898
+S'any(not isinstance(x, int) for x in l)'
+p899
+(F-1.5234289169311523
+F-2.6541359845329735
+tp900
+ssI21439226
+(dp901
+S"output.writerow([line[1] + item[0], item[1].rstrip('%')])"
+p902
+(F-1.937843186514718
+F-4.037721633911133
+tp903
+ssI9018109
+(dp904
+S"subprocess.call(['/bin/grep', line, 'my2.txt'])"
+p905
+(F-1.2991760798863001
+F-3.1888904571533203
+tp906
+ssI27126526
+(dp907
+S'"""\t""".join(items)'
+p908
+(F-1.5485683679580688
+F-1.9235555330912273
+tp909
+ssI33420033
+(dp910
+S"os.path.join('/', 'directory', 'file')"
+p911
+(F-1.183617455618722
+F-3.599680467085405
+tp912
+ssI27028226
+(dp913
+S'np.linspace(6, 23.4, 5)'
+p914
+(F-2.1354710261027017
+F-2.9975316524505615
+tp915
+ssI18219779
+(dp916
+S"con.executemany('insert into person(firstname, lastname) values (?,?)', persons\n    )"
+p917
+(F-2.8128317052667793
+F-2.688485336303711
+tp918
+ssI10579414
+(dp919
+S'[im.getpixel(x) for x in [(0, 0), (0, 1), (1, 0), (1, 1)]]'
+p920
+(F-1.4487619901958264
+F-4.0032758712768555
+tp921
+ssI14508809
+(dp922
+S'subprocess.call([\n    \'C:\\\\WINDOWS\\\\system32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\',\n    \'. "./SamplePowershell";\', \'&addOne(10)\'])'
+p923
+(F-1.4113361835479736
+F-3.1275646686553955
+tp924
+ssI28149207
+(dp925
+S"{'model': {'spam': 'eggs', 'spamspam': 'eggseggs', 'spamspamspam':\n    'eggseggseggs'}, 'param': {'foo': 'bar', 'foofoo': 'barbar',\n    'foofoofoo': 'barbarbar'}}"
+p926
+(F-1.0918993563265413
+F-3.593571090698242
+tp927
+ssI2180226
+(dp928
+S"MySQLdb.connect(host='...', cursorclass=MySQLdb.cursors.DictCursor)"
+p929
+(F-0.8935959225609189
+F-2.5085988362630207
+tp930
+ssI34125613
+(dp931
+S"a += '----------\\n' + key + '\\n'"
+p932
+(F-2.806137932671441
+F-2.206285603841146
+tp933
+ssI11215632
+(dp934
+S'wx.Dialog.__init__(self, None, title="I\'m a dialog!")'
+p935
+(F-1.119009017944336
+F-3.183800784024325
+tp936
+ssI25301779
+(dp937
+S'lines[-1][:20]'
+p938
+(F-2.4576773210005327
+F-4.025907728407118
+tp939
+ssI27556628
+(dp940
+S'trimmed_mean([10, 20, 30, 40])'
+p941
+(F-2.366117477416992
+F-3.7686407566070557
+tp942
+ssI1614613
+(dp943
+S'print b[0], b[1], b[2]'
+p944
+(F-1.3711404239430147
+F-3.507004737854004
+tp945
+ssI18737942
+(dp946
+S"scipy.cluster.hierarchy.linkage(y, method='single', metric='euclidean')"
+p947
+(F-2.920993614196777
+F-3.72109867976262
+tp948
+ssI40557335
+(dp949
+S'decode_binary_string(X)'
+p950
+(F-3.546185302734375
+F-2.88570319281684
+tp951
+ssI18439851
+(dp952
+S"browser.find_element_by_id('exporthlgt').click()"
+p953
+(F-0.3307890362209744
+F-2.8613128662109375
+tp954
+ssI3904289
+(dp955
+S"MyNewArray = zeros(12, dtype='S10,f4,f4,f4')"
+p956
+(F-3.404311043875558
+F-2.597888653094952
+tp957
+ssI9542435
+(dp958
+S'os.path.realpath(f.name)'
+p959
+(F-1.4913371404012044
+F-2.4009473588731556
+tp960
+ssI6714151
+(dp961
+S'converter(sys.argv[1])'
+p962
+(F-1.846898165616122
+F-2.483973653692948
+tp963
+ssI16227113
+(dp964
+S"list(glob.glob('*.txt'))"
+p965
+(F-1.6258645491166548
+F-2.409243583679199
+tp966
+ssI17814314
+(dp967
+S"plt.axes().set_aspect('equal')"
+p968
+(F-1.3143183844430106
+F-1.7111334800720215
+tp969
+ssI15821613
+(dp970
+S"lower_output.append(re.findall('[a-z]+', seq))"
+p971
+(F-1.9589859457576977
+F-3.5811136881510417
+tp972
+ssI31841071
+(dp973
+S"subprocess.call(['inkscape', '-D', '-A', outfn, inpfn])"
+p974
+(F-1.1947271558973525
+F-2.1948110262552896
+tp975
+ssI23686963
+(dp976
+S'TarFile.add(name, arcname=None, recursive=True, exclude=None, filter=None)'
+p977
+(F-3.411026916503906
+F-4.5084638595581055
+tp978
+ssI13355828
+(dp979
+S"[['milk', 'cheese'], ['bread', 'hotdog buns'], ['chicken', 'tuna', 'burgers']]"
+p980
+(F-0.7006106169327445
+F-3.8635982513427733
+tp981
+ssI20431670
+(dp982
+S'fout.write(line)'
+p983
+(F-2.766108989715576
+F-2.952582041422526
+tp984
+ssI20136763
+(dp985
+S"gnuplot.stdin.write('e\\n')"
+p986
+(F-0.8946533203125
+F-3.245838165283203
+tp987
+ssI5043012
+(dp988
+S"return self.cleaned_data['name'].strip()"
+p989
+(F-1.2371958414713542
+F-4.482432047526042
+tp990
+ssI19884870
+(dp991
+S"array([[u'3', u'1', u'22', u'1', u'0', u'7.25', u'2'], [u'3', u'20', u'22',\n    u'1', u'0', u'7.25', u'2']], dtype='<U82')"
+p992
+(F-0.8192885642827943
+F-2.7937423161097934
+tp993
+ssI12751687
+(dp994
+S'[word for word in txt if len(word) <= 4]'
+p995
+(F-2.013808250427246
+F-3.7239554723103843
+tp996
+ssI10120008
+(dp997
+S'array([[1, 2], [5, 6]])'
+p998
+(F-1.1478917863633897
+F-1.914105733235677
+tp999
+ssI3973963
+(dp1000
+S'[[\'BODYSTRUCTURE\', [\'"text"\', \'"plain"\', [\'"charset"\', \'"ISO-8859-1"\'],\n    \'NIL\', \'NIL\', \'"quoted printable"\', \'1207\', \'50\', \'NIL\', \'NIL\', \'NIL\',\n    \'NIL\']]]'
+p1001
+(F-1.188956040602464
+F-3.591452789306641
+tp1002
+ssI250700
+(dp1003
+S"child.expect('First question:')\nchild.sendline('Y')\nchild.expect('Second question:')\nchild.sendline('Yup')"
+p1004
+(F-0.7170213502028893
+F-2.1493654251098633
+tp1005
+ssI20484942
+(dp1006
+S'Area = (right - left) * (top - bottom)'
+p1007
+(F-3.789270528157552
+F-3.731987635294596
+tp1008
+ssI9571151
+(dp1009
+S"unicode(i, encoding='UTF-8')"
+p1010
+(F-2.594792366027832
+F-1.9732104407416449
+tp1011
+ssI25789264
+(dp1012
+S"df.to_excel('output.xls')"
+p1013
+(F-0.7876400470733642
+F-1.9949899400983537
+tp1014
+ssI32791377
+(dp1015
+S'"""  """.join(line.split(\'  \')[1:]).strip()'
+p1016
+(F-1.0289059593563987
+F-2.4767679067758412
+tp1017
+ssI15188828
+(dp1018
+S"models_with_stereos = tree.findall('.//model[@stereo]')"
+p1019
+(F-3.019150597708566
+F-2.7896766662597656
+tp1020
+ssI42294109
+(dp1021
+S'cv2.absdiff(a, b)'
+p1022
+(F-1.5549683570861816
+F-2.891605758666992
+tp1023
+ssI2106207
+(dp1024
+S"cursor.execute(sql, dict(like='%' + term + '%'))"
+p1025
+(F-2.478791487844367
+F-3.837683359781901
+tp1026
+ssI35744613
+(dp1027
+S'for rowx in range(sheet.nrows):\n    pass'
+p1028
+(F-1.5471134185791016
+F-3.262685255570845
+tp1029
+ssI22922086
+(dp1030
+S'[[a, b, n] for (a, b), n in _.items()]'
+p1031
+(F-1.934920310974121
+F-3.1259084065755207
+tp1032
+ssI9532264
+(dp1033
+S'threading.Thread.__init__(self)'
+p1034
+(F-1.0978850523630779
+F-2.5732827867780412
+tp1035
+ssI4246377
+(dp1036
+S"open(argv[1], 'w').write(open(argv[2]).read())"
+p1037
+(F-1.8654210017277644
+F-3.2891462225663033
+tp1038
+ssI12882794
+(dp1039
+S'plt.show()'
+p1040
+(F-0.6955161775861468
+F-2.3631643815474077
+tp1041
+ssI20902763
+(dp1042
+S"tk.Frame.__init__(self, master, background='green')"
+p1043
+(F-1.2827249103122287
+F-3.075960159301758
+tp1044
+ssI20312942
+(dp1045
+S"print ' '.join(['Hello World!'] * 2)"
+p1046
+(F-0.8505697983961839
+F-2.5227024078369142
+tp1047
+ssI14946109
+(dp1048
+S"re.sub('[\\\\x00-\\\\x1f\\\\x7f-\\\\xff]', '', ''.join(map(chr, range(256))))"
+p1049
+(F-1.3817939758300781
+F-3.5296743292557564
+tp1050
+ssI7252851
+(dp1051
+S'print np.vstack([idx, np.fromiter(g, dtype=np.float)]).T'
+p1052
+(F-2.259367135854868
+F-3.9052215576171876
+tp1053
+ssI15670132
+(dp1054
+S'a[(0), :] == b'
+p1055
+(F-3.5330991744995117
+F-3.2112932205200195
+tp1056
+ssI36951763
+(dp1057
+S'time.sleep(1)'
+p1058
+(F-0.6589539647102356
+F-2.154699537489149
+tp1059
+ssI12096377
+(dp1060
+S"my_module.yayfunctions('a')"
+p1061
+(F-1.8047531127929688
+F-2.833742141723633
+tp1062
+ssI9886589
+(dp1063
+S'A = numpy.array((X, Y, Z), dtype=float)'
+p1064
+(F-1.7695207595825195
+F-3.0555076599121094
+tp1065
+ssI17075071
+(dp1066
+S"{k: v for k, v in vars(myObject).items() if not k.startswith('_')}"
+p1067
+(F-1.8359039569723195
+F-3.6428604125976562
+tp1068
+ssI18148226
+(dp1069
+S"conn.cursor().execute('{call sp_rename(?,?,?)}', (\n    'xro_zips_import.CityAliasName', 'City', 'COLUMN'))"
+p1070
+(F-1.303823743547712
+F-3.185151481628418
+tp1071
+ssI6181763
+(dp1072
+S're.sub(pattern, repl, string, count=0, flags=0)'
+p1073
+(F-2.4039501190185546
+F-1.7515458193692295
+tp1074
+ssI38349700
+(dp1075
+S"df = pd.read_csv(file_, encoding='windows-1252', delim_whitespace=True)"
+p1076
+(F-1.5042975052543308
+F-3.863576889038086
+tp1077
+ssI36948870
+(dp1078
+S"a = collections.defaultdict(lambda : 'initial')"
+p1079
+(F-1.91033140818278
+F-3.1190704345703124
+tp1080
+ssI8539628
+(dp1081
+S'match.group()'
+p1082
+(F-1.9622960771833147
+F-2.126357165249911
+tp1083
+ssI19223435
+(dp1084
+S'print rec_increment([1, 2, 3, 4])'
+p1085
+(F-1.6670601788689108
+F-3.531900579279119
+tp1086
+ssI27177870
+(dp1087
+S'thread.start_new_thread(message_handler, (data, addr))'
+p1088
+(F-2.780160903930664
+F-2.857728958129883
+tp1089
+ssI14959507
+(dp1090
+S"subprocess.call('exit 1', shell=True)"
+p1091
+(F-0.5912893613179525
+F-2.218877156575521
+tp1092
+ssI24523670
+(dp1093
+S'plt.show()'
+p1094
+(F-0.5146879468645368
+F-2.235131399972098
+tp1095
+ssI17601435
+(dp1096
+S"wshell.SendKeys('foo')"
+p1097
+(F-1.725990719265408
+F-5.366920471191406
+tp1098
+ssI25412151
+(dp1099
+S'return [l[i:i + n] for i in range(0, len(l), n)]'
+p1100
+(F-1.0539536652741608
+F-2.4049417972564697
+tp1101
+ssI18910113
+(dp1102
+S"sht.Cells(1, 1).Value = 'yeah this works'"
+p1103
+(F-1.7836461748395647
+F-3.0140794118245444
+tp1104
+ssI29000613
+(dp1105
+S'[str(item).zfill(6) for item in data]'
+p1106
+(F-2.1966085994944855
+F-2.435604731241862
+tp1107
+ssI29518758
+(dp1108
+S'csv_writer.writerow([k, v])'
+p1109
+(F-1.9237308502197266
+F-3.4041779462028954
+tp1110
+ssI13214632
+(dp1111
+S'QObject.__init__(self)'
+p1112
+(F-1.5103367892178623
+F-3.7690210342407227
+tp1113
+ssI998314
+(dp1114
+S'sys.argv[1]'
+p1115
+(F-1.4734666347503662
+F-2.5912066372958096
+tp1116
+ssI27046828
+(dp1117
+S'sorted(ints, reverse=True)'
+p1118
+(F-1.8143285751342773
+F-1.9331207275390625
+tp1119
+ssI23882226
+(dp1120
+S"unquote('05%2F01%2F2014')"
+p1121
+(F-2.345221678415934
+F-3.5691146850585938
+tp1122
+ssI7001008
+(dp1123
+S"plt.savefig('test.png', bbox_inches='tight', pad_inches=0.0)"
+p1124
+(F-1.672205924987793
+F-2.3970064435686385
+tp1125
+ssI32531377
+(dp1126
+S'(windows == match_array).all(axis=(2, 3)).any()'
+p1127
+(F-3.008366584777832
+F-3.2003718289462
+tp1128
+ssI3059151
+(dp1129
+S're.sub(\'(?<=foo: ")(\\\\\\\\"|[^"])+(?=")\', \'pears\', s)'
+p1130
+(F-0.4937569300333659
+F-2.6425743103027344
+tp1131
+ssI5262264
+(dp1132
+S'foo.func1()'
+p1133
+(F-1.8261631556919642
+F-2.623167478121244
+tp1134
+ssI1885113
+(dp1135
+S"BaseHTTPServer.HTTPServer(('', 80), CGIHTTPServer.CGIHTTPRequestHandler\n    ).serve_forever()"
+p1136
+(F-2.5339077540806363
+F-5.12737310500372
+tp1137
+ssI20903071
+(dp1138
+S"df[[col for col in df.columns if 'Vibration' in col]]"
+p1139
+(F-1.8004286024305556
+F-3.1090189615885415
+tp1140
+ssI19872700
+(dp1141
+S"OLD.reshape((3, 3), order='F')"
+p1142
+(F-1.8305690288543701
+F-3.619279479980469
+tp1143
+ssI27895113
+(dp1144
+S"set_ser = serial.Serial(port='COM1', baudrate=9600, parity=serial.\n    PARITY_NONE, stopbits=serial.STOPBITS_ONE, bytesize=serial.EIGHTBITS,\n    timeout=1)"
+p1145
+(F-2.141332377558169
+F-3.798927625020345
+tp1146
+ssI12342207
+(dp1147
+S'c = Counter(f.read().strip())'
+p1148
+(F-1.97208571434021
+F-2.257722854614258
+tp1149
+ssI23229377
+(dp1150
+S'sys.stdout.flush()'
+p1151
+(F-0.9507723914252387
+F-3.065601030985514
+tp1152
+ssI33657794
+(dp1153
+S"print '{} {}'.format(line.split(',')[3], num)"
+p1154
+(F-1.3529667101408307
+F-3.429614727313702
+tp1155
+ssI27341763
+(dp1156
+S"owner = models.ForeignKey(User, related_name='owners_friend')"
+p1157
+(F-0.963345583747415
+F-3.8931214014689126
+tp1158
+ssI29320132
+(dp1159
+S'layout.addWidget(random.sample(choices, 1))'
+p1160
+(F-2.1488475799560547
+F-3.0882438023885093
+tp1161
+ssI16923589
+(dp1162
+S"PARCEL_ID = re.sub('[-/ ]', '', PARCEL_ID)"
+p1163
+(F-1.968638949924045
+F-2.8249165852864584
+tp1164
+ssI14384071
+(dp1165
+S"str('NC_000117.1_01') in str('NC_000117.1_01_173_001_001')"
+p1166
+(F-2.2698430148038
+F-4.369015884399414
+tp1167
+ssI5729226
+(dp1168
+S"print attrslist[0]['status']"
+p1169
+(F-1.4006573677062988
+F-2.3329319953918457
+tp1170
+ssI16156151
+(dp1171
+S"numVowels = sum(word.count(x) for x in 'aeiou')"
+p1172
+(F-3.0763036939832897
+F-4.191910670353816
+tp1173
+ssI20229071
+(dp1174
+S'sorted(dct, key=lambda k: (-dct[k], k))'
+p1175
+(F-1.8456173851376487
+F-3.5650747390020463
+tp1176
+ssI33657809
+(dp1177
+S"df.groupby('ind')[cols].sum()"
+p1178
+(F-1.0457140604654949
+F-2.6823596954345703
+tp1179
+ssI29550414
+(dp1180
+S"df['b'].apply(pd.Series)"
+p1181
+(F-1.5386185279259315
+F-1.950997034708659
+tp1182
+ssI19938809
+(dp1183
+S'arr[:, -2:]'
+p1184
+(F-1.7657608032226562
+F-2.7205397288004556
+tp1185
+ssI33764314
+(dp1186
+S'return Response(status=status.HTTP_400_BAD_REQUEST)'
+p1187
+(F-1.4535643633674173
+F-2.037477493286133
+tp1188
+ssI8098779
+(dp1189
+S'x.sort(reverse=True)'
+p1190
+(F-1.393153190612793
+F-1.6386595639315518
+tp1191
+ssI18392029
+(dp1192
+S'time = int(float(time))'
+p1193
+(F-2.3291953693736684
+F-1.5543948411941528
+tp1194
+ssI8330207
+(dp1195
+S'd[k].append(v)'
+p1196
+(F-1.853846636685458
+F-1.7279338836669922
+tp1197
+ssI14627809
+(dp1198
+S"p_socket.send('Hello world\\n')"
+p1199
+(F-2.09274845123291
+F-3.6407335721529446
+tp1200
+ssI16577507
+(dp1201
+S"f.write(str(n) + '\\n')"
+p1202
+(F-1.1548651915330153
+F-2.5714120864868164
+tp1203
+ssI347109
+(dp1204
+S"setattr(TestCase1, 'test_' + name, test_method)"
+p1205
+(F-2.671839141845703
+F-3.475901211009306
+tp1206
+ssI6589414
+(dp1207
+S"cursor.execute(\n    'INSERT INTO media_files (%s) VALUES (%%s, %%s, %%s, %%s,   ...)' % ','\n    .join(fieldlist), valuelist)"
+p1208
+(F-1.8725168328536184
+F-2.863792657852173
+tp1209
+ssI2335721
+(dp1210
+S'win32gui.MoveWindow(hwnd, 0, 0, 500, 500, True)'
+p1211
+(F-1.5801423725328947
+F-2.418831095975988
+tp1212
+ssI18527763
+(dp1213
+S"a = sum(word.endswith('ly') for line in f for word in line.split())"
+p1214
+(F-2.0532406616210936
+F-2.1251963565224097
+tp1215
+ssI17281335
+(dp1216
+S'con.commit()'
+p1217
+(F-1.1883331026349748
+F-2.791457176208496
+tp1218
+ssI32193526
+(dp1219
+S'print list(item for item in itertools.product(*a) if item[1] != item[2])'
+p1220
+(F-1.9127669157805267
+F-3.471021132035689
+tp1221
+ssI20438012
+(dp1222
+S"json.dumps({'favorite_food': [food]})"
+p1223
+(F-1.952916145324707
+F-3.4606971740722656
+tp1224
+ssI28910851
+(dp1225
+S"df[['parks', 'playgrounds', 'sports']].apply(lambda x: x.astype('category'))"
+p1226
+(F-0.9519623565673828
+F-3.8201228055087
+tp1227
+ssI20972033
+(dp1228
+S"ax2.yaxis.set_major_locator(MaxNLocator(prune='upper'))"
+p1229
+(F-1.0838398933410645
+F-3.7527999877929688
+tp1230
+ssI14652942
+(dp1231
+S"print t.decode('iso-8859-1').encode(outenc)"
+p1232
+(F-2.2811032703944614
+F-4.022491182599749
+tp1233
+ssI32687113
+(dp1234
+S"User.objects.create(username='john', password='xxx')"
+p1235
+(F-1.1667230129241943
+F-2.210107421875
+tp1236
+ssI9653264
+(dp1237
+S"self.ui.txtName.setProperty('rules', QtCore.QVariant())"
+p1238
+(F-1.2823311198841443
+F-2.797654015677316
+tp1239
+ssI39115794
+(dp1240
+S'def qcallback(duck):\n    duck.quack()'
+p1241
+(F-1.100688099861145
+F-2.9162917137145996
+tp1242
+ssI27128851
+(dp1243
+S"os.system('cowsay ' + word)"
+p1244
+(F-1.4181403160095214
+F-1.9209998448689778
+tp1245
+ssI3800086
+(dp1246
+S"u'\\xff and \\ubd23'.translate({(255): u'255', (48419): u'something else'})"
+p1247
+(F-3.200905609130859
+F-3.9737722223455254
+tp1248
+ssI18075721
+(dp1249
+S'plt.draw()'
+p1250
+(F-1.0939740453447615
+F-2.94283206646259
+tp1251
+ssI24810526
+(dp1252
+S"df['Risk_Factors'] = df.apply(countRiskFactors, axis=1)"
+p1253
+(F-2.272080270867599
+F-3.3381341298421225
+tp1254
+ssI27106335
+(dp1255
+S'd.isoweekday() % 7'
+p1256
+(F-3.6758846706814237
+F-3.2753933497837613
+tp1257
+ssI3781670
+(dp1258
+S'tk.Text.__init__(self, *args, **kwargs)'
+p1259
+(F-1.06974368625217
+F-1.8719201521439985
+tp1260
+ssI19412828
+(dp1261
+S'sorted(set(a))[-2]'
+p1262
+(F-1.9889913705679088
+F-3.524774031205611
+tp1263
+ssI31987207
+(dp1264
+S'list(map(q.put, items))'
+p1265
+(F-2.801317655123197
+F-3.5022493998209634
+tp1266
+ssI19866377
+(dp1267
+S"df1.join(df2, how='outer')"
+p1268
+(F-1.9252389272054036
+F-2.00632381439209
+tp1269
+ssI18433071
+(dp1270
+S"celery.send_task('tasks.add', (2, 2))"
+p1271
+(F-1.8388793468475342
+F-2.6099669138590493
+tp1272
+ssI36803632
+(dp1273
+S"tempDF3 = tempDF.loc[[6], ['group', 'string']]"
+p1274
+(F-1.9452270931667752
+F-2.439138239080256
+tp1275
+ssI19573809
+(dp1276
+S"im.save(os.path.join(path2, path), 'JPEG')"
+p1277
+(F-1.6599153217516447
+F-3.1403573843149037
+tp1278
+ssI25375794
+(dp1279
+S"print ' '.join(word[::-1] for word in s.split())"
+p1280
+(F-1.0437187526537024
+F-1.7149571010044642
+tp1281
+ssI20448435
+(dp1282
+S"print 'Invalid input!'"
+p1283
+(F-1.9037270545959473
+F-2.4349138259887697
+tp1284
+ssI26414132
+(dp1285
+S'super(Email, self).save(*args, **kwargs)'
+p1286
+(F-1.0543150060317095
+F-3.052660428560697
+tp1287
+ssI34442293
+(dp1288
+S"df['col'].apply(lambda x: pd.Series(x.split(',')))"
+p1289
+(F-0.9430437088012695
+F-3.4450375693184987
+tp1290
+ssI4856887
+(dp1291
+S'ExtEntry.objects.filter(categories=my_category)'
+p1292
+(F-2.328416442871094
+F-4.224434322781033
+tp1293
+ssI35224632
+(dp1294
+S'plt.xlim(0, len(a))'
+p1295
+(F-1.4189319610595703
+F-2.7941246032714844
+tp1296
+ssI4408377
+(dp1297
+S'proc.wait()'
+p1298
+(F-1.760861941746303
+F-1.691463123668324
+tp1299
+ssI4299293
+(dp1300
+S"string.replace('#', '', 1)"
+p1301
+(F-1.5861879984537761
+F-2.1126648585001626
+tp1302
+ssI19412029
+(dp1303
+S"client._sendFile(os.path.abspath('file_1.txt'))"
+p1304
+(F-2.142651319503784
+F-3.174283504486084
+tp1305
+ssI6364226
+(dp1306
+S"nfoText = codecs.open('something.nfo', 'r', 'cp437').read()"
+p1307
+(F-1.5341187527305202
+F-2.8732324080033735
+tp1308
+ssI1653828
+(dp1309
+S'return super(Question, self).save(*args, **kwargs)'
+p1310
+(F-1.45249515109592
+F-2.2888150215148926
+tp1311
+ssI14521414
+(dp1312
+S'os.kill(proc_pid, 9)'
+p1313
+(F-2.7953917185465493
+F-3.6574245029025607
+tp1314
+ssI9227335
+(dp1315
+S"return float(num.replace(',', '.'))"
+p1316
+(F-1.7325611114501953
+F-2.9681045532226564
+tp1317
+ssI8328264
+(dp1318
+S"inside_tags = re.findall('<aaa>(.+?)</aaa>', s)"
+p1319
+(F-2.101681573050363
+F-3.02912345299354
+tp1320
+ssI27479113
+(dp1321
+S"f.write('AAA')"
+p1322
+(F-1.1099443435668945
+F-1.693690299987793
+tp1323
+ssI18817207
+(dp1324
+S'coordinates.append((x, y))'
+p1325
+(F-1.74370272954305
+F-3.788248300552368
+tp1326
+ssI8830029
+(dp1327
+S"mystr.replace('x\\n', 'x extra extra stuff\\n')"
+p1328
+(F-1.3530603408813477
+F-2.193839179144965
+tp1329
+ssI30958670
+(dp1330
+S"df = pd.DataFrame({'A': ['string1', 'string2', 'string3'], 'B': ['StringA',\n    'StringB', 'StringC']})"
+p1331
+(F-0.7334533929824829
+F-2.86777663230896
+tp1332
+ssI30293071
+(dp1333
+S'[[1], [2, 2], [3, 3, 3], [4, 4, 4, 4], [5, 5, 5, 5, 5]]'
+p1334
+(F-1.4009850080623183
+F-3.508798122406006
+tp1335
+ssI35255377
+(dp1336
+S'self.ui.setupUi(self)'
+p1337
+(F-1.3529372648759321
+F-2.372892379760742
+tp1338
+ssI10144851
+(dp1339
+S'reactor.run()'
+p1340
+(F-0.9744721821376255
+F-3.5852203369140625
+tp1341
+ssI5919828
+(dp1342
+S"word = input('Give me a 5 letter word: ')"
+p1343
+(F-1.3493940830230713
+F-1.7525414058140345
+tp1344
+ssI18945109
+(dp1345
+S'ndb.delete_multi(Game.query().fetch(keys_only=True))'
+p1346
+(F-2.4992078698199727
+F-2.3645883447983684
+tp1347
+ssI29398109
+(dp1348
+S'theano.printing.debugprint(nearly_zeros)'
+p1349
+(F-2.7868356704711914
+F-2.857186726161412
+tp1350
+ssI730207
+(dp1351
+S"class Foo(models.Model):\n    foo = models.ForeignKey(Bar, to_field='bar')"
+p1352
+(F-1.3336174828665597
+F-2.18491216806265
+tp1353
+ssI16577632
+(dp1354
+S'json.loads(data)'
+p1355
+(F-1.0264482498168945
+F-1.4484070671929254
+tp1356
+ssI8307809
+(dp1357
+S"str_message = email.message_from_bytes('\\n'.join(raw_message))"
+p1358
+(F-1.9930118063221807
+F-4.007333755493164
+tp1359
+ssI19470435
+(dp1360
+S"json_object = type('JSON', (), json.loads(json_data))()"
+p1361
+(F-2.2451233863830566
+F-3.725109393780048
+tp1362
+ssI32969828
+(dp1363
+S'lines.append([int(y) for y in line.split()])'
+p1364
+(F-1.415936061314174
+F-2.4697413011030718
+tp1365
+ssI4093029
+(dp1366
+S'self._inner_list[-1]'
+p1367
+(F-2.3928789658979936
+F-2.6021223801832933
+tp1368
+ssI31407207
+(dp1369
+S'plt.legend()'
+p1370
+(F-0.923490047454834
+F-2.3314816611153737
+tp1371
+ssI35638377
+(dp1372
+S'df.ix[[x for x in df.index if x.islower()]]'
+p1373
+(F-1.5445159565318713
+F-3.5479631423950195
+tp1374
+ssI13455207
+(dp1375
+S"__tablename__ = 'tempo'"
+p1376
+(F-0.9829803194318499
+F-4.279980659484863
+tp1377
+ssI9915507
+(dp1378
+S"str('filepath_here')"
+p1379
+(F-1.6879048347473145
+F-4.498143196105957
+tp1380
+ssI32470132
+(dp1381
+S"with open('science.json') as tweet_data:\n    json_data = json.load(tweet_data)"
+p1382
+(F-1.354493882921007
+F-2.523299789428711
+tp1383
+ssI34157687
+(dp1384
+S"button.setProperty('row', row)"
+p1385
+(F-2.905695308338512
+F-3.374190403864934
+tp1386
+ssI5269012
+(dp1387
+S'ftp.sock.setsockopt(socket.SOL_SOCKET, socket.SO_KEEPALIVE, 1)'
+p1388
+(F-1.8502044677734375
+F-5.963839721679688
+tp1389
+ssI17478779
+(dp1390
+S'plt.scatter(*zip(*a))'
+p1391
+(F-1.596556149996244
+F-3.1751976013183594
+tp1392
+ssI32038012
+(dp1393
+S'out = eval(file_object.read())'
+p1394
+(F-2.191166877746582
+F-2.737078560723199
+tp1395
+ssI17706109
+(dp1396
+S'print df.groupby(df.index.date).count()'
+p1397
+(F-1.7484589745016659
+F-3.763752746582031
+tp1398
+ssI20364414
+(dp1399
+S"return hasattr(other, 'container') and self.container == other.container"
+p1400
+(F-3.5429036757525276
+F-3.8925857543945312
+tp1401
+ssI5422613
+(dp1402
+S'client.set_options(soapheaders=header)'
+p1403
+(F-1.49169921875
+F-3.1018112182617186
+tp1404
+ssI24853632
+(dp1405
+S"[['A', 'B', 'C', 'D'], ['1', '2', '3', '4'], ['W', 'X', 'Y', 'Z'], ['5',\n    '6', '7', '8']]"
+p1406
+(F-0.7684171850031073
+F-2.68902702331543
+tp1407
+ssI33006721
+(dp1408
+S'drawH(x1, y1, size / 2, level - 1)'
+p1409
+(F-3.65730881690979
+F-4.622211456298828
+tp1410
+ssI35953794
+(dp1411
+S"plt.plot([0], [0], 'oy', ms=100)"
+p1412
+(F-1.4982897758483886
+F-2.347120666503906
+tp1413
+ssI18078851
+(dp1414
+S'print sys.getdefaultencoding()'
+p1415
+(F-2.7169883251190186
+F-3.861391544342041
+tp1416
+ssI7683207
+(dp1417
+S"return render_to_response('upload_page.html', {'form': form},\n    context_instance=RequestContext(request))"
+p1418
+(F-1.1852692195347376
+F-3.583370409513775
+tp1419
+ssI9041033
+(dp1420
+S"re.findall('\\\\bbarbar', s, re.IGNORECASE | re.UNICODE)"
+p1421
+(F-1.1541420618693035
+F-3.4020462036132812
+tp1422
+ssI12082314
+(dp1423
+S"urllib.quote_plus(\n    'http://earth.google.com/gallery/kmz/women_for_women.kmz?a=large')"
+p1424
+(F-1.7207065929066052
+F-2.7576492854527066
+tp1425
+ssI4502314
+(dp1426
+S"re.findall('{{(.*?)}}', 'this {{is}} a sample {{text}}')"
+p1427
+(F-0.9557413101196289
+F-2.713211250305176
+tp1428
+ssI27221132
+(dp1429
+S'greenwich_date.date()'
+p1430
+(F-2.4200481838650174
+F-3.2416741847991943
+tp1431
+ssI4653507
+(dp1432
+S'print _3x3x3[i][j][k],'
+p1433
+(F-2.793155942644392
+F-3.8725654602050783
+tp1434
+ssI15778963
+(dp1435
+S"sys.path.insert(0, '/usr/local/lib/python2.6/dist-packages')"
+p1436
+(F-0.6565121412277222
+F-3.1761550903320312
+tp1437
+ssI7589012
+(dp1438
+S"cv2.imwrite('out.png', vis)"
+p1439
+(F-1.600390625
+F-2.291893550327846
+tp1440
+ssI3988632
+(dp1441
+S"shorter = re.sub(',\\\\s*d=[^)]+', '', longer)"
+p1442
+(F-0.6831695011683873
+F-2.8854301452636717
+tp1443
+ssI13894809
+(dp1444
+S'numbers = [int(n) for n in A.split()]'
+p1445
+(F-1.4175457424587674
+F-2.2976999282836914
+tp1446
+ssI31517851
+(dp1447
+S'divisible_numbers([12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1], [2, 3])'
+p1448
+(F-2.1976434808028373
+F-3.665591376168387
+tp1449
+ssI2682012
+(dp1450
+S'[do_something(x) for x in a_list_of_objects]'
+p1451
+(F-2.062814712524414
+F-2.379769105177659
+tp1452
+ssI19315870
+(dp1453
+S'print line_list[2][0]'
+p1454
+(F-2.4138971964518228
+F-1.648759365081787
+tp1455
+ssI28054687
+(dp1456
+S'QtCore.QPoint(852, 595)'
+p1457
+(F-2.3003684679667153
+F-3.1254730224609375
+tp1458
+ssI19279008
+(dp1459
+S'inputbox.delete(0, END)'
+p1460
+(F-1.5504165649414063
+F-2.829424031575521
+tp1461
+ssI14924721
+(dp1462
+S"line = random.choice(open('data.txt').readlines())"
+p1463
+(F-1.0486306583180147
+F-1.8204339345296223
+tp1464
+ssI16325794
+(dp1465
+S'music.close()'
+p1466
+(F-2.3923617771693637
+F-3.3619117736816406
+tp1467
+ssI14924963
+(dp1468
+S"plt.text(0.5, 0.5,\n    '$\\\\mathsf{sin\\\\left(\\\\frac{\\\\pi}{180} f_1 \\\\theta + \\\\varphi_1\\\\right)     + B sin\\\\left(\\\\frac{\\\\pi}{180} f_2 \\\\theta + \\\\varphi_2\\\\right)}$'\n    )"
+p1469
+(F-2.205817086356027
+F-4.956094529893663
+tp1470
+ssI33729700
+(dp1471
+S"collection.distinct('cust_id', {'city': 'Pittsburg'})"
+p1472
+(F-1.9112807682582311
+F-3.722761392593384
+tp1473
+ssI18926758
+(dp1474
+S'result.append(item)'
+p1475
+(F-1.887500524520874
+F-2.390474319458008
+tp1476
+ssI11005809
+(dp1477
+S'f.write(newstr)'
+p1478
+(F-1.5668606758117676
+F-1.5484487533569335
+tp1479
+ssI23151132
+(dp1480
+S"print row[0]['key']"
+p1481
+(F-1.5894244194030762
+F-3.3267309400770397
+tp1482
+ssI20206763
+(dp1483
+S'l[0]'
+p1484
+(F-2.800639788309733
+F-1.6318295001983643
+tp1485
+ssI38108335
+(dp1486
+S'np.bmat([[A, B], [B.T, C]])'
+p1487
+(F-1.8403172926469282
+F-3.286852094862196
+tp1488
+ssI13548721
+(dp1489
+S'd.A.values[1:] / d.B.values[:-1]'
+p1490
+(F-2.864787535233931
+F-3.879959954155816
+tp1491
+ssI3865779
+(dp1492
+S'sorted(unordered, key=operator.itemgetter(1, 0))'
+p1493
+(F-1.4588948418112362
+F-2.6724925571017795
+tp1494
+ssI23270942
+(dp1495
+S"[s.split()[:2] for s in string.split('\\n')]"
+p1496
+(F-1.3949729746038264
+F-4.1042285495334205
+tp1497
+ssI15617207
+(dp1498
+S'ax.scatter(x, y, z, c=plt.cm.jet(np.linspace(0, 1, N)))'
+p1499
+(F-1.1634610891342163
+F-3.2074241638183594
+tp1500
+ssI31124670
+(dp1501
+S'print count_files_7z(sys.argv[1])'
+p1502
+(F-2.2170956134796143
+F-2.3431671142578123
+tp1503
+ssI21277887
+(dp1504
+S'df.state = df.state.map(new_map)'
+p1505
+(F-3.2574872970581055
+F-2.7929780748155384
+tp1506
+ssI29378763
+(dp1507
+S"s3_client.upload_file('hello.txt', 'MyBucket', 'hello-remote.txt')"
+p1508
+(F-0.8326454162597656
+F-2.0349475542704263
+tp1509
+ssI15557828
+(dp1510
+S"datetime.datetime.strptime('30-01-12', '%d-%m-%y').date()"
+p1511
+(F-0.8390958309173584
+F-2.356154680252075
+tp1512
+ssI23172293
+(dp1513
+S"['0.16529463651919140688', '0.22945757727367316336',\n    '0.18028180766761139897', '0.21469677818346077913',\n    '0.54350916483644962085', '0.00654573856803835914',\n    '0.04530853441176059537', '0.02416511342888815264',\n    '0.21236619242575086042', '0.13421900772403019819',\n    '0.14957653992840658219', '0.02592135486124686958',\n    '0.02477670174791116522', '0.22983459269245612444',\n    '0.00000328449424529074', '0.29776257618061197086',\n    '0.09881729077887969892', '0.02257522897558370684',\n    '0.21599133163597591945', '0.02365043128986757739',\n    '0.16069861523756587274', '0.0']"
+p1514
+(F-0.7181617335269326
+F-4.561178727583452
+tp1515
+ssI21798086
+(dp1516
+S'words.replace(z[1], z[0])'
+p1517
+(F-2.841229200363159
+F-3.3615165286593967
+tp1518
+ssI11502113
+(dp1519
+S'file_pb2._TEST.values_by_number[1].name'
+p1520
+(F-4.054382748074001
+F-4.3065338134765625
+tp1521
+ssI27698377
+(dp1522
+S"plt.rcParams.update({'mathtext.default': 'regular'})"
+p1523
+(F-1.40488650004069
+F-2.4762344360351562
+tp1524
+ssI28615887
+(dp1525
+S"tick.set_horizontalalignment('left')"
+p1526
+(F-1.5382898330688477
+F-2.103100996751052
+tp1527
+ssI23519779
+(dp1528
+S'tree.getroot().xpath("//li[@epub:type = \'footnote\']", namespaces={\'epub\':\n    \'http://www.idpf.org/2007/ops\'})'
+p1529
+(F-1.6148180280412947
+F-2.5508399539523654
+tp1530
+ssI30149851
+(dp1531
+S"parser.add_argument('-a', '--alpha', action='append')"
+p1532
+(F-0.9179540872573853
+F-3.0277296702067056
+tp1533
+ssI16504029
+(dp1534
+S"zf.write(image, arcname='files/Ovr0.png')"
+p1535
+(F-1.7184654871622722
+F-2.023952007293701
+tp1536
+ssI88613
+(dp1537
+S"['2', '+', '24', '*', '48', '/', '32']"
+p1538
+(F-0.6816720401539522
+F-1.4488633473714192
+tp1539
+ssI6104289
+(dp1540
+S"p.stdin.write('b\\n')"
+p1541
+(F-0.9575941085815429
+F-2.1786944649436255
+tp1542
+ssI11764963
+(dp1543
+S"re.sub('(car)', '<b>\\\\1</b>', the_string, flags=re.I)"
+p1544
+(F-1.2985057830810547
+F-3.4032745361328125
+tp1545
+ssI11279589
+(dp1546
+S"root.xpath('/bookstore/book/*/text()')"
+p1547
+(F-1.6964287757873535
+F-2.1930033365885415
+tp1548
+ssI37192942
+(dp1549
+S"print str(date).replace('-', '')"
+p1550
+(F-1.0198345865522112
+F-1.4811246395111084
+tp1551
+ssI2817264
+(dp1552
+S"os.path.abspath(os.path.join('templates', 'blog1', 'page.html'))"
+p1553
+(F-0.6201168696085612
+F-3.5323583814832897
+tp1554
+ssI2139377
+(dp1555
+S"struct.unpack('4B', struct.pack('>I', x))"
+p1556
+(F-1.4076571745031021
+F-4.060598546808416
+tp1557
+ssI33643763
+(dp1558
+S"df1['Birth'] = df1.apply(lambda x: random.randrange(1905, 1995, len(df1)),\n    axis=1)"
+p1559
+(F-1.6912038398511482
+F-2.5987879435221353
+tp1560
+ssI36441335
+(dp1561
+S"pandas.read_csv(f, sep=',')"
+p1562
+(F-1.1516056060791016
+F-3.0916623202237217
+tp1563
+ssI19063086
+(dp1564
+S"a['two']['three']['four']"
+p1565
+(F-1.1853755315144856
+F-1.5660417996920073
+tp1566
+ssI12694779
+(dp1567
+S"sum(function.count(x) for x in '1 2 3'.split())"
+p1568
+(F-2.031704952842311
+F-3.500552707248264
+tp1569
+ssI23016700
+(dp1570
+S"df.set_index(['a', 'b'], inplace=True)"
+p1571
+(F-0.6935044394599067
+F-4.396144549051921
+tp1572
+ssI33682687
+(dp1573
+S'session.query(User).order_by(User.id.desc()).limit(3).all()[::-1]'
+p1574
+(F-1.4305842717488606
+F-4.2370045979817705
+tp1575
+ssI16946435
+(dp1576
+S"sorted(l, key=lambda x: int(re.sub('\\\\D', '', x)))"
+p1577
+(F-0.8649365234375
+F-2.853468758719308
+tp1578
+ssI3556613
+(dp1579
+S'B[:2, :2] += A'
+p1580
+(F-2.8942782084147134
+F-2.907548037442294
+tp1581
+ssI1547526
+(dp1582
+S'with bar() as foo:\n    do_something_with(foo)\ndo_something_else_with(foo)'
+p1583
+(F-2.6678009033203125
+F-3.7853072317023027
+tp1584
+ssI806151
+(dp1585
+S'hashlib.sha1(b).hexdigest()'
+p1586
+(F-1.9096554120381672
+F-2.8270438058035716
+tp1587
+ssI19612942
+(dp1588
+S"response.headers.add('redirect', request.url)"
+p1589
+(F-1.7810264314923967
+F-3.0383321762084963
+tp1590
+ssI35599632
+(dp1591
+S"binascii.hexlify(h).decode('utf8')"
+p1592
+(F-1.5722025357759917
+F-2.95097193998449
+tp1593
+ssI21502851
+(dp1594
+S"[elem for elem in array if '**' in elem.split(',')]"
+p1595
+(F-2.017528533935547
+F-2.287873008034446
+tp1596
+ssI6759700
+(dp1597
+S'b % tuple(range(3))'
+p1598
+(F-2.598124764182351
+F-2.6973883310953775
+tp1599
+ssI36021526
+(dp1600
+S"dictionary = {'time': {'hour': '1', 'minute': '30', 'seconds': '40'},\n    'place': {'street': '40 something', 'zip': '00000'}}"
+p1601
+(F-0.6752599828383502
+F-3.1932823874733667
+tp1602
+ssI28822809
+(dp1603
+S'master.mainloop()'
+p1604
+(F-1.649855068751744
+F-2.2305758794148765
+tp1605
+ssI32564507
+(dp1606
+S'[x[1] for x in sorted(lst, key=lambda x: (-x[0], x[1]))]'
+p1607
+(F-1.021548993659742
+F-3.210122608003162
+tp1608
+ssI35308828
+(dp1609
+S"movies.append(raw_input('Enter movie name: '))"
+p1610
+(F-1.8337201338547926
+F-1.4461575826009114
+tp1611
+ssI35104033
+(dp1612
+S"subprocess.check_call('netsh.exe advfirewall set publicprofile state off')"
+p1613
+(F-1.4180265426635743
+F-2.184600830078125
+tp1614
+ssI18708628
+(dp1615
+S"conn.request('POST', '/', json.dumps(data), headers)"
+p1616
+(F-1.6674108003315173
+F-1.7700611750284831
+tp1617
+ssI7873828
+(dp1618
+S'time.mktime(mydate.timetuple())'
+p1619
+(F-1.8687140146891277
+F-1.2762277776544744
+tp1620
+ssI21019942
+(dp1621
+S"target.write('%s \\n %s \\n %s \\n' % (line1, line2, line3))"
+p1622
+(F-1.7170205116271973
+F-1.9186929702758788
+tp1623
+ssI30965033
+(dp1624
+S'root.mainloop()'
+p1625
+(F-0.9040481703622001
+F-3.1142191886901855
+tp1626
+ssI4721963
+(dp1627
+S'ssh.connect(your_host, port=your_port, username=your_username, password=\n    your_password)'
+p1628
+(F-2.0552839081862877
+F-2.7002346332256613
+tp1629
+ssI31225132
+(dp1630
+S"print 'Current temperature in %s is: %s' % (location, temp_f)"
+p1631
+(F-2.64213228225708
+F-2.717070770263672
+tp1632
+ssI11678113
+(dp1633
+S'arr = np.matrix(arr)'
+p1634
+(F-1.4106016159057617
+F-2.148267322116428
+tp1635
+ssI27401779
+(dp1636
+S"DATABASES = {'context1': {'NAME': 'context1', 'ENGINE': 'db.engine.to.use',\n    'USER': 'xxx', 'PASSWORD': 'xxx'}, 'context2': {'NAME': 'context2',\n    'ENGINE': 'db.engine.to.use', 'USER': 'xxx', 'PASSWORD': 'xxx'}}"
+p1637
+(F-0.8817479559715758
+F-3.4905574798583983
+tp1638
+ssI34889012
+(dp1639
+S'lines.append(raw_input())'
+p1640
+(F-1.5793654123942058
+F-3.158637364705404
+tp1641
+ssI32734151
+(dp1642
+S"post = models.ManyToManyField(Post, related_name='tags')"
+p1643
+(F-1.2848176454242908
+F-2.202287372789885
+tp1644
+ssI9852226
+(dp1645
+S"parser.add_argument('-t', nargs='+', type=str)"
+p1646
+(F-0.8961482577853732
+F-3.2588560921805247
+tp1647
+ssI5518435
+(dp1648
+S'd = [[] for x in xrange(n)]'
+p1649
+(F-1.6124071756998697
+F-1.657437251164363
+tp1650
+ssI22515012
+(dp1651
+S'driver.execute_script(\n    """\nvar element = arguments[0];\nelement.parentNode.removeChild(element);\n"""\n    , element)'
+p1652
+(F-1.895536150251116
+F-1.831454912821452
+tp1653
+ssI19635526
+(dp1654
+S're.findall(pattern, rr[::-1])'
+p1655
+(F-1.8173894882202148
+F-3.248344693865095
+tp1656
+ssI14484809
+(dp1657
+S'root.mainloop()'
+p1658
+(F-1.1097016334533691
+F-3.7827513558523997
+tp1659
+ssI8854071
+(dp1660
+S'QtGui.QWidget.changeEvent(self, event)'
+p1661
+(F-1.4245491027832031
+F-3.7308692932128906
+tp1662
+ssI36447758
+(dp1663
+S"df.to_excel(writer, sheet_name='New')"
+p1664
+(F-1.030867576599121
+F-2.4483413696289062
+tp1665
+ssI6039109
+(dp1666
+S"s.replace('*replacethistext*', '*withthistext*')"
+p1667
+(F-0.8345587730407715
+F-1.7529070717947823
+tp1668
+ssI18916687
+(dp1669
+S'return response(environ, start_response)'
+p1670
+(F-1.920456972989169
+F-2.605558221990412
+tp1671
+ssI38526289
+(dp1672
+S'np.absolute(np.fft.fft(s1t5))'
+p1673
+(F-2.357463836669922
+F-3.23345152537028
+tp1674
+ssI35894613
+(dp1675
+S'os.chmod(path, 256)'
+p1676
+(F-2.2175926208496093
+F-2.9093971252441406
+tp1677
+ssI34387293
+(dp1678
+S'self._detailsbutton.setIconSize(QtCore.QSize(int, int))'
+p1679
+(F-1.688765389578683
+F-3.312905051491477
+tp1680
+ssI17295589
+(dp1681
+S'plt.show()'
+p1682
+(F-0.9813962663922992
+F-2.3644880814985796
+tp1683
+ssI18746721
+(dp1684
+S'c.astype(float) / c.sum()'
+p1685
+(F-2.2750941685267856
+F-3.2569569674405185
+tp1686
+ssI11111779
+(dp1687
+S"web.sendmail(from_address, to_address, subject, msg, headers={\n    'Content-Type': 'text/html;charset=utf-8'})"
+p1688
+(F-2.1721529077600548
+F-2.4668960571289062
+tp1689
+ssI19551589
+(dp1690
+S"int('')"
+p1691
+(F-1.734685738881429
+F-2.728912353515625
+tp1692
+ssI429414
+(dp1693
+S'a_list.count(k)'
+p1694
+(F-2.9880823135375976
+F-1.291932557758532
+tp1695
+ssI18044264
+(dp1696
+S"x.execute('INSERT INTO documents(documentname) VALUES (%s)', (fname,))"
+p1697
+(F-1.9470404111422026
+F-3.536471366882324
+tp1698
+ssI40822700
+(dp1699
+S"[{'colC': 'datC1', 'colA': 'datA1', 'colB': 'datB1'}, {'colC': 'datC2',\n    'colA': 'datA2', 'colB': 'datB2'}, {'colC': 'datCn', 'colA': 'datAn',\n    'colB': 'datBn'}]"
+p1700
+(F-0.7215635421428275
+F-1.2393877506256104
+tp1701
+ssI32020029
+(dp1702
+S'self.Bind(wx.EVT_MENU, self.OnClose, id=wx.ID_EXIT)'
+p1703
+(F-1.2724862670898438
+F-1.7308933951637961
+tp1704
+ssI21801507
+(dp1705
+S'df.fillna(0, inplace=True)'
+p1706
+(F-0.6969465414683024
+F-2.7486343383789062
+tp1707
+ssI13038963
+(dp1708
+S'x[:3] + (i,) + x[3:]'
+p1709
+(F-2.3591876559787326
+F-2.530039353804155
+tp1710
+ssI24800628
+(dp1711
+S'longs = [radians(coord[1]) for coord in coords]'
+p1712
+(F-2.414739720961627
+F-3.0232936314174106
+tp1713
+ssI28788086
+(dp1714
+S'np.array([X, Y])'
+p1715
+(F-1.3847935994466145
+F-2.5634243488311768
+tp1716
+ssI21650809
+(dp1717
+S"data.loc[data.index != 'Colorado']"
+p1718
+(F-2.068397045135498
+F-2.4014803568522134
+tp1719
+ssI35663226
+(dp1720
+S"glob.glob('parse_[0-9]*d_[0-9][0-9]a.txt')"
+p1721
+(F-1.1382492780685425
+F-2.5031034681532116
+tp1722
+ssI28614012
+(dp1723
+S'plt.imshow(np.array(df2.astype(float)))'
+p1724
+(F-1.8639856974283855
+F-4.074990844726562
+tp1725
+ssI33158526
+(dp1726
+S"call([gdaladdoFile, '-ro', '--config USE_RRD YES', 'filename', '2 4 8 16'])"
+p1727
+(F-1.8489506665398092
+F-2.1512571970621743
+tp1728
+ssI28315008
+(dp1729
+S"df.index.get_loc_level((1, 'A'))"
+p1730
+(F-2.4885855780707464
+F-4.050626118977864
+tp1731
+ssI15365507
+(dp1732
+S"print ''.join(finalArray)"
+p1733
+(F-1.979147720336914
+F-1.585662841796875
+tp1734
+ssI25869700
+(dp1735
+S"STATICFILES_DIRS = os.path.join(BASE_DIR, 'static')"
+p1736
+(F-1.178646935356988
+F-3.236334287203275
+tp1737
+ssI33483670
+(dp1738
+S'grouped = s.groupby(lambda x: s[x])'
+p1739
+(F-2.483107566833496
+F-1.791947841644287
+tp1740
+ssI11939207
+(dp1741
+S'new_data = {k: v for k, v in data.iteritems() if v[0] <= 30}'
+p1742
+(F-1.5768999372209822
+F-2.1565033305775034
+tp1743
+ssI35171721
+(dp1744
+S'Matrix = [[1, 2, 3], [3, 4, 5], [5, 6, 7]]'
+p1745
+(F-1.0131221639698949
+F-2.5419714185926647
+tp1746
+ssI16983435
+(dp1747
+S'print urlparse.urlsplit(url)[1]'
+p1748
+(F-2.2447431882222495
+F-2.491467581854926
+tp1749
+ssI4873613
+(dp1750
+S'return self.getXY()'
+p1751
+(F-2.077486991882324
+F-3.228804452078683
+tp1752
+ssI19805763
+(dp1753
+S'db.session.commit()'
+p1754
+(F-1.0637069278293185
+F-3.239408220563616
+tp1755
+ssI29595029
+(dp1756
+S'range(10, 0)'
+p1757
+(F-2.80210018157959
+F-2.54785270690918
+tp1758
+ssI26656151
+(dp1759
+S'super(MainWidget, self).__init__()'
+p1760
+(F-0.9449578603108724
+F-3.725932381369851
+tp1761
+ssI4515226
+(dp1762
+S"surface.write_to_png('filename')"
+p1763
+(F-2.3038225173950195
+F-2.9751319885253906
+tp1764
+ssI21398942
+(dp1765
+S"df[(df['datecol'] >= pd.datetime(2014, 1, 1)) & (df['datecol'] <= pd.\n    datetime(2014, 1, 31))]"
+p1766
+(F-2.1910774417039827
+F-3.460041046142578
+tp1767
+ssI33607071
+(dp1768
+S'(-p * np.log2(p)).sum(axis=1)'
+p1769
+(F-2.4697221755981444
+F-3.5541273263784556
+tp1770
+ssI45507
+(dp1771
+S"img.save('logo.ico')"
+p1772
+(F-1.9251914024353027
+F-2.8156154339130106
+tp1773
+ssI24023963
+(dp1774
+S'cursor.execute(sql, params)'
+p1775
+(F-1.4532373428344727
+F-2.3574642181396483
+tp1776
+ssI8685809
+(dp1777
+S"[f.write('{0},{1}\\n'.format(key, value)) for key, value in my_dict.items()]"
+p1778
+(F-1.4585045123922413
+F-2.763960702078683
+tp1779
+ssI17534377
+(dp1780
+S'cursor.executemany(\n    """insert into zip4_upd values(\n    ?,?,?,?,?,?,?,?,?,?,?,\n    ?,?,?,?,?,?,?,?,?,?,?,\n    ?,?,?,?,?,?,?,?,?,?,?,\n    ?,?,?,?,?,?,?,?,?,?,?,\n    ?,?,?,?,?,?,?,?,?,?,?,\n    ?,?,?,?,?,?,?,?,?,?,?,?)"""\n    , row_gen(cursor))'
+p1781
+(F-2.9206035838407627
+F-3.4516220092773438
+tp1782
+ssI6883033
+(dp1783
+S'return args[0], args[1]'
+p1784
+(F-1.6798763275146484
+F-3.1620826721191406
+tp1785
+ssI15406507
+(dp1786
+S"return HttpResponse(content=template.render(context), content_type=\n    'text/html; charset=utf-8', status=404)"
+p1787
+(F-2.518487783578726
+F-3.040972573416574
+tp1788
+ssI17075628
+(dp1789
+S'1 * (2 + 1) * (3 + 1)'
+p1790
+(F-2.2264778137207033
+F-2.694554567337036
+tp1791
+ssI28804526
+(dp1792
+S'a = np.random.rand(4, 5).view(Ludmo)'
+p1793
+(F-2.2085683722245064
+F-3.3183765411376953
+tp1794
+ssI39034289
+(dp1795
+S"spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])"
+p1796
+(F-1.2255796704973494
+F-2.0217064448765347
+tp1797
+ssI26969526
+(dp1798
+S"plt.yticks([0.5, 1.5, 2.5], ['first', 'second', 'third'])"
+p1799
+(F-1.3091394251043147
+F-2.670074939727783
+tp1800
+ssI26197435
+(dp1801
+S'lcs([1, 2, 3, 4, 5, 6, 7], [7, 3, 6, 4, 8, 5])'
+p1802
+(F-1.434945499195772
+F-4.389274597167969
+tp1803
+ssI5008828
+(dp1804
+S'print type(someObject).__name__'
+p1805
+(F-2.6802085240681968
+F-2.2212182680765786
+tp1806
+ssI29742526
+(dp1807
+S'values.append(unicode(sheet.cell(row, col).value))'
+p1808
+(F-1.943223762512207
+F-3.4038193225860596
+tp1809
+ssI22339008
+(dp1810
+S'pd.read_json(\n    \'[{"xstk": "1", "stk": "0"}, {"xstk": "0", "stk": "1"}, {"xstk": "1", "stk": "0"}]\'\n    )'
+p1811
+(F-1.4236634572347004
+F-2.4589031764439175
+tp1812
+ssI21757377
+(dp1813
+S"print ''.join(get_only_text(bs(html).find_all('foo')[0]))"
+p1814
+(F-1.9786209895693023
+F-2.5423620541890464
+tp1815
+ssI27135779
+(dp1816
+S"print 'Unexpected error:', sys.exc_info()[0]"
+p1817
+(F-1.5711479187011719
+F-3.577519416809082
+tp1818
+ssI22792779
+(dp1819
+S'ax.plot(x, y)'
+p1820
+(F-0.8020723342895508
+F-3.040900911603655
+tp1821
+ssI9055687
+(dp1822
+S"sorted(input, key=operator.itemgetter('age', 'name'))"
+p1823
+(F-1.3776272044462317
+F-1.7057657877604167
+tp1824
+ssI32792008
+(dp1825
+S'str(unichr(97))'
+p1826
+(F-3.1713027954101562
+F-4.144085354275173
+tp1827
+ssI30907851
+(dp1828
+S'master.mainloop()'
+p1829
+(F-1.5791733605521066
+F-2.998250961303711
+tp1830
+ssI16121293
+(dp1831
+S"xmlDoc.write('path to your new xml doc')"
+p1832
+(F-1.9480056762695312
+F-4.362508501325335
+tp1833
+ssI36369870
+(dp1834
+S"{u'benci': 2.09861228866811, u'taubat': 2.09861228866811, u'saya': 1.0,\n    u'awak': 1.0, u'geram': 2.09861228866811, u'cinta': 2.09861228866811,\n    u'happy': 2.09861228866811}"
+p1835
+(F-1.3139381408691406
+F-3.7763868478628306
+tp1836
+ssI15173071
+(dp1837
+S'd.update([(k.upper(), v.upper()) for k, v in d.iteritems()])'
+p1838
+(F-1.3432704210281372
+F-3.9192226634306064
+tp1839
+ssI30534377
+(dp1840
+S'max(list, key=lambda x: x[1])'
+p1841
+(F-1.1163554191589355
+F-1.9168815612792969
+tp1842
+ssI35411414
+(dp1843
+S"df = pd.read_csv('stuff.csv', delimiter=',', index_col='year').T.plot()"
+p1844
+(F-1.4109464372907365
+F-3.2361231717196377
+tp1845
+ssI38170071
+(dp1846
+S'f.write(json.dumps(data))'
+p1847
+(F-1.2164991818941557
+F-2.07352876663208
+tp1848
+ssI37299109
+(dp1849
+S"df1.drop('Join', axis=1, inplace=True)"
+p1850
+(F-1.0029001235961914
+F-3.4414618015289307
+tp1851
+ssI7415264
+(dp1852
+S"button = tkinter.Button(root, text='Submit', command=displayText)"
+p1853
+(F-1.5849551150673313
+F-2.7402012164776144
+tp1854
+ssI15750628
+(dp1855
+S'writer.writerow(c)'
+p1856
+(F-2.0894551277160645
+F-1.8543230056762696
+tp1857
+ssI20254289
+(dp1858
+S"ax1.plot(x, y, marker='o', markerfacecolor='r')"
+p1859
+(F-1.5148455301920574
+F-2.3763179779052734
+tp1860
+ssI31985132
+(dp1861
+S"datetime.datetime.strptime('2015 June 1', '%Y %B %d').date()"
+p1862
+(F-0.807486891746521
+F-2.4023394951453576
+tp1863
+ssI8424942
+(dp1864
+S'new_dict = dict()'
+p1865
+(F-1.3221959008110895
+F-1.7619704008102417
+tp1866
+ssI16475632
+(dp1867
+S"button.connect('clicked', button_function)"
+p1868
+(F-1.7287009557088215
+F-3.2007071755149146
+tp1869
+ssI17776113
+(dp1870
+S'print mazeDetector(1, 5, [])[1]'
+p1871
+(F-3.0074100494384766
+F-3.204461415608724
+tp1872
+ssI8762870
+(dp1873
+S'self.button.clicked.connect(self.handleButton)'
+p1874
+(F-0.929333750406901
+F-2.029887580871582
+tp1875
+ssI28014071
+(dp1876
+S"f.write('{}, You got {} Out of 10'.format(name, Correct))"
+p1877
+(F-1.5676765441894531
+F-3.4469650268554686
+tp1878
+ssI29509113
+(dp1879
+S"[('size', 's'), ('size', 'l'), ('size', 'y')]"
+p1880
+(F-0.654052598135812
+F-2.2079060872395835
+tp1881
+ssI19596794
+(dp1882
+S"{'ip': '12.34.56.78', 'hostname': 'XXXXX.com', 'city': 'Saint-Lambert',\n    'region': 'Quebec', 'country': 'CA', 'loc': '45.5073,-73.5082', 'org':\n    'AS577 Bell Canada', 'postal': 'J4P'}"
+p1883
+(F-0.9684780223949535
+F-3.274369557698568
+tp1884
+ssI33945086
+(dp1885
+S"df.groupby('user_id').apply(per_group, columns=['ts', 'text']).compute()"
+p1886
+(F-1.4745719344527632
+F-4.433196385701497
+tp1887
+ssI19870293
+(dp1888
+S"print ('The average value is ', sum(data) / len(data))"
+p1889
+(F-1.436697244644165
+F-1.615978513445173
+tp1890
+ssI13614763
+(dp1891
+S"[{'color': 'blue', 'kind': 'pencil', 'rating': 'high'}, {'season': 'winter'\n    }, {'color': 'red', 'kind': 'truck', 'rating': 'low'}, {'season': 'spring'}\n    ]"
+p1892
+(F-0.8618513319227431
+F-3.1295325756073
+tp1893
+ssI30773670
+(dp1894
+S'all([np.allclose(x, y) for x, y in zip(a, b)])'
+p1895
+(F-1.129339071420523
+F-1.4514539025046609
+tp1896
+ssI13990828
+(dp1897
+S'hashlib.sha1(data).hexdigest()'
+p1898
+(F-1.5752808252970378
+F-3.6005376180013022
+tp1899
+ssI7753226
+(dp1900
+S'[x.strip(\'"\') for x in\n    \'"149" "149" "153" "153" "159" "159" "165" "165" "36" "36" "44"\'.split()]'
+p1901
+(F-1.7986269499126233
+F-2.909541368484497
+tp1902
+ssI9740887
+(dp1903
+S"p.stdin.write(phrase + '\\n')"
+p1904
+(F-2.3875694274902344
+F-3.070429484049479
+tp1905
+ssI12705293
+(dp1906
+S're.compile("([\\\\w][\\\\w]*\'?\\\\w?)").findall(s)'
+p1907
+(F-1.4010552626389723
+F-2.1981394290924072
+tp1908
+ssI27964942
+(dp1909
+S'print columns[1]'
+p1910
+(F-2.4258480072021484
+F-1.4547470092773438
+tp1911
+ssI27381264
+(dp1912
+S'sys.path.pop()'
+p1913
+(F-1.361541959974501
+F-2.1763388689826515
+tp1914
+ssI21700113
+(dp1915
+S'app.run(debug=True)'
+p1916
+(F-0.8130992889404297
+F-3.9092507362365723
+tp1917
+ssI14716435
+(dp1918
+S're.compile(\n    """\n    (?<=\\\\d) \n    (?!\\\\d)  \n    |   \n    (?<!\\\\d) \n    (?=\\\\d)  \n""",\n    re.VERBOSE).sub(\' \', s)'
+p1919
+(F-1.9909796941848028
+F-2.365679168701172
+tp1920
+ssI11140628
+(dp1921
+S"users = User.objects.annotate(num_followers=Count('to_users')).order_by(\n    '-num_followers')"
+p1922
+(F-1.358248816596137
+F-3.1747411092122397
+tp1923
+ssI31862293
+(dp1924
+S'PYSPARK_DRIVER_PYTHON = ipython / path / to / bin / pyspark'
+p1925
+(F-3.7865223604090072
+F-3.20330450269911
+tp1926
+ssI35443289
+(dp1927
+S"cherrypy.config.update({'global': {'environment': 'production'}})"
+p1928
+(F-1.091642591688368
+F-4.774354117257254
+tp1929
+ssI32235033
+(dp1930
+S"score = {'a': 1, 'c': 3, 'b': 3, 'e': 1, 'd': 2, 'g': 2, 'f': 4, 'i': 1,\n    'h': 4, 'k': 5, 'j': 8, 'm': 3, 'l': 1, 'o': 1, 'n': 1, 'q': 10, 'p': 3,\n    's': 1, 'r': 1, 'u': 1, 't': 1, 'w': 4, 'v': 4, 'y': 4, 'x': 8, 'z': 10}"
+p1931
+(F-0.8728716738589175
+F-3.7099689483642577
+tp1932
+ssI5619226
+(dp1933
+S"{'bob': 129459, 'joe': 121212}"
+p1934
+(F-1.18730675090443
+F-4.419315020243327
+tp1935
+ssI29404700
+(dp1936
+S"Popen(['cat'], stdin=PIPE, universal_newlines=True).communicate(input=message)"
+p1937
+(F-1.9606002807617187
+F-3.033535851372613
+tp1938
+ssI8422942
+(dp1939
+S"self.OutWidget.tag_configure('highlight', background='bisque')"
+p1940
+(F-2.440188912784352
+F-4.604880332946777
+tp1941
+ssI28398758
+(dp1942
+S'del d[name][0]'
+p1943
+(F-2.109634590148926
+F-2.831991195678711
+tp1944
+ssI39583264
+(dp1945
+S"df['B'].str.extract('.*?([A-Za-z]+).*?', expand=True)"
+p1946
+(F-1.536149866440717
+F-3.1969167709350588
+tp1947
+ssI9209377
+(dp1948
+S'print httpagentparser.detect(s)'
+p1949
+(F-3.4337488810221353
+F-3.857524871826172
+tp1950
+ssI25560613
+(dp1951
+S'root.mainloop()'
+p1952
+(F-1.1339374269757951
+F-2.9120506873497596
+tp1953
+ssI20674086
+(dp1954
+S'super(College, self).save(*args, **kwargs)'
+p1955
+(F-0.6949053932638729
+F-3.317330169677734
+tp1956
+ssI22842289
+(dp1957
+S'random.sample(range(1, 100), 3)'
+p1958
+(F-1.3688758850097655
+F-2.8861287434895835
+tp1959
+ssI34584109
+(dp1960
+S'file.close()'
+p1961
+(F-1.0079374994550432
+F-2.80682430267334
+tp1962
+ssI15338758
+(dp1963
+S'""" """.join(text[i:i + 2] for i in range(0, len(text), 2))'
+p1964
+(F-0.9473256735966123
+F-2.722756576538086
+tp1965
+ssI33857071
+(dp1966
+S'urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)'
+p1967
+(F-1.93195932561701
+F-3.07985102335612
+tp1968
+ssI37967151
+(dp1969
+S"data[['BusID', 'ModeName', 'Value', 'day']].groupby(['BusID', 'ModeName',\n    'day'], as_index=False).mean()"
+p1970
+(F-1.4716343349880643
+F-4.043496322631836
+tp1971
+ssI6475314
+(dp1972
+S'[function(number) for number in numbers if condition(number)]'
+p1973
+(F-2.569723690257353
+F-3.5176721052689985
+tp1974
+ssI23248435
+(dp1975
+S'plt.show()'
+p1976
+(F-0.6359304019383022
+F-2.6854786343044705
+tp1977
+ssI26635870
+(dp1978
+S"pl.imshow(values, origin='lower', extent=[0, max(X), 0, max(Y)], aspect=\n    'auto', cmap=pl.get_cmap('YlOrRd'))"
+p1979
+(F-2.0485967553180195
+F-3.9256914924172794
+tp1980
+ssI28079670
+(dp1981
+S'set([(1, 1)])'
+p1982
+(F-1.5772050221761067
+F-1.9826671893780048
+tp1983
+ssI2238008
+(dp1984
+S'datetime.datetime.now().date()'
+p1985
+(F-1.1129490045400767
+F-3.972100575764974
+tp1986
+ssI31370809
+(dp1987
+S"print 'There are {} characters in the file.'.format(sum(data['lengths']))"
+p1988
+(F-1.7741143544514975
+F-2.3144874572753906
+tp1989
+ssI7853628
+(dp1990
+S'cv2.waitKey(0)'
+p1991
+(F-1.162469016181098
+F-1.7467698317307692
+tp1992
+ssI25175613
+(dp1993
+S"entry.grid(row=0, column=1, padx=2, pady=2, sticky='we', columnspan=25)"
+p1994
+(F-1.5810348510742187
+F-3.6739136832101003
+tp1995
+ssI20061763
+(dp1996
+S'os.path.abspath(file_csv.name)'
+p1997
+(F-1.9050915581839425
+F-2.623014970259233
+tp1998
+ssI34731589
+(dp1999
+S"return render(request, 'index.html', {'posts': logged_in_user_posts})"
+p2000
+(F-1.9768135434105283
+F-2.5409981863839284
+tp2001
+ssI16064071
+(dp2002
+S'print """\nSo, your total bill including a 20% tip would be: ${0:.2f}""".format(\n    high_total)'
+p2003
+(F-2.5336939493815103
+F-2.942947578430176
+tp2004
+ssI3697763
+(dp2005
+S"print '+-' + '-+-'.join(dividers) + '-+'"
+p2006
+(F-1.815053939819336
+F-3.817234584263393
+tp2007
+ssI13323851
+(dp2008
+S'print len([w for w in list2 if w in list1])'
+p2009
+(F-2.6179881376378678
+F-3.0906404767717635
+tp2010
+ssI11454029
+(dp2011
+S"line = re.sub('-', '', line, 1)"
+p2012
+(F-1.375455379486084
+F-2.7326798072228065
+tp2013
+ssI28622414
+(dp2014
+S"message.attachments = [('emailHTML.html', open('emailHTML.html').read())]"
+p2015
+(F-2.1356128692626952
+F-3.5804302509014425
+tp2016
+ssI14403151
+(dp2017
+S'self.delete(0, Tkinter.END)'
+p2018
+(F-1.6114749908447266
+F-3.1562983194986978
+tp2019
+ssI26398289
+(dp2020
+S'f.write(data)'
+p2021
+(F-2.0689942836761475
+F-2.015566417149135
+tp2022
+ssI4152963
+(dp2023
+S'print sys.argv[0]'
+p2024
+(F-1.657772699991862
+F-2.379541206359863
+tp2025
+ssI28225109
+(dp2026
+S'split_str.sort(key=int)'
+p2027
+(F-2.438220977783203
+F-2.889285087585449
+tp2028
+ssI35066809
+(dp2029
+S'[i.text.strip() for i in prices]'
+p2030
+(F-2.3730435689290363
+F-3.780218336317274
+tp2031
+ssI26092132
+(dp2032
+S"X['Var1'].cat.add_categories('c', inplace=True)"
+p2033
+(F-2.464435577392578
+F-3.352015177408854
+tp2034
+ssI32155589
+(dp2035
+S"with open('C:/Windows/System32/drivers/etc/hosts', 'a') as f:\n    f.write('127.127.127.127 static.ak.connect.facebook.com\\n')"
+p2036
+(F-0.34776975995018367
+F-2.1870011223687067
+tp2037
+ssI25239132
+(dp2038
+S'zip_file.writestr(filename, resultfile)'
+p2039
+(F-2.4277968406677246
+F-3.612581041124132
+tp2040
+ssI17106526
+(dp2041
+S's.flush()'
+p2042
+(F-1.9781108583722795
+F-3.202044350760324
+tp2043
+ssI29654628
+(dp2044
+S'np.vstack((a, b))'
+p2045
+(F-1.3167672952016194
+F-2.3388491543856533
+tp2046
+ssI7558758
+(dp2047
+S"unicode(urllib.unquote(raw), 'utf-8')"
+p2048
+(F-2.13201170701247
+F-4.465081956651476
+tp2049
+ssI18620008
+(dp2050
+S'screen.blit(image, position)'
+p2051
+(F-2.2039852142333984
+F-3.1320912497384206
+tp2052
+ssI28718700
+(dp2053
+S'd.setdefault(x, []).append(y)'
+p2054
+(F-1.537611722946167
+F-2.418994188308716
+tp2055
+ssI192109
+(dp2056
+S'pprint(vars(your_object))'
+p2057
+(F-2.840184125033292
+F-2.724818801879883
+tp2058
+ssI8711794
+(dp2059
+S"[{'foo': g['foo'], 'bars': group(g['bars'], 'bar', 'bazs')} for g in group(\n    x, 'foo', 'bars')]"
+p2060
+(F-2.4017350046258223
+F-3.0018800588754506
+tp2061
+ssI25791763
+(dp2062
+S'root.mainloop()'
+p2063
+(F-1.1146655763898576
+F-3.1009123060438366
+tp2064
+ssI20874870
+(dp2065
+S'sys.exit(app.exec_())'
+p2066
+(F-1.6121080838716948
+F-4.161171340942383
+tp2067
+ssI12902008
+(dp2068
+S"os.popen('lscpu').readlines()"
+p2069
+(F-1.4822368621826172
+F-2.5299464139071377
+tp2070
+ssI7218809
+(dp2071
+S'sum((node.sons.values() for node in current_nodes), [])'
+p2072
+(F-2.385211281154467
+F-2.7093758053249783
+tp2073
+ssI16776828
+(dp2074
+S'cursor.execute(insert_seventies, row[12:22])'
+p2075
+(F-2.529298221363741
+F-3.4173041752406528
+tp2076
+ssI24309377
+(dp2077
+S"return render(request, 'meddy1/index.html', {'form': form})"
+p2078
+(F-0.8628868738810221
+F-4.0845827375139505
+tp2079
+ssI4005507
+(dp2080
+S'server.serve_forever()'
+p2081
+(F-1.2489537133110895
+F-2.828272501627604
+tp2082
+ssI23201414
+(dp2083
+S"['1', '2'] in ['5', '1', '2', '20']"
+p2084
+(F-1.4901235243853401
+F-3.3415039607456754
+tp2085
+ssI14323335
+(dp2086
+S"print root.attrib['a']"
+p2087
+(F-1.4301586151123047
+F-4.032566070556641
+tp2088
+ssI30154377
+(dp2089
+S"'spam', [''], ['$170910000'], ['$108249000'], ['$108249000']"
+p2090
+(F-1.2650028027986224
+F-3.4040989875793457
+tp2091
+ssI34969226
+(dp2092
+S"print '%.6f' % 4.0"
+p2093
+(F-3.4637959798177085
+F-3.106909434000651
+tp2094
+ssI433507
+(dp2095
+S'Entry.objects.filter(pub_date=datetime(2008, 10, 18))'
+p2096
+(F-1.484129406156994
+F-2.4565217759874134
+tp2097
+ssI9481870
+(dp2098
+S"my_dict = {d['slug']: d for d in a}"
+p2099
+(F-1.2901560465494792
+F-1.6095535278320312
+tp2100
+ssI280207
+(dp2101
+S'parts[0].get_payload()'
+p2102
+(F-2.1193386713663735
+F-4.513182206587358
+tp2103
+ssI32327314
+(dp2104
+S"datetime.strptime(date_string, 'DD/MM/YYYY HH:MM')"
+p2105
+(F-1.524884859720866
+F-2.046181148952908
+tp2106
+ssI36333507
+(dp2107
+S"df.pivot_table(index=['car_id', 'car_order'], columns=['car_name'], values=\n    ['car_rank'], dropna=True, fill_value='')"
+p2108
+(F-1.7935783190604968
+F-3.9241968790690103
+tp2109
+ssI14698132
+(dp2110
+S"list(merge([('a', 'b'), ('a', 'c'), ('c', 'd')]))"
+p2111
+(F-0.9395520245587384
+F-2.3917857276068792
+tp2112
+ssI29442670
+(dp2113
+S"numbers = [int(n) for n in raw_input('Enter numbers: ').split()]"
+p2114
+(F-0.8685266245966372
+F-1.9841251373291016
+tp2115
+ssI30482071
+(dp2116
+S"df.groupby('StationID', as_index=False)['BiasTemp'].mean()"
+p2117
+(F-1.2005983988444011
+F-2.7050496614896336
+tp2118
+ssI18056132
+(dp2119
+S"add(name='Hello')"
+p2120
+(F-2.1693716049194336
+F-4.093081156412761
+tp2121
+ssI22677151
+(dp2122
+S"self.cursor.execute(record_exists, item['name'])"
+p2123
+(F-1.9622109357048483
+F-3.232972578568892
+tp2124
+ssI15376033
+(dp2125
+S'word_counts = [len(word) for word in s.split()]'
+p2126
+(F-1.4528974533081054
+F-2.4002105712890627
+tp2127
+ssI3077794
+(dp2128
+S'os.rename(filename, newname)'
+p2129
+(F-1.2239038467407226
+F-2.9553639888763428
+tp2130
+ssI25345700
+(dp2131
+S"cursor.execute('SELECT a, b, c FROM some_table')"
+p2132
+(F-0.5438127517700195
+F-2.7894778781467013
+tp2133
+ssI32679589
+(dp2134
+S'img = Image.open(filename)\nprint img.format'
+p2135
+(F-1.577692159016927
+F-1.777323881785075
+tp2136
+ssI22163113
+(dp2137
+S'np.dot(A, x) - b'
+p2138
+(F-2.449035326639811
+F-5.32717768351237
+tp2139
+ssI34682828
+(dp2140
+S"new = old.filter(['A', 'B', 'D'], axis=1)"
+p2141
+(F-1.860395622253418
+F-3.4949133736746654
+tp2142
+ssI15547335
+(dp2143
+S'admin.site.register(YourModel, YourModelAdmin)'
+p2144
+(F-1.2824275970458985
+F-1.9749298095703125
+tp2145
+ssI6643314
+(dp2146
+S"TestModel.objects.update(done=~F('done'))"
+p2147
+(F-2.9842603346880745
+F-5.094336076216265
+tp2148
+ssI17194670
+(dp2149
+S"spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])"
+p2150
+(F-1.045340129307338
+F-2.0114216804504395
+tp2151
+ssI24977071
+(dp2152
+S"img.save(os.path.join(app.config['UPLOAD_FOLDER'], filename), format='PNG')"
+p2153
+(F-1.683335230900691
+F-4.837554931640625
+tp2154
+ssI5083763
+(dp2155
+S'plt.show()'
+p2156
+(F-0.6505132402692523
+F-2.3723727006178637
+tp2157
+ssI8894132
+(dp2158
+S"print '\\n'.join(' '.join(o) for o in a.items())"
+p2159
+(F-1.351919867775657
+F-3.7605862617492676
+tp2160
+ssI27846942
+(dp2161
+S"spamwriter.writerow(['Spam', 'Lovely Spam', 'Wonderful Spam'])"
+p2162
+(F-1.242311886378697
+F-2.6499969164530435
+tp2163
+ssI25690851
+(dp2164
+S"data['stuff'].sort(key=lambda item: item['number'], reverse=True)"
+p2165
+(F-1.0241304480511209
+F-2.901958783467611
+tp2166
+ssI21135033
+(dp2167
+S"[{'status': 'Registered', 'credential': '10000323xsds', 'scan_time':\n    'Jan.15,2014, 03:30 pm', 'asset_code': 'cls103', 'emp_id': 'LS07',\n    'location': 'BLR-10', 'auth_code': 'DSC(Verisign', 'operator':\n    'pradeep', 'id': 538}]"
+p2168
+(F-1.0845837159590288
+F-3.027149963378906
+tp2169
+ssI12302012
+(dp2170
+S'zzz = [list(x) for x in zip(xxx, yyy)]'
+p2171
+(F-1.5646510877107318
+F-2.7901407877604165
+tp2172
+ssI1810109
+(dp2173
+S"print ast.literal_eval('(8, 12.25), (13, 15), (16.75, 18.5)')"
+p2174
+(F-1.464567704634233
+F-2.4853042255748403
+tp2175
+ssI37838526
+(dp2176
+S"p4.run('dirs', path + '*')"
+p2177
+(F-2.8578564325968423
+F-3.647843678792318
+tp2178
+ssI2309828
+(dp2179
+S"'%d/%d/%d' % (d.month, d.day, d.year)"
+p2180
+(F-2.5309816248276653
+F-3.1550316443810096
+tp2181
+ssI16871109
+(dp2182
+S'cb.reshape([480 / 2, 640 / 2])'
+p2183
+(F-4.220881938934326
+F-6.255120468139649
+tp2184
+ssI8126151
+(dp2185
+S"fig.savefig('afterclip.png')"
+p2186
+(F-1.2074834108352661
+F-2.809173011779785
+tp2187
+ssI17688264
+(dp2188
+S"tests.objects.annotate(Count('tat'))"
+p2189
+(F-1.6131333571213942
+F-3.2170316908094616
+tp2190
+ssI3481289
+(dp2191
+S'float(repr(a_float)) == a_float'
+p2192
+(F-3.1092267354329426
+F-2.9889793395996094
+tp2193
+ssI19261132
+(dp2194
+S"c.execute('INSERT INTO whois_names VALUES (?, ?)', (rid, name))"
+p2195
+(F-2.004230090550014
+F-2.596531731741769
+tp2196
+ssI29185264
+(dp2197
+S"getattr(df, 'loc')[df['a'] == 5]"
+p2198
+(F-1.6987706422805786
+F-1.9598033428192139
+tp2199
+ssI7028435
+(dp2200
+S"str.format('x{0[0]} y{0[1]}', p)"
+p2201
+(F-2.297211837768555
+F-3.200750078473772
+tp2202
+ssI21102293
+(dp2203
+S'logging.Handler.__init__(self)'
+p2204
+(F-1.0438884099324544
+F-2.729475975036621
+tp2205
+ssI35661526
+(dp2206
+S'app.run(debug=True)'
+p2207
+(F-0.7988765239715576
+F-2.5095083063299004
+tp2208
+ssI18501335
+(dp2209
+S'list(itertools.product([-1, 1], repeat=4))'
+p2210
+(F-1.4245248794555665
+F-3.005506627699908
+tp2211
+ssI11388632
+(dp2212
+S"cursor.execute('PRAGMA auto_vacuum=FULL')"
+p2213
+(F-0.5686852335929871
+F-2.585035483042399
+tp2214
+ssI40003289
+(dp2215
+S'return super(cashadvance, self).create(vals)'
+p2216
+(F-2.307891845703125
+F-3.3011824867942114
+tp2217
+ssI2776794
+(dp2218
+S"c.setopt(pycurl.URL, 'http://api.website.com')"
+p2219
+(F-1.0971575578053792
+F-2.587677001953125
+tp2220
+ssI21292763
+(dp2221
+S'cur.execute(strsql, (check,))'
+p2222
+(F-2.1842557466947117
+F-3.4752416610717773
+tp2223
+ssI14447507
+(dp2224
+S"f.write('latitude:' + format(lat) + ' longitude:' + format(long))"
+p2225
+(F-2.4848491668701174
+F-3.8904656802906707
+tp2226
+ssI34883293
+(dp2227
+S'super(Lot, self).save(*args, **kwargs)'
+p2228
+(F-0.7525831671322093
+F-2.9232877095540366
+tp2229
+ssI10176226
+(dp2230
+S'return func(*args, **kwargs)'
+p2231
+(F-0.8553618517788973
+F-2.2520464116876777
+tp2232
+ssI6874851
+(dp2233
+S'float(row[2].strip(\'\\\'"\'))'
+p2234
+(F-1.9891456876482283
+F-2.4384889602661133
+tp2235
+ssI19255012
+(dp2236
+S"[hex(ord(c)) for c in ''.join(myData)]"
+p2237
+(F-1.769224076043992
+F-2.615998719867907
+tp2238
+ssI2352870
+(dp2239
+S'proc.communicate()'
+p2240
+(F-1.484100614275251
+F-2.414940357208252
+tp2241
+ssI32012012
+(dp2242
+S"grouper['Event'].count().unstack()"
+p2243
+(F-2.278173037937709
+F-3.297264814376831
+tp2244
+ssI17956589
+(dp2245
+S"subprocess.call(['7z', 'e', 'data1.zip', '*.*'])"
+p2246
+(F-0.5565396547317505
+F-3.840638902452257
+tp2247
+ssI14423794
+(dp2248
+S'scanl(range(1, 11))'
+p2249
+(F-1.9119254025545986
+F-3.2507917881011963
+tp2250
+ssI17153779
+(dp2251
+S"print 'If there was a birth every 7 seconds, there would be: {} births'.format(\n    births)"
+p2252
+(F-1.4624513626098632
+F-2.2736175537109373
+tp2253
+ssI6649589
+(dp2254
+S"[{'comment': ['', 'slang'], 'language': 'fr', 'suggestion': ['manger',\n    'bouffer']}, {'comment': ['for animals', ''], 'language': 'de',\n    'suggestion': ['fressen', 'essen']}]"
+p2255
+(F-0.9909115226901307
+F-3.1191018911508412
+tp2256
+ssI26579033
+(dp2257
+S'print sum(args) / float(len(args))'
+p2258
+(F-2.103264872233073
+F-2.5829999446868896
+tp2259
+ssI816887
+(dp2260
+S'wx.Frame.__init__(self, None)'
+p2261
+(F-0.843865190233503
+F-3.278721809387207
+tp2262
+ssI10290507
+(dp2263
+S"doc.xpath('//html:title', namespaces={'html': 'http://www.w3.org/1999/xhtml'})"
+p2264
+(F-0.8627424836158752
+F-3.4351685841878257
+tp2265
+ssI21669632
+(dp2266
+S'cv2.waitKey(1)'
+p2267
+(F-0.9005654652913412
+F-2.922368730817522
+tp2268
+ssI30650113
+(dp2269
+S"df = pd.DataFrame([], columns=['a', 'b', 'c'])\ndf"
+p2270
+(F-0.904076337814331
+F-1.890829086303711
+tp2271
+ssI18734851
+(dp2272
+S'plt.show()'
+p2273
+(F-0.6705991200038365
+F-2.6902408599853516
+tp2274
+ssI29703942
+(dp2275
+S"print 'Removing empty folder:', repr(path)"
+p2276
+(F-2.3386764526367188
+F-3.2811317443847656
+tp2277
+ssI17043207
+(dp2278
+S'd.most_common()'
+p2279
+(F-2.4279861450195312
+F-2.3243047926161022
+tp2280
+ssI28704526
+(dp2281
+S'dict(islice(mydict.iteritems(), 0, 2))'
+p2282
+(F-2.409594367532169
+F-2.951551982334682
+tp2283
+ssI5359377
+(dp2284
+S'self.setCentralWidget(self.view)'
+p2285
+(F-1.4741075833638508
+F-5.246858869280134
+tp2286
+ssI1413763
+(dp2287
+S'"""""".join([\'f\', \'o\', \'o\', \'b\', \'a\', \'r\'])'
+p2288
+(F-0.8215585708618164
+F-2.710606002807617
+tp2289
+ssI27449109
+(dp2290
+S'plt.show()'
+p2291
+(F-0.6322110721043178
+F-2.251206874847412
+tp2292
+ssI28337942
+(dp2293
+S"i.find_elements_by_xpath('//a/abbr')[0].get_attribute('title')"
+p2294
+(F-0.960019588470459
+F-3.828904724121094
+tp2295
+ssI26941207
+(dp2296
+S'np.where(m.toarray())'
+p2297
+(F-2.145195643107096
+F-2.0738742134787818
+tp2298
+ssI7312687
+(dp2299
+S'urllib.urlretrieve(url, path)'
+p2300
+(F-1.4291790962219237
+F-2.7951102623572717
+tp2301
+ssI32399132
+(dp2302
+S"print df_fill['col1'].round(5)"
+p2303
+(F-2.6407337188720703
+F-3.0813357830047607
+tp2304
+ssI36324314
+(dp2305
+S'yield os.path.join(root, filename)'
+p2306
+(F-1.153504151564378
+F-3.206474939982096
+tp2307
+ssI35536670
+(dp2308
+S"print ' '.join('{:02x}'.format(c) for c in data)"
+p2309
+(F-1.0769634246826172
+F-1.9106371743338448
+tp2310
+ssI23781151
+(dp2311
+S'"""""".join(\'{:02X}\'.format(ord(x)) for x in str1)'
+p2312
+(F-1.2867412567138672
+F-3.030261993408203
+tp2313
+ssI14016289
+(dp2314
+S"re.search('(\\\\d\\\\.\\\\d)', st[::-1]).group(1)[::-1]"
+p2315
+(F-1.1089673218903717
+F-4.139209429423015
+tp2316
+ssI36693794
+(dp2317
+S"{'v0': 'a', 'v1': 'b', 'v2': 'c', 'v3': 'd', 'v4': 'e'}"
+p2318
+(F-0.5871409540591033
+F-4.280620098114014
+tp2319
+ssI23682851
+(dp2320
+S"df.loc['2014-05-30']"
+p2321
+(F-1.5192198753356934
+F-2.95948486328125
+tp2322
+ssI32126758
+(dp2323
+S'points.append((x, y))'
+p2324
+(F-2.3891865412394204
+F-2.1288363138834634
+tp2325
+ssI9402151
+(dp2326
+S"plt.title('Analysis of Tsunamis in Southeast Asia')"
+p2327
+(F-1.0130698680877686
+F-2.148824251615084
+tp2328
+ssI37396264
+(dp2329
+S'(df.index.to_series() / 5).astype(int)'
+p2330
+(F-1.3714229583740234
+F-4.010759735107422
+tp2331
+ssI7733033
+(dp2332
+S'float(sum(x[0] * x[1] for x in xs)) / sum(x[1] for x in xs)'
+p2333
+(F-2.0229580041133994
+F-4.1558588663736975
+tp2334
+ssI16957226
+(dp2335
+S"[x.encode('utf-8') for x in items]"
+p2336
+(F-1.3716558728899275
+F-2.0916612413194446
+tp2337
+ssI22732589
+(dp2338
+S'np.vstack([ys, xs])'
+p2339
+(F-2.587357680002848
+F-2.940262930733817
+tp2340
+ssI37424942
+(dp2341
+S"df = sc.parallelize([(10, 0, 0), (20, 0, 0), (None, 1, 0), (None, 0, 1)]).toDF(\n    ['age', 'missing_age', 'unknown_age'])"
+p2342
+(F-1.504106874819155
+F-4.4775133634868425
+tp2343
+ssI23480113
+(dp2344
+S"parser.add_argument('--same', help=\n    'Find those in List1 that are the same in List2', action='store_true')"
+p2345
+(F-1.4819269682231702
+F-3.3288002014160156
+tp2346
+ssI25456435
+(dp2347
+S"output = urllib.request.urlopen('http://www.somewebsite.com').read()"
+p2348
+(F-0.9888984560966492
+F-2.825905164082845
+tp2349
+ssI19924794
+(dp2350
+S"def user_status(Status):\n    print 'The status of the user changed'"
+p2351
+(F-2.558366139729818
+F-5.042438507080078
+tp2352
+ssI18239293
+(dp2353
+S"wb.save(filename='temp2.xlsx')"
+p2354
+(F-1.218062973022461
+F-3.379593482384315
+tp2355
+ssI28190526
+(dp2356
+S'cherrypy.session.release_lock()'
+p2357
+(F-2.829904382879084
+F-3.551553726196289
+tp2358
+ssI13158207
+(dp2359
+S"print re.search('^\\\\s*My_NUMBER\\\\s*=\\\\s*(\\\\d*)\\\\s*$', text, re.MULTILINE\n    ).group(1)"
+p2360
+(F-1.5054854438418435
+F-2.9613505469428167
+tp2361
+ssI9748289
+(dp2362
+S"re.findall(pat, 'abc@cs.stansoft.edu.com .rtrt.. myacc@gmail.com ')"
+p2363
+(F-1.3224513053894043
+F-3.3913844426472983
+tp2364
+ssI33468226
+(dp2365
+S't.goto(x, y)'
+p2366
+(F-1.9981077194213868
+F-4.079527219136556
+tp2367
+ssI11119632
+(dp2368
+S"print hex(int('12ef', 16) ^ int('abcd', 16))"
+p2369
+(F-2.5280645270096627
+F-3.3227106730143228
+tp2370
+ssI16930632
+(dp2371
+S'str(values[0]) == str((0, 0, 0))'
+p2372
+(F-2.1975669860839844
+F-5.694234674627131
+tp2373
+ssI32657226
+(dp2374
+S'return pd.Series(m.predict(df), index=df.index)'
+p2375
+(F-2.205829620361328
+F-3.3913443883260093
+tp2376
+ssI15780151
+(dp2377
+S'return logging.getLogger(name)'
+p2378
+(F-1.9117918014526367
+F-1.940084457397461
+tp2379
+ssI30926670
+(dp2380
+S"df.reindex(columns=list('DCBA'))"
+p2381
+(F-1.0445634401761568
+F-2.343258094787598
+tp2382
+ssI21661526
+(dp2383
+S'label2.set_visible(False)'
+p2384
+(F-2.0990036010742186
+F-2.214479923248291
+tp2385
+ssI11669335
+(dp2386
+S'pprint.pprint(get_memory_info())'
+p2387
+(F-2.9574432373046875
+F-2.822124163309733
+tp2388
+ssI33029071
+(dp2389
+S'array([0, 2, 8, 10])'
+p2390
+(F-1.8213693073817663
+F-2.5591773986816406
+tp2391
+ssI28079963
+(dp2392
+S"pd.DataFrame(pd.read_csv('test.csv', header=None, squeeze=True).reshape(-1, 2))"
+p2393
+(F-1.5780329704284668
+F-3.059396041067023
+tp2394
+ssI1185628
+(dp2395
+S'Model.get_or_insert(key_name, **kwds)'
+p2396
+(F-2.639341017779182
+F-2.080625197466682
+tp2397
+ssI24758113
+(dp2398
+S'plt.show()'
+p2399
+(F-0.6688391140529087
+F-2.5519816080729165
+tp2400
+ssI28688226
+(dp2401
+S"pd.melt(df, id_vars=['Team Name', 'Nb of teammates'], value_vars=[\n    'Team Leader One', 'Team Leader Two']).dropna()"
+p2402
+(F-1.7502811316287878
+F-2.835123062133789
+tp2403
+ssI1668963
+(dp2404
+S"'WHERE client_email =:1 AND date > DATE(:2) AND date <= DATE(:3) AND application_id =:4', 'some_email', '2009-02-03', '2009-11-04', 'foo'"
+p2405
+(F-1.5235878337513318
+F-3.1476478576660156
+tp2406
+ssI7436132
+(dp2407
+S"a = Analysis([os.path.join(HOMEPATH, 'support/_mountzlib.py'), os.path.join\n    (HOMEPATH, 'support/useUnicode.py'), 'icinga.py'], pathex=[\n    '/home/user/projects/icinga_python/releases/v2.1'], hiddenimports=['mysql']\n    )"
+p2408
+(F-2.051855209025931
+F-3.4238009134928387
+tp2409
+ssI28704613
+(dp2410
+S'plt.plot(x, y)'
+p2411
+(F-0.8530988693237305
+F-2.536738713582357
+tp2412
+ssI11411033
+(dp2413
+S"send_mail('some message', 'Scraper Report')"
+p2414
+(F-1.160587215423584
+F-3.5063011169433596
+tp2415
+ssI7604071
+(dp2416
+S"lines[0].set_color('c')"
+p2417
+(F-1.7344862130972056
+F-3.8168649673461914
+tp2418
+ssI19750763
+(dp2419
+S"re.findall('([^,\\\\s]+)(?:,\\\\s*[^,\\\\s]+)?', s)"
+p2420
+(F-0.6578351974487304
+F-2.5994529724121094
+tp2421
+ssI17262226
+(dp2422
+S"fb.request(path='/80329313253_10151690351363254', args={'fields': 'shares'})"
+p2423
+(F-2.3050020005967884
+F-3.9911490992495886
+tp2424
+ssI11938109
+(dp2425
+S'main()'
+p2426
+(F-1.812514877319336
+F-2.2056986490885415
+tp2427
+ssI34301809
+(dp2428
+S"cursr.execute('SLEECT * FROM Table;')"
+p2429
+(F-1.3942139148712158
+F-3.997159004211426
+tp2430
+ssI280435
+(dp2431
+S"re.sub('a', re.escape('_'), 'aa')"
+p2432
+(F-1.2892617618336397
+F-2.145973341805594
+tp2433
+ssI7331700
+(dp2434
+S'set(open(file1)) & set(open(file2))'
+p2435
+(F-2.647512099322151
+F-2.8139366149902343
+tp2436
+ssI15647687
+(dp2437
+S"elem = driver.find_elements_by_tag_name('TextView')[5]"
+p2438
+(F-1.5771113804408483
+F-4.297526966441762
+tp2439
+ssI14349289
+(dp2440
+S'def imshow(img, scale_val=1, ax=None, *args, **kwargs):\n    if ax is None:\n        ax = plt.gca()\nim = ax.imshow(img, *args, **kwargs)'
+p2441
+(F-1.9463695057651453
+F-4.2716233389718195
+tp2442
+ssI11399033
+(dp2443
+S'Base.metadata.create_all(engine)'
+p2444
+(F-1.3846089045206706
+F-3.4476710232821377
+tp2445
+ssI14226763
+(dp2446
+S"{'test_id1': {'resultValue': resultValue, 'timeChecked': timeChecked}}"
+p2447
+(F-3.080122106215533
+F-3.7670681293194113
+tp2448
+ssI23533435
+(dp2449
+S"return HttpResponse(json.dumps(country), content_type='application/json')"
+p2450
+(F-1.6593371943423623
+F-3.903906080457899
+tp2451
+ssI9246589
+(dp2452
+S"[word.strip(':[]') for word in s.split()]"
+p2453
+(F-1.4550632900661893
+F-2.3061671257019043
+tp2454
+ssI6793086
+(dp2455
+S"reactor.connectTCP('psrfb6', 10999, self.otherFact)"
+p2456
+(F-2.217937723795573
+F-2.970728787508878
+tp2457
+ssI37629828
+(dp2458
+S"b = [float(s) for s in a[0].split('*')]"
+p2459
+(F-1.53297268260609
+F-2.790529523577009
+tp2460
+ssI38778758
+(dp2461
+S"return render_template('p.html', table=table)"
+p2462
+(F-2.1898348881648135
+F-3.0583368937174478
+tp2463
+ssI38320008
+(dp2464
+S'return super(ProductListAPIView, self).dispatch(*args, **kwargs)'
+p2465
+(F-1.6622570037841797
+F-2.8482929576526987
+tp2466
+ssI21583758
+(dp2467
+S'(1.555).is_integer()'
+p2468
+(F-2.8175825639204546
+F-2.3233971228966346
+tp2469
+ssI21198887
+(dp2470
+S'not b.mask.all()'
+p2471
+(F-2.9922304153442383
+F-2.946156953510485
+tp2472
+ssI8183700
+(dp2473
+S'c.save()'
+p2474
+(F-1.4836594717843192
+F-3.091250555855887
+tp2475
+ssI22341526
+(dp2476
+S'self.commitData.emit(self.sender())'
+p2477
+(F-2.8695775349934896
+F-3.6586761474609375
+tp2478
+ssI23723086
+(dp2479
+S'line.split()[-1]'
+p2480
+(F-1.0347049019553445
+F-2.3694581118496982
+tp2481
+ssI28005700
+(dp2482
+S'return sum([n for i in range(rec_fac(n - 1))])'
+p2483
+(F-2.4859695434570312
+F-3.410241444905599
+tp2484
+ssI27875226
+(dp2485
+S'zip(lst, lst[1:])'
+p2486
+(F-2.087785085042318
+F-2.947443875399503
+tp2487
+ssI19314589
+(dp2488
+S'hexbin(x, y, C=w, alpha=0.5)'
+p2489
+(F-2.3976874351501465
+F-4.561510467529297
+tp2490
+ssI7456670
+(dp2491
+S'self.response.out.write(\n    """\n<form name="search_form" action="/searchhandler" method="GET"><br />\n<input type="text" name="search_string" size=40>\n<input type="submit" value="search tags">\n</form>"""\n    )'
+p2492
+(F-1.5620622634887695
+F-3.7283568749061
+tp2493
+ssI13840289
+(dp2494
+S'self.setMouseTracking(True)'
+p2495
+(F-0.9569568634033203
+F-1.7592817942301433
+tp2496
+ssI19077029
+(dp2497
+S'np.delete(a, 1, 1)'
+p2498
+(F-1.7712806065877278
+F-2.6622169494628904
+tp2499
+ssI23541670
+(dp2500
+S'time.sleep(1)'
+p2501
+(F-0.7276859879493713
+F-3.1412762233189175
+tp2502
+ssI15437589
+(dp2503
+S's.translate(None, string.ascii_lowercase)'
+p2504
+(F-1.6232648577008928
+F-2.761214169588956
+tp2505
+ssI26163113
+(dp2506
+S'sys.path.append(path)'
+p2507
+(F-1.0963276863098144
+F-3.723388671875
+tp2508
+ssI31354794
+(dp2509
+S'proc.terminate()'
+p2510
+(F-1.3131749289376395
+F-2.1030094146728517
+tp2511
+ssI16265132
+(dp2512
+S'ax.scatter(X, Y, Z, c=col, marker=key)'
+p2513
+(F-2.3053056716918947
+F-3.95844474205604
+tp2514
+ssI15603628
+(dp2515
+S'print binascii.hexlify(hash)'
+p2516
+(F-2.2196843889024525
+F-1.8445920944213867
+tp2517
+ssI34828207
+(dp2518
+S"Model.filter(birth_year__lte=F('regisration_date__year') - 25)"
+p2519
+(F-2.5718429565429686
+F-4.937343597412109
+tp2520
+ssI10201008
+(dp2521
+S'file.seek(0)'
+p2522
+(F-1.5517897605895996
+F-3.4945838928222654
+tp2523
+ssI3164086
+(dp2524
+S'process.wait()'
+p2525
+(F-0.7560623032706124
+F-3.0337133407592773
+tp2526
+ssI32296887
+(dp2527
+S'print sorted([(x, i) for i, x in enumerate(lst)], reverse=True)[:3]'
+p2528
+(F-1.5309937795003254
+F-3.464905209011502
+tp2529
+ssI36239289
+(dp2530
+S'sys.exit()'
+p2531
+(F-1.4450323922293526
+F-3.1662708282470704
+tp2532
+ssI25169851
+(dp2533
+S'pd.Series(proxy.date, index=df.index)'
+p2534
+(F-2.2370755672454834
+F-3.4816582202911377
+tp2535
+ssI19763132
+(dp2536
+S'3, 12'
+p2537
+(F-4.892287826538086
+F-2.3690907614571706
+tp2538
+ssI24262589
+(dp2539
+S"setup(name='ProjectName', version='1.0', description='', options=dict(\n    build_exe=buildOptions), executables=executables)"
+p2540
+(F-2.3424627130681817
+F-3.8246453603108725
+tp2541
+ssI10954687
+(dp2542
+S'print \'"{}"\'.format(str([\'a\']))'
+p2543
+(F-1.3744713919503349
+F-3.097671781267439
+tp2544
+ssI18169794
+(dp2545
+S'accum_value[item[0]].append(item[1])'
+p2546
+(F-2.672698974609375
+F-2.8358441521139706
+tp2547
+ssI14511435
+(dp2548
+S'filename = os.path.splitext(os.path.basename(path))[0]'
+p2549
+(F-0.8838901519775391
+F-2.914246029324002
+tp2550
+ssI13682628
+(dp2551
+S'savefig(str(a[0]))'
+p2552
+(F-2.922255198160807
+F-3.9523680550711497
+tp2553
+ssI15008758
+(dp2554
+S'parser._registries'
+p2555
+(F-2.023868751525879
+F-3.5653343200683594
+tp2556
+ssI21321670
+(dp2557
+S'plt.show()'
+p2558
+(F-0.5676559720720563
+F-1.938291072845459
+tp2559
+ssI34309151
+(dp2560
+S'client = boto3.client(SERVICE_NAME, AWS_REGION)'
+p2561
+(F-2.382643461227417
+F-3.88808857310902
+tp2562
+ssI29661132
+(dp2563
+S'all(int(c) < 2 for c in str(n))'
+p2564
+(F-2.3161917792426214
+F-2.134276580810547
+tp2565
+ssI28657613
+(dp2566
+S'tuple(d.items())'
+p2567
+(F-1.2897433280944823
+F-3.2616285596575056
+tp2568
+ssI9662414
+(dp2569
+S"return HttpResponseRedirect(reverse('error'))"
+p2570
+(F-1.3590580622355144
+F-2.8679643110795454
+tp2571
+ssI17203151
+(dp2572
+S'print file.read.__doc__'
+p2573
+(F-3.0397972106933593
+F-2.0809029473198786
+tp2574
+ssI20868613
+(dp2575
+S'fig.set_size_inches(width, height)'
+p2576
+(F-1.5350306374686105
+F-3.9828742345174155
+tp2577
+ssI11509721
+(dp2578
+S'data = {k: [] for k in range(2)}'
+p2579
+(F-1.5388464086196
+F-1.7999529157366072
+tp2580
+ssI5003226
+(dp2581
+S'path = os.path.dirname(MODULE.__file__)'
+p2582
+(F-1.3186421394348145
+F-2.3724524974823
+tp2583
+ssI10010589
+(dp2584
+S"print '{:g}'.format(1.0)"
+p2585
+(F-1.7525588141547308
+F-3.3574641834605825
+tp2586
+ssI7636963
+(dp2587
+S'self.indices[2][5]'
+p2588
+(F-2.8698300448330967
+F-4.425258636474609
+tp2589
+ssI10182628
+(dp2590
+S"{'Cardname Two': 3, 'Cardname Three': 1, 'Cardname': 2}"
+p2591
+(F-1.4345985412597657
+F-3.0112217797173395
+tp2592
+ssI12574700
+(dp2593
+S'print repr(answer), repr(correct)'
+p2594
+(F-3.728755315144857
+F-3.148021697998047
+tp2595
+ssI514029
+(dp2596
+S'"""i,split,on commas""".split(\',\')'
+p2597
+(F-1.1752344369888306
+F-2.3708955324613132
+tp2598
+ssI4532008
+(dp2599
+S'pyglet.app.run()'
+p2600
+(F-1.0161321428087022
+F-1.841360855102539
+tp2601
+ssI33947632
+(dp2602
+S'[int(str(x)[0]) for x in lst]'
+p2603
+(F-1.6506625281439886
+F-3.2697765827178955
+tp2604
+ssI18473377
+(dp2605
+S'print soup.get_text()'
+p2606
+(F-1.3980137825012207
+F-2.698336514559659
+tp2607
+ssI2977779
+(dp2608
+S'print lxml.etree.tostring(doc)'
+p2609
+(F-1.70506460016424
+F-2.2428668975830077
+tp2610
+ssI30576628
+(dp2611
+S'plt.show()'
+p2612
+(F-0.6517523356846401
+F-2.338574545724051
+tp2613
+ssI7456758
+(dp2614
+S"print 'Non ASCII character at line:%s char:%s' % (line, char)"
+p2615
+(F-1.953073501586914
+F-2.489959716796875
+tp2616
+ssI7984809
+(dp2617
+S'Counter(map(len, words))'
+p2618
+(F-2.1721187938343394
+F-2.9423831592906606
+tp2619
+ssI854008
+(dp2620
+S"cur.execute('CREATE TABLE persons(id INT, name VARCHAR(100))')"
+p2621
+(F-0.8956350088119507
+F-2.613983578152127
+tp2622
+ssI32069628
+(dp2623
+S"netifaces.ifaddresses('eth0')[netifaces.AF_INET][0]['addr']"
+p2624
+(F-2.578794933500744
+F-4.844390392303467
+tp2625
+ssI858109
+(dp2626
+S"['item 1', 'item 2', 'item 3'].index('not found')"
+p2627
+(F-1.7507269723074776
+F-3.900930404663086
+tp2628
+ssI31363071
+(dp2629
+S"del d['DACItemCount']"
+p2630
+(F-2.2764720916748047
+F-2.2074267523629323
+tp2631
+ss.

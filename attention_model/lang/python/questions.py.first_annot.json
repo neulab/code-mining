@@ -1,0 +1,4588 @@
+[
+  {
+    "accepted_answer_post_id": 3061789, 
+    "id": 3061761, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> a.shape\n(2, 2)\n"
+        ], 
+        "score": 252, 
+        "id": 3061789, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import numpy as N    \n>>> N.shape(a)\n(2,2)\n", 
+          ">>> a = [[1,2],[1,2]]\n>>> N.shape(a)\n(2,2)\n"
+        ], 
+        "score": 21, 
+        "id": 33088216, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "In [1]: import numpy as np\n\nIn [2]: a = np.array([[1,2],[3,4]])\n", 
+          "In [3]: a.ndim  # num of dimensions/axes, *Mathematics definition of dimension*\nOut[3]: 2\n", 
+          "In [4]: a[1,0]  # to index `a`, we specific 1 at the first axis and 0 at the second axis.\nOut[4]: 3  # which results in 3 (locate at the row 1 and column 0, 0-based index)\n", 
+          "In [5]: a.shape\nOut[5]: (2, 2)  # both the first and second axis have 2 (columns/rows/pages/blocks/...) data\n"
+        ], 
+        "score": 7, 
+        "id": 41015342, 
+        "rank": 2
+      }
+    ], 
+    "title": "Numpy array dimensions"
+  }, 
+  {
+    "accepted_answer_post_id": 379910, 
+    "id": 379906, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> a = \"545.2222\"\n>>> float(a)\n545.22220000000004\n>>> int(float(a))\n545\n"
+        ], 
+        "score": 1401, 
+        "id": 379910, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "def num(s):\n    try:\n        return int(s)\n    except ValueError:\n        return float(s)\n"
+        ], 
+        "score": 347, 
+        "id": 379966, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "def isfloat(value):\n  try:\n    float(value)\n    return True\n  except:\n    return False\n", 
+          "Command to parse                      isFloat?   Note\n------------------------------------  --------   --------------------------------\nprint(isfloat(\"\"))                    False      Blank string\nprint(isfloat(\"127\"))                 True       Passed string\nprint(isfloat(True))                  True       Pure sweet Truth\nprint(isfloat(\"True\"))                False      Vile contemptible lie\nprint(isfloat(False))                 True       So false it becomes true\nprint(isfloat(\"123.456\"))             True       Decimal\nprint(isfloat(\"      -127    \"))      True       Spaces trimmed\nprint(isfloat(\"\\t\\n12\\r\\n\"))          True       whitespace ignored\nprint(isfloat(\"NaN\"))                 True       Not a number\nprint(isfloat(\"NaNanananaBATMAN\"))    False      I am Batman\nprint(isfloat(\"-iNF\"))                True       Negative infinity\nprint(isfloat(\"123.E4\"))              True       Exponential notation\nprint(isfloat(\".1\"))                  True       mantissa only\nprint(isfloat(\"1,234\"))               False      Commas gtfo\nprint(isfloat(u'\\x30'))               True       Unicode is fine.\nprint(isfloat(\"NULL\"))                False      Null is not special\nprint(isfloat(0x3fade))               True       Hexidecimal\nprint(isfloat(\"6e7777777777777\"))     True       Shrunk to infinity\nprint(isfloat(\"1.797693e+308\"))       True       This is max value\nprint(isfloat(\"infinity\"))            True       Same as inf\nprint(isfloat(\"infinityandBEYOND\"))   False      Extra characters wreck it\nprint(isfloat(\"12.34.56\"))            False      Only one dot allowed\nprint(isfloat(u'\u56db'))                  False      Japanese '4' is not a float.\nprint(isfloat(\"#56\"))                 False      Pound sign\nprint(isfloat(\"56%\"))                 False      Percent of what?\nprint(isfloat(\"0E0\"))                 True       Exponential, move dot 0 places\nprint(isfloat(0**0))                  True       0___0  Exponentiation\nprint(isfloat(\"-5e-5\"))               True       Raise to a negative number\nprint(isfloat(\"+1e1\"))                True       Plus is OK with exponent\nprint(isfloat(\"+1e1^5\"))              False      Fancy exponent not interpreted\nprint(isfloat(\"+1e1.3\"))              False      No decimals in exponent\nprint(isfloat(\"-+1\"))                 False      Make up your mind\nprint(isfloat(\"(1)\"))                 False      Parenthesis is bad\n"
+        ], 
+        "score": 252, 
+        "id": 20929983, 
+        "rank": 2
+      }
+    ], 
+    "title": "Parse String to Float or Int"
+  }, 
+  {
+    "accepted_answer_post_id": 3437070, 
+    "id": 3437059, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if \"blah\" not in somestring: \n    continue\n"
+        ], 
+        "score": 2354, 
+        "id": 3437070, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "s = \"This be a string\"\nif s.find(\"is\") == -1:\n    print \"No 'is' here!\"\nelse:\n    print \"Found 'is' in the string.\"\n"
+        ], 
+        "score": 242, 
+        "id": 3437068, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 65, 
+        "id": 3437130, 
+        "rank": 2
+      }
+    ], 
+    "title": "Does Python have a string contains substring method?"
+  }, 
+  {
+    "accepted_answer_post_id": 4266645, 
+    "id": 4265988, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "numpy.random.choice(numpy.arange(1, 7), p=[0.1, 0.05, 0.05, 0.2, 0.4, 0.2])\n"
+        ], 
+        "score": 35, 
+        "id": 4266645, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "def random_distr(l):\n    r = random.uniform(0, 1)\n    s = 0\n    for item, prob in l:\n        s += prob\n        if s >= r:\n            return item\n    return item  # Might occur because of floating point inaccuracies\n"
+        ], 
+        "score": 19, 
+        "id": 4266562, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "pdf = [(1, 0.1), (2, 0.05), (3, 0.05), (4, 0.2), (5, 0.4), (6, 0.2)]\ncdf = [(i, sum(p for j,p in pdf if j < i)) for i,_ in pdf]\nR = max(i for r in [random.random()] for i,c in cdf if c <= r)\n", 
+          "sorted(max(i for r in [random.random()] for i,c in cdf if c <= r)\n       for _ in range(1000))\n"
+        ], 
+        "score": 8, 
+        "id": 4266278, 
+        "rank": 2
+      }
+    ], 
+    "title": "Generate random numbers with a given (numerical) distribution"
+  }, 
+  {
+    "accepted_answer_post_id": 6886507, 
+    "id": 6886493, 
+    "answer_posts": [
+      {
+        "snippets": [], 
+        "score": 184, 
+        "id": 6886507, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 39, 
+        "id": 6886536, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "class MyObj(object):\n  def __init__(self):\n    self.name = 'Chuck Norris'\n    self.phone = '+6661'\n\nobj = MyObj()\nprint(obj.__dict__)\n\n# Output:  \n# {'phone': '+6661', 'name': 'Chuck Norris'}\n"
+        ], 
+        "score": 15, 
+        "id": 39392891, 
+        "rank": 2
+      }
+    ], 
+    "title": "Get all object attributes in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 843293, 
+    "id": 843277, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if 'myVar' in locals():\n  # myVar exists.\n", 
+          "if 'myVar' in globals():\n  # myVar exists.\n", 
+          "if hasattr(obj, 'attr_name'):\n  # obj.attr_name exists.\n"
+        ], 
+        "score": 817, 
+        "id": 843293, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "try:\n    myVar\nexcept NameError:\n    myVar = None\n# Now you're free to use myVar without Python complaining.\n"
+        ], 
+        "score": 58, 
+        "id": 843306, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "my_variable = None\n\ndef InitMyVariable():\n  global my_variable\n  if my_variable is None:\n    my_variable = ...\n"
+        ], 
+        "score": 14, 
+        "id": 843326, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I check if a variable exists?"
+  }, 
+  {
+    "accepted_answer_post_id": 546356, 
+    "id": 546321, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from datetime import date\nfrom dateutil.relativedelta import relativedelta\n\nsix_months = date.today() + relativedelta(months=+6)\n", 
+          "$ date(2010,12,31)+relativedelta(months=+1)\n  datetime.date(2011, 1, 31)\n\n$ date(2010,12,31)+relativedelta(months=+2)\n  datetime.date(2011, 2, 28)\n"
+        ], 
+        "score": 493, 
+        "id": 4406260, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import datetime\nprint (datetime.date.today() + datetime.timedelta(6*365/12)).isoformat()\n"
+        ], 
+        "score": 55, 
+        "id": 546356, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "(day, month, year) = (day, (month+6)%12, year+(month+6)/12)\n", 
+          "date += datetime.timedelta(6*30)\n"
+        ], 
+        "score": 39, 
+        "id": 546354, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I calculate the date six months from the current date using the datetime Python module?"
+  }, 
+  {
+    "accepted_answer_post_id": 39501288, 
+    "id": 237079, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import os.path, time\nprint \"last modified: %s\" % time.ctime(os.path.getmtime(file))\nprint \"created: %s\" % time.ctime(os.path.getctime(file))\n", 
+          "import os, time\n(mode, ino, dev, nlink, uid, gid, size, atime, mtime, ctime) = os.stat(file)\nprint \"last modified: %s\" % time.ctime(mtime)\n"
+        ], 
+        "score": 553, 
+        "id": 237084, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import os\nimport datetime\ndef modification_date(filename):\n    t = os.path.getmtime(filename)\n    return datetime.datetime.fromtimestamp(t)\n", 
+          ">>> d = modification_date('/var/log/syslog')\n>>> print d\n2009-10-06 10:50:01\n>>> print repr(d)\ndatetime.datetime(2009, 10, 6, 10, 50, 1)\n"
+        ], 
+        "score": 298, 
+        "id": 1526089, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import os\nimport platform\n\ndef creation_date(path_to_file):\n    \"\"\"\n    Try to get the date that a file was created, falling back to when it was\n    last modified if that isn't possible.\n    See http://stackoverflow.com/a/39501288/1709587 for explanation.\n    \"\"\"\n    if platform.system() == 'Windows':\n        return os.path.getctime(path_to_file)\n    else:\n        stat = os.stat(path_to_file)\n        try:\n            return stat.st_birthtime\n        except AttributeError:\n            # We're probably on Linux. No easy way to get creation dates here,\n            # so we'll settle for when its content was last modified.\n            return stat.st_mtime\n"
+        ], 
+        "score": 92, 
+        "id": 39501288, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get file creation & modification date/times in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 6159912, 
+    "id": 6159900, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from __future__ import print_function\nprint(\"hi there\", file=f)\n", 
+          "f = open('myfile','w')\nf.write('hi there\\n') # python will convert \\n to os.linesep\nf.close() # you can omit in most cases as the destructor will call it\n"
+        ], 
+        "score": 660, 
+        "id": 6159912, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> with open('somefile.txt', 'a') as the_file:\n...     the_file.write('Hello\\n')\n"
+        ], 
+        "score": 331, 
+        "id": 6160082, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "Python 2.7.1 (r271:86832, Nov 27 2010, 18:30:46) [MSC v.1500 32 bit (Intel)] on\nwin32\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>> import os\n>>> os.linesep\n'\\r\\n'\n>>> f = open('myfile','w')\n>>> f.write('hi there\\n')\n>>> f.write('hi there' + os.linesep) # same result as previous line ?????????\n>>> f.close()\n>>> open('myfile', 'rb').read()\n'hi there\\r\\nhi there\\r\\r\\n'\n>>>\n"
+        ], 
+        "score": 63, 
+        "id": 6165711, 
+        "rank": 2
+      }
+    ], 
+    "title": "Correct way to write line to file in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 899176, 
+    "id": 899103, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "for item in thelist:\n  thefile.write(\"%s\\n\" % item)\n", 
+          "for item in thelist:\n  print>>thefile, item\n"
+        ], 
+        "score": 325, 
+        "id": 899176, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import pickle\n\npickle.dump(itemlist, outfile)\n", 
+          "itemlist = pickle.load(infile)\n"
+        ], 
+        "score": 132, 
+        "id": 899199, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "outfile.write(\"\\n\".join(itemlist))\n"
+        ], 
+        "score": 119, 
+        "id": 899149, 
+        "rank": 2
+      }
+    ], 
+    "title": "Writing a list to a file with Python"
+  }, 
+  {
+    "accepted_answer_post_id": 3939381, 
+    "id": 3939361, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "line = line.translate(None, '!@#$')\n", 
+          "import re\nline = re.sub('[!@#$]', '', line)\n", 
+          "translation_table = dict.fromkeys(map(ord, '!@#$'), None)\nunicode_line = unicode_line.translate(translation_table)\n", 
+          "{ord('!'): None, ord('@'): None, ...}\n", 
+          "unicode_line = unicode_line.translate({ord(c): None for c in '!@#$'})\n", 
+          "import string\nline = line.translate(string.maketrans('', ''), '!@#$')\n"
+        ], 
+        "score": 323, 
+        "id": 3939381, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> string = \"ab1cd1ef\"\n>>> string.replace(\"1\",\"\")\n'abcdef'\n>>>\n", 
+          ">>>\n>>> a = \"a!b@c#d$\"\n>>> b = \"!@#$\"\n>>> for char in b:\n...     a = a.replace(char,\"\")\n...\n>>> print a\nabcd\n>>>\n"
+        ], 
+        "score": 80, 
+        "id": 3942100, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> line = \"abc#@!?efg12;:?\"\n>>> ''.join( c for c in line if  c not in '?:!/;' )\n'abc#@efg12'\n"
+        ], 
+        "score": 14, 
+        "id": 3939473, 
+        "rank": 2
+      }
+    ], 
+    "title": "Remove specific characters from a string in python"
+  }, 
+  {
+    "accepted_answer_post_id": 9001529, 
+    "id": 9001509, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "In [1]: import collections\n\nIn [2]: d = {2:3, 1:89, 4:5, 3:0}\n\nIn [3]: od = collections.OrderedDict(sorted(d.items()))\n\nIn [4]: od\nOut[4]: OrderedDict([(1, 89), (2, 3), (3, 0), (4, 5)])\n", 
+          "In [11]: od[1]\nOut[11]: 89\n\nIn [12]: od[3]\nOut[12]: 0\n\nIn [13]: for k, v in od.iteritems(): print k, v\n   ....: \n1 89\n2 3\n3 0\n4 5\n", 
+          "In [13]: for k, v in od.items(): print(k, v)\n   ....: \n1 89\n2 3\n3 0\n4 5\n"
+        ], 
+        "score": 436, 
+        "id": 9001529, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "mydict = {'carl':40,\n          'alan':2,\n          'bob':1,\n          'danny':3}\n\nfor key in sorted(mydict):\n    print \"%s: %s\" % (key, mydict[key])\n", 
+          "alan: 2\nbob: 1\ncarl: 40\ndanny: 3\n", 
+          "keylist = mydict.keys()\nkeylist.sort()\nfor key in keylist:\n    print \"%s: %s\" % (key, mydict[key])\n"
+        ], 
+        "score": 240, 
+        "id": 13990710, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> from collections import OrderedDict\n\n>>> # regular unsorted dictionary\n>>> d = {'banana': 3, 'apple':4, 'pear': 1, 'orange': 2}\n\n>>> # dictionary sorted by key -- OrderedDict(sorted(d.items()) also works\n>>> OrderedDict(sorted(d.items(), key=lambda t: t[0]))\nOrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])\n\n>>> # dictionary sorted by value\n>>> OrderedDict(sorted(d.items(), key=lambda t: t[1]))\nOrderedDict([('pear', 1), ('orange', 2), ('banana', 3), ('apple', 4)])\n\n>>> # dictionary sorted by length of the key string\n>>> OrderedDict(sorted(d.items(), key=lambda t: len(t[0])))\nOrderedDict([('pear', 1), ('apple', 4), ('orange', 2), ('banana', 3)])\n"
+        ], 
+        "score": 107, 
+        "id": 15179418, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I sort a dictionary by key?"
+  }, 
+  {
+    "accepted_answer_post_id": 2990152, 
+    "id": 2990121, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "for i in xrange(0,10,2):\n  print(i)\n", 
+          "for i in range(0,10,2):\n  print(i)\n"
+        ], 
+        "score": 168, 
+        "id": 2990152, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from itertools import izip_longest\n\ndef grouper(n, iterable, fillvalue=None):\n    \"grouper(3, 'ABCDEFG', 'x') --> ABC DEF Gxx\"\n    args = [iter(iterable)] * n\n    return izip_longest(fillvalue=fillvalue, *args)\n", 
+          "for item1, item2 in grouper(2, l):\n    # Do something with item1 and item2\n"
+        ], 
+        "score": 35, 
+        "id": 2990151, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "mylist = [1,2,3,4,5,6,7,8,9,10]\nfor i in mylist[::2]:\n    print i,\n# prints 1 3 5 7 9\n\nfor i in mylist[1::2]:\n    print i,\n# prints 2 4 6 8 10\n"
+        ], 
+        "score": 35, 
+        "id": 2990281, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I loop through a Python list by twos?"
+  }, 
+  {
+    "accepted_answer_post_id": 26443334, 
+    "id": 26443308, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> \"abcd}def}\".rfind('}')\n8\n"
+        ], 
+        "score": 33, 
+        "id": 26443334, 
+        "rank": 0
+      }
+    ], 
+    "title": "Find last occurrence of character in string Python"
+  }, 
+  {
+    "accepted_answer_post_id": 4174955, 
+    "id": 4174941, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> from operator import itemgetter\n>>> L=[[0, 1, 'f'], [4, 2, 't'], [9, 4, 'afsd']]\n>>> sorted(L, key=itemgetter(2))\n[[9, 4, 'afsd'], [0, 1, 'f'], [4, 2, 't']]\n"
+        ], 
+        "score": 162, 
+        "id": 4174955, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> l = [[0, 1, 'f'], [4, 2, 't'], [9, 4, 'afsd']]\n>>> l.sort(key=lambda x: x[2])\n", 
+          ">>> sorted(l, key=lambda x: x[2])\n"
+        ], 
+        "score": 85, 
+        "id": 4174956, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "sorted_list = sorted(list_to_sort, key=itemgetter(2,0,1))\n"
+        ], 
+        "score": 43, 
+        "id": 15544861, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to sort a list of lists by a specific index of the inner list?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 3207219, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from os import listdir\nfrom os.path import isfile, join\nonlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]\n", 
+          "from os import walk\n\nf = []\nfor (dirpath, dirnames, filenames) in walk(mypath):\n    f.extend(filenames)\n    break\n", 
+          ">>> q = [1, 2, 3]\n>>> w = [4, 5, 6]\n>>> q = q + w\n>>> q\n[1, 2, 3, 4, 5, 6]\n"
+        ], 
+        "score": 1670, 
+        "id": 3207973, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import glob\nprint glob.glob(\"/home/adam/*.txt\")\n", 
+          "['/home/adam/file1.txt', '/home/adam/file2.txt', .... ]\n"
+        ], 
+        "score": 694, 
+        "id": 3215392, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import os\nos.listdir(\"somedirectory\")\n"
+        ], 
+        "score": 265, 
+        "id": 3207254, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to list all files of a directory in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 2972226, 
+    "id": 2972212, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "% python -mtimeit  \"l=[]\"\n10000000 loops, best of 3: 0.0711 usec per loop\n\n% python -mtimeit  \"l=list()\"\n1000000 loops, best of 3: 0.297 usec per loop\n"
+        ], 
+        "score": 164, 
+        "id": 2972226, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 67, 
+        "id": 2972369, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 9, 
+        "id": 2972414, 
+        "rank": 2
+      }
+    ], 
+    "title": "Creating an empty list in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 3964691, 
+    "id": 3964681, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import glob, os\nos.chdir(\"/mydir\")\nfor file in glob.glob(\"*.txt\"):\n    print(file)\n", 
+          "import os\nfor file in os.listdir(\"/mydir\"):\n    if file.endswith(\".txt\"):\n        print(file)\n", 
+          "import os\nfor root, dirs, files in os.walk(\"/mydir\"):\n    for file in files:\n        if file.endswith(\".txt\"):\n             print(os.path.join(root, file))\n"
+        ], 
+        "score": 1021, 
+        "id": 3964691, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import glob\n>>> glob.glob('./*.txt')\n['./outline.txt', './pip-log.txt', './test.txt', './testingvim.txt']\n"
+        ], 
+        "score": 119, 
+        "id": 3964689, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 77, 
+        "id": 3964690, 
+        "rank": 2
+      }
+    ], 
+    "title": "Find all files in directory with extension .txt in Python"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 1514553, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "variable = []\n"
+        ], 
+        "score": 171, 
+        "id": 1514557, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from array import array\nintarray = array('i')\n"
+        ], 
+        "score": 58, 
+        "id": 1514649, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "   f = []\n\n   for i in range(30):\n       f.append(0)\n"
+        ], 
+        "score": 34, 
+        "id": 4476624, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to declare an array in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 21888214, 
+    "id": 21887754, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "a = np.array([[1,5,9],[2,6,10]])\nb = np.array([[3,7,11],[4,8,12]])\n", 
+          "print concatenate((a,b),axis=0)\narray([[ 1,  5,  9],\n       [ 2,  6, 10],\n       [ 3,  7, 11],\n       [ 4,  8, 12]])\n", 
+          "print concatenate((a,b),axis=1)\narray([[ 1,  5,  9,  3,  7, 11],\n      [ 2,  6, 10,  4,  8, 12]])\n", 
+          "a = np.array([1,2,3])\nb = np.array([4,5,6])\nvstack((a,b))\n", 
+          "a=a.reshape(1,3)\nb=b.reshape(1,3)\nprint concatenate((a,b))\n"
+        ], 
+        "score": 37, 
+        "id": 21888214, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import numpy as np\na = np.array([1,2,3])\nb = np.array([4,5,6])\nc = np.r_[a[None,:],b[None,:]]\nprint(c)\n#[[1 2 3]\n# [4 5 6]]\n"
+        ], 
+        "score": 6, 
+        "id": 29913056, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "a = np.array([1,2,3])\nb = np.array([4,5,6])\nnp.array((a,b))\n", 
+          "np.array([[1,2,3], [4,5,6]])\n", 
+          "return _nx.concatenate([atleast_2d(_m) for _m in tup], 0)\n"
+        ], 
+        "score": 0, 
+        "id": 42738514, 
+        "rank": 2
+      }
+    ], 
+    "title": "numpy concatenate two arrays vertically"
+  }, 
+  {
+    "accepted_answer_post_id": 13571166, 
+    "id": 13571134, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "with open('output.txt','w') as fout:\n    for root, subFolders, files in os.walk(rootdir):\n        if 'data.txt' in files:\n            with open(os.path.join(root, 'data.txt'), 'r') as fin:\n                for lines in fin:\n                    dosomething()\n"
+        ], 
+        "score": 46, 
+        "id": 13571166, 
+        "rank": 0
+      }
+    ], 
+    "title": "How to recursively go through all subdirectories and read files?"
+  }, 
+  {
+    "accepted_answer_post_id": 2612815, 
+    "id": 2612802, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "new_list = old_list[:]\n", 
+          "new_list = list(old_list)\n", 
+          "import copy\nnew_list = copy.copy(old_list)\n", 
+          "import copy\nnew_list = copy.deepcopy(old_list)\n", 
+          "import copy\n\nclass Foo(object):\n    def __init__(self, val):\n         self.val = val\n\n    def __repr__(self):\n        return str(self.val)\n\nfoo = Foo(1)\n\na = ['foo', foo]\nb = a[:]\nc = list(a)\nd = copy.copy(a)\ne = copy.deepcopy(a)\n\n# edit orignal list and instance \na.append('baz')\nfoo.val = 5\n\nprint('original: %r\\n slice: %r\\n list(): %r\\n copy: %r\\n deepcopy: %r'\n      % (a, b, c, d, e))\n", 
+          "original: ['foo', 5, 'baz']\nslice: ['foo', 5]\nlist(): ['foo', 5]\ncopy: ['foo', 5]\ndeepcopy: ['foo', 1]\n"
+        ], 
+        "score": 1366, 
+        "id": 2612815, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from copy import deepcopy\n\nclass old_class:\n    def __init__(self):\n        self.blah = 'blah'\n\nclass new_class(object):\n    def __init__(self):\n        self.blah = 'blah'\n\ndignore = {str: None, unicode: None, int: None, type(None): None}\n\ndef Copy(obj, use_deepcopy=True):\n    t = type(obj)\n\n    if t in (list, tuple):\n        if t == tuple:\n            # Convert to a list if a tuple to \n            # allow assigning to when copying\n            is_tuple = True\n            obj = list(obj)\n        else: \n            # Otherwise just do a quick slice copy\n            obj = obj[:]\n            is_tuple = False\n\n        # Copy each item recursively\n        for x in xrange(len(obj)):\n            if type(obj[x]) in dignore:\n                continue\n            obj[x] = Copy(obj[x], use_deepcopy)\n\n        if is_tuple: \n            # Convert back into a tuple again\n            obj = tuple(obj)\n\n    elif t == dict: \n        # Use the fast shallow dict copy() method and copy any \n        # values which aren't immutable (like lists, dicts etc)\n        obj = obj.copy()\n        for k in obj:\n            if type(obj[k]) in dignore:\n                continue\n            obj[k] = Copy(obj[k], use_deepcopy)\n\n    elif t in dignore: \n        # Numeric or string/unicode? \n        # It's immutable, so ignore it!\n        pass \n\n    elif use_deepcopy: \n        obj = deepcopy(obj)\n    return obj\n\nif __name__ == '__main__':\n    import copy\n    from time import time\n\n    num_times = 100000\n    L = [None, 'blah', 1, 543.4532, \n         ['foo'], ('bar',), {'blah': 'blah'},\n         old_class(), new_class()]\n\n    t = time()\n    for i in xrange(num_times):\n        Copy(L)\n    print 'Custom Copy:', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        Copy(L, use_deepcopy=False)\n    print 'Custom Copy Only Copying Lists/Tuples/Dicts (no classes):', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        copy.copy(L)\n    print 'copy.copy:', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        copy.deepcopy(L)\n    print 'copy.deepcopy:', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        L[:]\n    print 'list slicing [:]:', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        list(L)\n    print 'list(L):', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        [i for i in L]\n    print 'list expression(L):', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        a = []\n        a.extend(L)\n    print 'list extend:', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        a = []\n        for y in L:\n            a.append(y)\n    print 'list append:', time()-t\n\n    t = time()\n    for i in xrange(num_times):\n        a = []\n        a.extend(i for i in L)\n    print 'generator expression extend:', time()-t\n"
+        ], 
+        "score": 281, 
+        "id": 2612990, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 52, 
+        "id": 17810305, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to clone or copy a list?"
+  }, 
+  {
+    "accepted_answer_post_id": 610893, 
+    "id": 610883, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if hasattr(a, 'property'):\n    a.property\n"
+        ], 
+        "score": 1154, 
+        "id": 610893, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "try:\n    doStuff(a.property)\nexcept AttributeError:\n    otherStuff()\n", 
+          "if hasattr(a, 'property'):\n    doStuff(a.property)\nelse:\n    otherStuff()\n"
+        ], 
+        "score": 354, 
+        "id": 610923, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "getattr(a, 'property', 'default value')\n"
+        ], 
+        "score": 287, 
+        "id": 611708, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to know if an object has an attribute in Python"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 402504, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> i = 123\n>>> type(i)\n<type 'int'>\n>>> type(i) is int\nTrue\n>>> i = 123456789L\n>>> type(i)\n<type 'long'>\n>>> type(i) is long\nTrue\n>>> i = 123.456\n>>> type(i)\n<type 'float'>\n>>> type(i) is float\nTrue\n"
+        ], 
+        "score": 596, 
+        "id": 402704, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> v = 10\n>>> type(v)\n<type 'int'>\n", 
+          ">>> v = 100000000000000\n>>> type(v)\n<type 'long'>\n", 
+          ">>> v = -10\n>>> type(v)\n<type 'int'>\n", 
+          ">>> v = 'hi'\n>>> type(v)\n<type 'str'>\n"
+        ], 
+        "score": 177, 
+        "id": 402507, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "print type(variable_name)\n"
+        ], 
+        "score": 57, 
+        "id": 32885953, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to determine the variable type in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 275018, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> 'test string\\n'.rstrip()\n'test string'\n", 
+          ">>> 'test string \\n\\n'.rstrip('\\n')\n'test string '\n", 
+          ">>> s = \" \\n  abc   def   \"\n>>> s.strip()\n'abc   def'\n>>> s.rstrip()\n' \\n  abc   def'\n>>> s.lstrip()\n'abc   def   '\n>>>\n"
+        ], 
+        "score": 979, 
+        "id": 275025, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> text = \"line 1\\nline 2\\r\\nline 3\\nline 4\"\n>>> text.splitlines()\n['line 1', 'line 2', 'line 3', 'line 4']\n"
+        ], 
+        "score": 113, 
+        "id": 275659, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> 'Mac EOL\\r'.rstrip('\\r\\n')\n'Mac EOL'\n>>> 'Windows EOL\\r\\n'.rstrip('\\r\\n')\n'Windows EOL'\n>>> 'Unix EOL\\n'.rstrip('\\r\\n')\n'Unix EOL'\n", 
+          ">>> \"Hello\\n\\n\\n\".rstrip(\"\\n\")\n\"Hello\"\n"
+        ], 
+        "score": 100, 
+        "id": 275401, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I remove (chomp) a newline in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 364769, 
+    "id": 364621, 
+    "answer_posts": [
+      {
+        "snippets": [
+          " [i for i,x in enumerate(testlist) if x == 1]\n", 
+          ">>> testlist\n[1, 2, 3, 5, 3, 1, 2, 1, 6]\n>>> [i for i,x in enumerate(testlist) if x == 1]\n[0, 5, 7]\n", 
+          ">>> for i in [i for i,x in enumerate(testlist) if x == 1]:\n...     print i\n... \n0\n5\n7\n", 
+          ">>> (i for i,x in enumerate(testlist) if x == 1)\n<generator object at 0x6b508>\n>>> for i in (i for i,x in enumerate(testlist) if x == 1):\n...     print i\n... \n0\n5\n7\n", 
+          ">>> gen = (i for i,x in enumerate(testlist) if x == 1)\n>>> for i in gen: print i\n... \n0\n5\n7\n"
+        ], 
+        "score": 189, 
+        "id": 364769, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "print testlist.index(element)\n", 
+          "if element in testlist:\n    print testlist.index(element)\n", 
+          "print(testlist.index(element) if element in testlist else None)\n", 
+          "try:\n    print testlist.index(element)\nexcept ValueError:\n    pass\n"
+        ], 
+        "score": 90, 
+        "id": 10266829, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "testlist = [1,2,3,5,3,1,2,1,6]\nfor position, item in enumerate(testlist):\n    if item == 1:\n        print position\n"
+        ], 
+        "score": 36, 
+        "id": 364641, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get item's position in a list?"
+  }, 
+  {
+    "accepted_answer_post_id": 952952, 
+    "id": 952914, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "[item for sublist in l for item in sublist]\n", 
+          "$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99' '[item for sublist in l for item in sublist]'\n10000 loops, best of 3: 143 usec per loop\n$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99' 'sum(l, [])'\n1000 loops, best of 3: 969 usec per loop\n$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99' 'reduce(lambda x,y: x+y,l)'\n1000 loops, best of 3: 1.1 msec per loop\n"
+        ], 
+        "score": 1642, 
+        "id": 952952, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import itertools\n>>> list2d = [[1,2,3],[4,5,6], [7], [8,9]]\n>>> merged = list(itertools.chain(*list2d))\n", 
+          ">>> import itertools\n>>> list2d = [[1,2,3],[4,5,6], [7], [8,9]]\n>>> merged = list(itertools.chain.from_iterable(list2d))\n", 
+          "[me@home]$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99;import itertools' 'list(itertools.chain.from_iterable(l))'\n10000 loops, best of 3: 24.2 usec per loop\n[me@home]$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99' '[item for sublist in l for item in sublist]'\n10000 loops, best of 3: 45.2 usec per loop\n[me@home]$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99' 'sum(l, [])'\n1000 loops, best of 3: 488 usec per loop\n[me@home]$ python -mtimeit -s'l=[[1,2,3],[4,5,6], [7], [8,9]]*99' 'reduce(lambda x,y: x+y,l)'\n1000 loops, best of 3: 522 usec per loop\n[me@home]$ python --version\nPython 2.7.3\n"
+        ], 
+        "score": 699, 
+        "id": 953097, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> sum(l, [])\n[1, 2, 3, 4, 5, 6, 7, 8, 9]\n"
+        ], 
+        "score": 383, 
+        "id": 952946, 
+        "rank": 2
+      }
+    ], 
+    "title": "Making a flat list out of list of lists in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 2468983, 
+    "id": 276052, 
+    "answer_posts": [
+      {
+        "snippets": [], 
+        "score": 205, 
+        "id": 2468983, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from __future__ import print_function\nimport psutil\nprint(psutil.__versi\u200c\u200bon__)\n", 
+          "from __future__ import print_function\nimport psutil\nprint(psutil.cpu_percent())\nprint(psutil.virtual_memory()) #  physical memory usage\n", 
+          "import os\nimport psutil\npid = os.getpid()\npy = psutil.Process(pid)\nmemoryUse = py.memory_info()[0]/2.**30  # memory use in GB...I think\nprint('memory use:', memoryUse)\n", 
+          "tar -xvzf psutil-0.5.0.tar.gz\u200c\u200b\ncd psutil-0.5.0\nsudo python setup.py install\n"
+        ], 
+        "score": 8, 
+        "id": 38984517, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "'''\nMonitor window processes\n\nderived from:\n>for sys available mem\nhttp://msdn2.microsoft.com/en-us/library/aa455130.aspx\n\n> individual process information and python script examples\nhttp://www.microsoft.com/technet/scriptcenter/scripts/default.mspx?mfr=true\n\nNOTE: the WMI interface/process is also available for performing similar tasks\n        I'm not using it here because the current method covers my needs, but if someday it's needed\n        to extend or improve this module, then may want to investigate the WMI tools available.\n        WMI for python:\n        http://tgolden.sc.sabren.com/python/wmi.html\n'''\n\n__revision__ = 3\n\nimport win32com.client\nfrom ctypes import *\nfrom ctypes.wintypes import *\nimport pythoncom\nimport pywintypes\nimport datetime\n\n\nclass MEMORYSTATUS(Structure):\n    _fields_ = [\n                ('dwLength', DWORD),\n                ('dwMemoryLoad', DWORD),\n                ('dwTotalPhys', DWORD),\n                ('dwAvailPhys', DWORD),\n                ('dwTotalPageFile', DWORD),\n                ('dwAvailPageFile', DWORD),\n                ('dwTotalVirtual', DWORD),\n                ('dwAvailVirtual', DWORD),\n                ]\n\n\ndef winmem():\n    x = MEMORYSTATUS() # create the structure\n    windll.kernel32.GlobalMemoryStatus(byref(x)) # from cytypes.wintypes\n    return x    \n\n\nclass process_stats:\n    '''process_stats is able to provide counters of (all?) the items available in perfmon.\n    Refer to the self.supported_types keys for the currently supported 'Performance Objects'\n\n    To add logging support for other data you can derive the necessary data from perfmon:\n    ---------\n    perfmon can be run from windows 'run' menu by entering 'perfmon' and enter.\n    Clicking on the '+' will open the 'add counters' menu,\n    From the 'Add Counters' dialog, the 'Performance object' is the self.support_types key.\n    --> Where spaces are removed and symbols are entered as text (Ex. # == Number, % == Percent)\n    For the items you wish to log add the proper attribute name in the list in the self.supported_types dictionary,\n    keyed by the 'Performance Object' name as mentioned above.\n    ---------\n\n    NOTE: The 'NETFramework_NETCLRMemory' key does not seem to log dotnet 2.0 properly.\n\n    Initially the python implementation was derived from:\n    http://www.microsoft.com/technet/scriptcenter/scripts/default.mspx?mfr=true\n    '''\n    def __init__(self,process_name_list=[],perf_object_list=[],filter_list=[]):\n        '''process_names_list == the list of all processes to log (if empty log all)\n        perf_object_list == list of process counters to log\n        filter_list == list of text to filter\n        print_results == boolean, output to stdout\n        '''\n        pythoncom.CoInitialize() # Needed when run by the same process in a thread\n\n        self.process_name_list = process_name_list\n        self.perf_object_list = perf_object_list\n        self.filter_list = filter_list\n\n        self.win32_perf_base = 'Win32_PerfFormattedData_'\n\n        # Define new datatypes here!\n        self.supported_types = {\n                                    'NETFramework_NETCLRMemory':    [\n                                                                        'Name',\n                                                                        'NumberTotalCommittedBytes',\n                                                                        'NumberTotalReservedBytes',\n                                                                        'NumberInducedGC',    \n                                                                        'NumberGen0Collections',\n                                                                        'NumberGen1Collections',\n                                                                        'NumberGen2Collections',\n                                                                        'PromotedMemoryFromGen0',\n                                                                        'PromotedMemoryFromGen1',\n                                                                        'PercentTimeInGC',\n                                                                        'LargeObjectHeapSize'\n                                                                     ],\n\n                                    'PerfProc_Process':              [\n                                                                          'Name',\n                                                                          'PrivateBytes',\n                                                                          'ElapsedTime',\n                                                                          'IDProcess',# pid\n                                                                          'Caption',\n                                                                          'CreatingProcessID',\n                                                                          'Description',\n                                                                          'IODataBytesPersec',\n                                                                          'IODataOperationsPersec',\n                                                                          'IOOtherBytesPersec',\n                                                                          'IOOtherOperationsPersec',\n                                                                          'IOReadBytesPersec',\n                                                                          'IOReadOperationsPersec',\n                                                                          'IOWriteBytesPersec',\n                                                                          'IOWriteOperationsPersec'     \n                                                                      ]\n                                }\n\n    def get_pid_stats(self, pid):\n        this_proc_dict = {}\n\n        pythoncom.CoInitialize() # Needed when run by the same process in a thread\n        if not self.perf_object_list:\n            perf_object_list = self.supported_types.keys()\n\n        for counter_type in perf_object_list:\n            strComputer = \".\"\n            objWMIService = win32com.client.Dispatch(\"WbemScripting.SWbemLocator\")\n            objSWbemServices = objWMIService.ConnectServer(strComputer,\"root\\cimv2\")\n\n            query_str = '''Select * from %s%s''' % (self.win32_perf_base,counter_type)\n            colItems = objSWbemServices.ExecQuery(query_str) # \"Select * from Win32_PerfFormattedData_PerfProc_Process\")# changed from Win32_Thread        \n\n            if len(colItems) > 0:        \n                for objItem in colItems:\n                    if hasattr(objItem, 'IDProcess') and pid == objItem.IDProcess:\n\n                            for attribute in self.supported_types[counter_type]:\n                                eval_str = 'objItem.%s' % (attribute)\n                                this_proc_dict[attribute] = eval(eval_str)\n\n                            this_proc_dict['TimeStamp'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.') + str(datetime.datetime.now().microsecond)[:3]\n                            break\n\n        return this_proc_dict      \n\n\n    def get_stats(self):\n        '''\n        Show process stats for all processes in given list, if none given return all processes   \n        If filter list is defined return only the items that match or contained in the list\n        Returns a list of result dictionaries\n        '''    \n        pythoncom.CoInitialize() # Needed when run by the same process in a thread\n        proc_results_list = []\n        if not self.perf_object_list:\n            perf_object_list = self.supported_types.keys()\n\n        for counter_type in perf_object_list:\n            strComputer = \".\"\n            objWMIService = win32com.client.Dispatch(\"WbemScripting.SWbemLocator\")\n            objSWbemServices = objWMIService.ConnectServer(strComputer,\"root\\cimv2\")\n\n            query_str = '''Select * from %s%s''' % (self.win32_perf_base,counter_type)\n            colItems = objSWbemServices.ExecQuery(query_str) # \"Select * from Win32_PerfFormattedData_PerfProc_Process\")# changed from Win32_Thread\n\n            try:  \n                if len(colItems) > 0:\n                    for objItem in colItems:\n                        found_flag = False\n                        this_proc_dict = {}\n\n                        if not self.process_name_list:\n                            found_flag = True\n                        else:\n                            # Check if process name is in the process name list, allow print if it is\n                            for proc_name in self.process_name_list:\n                                obj_name = objItem.Name\n                                if proc_name.lower() in obj_name.lower(): # will log if contains name\n                                    found_flag = True\n                                    break\n\n                        if found_flag:\n                            for attribute in self.supported_types[counter_type]:\n                                eval_str = 'objItem.%s' % (attribute)\n                                this_proc_dict[attribute] = eval(eval_str)\n\n                            this_proc_dict['TimeStamp'] = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S.') + str(datetime.datetime.now().microsecond)[:3]\n                            proc_results_list.append(this_proc_dict)\n\n            except pywintypes.com_error, err_msg:\n                # Ignore and continue (proc_mem_logger calls this function once per second)\n                continue\n        return proc_results_list     \n\n\ndef get_sys_stats():\n    ''' Returns a dictionary of the system stats'''\n    pythoncom.CoInitialize() # Needed when run by the same process in a thread\n    x = winmem()\n\n    sys_dict = { \n                    'dwAvailPhys': x.dwAvailPhys,\n                    'dwAvailVirtual':x.dwAvailVirtual\n                }\n    return sys_dict\n\n\nif __name__ == '__main__':\n    # This area used for testing only\n    sys_dict = get_sys_stats()\n\n    stats_processor = process_stats(process_name_list=['process2watch'],perf_object_list=[],filter_list=[])\n    proc_results = stats_processor.get_stats()\n\n    for result_dict in proc_results:\n        print result_dict\n\n    import os\n    this_pid = os.getpid()\n    this_proc_results = stats_processor.get_pid_stats(this_pid)\n\n    print 'this proc results:'\n    print this_proc_results\n"
+        ], 
+        "score": 7, 
+        "id": 276934, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get current CPU and RAM usage in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 5137509, 
+    "id": 5137497, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import os \ndir_path = os.path.dirname(os.path.realpath(__file__))\n", 
+          "import os\ncwd = os.getcwd()\n"
+        ], 
+        "score": 1115, 
+        "id": 5137509, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 226, 
+        "id": 5137507, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import os\n\nprint(\"Path at terminal when executing this file\")\nprint(os.getcwd() + \"\\n\")\n\nprint(\"This file path, relative to os.getcwd()\")\nprint(__file__ + \"\\n\")\n\nprint(\"This file full path (following symlinks)\")\nfull_path = os.path.realpath(__file__)\nprint(full_path + \"\\n\")\n\nprint(\"This file directory and name\")\npath, filename = os.path.split(full_path)\nprint(path + ' --> ' + filename + \"\\n\")\n\nprint(\"This file directory only\")\nprint(os.path.dirname(full_path))\n"
+        ], 
+        "score": 172, 
+        "id": 13720875, 
+        "rank": 2
+      }
+    ], 
+    "title": "Find current directory and file's directory"
+  }, 
+  {
+    "accepted_answer_post_id": 930398, 
+    "id": 930397, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> some_list = [1, 2, 3]\n>>> some_list[-1] = 5 # Set the last element\n>>> some_list[-2] = 3 # Set the second to last element\n>>> some_list\n[1, 3, 5]\n"
+        ], 
+        "score": 1387, 
+        "id": 930398, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "alist = []\nalist[-1]   # will generate an IndexError exception whereas \nalist[-1:]  # will return an empty list\nastr = ''\nastr[-1]    # will generate an IndexError exception whereas\nastr[-1:]   # will return an empty str\n"
+        ], 
+        "score": 119, 
+        "id": 4139773, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "alist.pop()\n"
+        ], 
+        "score": 49, 
+        "id": 930759, 
+        "rank": 2
+      }
+    ], 
+    "title": "Getting the last element of a list in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 961638, 
+    "id": 961632, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> str(10)\n'10'\n>>> int('10')\n10\n"
+        ], 
+        "score": 1066, 
+        "id": 961638, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "str(i)\n"
+        ], 
+        "score": 51, 
+        "id": 961636, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "str(a)\n", 
+          "a.__str__()\n"
+        ], 
+        "score": 29, 
+        "id": 961652, 
+        "rank": 2
+      }
+    ], 
+    "title": "Converting integer to string in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 1712236, 
+    "id": 1712227, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> len([1,2,3])\n3\n"
+        ], 
+        "score": 1421, 
+        "id": 1712236, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "class slist(list):\n    @property\n    def length(self):\n        return len(self)\n", 
+          ">>> l = slist(range(10))\n>>> l.length\n10\n>>> print l\n[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\n"
+        ], 
+        "score": 38, 
+        "id": 16114025, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "items = []\nitems.append(\"apple\")\nitems.append(\"orange\")\nitems.append(\"banana\")\n", 
+          "len(items)\n", 
+          "items.__len__()\n", 
+          ">>> all(hasattr(cls, '__len__') for cls in (str, bytes, tuple, list, \n                                            xrange, dict, set, frozenset))\nTrue\n"
+        ], 
+        "score": 33, 
+        "id": 27137427, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get the size of a list"
+  }, 
+  {
+    "accepted_answer_post_id": 1720432, 
+    "id": 1720421, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "mergedlist = listone + listtwo\n"
+        ], 
+        "score": 1627, 
+        "id": 1720432, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import itertools\nfor item in itertools.chain(listone, listtwo):\n   # do something with each list item\n"
+        ], 
+        "score": 136, 
+        "id": 1724975, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "mergedlist = list(set(listone + listtwo))\n"
+        ], 
+        "score": 103, 
+        "id": 3749835, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to append list to second list (concatenate lists)"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 16196712, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "p = subprocess.Popen('unrar e ' + root + '/' + i + ' ' + testfolder,\n        bufsize=2048, shell=True, stdin=subprocess.PIPE)\n", 
+          "p = subprocess.Popen(['unrar', 'e', '%s/%s' % (root, i), testfolder],\n        bufsize=2048, stdin=subprocess.PIPE)\np.stdin.write('e')\np.wait()\nif p.returncode == 0:\n    pass # put code that must only run if successful here.\n", 
+          "import pipes # in Python 2.x; in 3.x, use shlex.quote() instead\np = subprocess.Popen(['ssh', ' '.join(\n      [pipes.quote(s) for s in ['unrar', 'e', '%s/%s' % (root, i), testfolder]])\n"
+        ], 
+        "score": 4, 
+        "id": 16197061, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 0, 
+        "id": 16196938, 
+        "rank": 1
+      }
+    ], 
+    "title": "python to wait for shell command to complete"
+  }, 
+  {
+    "accepted_answer_post_id": 209550, 
+    "id": 209513, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "x = int(\"deadbeef\", 16)\n", 
+          ">>> print int(\"0xdeadbeef\", 0)\n3735928559\n>>> print int(\"10\", 0)\n10\n"
+        ], 
+        "score": 603, 
+        "id": 209550, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> int(\"a\", 16)\n10\n>>> int(\"0xa\",16)\n10\n"
+        ], 
+        "score": 101, 
+        "id": 209529, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "int(s, 16)\n"
+        ], 
+        "score": 32, 
+        "id": 209530, 
+        "rank": 2
+      }
+    ], 
+    "title": "Convert hex string to int in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 642169, 
+    "id": 642154, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "print int(\"1\") + 1\n", 
+          "T2 = [map(int, x) for x in T1]\n"
+        ], 
+        "score": 332, 
+        "id": 642169, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "T2 = [[int(column) for column in row] for row in T1]\n", 
+          "T2 = [parse_a_row_of_T1(row) for row in T1]\n"
+        ], 
+        "score": 21, 
+        "id": 642177, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "[[int(y) for y in x] for x in T1]\n"
+        ], 
+        "score": 12, 
+        "id": 855419, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to convert strings into integers in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 7961390, 
+    "id": 7961363, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> t = [1, 2, 3, 1, 2, 5, 6, 7, 8]\n>>> t\n[1, 2, 3, 1, 2, 5, 6, 7, 8]\n>>> list(set(t))\n[1, 2, 3, 5, 6, 7, 8]\n>>> s = [1, 2, 3]\n>>> list(set(t) - set(s))\n[8, 5, 6, 7]\n"
+        ], 
+        "score": 697, 
+        "id": 7961390, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> from collections import OrderedDict\n>>> list(OrderedDict.fromkeys('abracadabra'))\n['a', 'b', 'r', 'c', 'd']\n", 
+          ">>> list(dict.fromkeys('abracadabra'))\n['a', 'b', 'r', 'c', 'd']\n"
+        ], 
+        "score": 201, 
+        "id": 7961425, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 122, 
+        "id": 7961393, 
+        "rank": 2
+      }
+    ], 
+    "title": "Removing duplicates in lists"
+  }, 
+  {
+    "accepted_answer_post_id": 2269836, 
+    "id": 2269827, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> chr(0x65) == '\\x65'\nTrue\n\n\n>>> hex(65)\n'0x41'\n>>> chr(65) == '\\x41'\nTrue\n"
+        ], 
+        "score": 119, 
+        "id": 2269836, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "strHex = \"0x%0.2X\" % 255\n"
+        ], 
+        "score": 74, 
+        "id": 2269863, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "\"0x%x\" % 255 # => 0xff\n", 
+          "\"0x%X\" % 255 # => 0xFF\n"
+        ], 
+        "score": 29, 
+        "id": 2269841, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to convert an int to a hex string?"
+  }, 
+  {
+    "accepted_answer_post_id": 6996628, 
+    "id": 6996603, 
+    "answer_posts": [
+      {
+        "snippets": [], 
+        "score": 1204, 
+        "id": 6996628, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "shutil.rmtree(path[, ignore_errors[, onerror]])\n", 
+          "os.remove\n", 
+          "os.rmdir\n"
+        ], 
+        "score": 38, 
+        "id": 6996662, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "os.unlink(path, *, dir_fd=None)\n", 
+          "os.remove(path, *, dir_fd=None)\n", 
+          "os.rmdir(path, *, dir_fd=None)\n", 
+          "shutil.rmtree(path, ignore_errors=False, onerror=None)\n", 
+          "os.removedirs(name)\n"
+        ], 
+        "score": 15, 
+        "id": 39079453, 
+        "rank": 2
+      }
+    ], 
+    "title": "Delete a file or folder in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 663175, 
+    "id": 663171, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> x = \"Hello World!\"\n>>> x[2:]\n'llo World!'\n>>> x[:2]\n'He'\n>>> x[:-2]\n'Hello Worl'\n>>> x[-2:]\n'd!'\n>>> x[2:-2]\n'llo Worl'\n"
+        ], 
+        "score": 1585, 
+        "id": 663175, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "some_string[::-1]\n", 
+          "\"H-e-l-l-o- -W-o-r-l-d\"[::2] # outputs \"Hello World\"\n"
+        ], 
+        "score": 200, 
+        "id": 9780082, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "s = Substr(s, beginning, LENGTH)\n", 
+          "s = s[ beginning : beginning + LENGTH]\n"
+        ], 
+        "score": 52, 
+        "id": 11808384, 
+        "rank": 2
+      }
+    ], 
+    "title": "Is there a way to substring a string in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 9257122, 
+    "id": 9257094, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> s = 'sdsd'\n>>> s.upper()\n'SDSD'\n"
+        ], 
+        "score": 560, 
+        "id": 9257122, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "s = 'sdsd'\ns.upper()\n#=> 'SDSD'\n", 
+          "import string\nstring.ascii_uppercase\n#=> 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'\n"
+        ], 
+        "score": 59, 
+        "id": 9257158, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "s = 'sdsd'\nprint s.upper()\n>>or\nupper = raw_input('type in something lowercase.')\nlower = raw_input('type in the same thing caps lock.')\nprint upper.upper()\nprint lower.lower()\n"
+        ], 
+        "score": 5, 
+        "id": 24770472, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to change a string into uppercase"
+  }, 
+  {
+    "accepted_answer_post_id": 730778, 
+    "id": 730764, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "try:\n  doSomething()\nexcept: \n  pass\n", 
+          "try:\n  doSomething()\nexcept Exception: \n  pass\n"
+        ], 
+        "score": 577, 
+        "id": 730778, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "try:\n    do_something()\nexcept:\n    handle_exception()\n    raise  #re-raise the exact same exception that was thrown\n"
+        ], 
+        "score": 94, 
+        "id": 730806, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> shutil.rmtree(\"/fake/dir\")\nTraceback (most recent call last):\n    [...]\nOSError: [Errno 2] No such file or directory: '/fake/dir'\n", 
+          "try:\n    shutil.rmtree(path)\nexcept OSError:\n    pass\n", 
+          "shutil.rmtree(2)\n", 
+          ">>> try:\n...     sys.exit(1)\n... except:\n...     pass\n... \n>>>\n", 
+          ">>> try:\n...     sys.exit(1)\n... except Exception:\n...     pass\n... \nshell:~$ \n", 
+          "try:\n    shutil.rmtree(path)\nexcept OSError, e:\n    if e.errno == 2:\n        # suppress \"No such file or directory\" error\n        pass\n    else:\n        # reraise the exception, as it's an unexpected error\n        raise\n"
+        ], 
+        "score": 79, 
+        "id": 736029, 
+        "rank": 2
+      }
+    ], 
+    "title": "Try/Except in Python: How do you properly ignore Exceptions?"
+  }, 
+  {
+    "accepted_answer_post_id": 70833, 
+    "id": 70797, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "var = raw_input(\"Please enter something: \")\nprint \"you entered\", var\n"
+        ], 
+        "score": 299, 
+        "id": 70814, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import sys\nprint sys.argv\n", 
+          "import sys\nprint(sys.argv)\n"
+        ], 
+        "score": 186, 
+        "id": 70833, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "input_var = input(\"Enter something: \")\nprint (\"you entered \" + input_var) \n"
+        ], 
+        "score": 131, 
+        "id": 8334188, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python: user input and commandline arguments"
+  }, 
+  {
+    "accepted_answer_post_id": 4706520, 
+    "id": 4706499, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "with open(\"test.txt\", \"a\") as myfile:\n    myfile.write(\"appended text\")\n"
+        ], 
+        "score": 1262, 
+        "id": 4706520, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> with open('test1','wb') as f:\n        f.write('test')\n>>> with open('test1','ab') as f:\n        f.write('koko')\n>>> with open('test1','rb') as f:\n        f.read()\n'testkoko'\n", 
+          ">>> f = open('test','a+') # Not using 'with' just to simplify the example REPL session\n>>> f.write('hi')\n>>> f.seek(0)\n>>> f.read()\n'hi'\n>>> f.seek(0)\n>>> f.write('bye') # Will still append despite the seek(0)!\n>>> f.seek(0)\n>>> f.read()\n'hibye'\n", 
+          "fseek(stream, 0, SEEK_END);\n", 
+          ">>> open(\"test\",\"wb\").write(\"test\")\n>>> open(\"test\",\"a+b\").write(\"koko\")\n>>> open(\"test\",\"rb\").read()\n'testkoko'\n"
+        ], 
+        "score": 99, 
+        "id": 4706519, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "with open(\"foo\", \"a\") as f:\n    f.write(\"cool beans...\")\n"
+        ], 
+        "score": 19, 
+        "id": 4706565, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do you append to a file in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 22682, 
+    "id": 22676, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import urllib\nurllib.urlretrieve (\"http://www.example.com/songs/mp3.mp3\", \"mp3.mp3\")\n", 
+          "import urllib2\n\nurl = \"http://download.thinkbroadband.com/10MB.zip\"\n\nfile_name = url.split('/')[-1]\nu = urllib2.urlopen(url)\nf = open(file_name, 'wb')\nmeta = u.info()\nfile_size = int(meta.getheaders(\"Content-Length\")[0])\nprint \"Downloading: %s Bytes: %s\" % (file_name, file_size)\n\nfile_size_dl = 0\nblock_sz = 8192\nwhile True:\n    buffer = u.read(block_sz)\n    if not buffer:\n        break\n\n    file_size_dl += len(buffer)\n    f.write(buffer)\n    status = r\"%10d  [%3.2f%%]\" % (file_size_dl, file_size_dl * 100. / file_size)\n    status = status + chr(8)*(len(status)+1)\n    print status,\n\nf.close()\n"
+        ], 
+        "score": 766, 
+        "id": 22776, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import urllib2\nresponse = urllib2.urlopen('http://www.example.com/')\nhtml = response.read()\n"
+        ], 
+        "score": 290, 
+        "id": 22682, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> import requests\n>>> \n>>> url = \"http://download.thinkbroadband.com/10MB.zip\"\n>>> r = requests.get(url)\n>>> print len(r.content)\n10485760\n", 
+          "from tqdm import tqdm\nimport requests\n\nurl = \"http://download.thinkbroadband.com/10MB.zip\"\nresponse = requests.get(url, stream=True)\n\nwith open(\"10MB\", \"wb\") as handle:\n    for data in tqdm(response.iter_content()):\n        handle.write(data)\n"
+        ], 
+        "score": 227, 
+        "id": 10744565, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I download a file over HTTP using Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 11709155, 
+    "id": 11709079, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "try: \n    from BeautifulSoup import BeautifulSoup\nexcept ImportError:\n    from bs4 import BeautifulSoup\nhtml = #the HTML code you've written above\nparsed_html = BeautifulSoup(html)\nprint parsed_html.body.find('div', attrs={'class':'container'}).text\n"
+        ], 
+        "score": 98, 
+        "id": 11709155, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from pyquery import PyQuery    \nhtml = # Your HTML CODE\npq = PyQuery(html)\ntag = pq('div#class')\nprint tag.text()\n", 
+          "pq('div#mw-head.noprint')\n"
+        ], 
+        "score": 33, 
+        "id": 11709361, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import urllib2\nfrom BeautifulSoup import BeautifulSoup\n\npage = urllib2.urlopen('http://www.google.com/')\nsoup = BeautifulSoup(page)\n\nx = soup.body.find('div', attrs={'class' : 'container'}).text\n"
+        ], 
+        "score": 28, 
+        "id": 11709123, 
+        "rank": 2
+      }
+    ], 
+    "title": "Parsing HTML using Python"
+  }, 
+  {
+    "accepted_answer_post_id": 23885252, 
+    "id": 739993, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "help('modules')\n"
+        ], 
+        "score": 639, 
+        "id": 740018, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import pip\ninstalled_packages = pip.get_installed_distributions()\ninstalled_packages_list = sorted([\"%s==%s\" % (i.key, i.version)\n     for i in installed_packages])\nprint(installed_packages_list)\n", 
+          "sorted([\"%s==%s\" % (i.key, i.version) for i in pip.get_installed_distributions()])\n", 
+          "['behave==1.2.4', 'enum34==1.0', 'flask==0.10.1', 'itsdangerous==0.24', \n 'jinja2==2.7.2', 'jsonschema==2.3.0', 'markupsafe==0.23', 'nose==1.3.3', \n 'parse-type==0.3.4', 'parse==1.6.4', 'prettytable==0.7.2', 'requests==2.3.0',\n 'six==1.6.1', 'vioozer-metadata==0.1', 'vioozer-users-server==0.1', \n 'werkzeug==0.9.4']\n", 
+          "$ cd /tmp\n$ virtualenv test_env\nNew python executable in test_env/bin/python\nInstalling setuptools, pip...done.\n$ source test_env/bin/activate\n(test_env) $ \n", 
+          "(test_env) $ git clone https://github.com/behave/behave.git\nCloning into 'behave'...\nremote: Reusing existing pack: 4350, done.\nremote: Total 4350 (delta 0), reused 0 (delta 0)\nReceiving objects: 100% (4350/4350), 1.85 MiB | 418.00 KiB/s, done.\nResolving deltas: 100% (2388/2388), done.\nChecking connectivity... done.\n", 
+          "(test_env) $ ls /tmp/behave/setup.py\n/tmp/behave/setup.py\n", 
+          "(test_env) $ cd /tmp/behave && python setup.py install\nrunning install\n...\nInstalled /private/tmp/test_env/lib/python2.7/site-packages/enum34-1.0-py2.7.egg\nFinished processing dependencies for behave==1.2.5a1\n", 
+          ">>> import pip\n>>> sorted([\"%s==%s\" % (i.key, i.version) for i in pip.get_installed_distributions()])\n['behave==1.2.5a1', 'enum34==1.0', 'parse-type==0.3.4', 'parse==1.6.4', 'six==1.6.1']\n>>> import os\n>>> os.getcwd()\n'/private/tmp'\n", 
+          ">>> import pip\n>>> sorted([\"%s==%s\" % (i.key, i.version) for i in pip.get_installed_distributions()])\n['enum34==1.0', 'parse-type==0.3.4', 'parse==1.6.4', 'six==1.6.1']\n>>> import os\n>>> os.getcwd()\n'/private/tmp/behave'\n"
+        ], 
+        "score": 272, 
+        "id": 23885252, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "pip freeze\n", 
+          "Fabric==0.9.3\napache-libcloud==0.4.0\nbzr==2.3b4\ndistribute==0.6.14\ndocutils==0.7\ngreenlet==0.3.1\nipython==0.10.1\niterpipes==0.4\nlibxml2-python==2.6.21\n"
+        ], 
+        "score": 175, 
+        "id": 4703670, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I get a list of locally installed Python modules?"
+  }, 
+  {
+    "accepted_answer_post_id": 9210558, 
+    "id": 9210525, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "s = \"6a48f82d8e828ce82b82\"\n", 
+          "i = int(s, 16)\n", 
+          "str(i)\n"
+        ], 
+        "score": 99, 
+        "id": 9210558, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> int(\"0xff\", 16)\n255\n", 
+          ">>> int(\"FFFF\", 16)\n65535\n"
+        ], 
+        "score": 22, 
+        "id": 9210556, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> ast.literal_eval('0xdeadbeef')\n3735928559\n", 
+          ">>> int('deadbeef', 16)\n3735928559\n"
+        ], 
+        "score": 10, 
+        "id": 9210564, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I convert hex to decimal in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 6797990, 
+    "id": 6797984, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "s = \"Kilometer\"\nprint(s.lower())\n"
+        ], 
+        "score": 1412, 
+        "id": 6797990, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "raw_input('Type Something').lower()\n"
+        ], 
+        "score": 60, 
+        "id": 6798246, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> s='\u041a\u0438\u043b\u043e\u043c\u0435\u0442\u0440'\n>>> print s.lower()\n\u041a\u0438\u043b\u043e\u043c\u0435\u0442\u0440\n>>> print s.decode('utf-8').lower()\n\u043a\u0438\u043b\u043e\u043c\u0435\u0442\u0440\n"
+        ], 
+        "score": 55, 
+        "id": 26175350, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to convert string to lowercase in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 1207479, 
+    "id": 1207457, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "title = u\"Kl\u00fcft skr\u00e4ms inf\u00f6r p\u00e5 f\u00e9d\u00e9ral \u00e9lectoral gro\u00dfe\"\nimport unicodedata\nunicodedata.normalize('NFKD', title).encode('ascii','ignore')\n'Kluft skrams infor pa federal electoral groe'\n"
+        ], 
+        "score": 376, 
+        "id": 1207479, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> a=u\"aaa\u00e0\u00e7\u00e7\u00e7\u00f1\u00f1\u00f1\"\n>>> type(a)\n<type 'unicode'>\n>>> a.encode('ascii','ignore')\n'aaa'\n>>> a.encode('ascii','replace')\n'aaa???????'\n>>>\n"
+        ], 
+        "score": 183, 
+        "id": 1211102, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> s= u'\u00a310'\n>>> s.encode('utf8')\n'\\xc2\\x9c10'\n>>> s.encode('utf16')\n'\\xff\\xfe\\x9c\\x001\\x000\\x00'\n", 
+          "import codecs\nf = codecs.open('path/to/file.txt','w','utf8')\nf.write(my_unicode_string)  # Stored on disk as UTF-8\n"
+        ], 
+        "score": 76, 
+        "id": 1207836, 
+        "rank": 2
+      }
+    ], 
+    "title": "Convert a Unicode string to a string in Python (containing extra symbols)"
+  }, 
+  {
+    "accepted_answer_post_id": 3294899, 
+    "id": 3294889, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "for key in d:\n", 
+          "for key, value in d.iteritems():\n", 
+          "for key, value in d.items():\n"
+        ], 
+        "score": 2046, 
+        "id": 3294899, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "for k in dict: ...\n", 
+          "for k in dict.keys(): ...\n", 
+          "for key in dict.iterkeys(): ...\n\nfor value in dict.itervalues(): ...\n\nfor key, value in dict.iteritems(): ...\n"
+        ], 
+        "score": 229, 
+        "id": 3295295, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> d = {'x': 1, 'y': 2, 'z': 3} \n>>> list(d)\n['y', 'x', 'z']\n>>> d.keys()\n['y', 'x', 'z']\n", 
+          ">>> d.items()\n[('y', 2), ('x', 1), ('z', 3)]\n", 
+          "for k,v in d.items():\n    print k, 'corresponds to', v\n", 
+          "for letter, number in d.items():\n    print letter, 'corresponds to', number\n", 
+          "for letter, number in d.items():\n    print '{0} corresponds to {1}'.format(letter, number)\n"
+        ], 
+        "score": 89, 
+        "id": 3295662, 
+        "rank": 2
+      }
+    ], 
+    "title": "Iterating over dictionaries using for loops in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 7571665, 
+    "id": 7571635, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "7 in a\n"
+        ], 
+        "score": 484, 
+        "id": 7571665, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "a = [1,2,3,4,'a','b','c']\nreturn 'a' in a\n"
+        ], 
+        "score": 23, 
+        "id": 7571776, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "a = [4,2,3,1,5,6]\n\nindex = dict((y,x) for x,y in enumerate(a))\ntry:\n   a_index = index[7]\nexcept KeyError:\n   print \"Not found\"\nelse:\n   print \"found\"\n"
+        ], 
+        "score": 12, 
+        "id": 7572489, 
+        "rank": 2
+      }
+    ], 
+    "title": "Fastest way to check if a value exist in a list"
+  }, 
+  {
+    "accepted_answer_post_id": 1093331, 
+    "id": 1093322, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> import sys\n", 
+          ">>> print (sys.version) #parentheses necessary in python 3.       \n2.5.2 (r252:60911, Jul 31 2008, 17:28:52) \n[GCC 4.2.3 (Ubuntu 4.2.3-2ubuntu7)]\n", 
+          ">>> sys.version_info\n(2, 5, 2, 'final', 0)\n# or\n>>> sys.hexversion\n34014192\n", 
+          "assert sys.version_info >= (2,5)\n"
+        ], 
+        "score": 650, 
+        "id": 1093331, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "python -V\n"
+        ], 
+        "score": 130, 
+        "id": 17796193, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> import sys\n>>> sys.hexversion\n33883376\n>>> '%x' % sys.hexversion\n'20504f0'\n>>> sys.hexversion < 0x02060000\nTrue\n"
+        ], 
+        "score": 74, 
+        "id": 3018075, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I check what version of Python is running my script?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 5618878, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "list1 = ['1', '2', '3']\nstr1 = ''.join(list1)\n", 
+          "list1 = [1, 2, 3]\nstr1 = ''.join(str(e) for e in list1)\n"
+        ], 
+        "score": 325, 
+        "id": 5618893, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> L = [1,2,3]       \n>>> \" \".join(str(x) for x in L)\n>>> '1 2 3'\n"
+        ], 
+        "score": 32, 
+        "id": 5618910, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "L = ['L','O','L']\nmakeitastring = ''.join(map(str, L))\n"
+        ], 
+        "score": 22, 
+        "id": 5618944, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to convert list to string"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 3277503, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "with open(fname) as f:\n    content = f.readlines()\n"
+        ], 
+        "score": 936, 
+        "id": 3277516, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "with open('filename') as f:\n    lines = f.readlines()\n", 
+          "lines = [line.rstrip('\\n') for line in open('filename')]\n"
+        ], 
+        "score": 570, 
+        "id": 3277515, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "with open(\"file.txt\", \"r\") as ins:\n    array = []\n    for line in ins:\n        array.append(line)\n"
+        ], 
+        "score": 235, 
+        "id": 3277512, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to read a file line by line into a list with Python"
+  }, 
+  {
+    "accepted_answer_post_id": 5844692, 
+    "id": 5844672, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "del d[key]\n", 
+          "def removekey(d, key):\n    r = dict(d)\n    del r[key]\n    return r\n"
+        ], 
+        "score": 681, 
+        "id": 5844692, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> a\n{0: 'zero', 1: 'one', 2: 'two', 3: 'three'}\n>>> {i:a[i] for i in a if i!=0}\n{1: 'one', 2: 'two', 3: 'three'}\n"
+        ], 
+        "score": 40, 
+        "id": 5844700, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          " >>>lol = {\"hello\":\"gdbye\"}\n >>>lol.pop(\"hello\")\n    'gdbye'\n >>> lol\n     {}\n"
+        ], 
+        "score": 40, 
+        "id": 22564121, 
+        "rank": 2
+      }
+    ], 
+    "title": "Delete an element from a dictionary"
+  }, 
+  {
+    "accepted_answer_post_id": 1400622, 
+    "id": 1400608, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "del lst[:]\n", 
+          "lst1 = [1, 2, 3]\nlst2 = lst1\ndel lst1[:]\nprint(lst2)\n", 
+          "lst[:] = []\n"
+        ], 
+        "score": 416, 
+        "id": 1400622, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "alist[:] = []\n"
+        ], 
+        "score": 45, 
+        "id": 1400624, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "alist.clear()  # removes all items from alist (equivalent to del alist[:])\n"
+        ], 
+        "score": 30, 
+        "id": 30087221, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to empty a list in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 16296643, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> t = ('my', 'name', 'is', 'mr', 'tuple')\n>>> t\n('my', 'name', 'is', 'mr', 'tuple')\n>>> list(t)\n['my', 'name', 'is', 'mr', 'tuple']\n", 
+          ">>> l = ['my', 'name', 'is', 'mr', 'list']\n>>> l\n['my', 'name', 'is', 'mr', 'list']\n>>> tuple(l)\n('my', 'name', 'is', 'mr', 'list')\n"
+        ], 
+        "score": 99, 
+        "id": 23497549, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "[list(i) for i in level] # list of lists\n", 
+          "map(list, level)\n", 
+          "tuple(tuple(i) for i in edited) # tuple of tuples\n", 
+          "tuple(itertools.imap(tuple, edited))\n", 
+          ">>> a = numpy.array(level1)\n>>> a\narray([[1, 1, 1, 1, 1, 1],\n       [1, 0, 0, 0, 0, 1],\n       [1, 0, 0, 0, 0, 1],\n       [1, 0, 0, 0, 0, 1],\n       [1, 0, 0, 0, 0, 1],\n       [1, 1, 1, 1, 1, 1]])\n", 
+          "if clicked[0] == 1:\n    x = (mousey + cameraY) // 60 # For readability\n    y = (mousex + cameraX) // 60 # For readability\n    a[x][y] = 1\n"
+        ], 
+        "score": 41, 
+        "id": 16296703, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "level1 = [list(row) for row in level1]\n", 
+          "level1 = map(list, level1)\n"
+        ], 
+        "score": 16, 
+        "id": 16296668, 
+        "rank": 2
+      }
+    ], 
+    "title": "Convert tuple to list and back"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 4004550, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "s = '5.2 5.6 5.3'\nfloats = [float(x) for x in s.split()]\n", 
+          "floats = map(float, s.split())\n"
+        ], 
+        "score": 57, 
+        "id": 4004554, 
+        "rank": 0
+      }
+    ], 
+    "title": "Converting string series to float list in python"
+  }, 
+  {
+    "accepted_answer_post_id": 10543316, 
+    "id": 10543303, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> j = [4, 5, 6, 7, 1, 3, 7, 5]\n>>> sum(i > 5 for i in j)\n3\n", 
+          ">>> issubclass(bool, int)\nTrue\n"
+        ], 
+        "score": 62, 
+        "id": 10543316, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> j = [4, 5, 6, 7, 1, 3, 7, 5]\n>>> len([1 for i in j if i > 5])\n3\n"
+        ], 
+        "score": 6, 
+        "id": 10543348, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import numpy as np\nj = np.array(j)\nsum(j > i)\n"
+        ], 
+        "score": 5, 
+        "id": 10543345, 
+        "rank": 2
+      }
+    ], 
+    "title": "number of values in a list greater than a certain number"
+  }, 
+  {
+    "accepted_answer_post_id": 674775, 
+    "id": 674764, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> x = \"Hello World\"\n>>> x.find('World')\n6\n>>> x.find('Aloha');\n-1\n"
+        ], 
+        "score": 93, 
+        "id": 674774, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> 'sdfasdf'.index('cc')\nTraceback (most recent call last):\n  File \"<pyshell#144>\", line 1, in <module>\n    'sdfasdf'.index('cc')\nValueError: substring not found\n>>> 'sdfasdf'.index('df')\n1\n"
+        ], 
+        "score": 38, 
+        "id": 674775, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> str = \"abcdefioshgoihgs sijsiojs \"\n>>> str.find('a')\n0\n>>> str.find('g')\n10\n>>> str.find('s',11)\n15\n>>> str.find('s',15)\n15\n>>> str.find('s',16)\n17\n>>> str.find('s',11,14)\n-1\n"
+        ], 
+        "score": 27, 
+        "id": 674790, 
+        "rank": 2
+      }
+    ], 
+    "title": "Examples for string find in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 433161, 
+    "id": 432842, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "bool(a) != bool(b)\n"
+        ], 
+        "score": 750, 
+        "id": 433161, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "(a and not b) or (not a and b)\n", 
+          "bool(a) ^ bool(b)\n", 
+          "def logical_xor(str1, str2):\n    return bool(str1) ^ bool(str2)\n"
+        ], 
+        "score": 292, 
+        "id": 432844, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "from operator import xor\nxor(bool(a), bool(b))\n"
+        ], 
+        "score": 96, 
+        "id": 11036506, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do you get the logical xor of two variables in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 1303243, 
+    "answer_posts": [
+      {
+        "snippets": [], 
+        "score": 210, 
+        "id": 1303252, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "isinstance(o, basestring)\n", 
+          "type(o) is str\n", 
+          "isinstance(o, str)\n"
+        ], 
+        "score": 104, 
+        "id": 1303266, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "isinstance(obj_to_test, str)\n"
+        ], 
+        "score": 44, 
+        "id": 26535728, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to find out if a Python object is a string?"
+  }, 
+  {
+    "accepted_answer_post_id": 165662, 
+    "id": 163542, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "    pipe = os.popen(cmd, 'w', bufsize)\n    # ==>\n    pipe = Popen(cmd, shell=True, bufsize=bufsize, stdin=PIPE).stdin\n", 
+          "from subprocess import Popen, PIPE, STDOUT\n\np = Popen(['grep', 'f'], stdout=PIPE, stdin=PIPE, stderr=STDOUT)    \ngrep_stdout = p.communicate(input=b'one\\ntwo\\nthree\\nfour\\nfive\\nsix\\n')[0]\nprint(grep_stdout.decode())\n# -> four\n# -> five\n# ->\n"
+        ], 
+        "score": 211, 
+        "id": 165662, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> p = subprocess.Popen(['grep','f'],stdout=subprocess.PIPE,stdin=subprocess.PIPE)\n>>> p.stdin.write('one\\ntwo\\nthree\\nfour\\nfive\\nsix\\n')\n>>> p.communicate()[0]\n'four\\nfive\\n'\n>>> p.stdin.close()\n"
+        ], 
+        "score": 26, 
+        "id": 163556, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 12, 
+        "id": 163870, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python - How do I pass a string into subprocess.Popen (using the stdin argument)?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 4383571, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "# some_file.py\nimport sys\nsys.path.insert(0, '/path/to/application/app/folder')\n\nimport file\n"
+        ], 
+        "score": 510, 
+        "id": 4383597, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from application.app.folder.file import func_name\n"
+        ], 
+        "score": 201, 
+        "id": 21995949, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "PYTHONPATH\n", 
+          "export PYTHONPATH=$HOME/dirWithScripts/:$PYTHONPATH\n"
+        ], 
+        "score": 14, 
+        "id": 21878513, 
+        "rank": 2
+      }
+    ], 
+    "title": "Importing files from different folder in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 11801336, 
+    "id": 11801309, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import os  \nfor fn in os.listdir('.'):\n     if os.path.isfile(fn):\n        print (fn)\n"
+        ], 
+        "score": 71, 
+        "id": 11801338, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "log = open(os.path.join(root, f), 'r')\n"
+        ], 
+        "score": 21, 
+        "id": 11801336, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "source = '/home/test/py_test/'\nfor root, dirs, filenames in os.walk(source):\n    for f in filenames:\n        print f\n        fullpath = os.path.join(source, f)\n        log = open(fullpath, 'r')\n"
+        ], 
+        "score": 5, 
+        "id": 35114238, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to loop over files with Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 306417, 
+    "id": 306400, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import random\n\nfoo = ['a', 'b', 'c', 'd', 'e']\nprint(random.choice(foo))\n"
+        ], 
+        "score": 1499, 
+        "id": 306417, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "foo = ['a', 'b', 'c', 'd', 'e']\nfrom random import randrange\nrandom_index = randrange(0,len(foo))\nprint foo[random_index]\n"
+        ], 
+        "score": 65, 
+        "id": 12373205, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import random\ngroup_of_items = {1, 2, 3, 4}               # a sequence or set will work here.\nnum_to_select = 2                           # set the number to select here.\nlist_of_random_items = random.sample(group_of_items, num_to_select)\nfirst_random_item = list_of_random_items[0]\nsecond_random_item = list_of_random_items[1] \n"
+        ], 
+        "score": 38, 
+        "id": 30488952, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I randomly select an item from a list using Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 3996930, 
+    "id": 3996904, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from random import randint\nprint(randint(0,9))\n"
+        ], 
+        "score": 727, 
+        "id": 3996930, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import random\nprint(random.randint(0,9))\n", 
+          "random.randint(a, b)\n"
+        ], 
+        "score": 159, 
+        "id": 16376904, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "from random import randrange, uniform\n\n# randrange gives you an integral value\nirand = randrange(0, 10)\n\n# uniform gives you a floating-point value\nfrand = uniform(0, 10)\n"
+        ], 
+        "score": 51, 
+        "id": 3996919, 
+        "rank": 2
+      }
+    ], 
+    "title": "Generate random integers between 0 and 9"
+  }, 
+  {
+    "accepted_answer_post_id": 627453, 
+    "id": 627435, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "In [9]: a = range(10)\nIn [10]: a\nOut[10]: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]\nIn [11]: del a[-1]\nIn [12]: a\nOut[12]: [0, 1, 2, 3, 4, 5, 6, 7, 8]\n"
+        ], 
+        "score": 758, 
+        "id": 627453, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "a = ['a', 'b', 'c', 'd']\na.pop(1)\n\n# now a is ['a', 'c', 'd']\n", 
+          "a = ['a', 'b', 'c', 'd']\na.pop()\n\n# now a is ['a', 'b', 'c']\n"
+        ], 
+        "score": 310, 
+        "id": 627441, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> a = [  1, 2, 3, 4, 5, 6 ]\n>>> index = 3 # Only Positive index\n\n>>> a = a[:index] + a[index+1 :]\n# a is now [ 1, 2, 3, 5, 6 ]\n", 
+          "class foo(object):\n    def __init__(self, items):\n        self.items = items\n\n    def __getitem__(self, index):\n        return foo(self.items[index])\n\n    def __add__(self, right):\n        return foo( self.items + right.items )\n", 
+          "a = range(10)\nindex = 3\n", 
+          "def del_method():\n    global a\n    global index\n    del a[index]\n", 
+          " 10           0 LOAD_GLOBAL              0 (a)\n              3 LOAD_GLOBAL              1 (index)\n              6 DELETE_SUBSCR       # This is the line that deletes the item\n              7 LOAD_CONST               0 (None)\n             10 RETURN_VALUE        \nNone\n", 
+          "def pop_method():\n    global a\n    global index\n    a.pop(index)\n", 
+          " 17           0 LOAD_GLOBAL              0 (a)\n              3 LOAD_ATTR                1 (pop)\n              6 LOAD_GLOBAL              2 (index)\n              9 CALL_FUNCTION            1\n             12 POP_TOP             \n             13 LOAD_CONST               0 (None)\n             16 RETURN_VALUE        \n", 
+          "def slice_method():\n    global a\n    global index\n    a = a[:index] + a[index+1:]\n", 
+          " 24           0 LOAD_GLOBAL              0 (a)\n              3 LOAD_GLOBAL              1 (index)\n              6 SLICE+2             \n              7 LOAD_GLOBAL              0 (a)\n             10 LOAD_GLOBAL              1 (index)\n             13 LOAD_CONST               1 (1)\n             16 BINARY_ADD          \n             17 SLICE+1             \n             18 BINARY_ADD          \n             19 STORE_GLOBAL             0 (a)\n             22 LOAD_CONST               0 (None)\n             25 RETURN_VALUE        \nNone\n"
+        ], 
+        "score": 44, 
+        "id": 24352671, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to remove an element from a list by index in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 1774043, 
+    "id": 1773805, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "#!/usr/bin/env python\n\nimport yaml\n\nwith open(\"example.yaml\", 'r') as stream:\n    try:\n        print(yaml.load(stream))\n    except yaml.YAMLError as exc:\n        print(exc)\n"
+        ], 
+        "score": 327, 
+        "id": 1774043, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import ruamel.yaml as yaml\n\nwith open(\"example.yaml\") as stream:\n    try:\n        print(yaml.load(stream))\n    except yaml.YAMLError as exc:\n        print(exc)\n"
+        ], 
+        "score": 15, 
+        "id": 38922434, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "# -*- coding: utf-8 -*-\nimport yaml\nimport io\n\n# Define data\ndata = {'a list': [1, 42, 3.141, 1337, 'help', u'\u20ac'],\n        'a string': 'bla',\n        'another dict': {'foo': 'bar',\n                         'key': 'value',\n                         'the answer': 42}}\n\n# Write YAML file\nwith io.open('data.yaml', 'w', encoding='utf8') as outfile:\n    yaml.dump(data, outfile, default_flow_style=False, allow_unicode=True)\n\n# Read YAML file\nwith open(\"data.yaml\", 'r') as stream:\n    data_loaded = yaml.load(stream)\n\nprint(data == data_loaded)\n", 
+          "a list:\n- 1\n- 42\n- 3.141\n- 1337\n- help\n- \u20ac\na string: bla\nanother dict:\n  foo: bar\n  key: value\n  the answer: 42\n"
+        ], 
+        "score": 6, 
+        "id": 42054860, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I parse a YAML file in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 10406143, 
+    "id": 10406130, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> 3 not in [2, 3, 4]\nFalse\n>>> 3 not in [4, 5, 6]\nTrue\n", 
+          ">>> (2, 3) not in [(2, 3), (5, 6), (9, 1)]\nFalse\n>>> (2, 3) not in [(2, 7), (7, 3), \"hi\"]\nTrue\n"
+        ], 
+        "score": 191, 
+        "id": 10406143, 
+        "rank": 0
+      }
+    ], 
+    "title": "Check if something is not in a list in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 1185529, 
+    "id": 1185524, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "s = \"  \\t a string example\\t  \"\ns = s.strip()\n", 
+          "s = s.rstrip()\n", 
+          "s = s.lstrip()\n", 
+          "s = s.strip(' \\t\\n\\r')\n", 
+          "import re\nprint re.sub('[\\s+]', '', s)\n", 
+          "astringexample\n"
+        ], 
+        "score": 938, 
+        "id": 1185529, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "str.strip() #trim\nstr.lstrip() #ltrim\nstr.rstrip() #rtrim\n"
+        ], 
+        "score": 39, 
+        "id": 9326184, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "s = '   foo    \\t   '\nprint s.strip()\n", 
+          "import re\npat = re.compile(r'\\s+')\ns = '  \\t  foo   \\t   bar \\t  '\nprint pat.sub('', s)\n"
+        ], 
+        "score": 17, 
+        "id": 1185528, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to trim whitespace (including tabs)?"
+  }, 
+  {
+    "accepted_answer_post_id": 354130, 
+    "id": 354038, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> a = \"03523\"\n>>> a.isdigit()\nTrue\n>>> b = \"963spam\"\n>>> b.isdigit()\nFalse\n"
+        ], 
+        "score": 1086, 
+        "id": 354073, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 439, 
+        "id": 354130, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> float('NaN')\nnan\n"
+        ], 
+        "score": 50, 
+        "id": 3618897, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I check if a string is a number (float) in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 2600208, 
+    "id": 2600191, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> from collections import Counter\n>>> z = ['blue', 'red', 'blue', 'yellow', 'blue', 'red']\n>>> Counter(z)\nCounter({'blue': 3, 'red': 2, 'yellow': 1})\n"
+        ], 
+        "score": 937, 
+        "id": 5829377, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> [1, 2, 3, 4, 1, 4, 1].count(1)\n3\n"
+        ], 
+        "score": 852, 
+        "id": 2600208, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> l = [\"a\",\"b\",\"b\"]\n>>> l.count(\"a\")\n1\n>>> l.count(\"b\")\n2\n", 
+          "[[x,l.count(x)] for x in set(l)]\n", 
+          ">>> l = [\"a\",\"b\",\"b\"]\n>>> [[x,l.count(x)] for x in set(l)]\n[['a', 1], ['b', 2]]\n>>> dict((x,l.count(x)) for x in set(l))\n{'a': 1, 'b': 2}\n", 
+          "Counter(l)\n", 
+          ">>> l = [\"a\",\"b\",\"b\"]\n>>> from collections import Counter\n>>> Counter(l)\nCounter({'b': 2, 'a': 1})\n", 
+          "import timeit\n\nt1=timeit.Timer('Counter(l)', \\\n                'import random;import string;from collections import Counter;n=1000;l=[random.choice(string.ascii_letters) for x in xrange(n)]'\n                )\n\nt2=timeit.Timer('[[x,l.count(x)] for x in set(l)]',\n                'import random;import string;n=1000;l=[random.choice(string.ascii_letters) for x in xrange(n)]'\n                )\n\nprint \"Counter(): \", t1.repeat(repeat=3,number=10000)\nprint \"count():   \", t2.repeat(repeat=3,number=10000)\n", 
+          "Counter():  [6.360648187146579, 6.613881559699756, 6.392260466851987]\ncount():    [12.885062765334006, 13.045601897769359, 12.87746743077426]\n"
+        ], 
+        "score": 87, 
+        "id": 23909767, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I count the occurrences of a list item in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 4944929, 
+    "id": 4940032, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if 'blabla' in open('example.txt').read():\n    print \"true\"\n", 
+          "import mmap\nf = open('example.txt')\ns = mmap.mmap(f.fileno(), 0, access=mmap.ACCESS_READ)\nif s.find('blabla') != -1:\n    print 'true'\n", 
+          "#!/usr/bin/env python3\nimport mmap\n\nwith open('example.txt', 'rb', 0) as file, \\\n     mmap.mmap(file.fileno(), 0, access=mmap.ACCESS_READ) as s:\n    if s.find(b'blabla') != -1:\n        print('true')\n"
+        ], 
+        "score": 172, 
+        "id": 4944929, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "def check():\n        datafile = file('example.txt')\n        found = False #this isn't really necessary \n        for line in datafile:\n            if blabla in line:\n                #found = True #not necessary \n                return True\n        return False #because you finished the search without finding anything\n\n\nprint check()\n"
+        ], 
+        "score": 18, 
+        "id": 4940068, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "if True:\n    print \"true\"\n", 
+          "if check():\n    print \"true\"\nelse:\n    print \"false\"\n"
+        ], 
+        "score": 7, 
+        "id": 4940041, 
+        "rank": 2
+      }
+    ], 
+    "title": "Search for string in txt file Python"
+  }, 
+  {
+    "accepted_answer_post_id": 845081, 
+    "id": 845058, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "num_lines = sum(1 for line in open('myfile.txt'))\n"
+        ], 
+        "score": 348, 
+        "id": 1019572, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 179, 
+        "id": 845081, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "mapcount : 0.465599966049\nsimplecount : 0.756399965286\nbufcount : 0.546800041199\nopcount : 0.718600034714\n", 
+          "mapcount : 0.471799945831\nsimplecount : 0.634400033951\nbufcount : 0.468800067902\nopcount : 0.602999973297\n", 
+          "from __future__ import with_statement\nimport time\nimport mmap\nimport random\nfrom collections import defaultdict\n\ndef mapcount(filename):\n    f = open(filename, \"r+\")\n    buf = mmap.mmap(f.fileno(), 0)\n    lines = 0\n    readline = buf.readline\n    while readline():\n        lines += 1\n    return lines\n\ndef simplecount(filename):\n    lines = 0\n    for line in open(filename):\n        lines += 1\n    return lines\n\ndef bufcount(filename):\n    f = open(filename)                  \n    lines = 0\n    buf_size = 1024 * 1024\n    read_f = f.read # loop optimization\n\n    buf = read_f(buf_size)\n    while buf:\n        lines += buf.count('\\n')\n        buf = read_f(buf_size)\n\n    return lines\n\ndef opcount(fname):\n    with open(fname) as f:\n        for i, l in enumerate(f):\n            pass\n    return i + 1\n\n\ncounts = defaultdict(list)\n\nfor i in range(5):\n    for func in [mapcount, simplecount, bufcount, opcount]:\n        start_time = time.time()\n        assert func(\"big_file.txt\") == 1209138\n        counts[func].append(time.time() - start_time)\n\nfor key, vals in counts.items():\n    print key.__name__, \":\", sum(vals) / float(len(vals))\n"
+        ], 
+        "score": 155, 
+        "id": 850962, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get line count cheaply in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 6416142, 
+    "id": 6416131, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "default_data['item3'] = 3\n", 
+          "default_data.update({'item3': 3})\n"
+        ], 
+        "score": 503, 
+        "id": 6416142, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "default_data['item3'] = 3\n", 
+          "default_data.update({'item4': 4, 'item5': 5})\n"
+        ], 
+        "score": 37, 
+        "id": 6416157, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> class Dict(dict):\n...     def __add__(self, other):\n...         copy = self.copy()\n...         copy.update(other)\n...         return copy\n...     def __radd__(self, other):\n...         copy = other.copy()\n...         copy.update(self)\n...         return copy\n... \n>>> default_data = Dict({'item1': 1, 'item2': 2})\n>>> default_data + {'item3': 3}\n{'item2': 2, 'item3': 3, 'item1': 1}\n>>> {'test1': 1} + Dict(test2=2)\n{'test1': 1, 'test2': 2}\n"
+        ], 
+        "score": 15, 
+        "id": 6416471, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python add new item to dictionary"
+  }, 
+  {
+    "accepted_answer_post_id": 53522, 
+    "id": 53513, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if not a:\n  print(\"List is empty\")\n"
+        ], 
+        "score": 2443, 
+        "id": 53522, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 581, 
+        "id": 53752, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "if len(li) == 0:\n    print 'the list is empty'\n"
+        ], 
+        "score": 274, 
+        "id": 7302987, 
+        "rank": 2
+      }
+    ], 
+    "title": "Best way to check if a list is empty"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 849674, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import thread, time\n\ndef myfunction(mystring,*args):\n    print mystring\n\n\nif __name__ == '__main__':\n\n    try:\n\n        thread.start_new_thread(myfunction,('MyStringHere',1))\n\n    except Exception, errtxt:\n        print errtxt\n\n    time.sleep(5)\n", 
+          "from threading import Thread\n\ndef myfunction(mystring,*args):\n    print mystring\n\n\nif __name__ == '__main__':\n\n    try:\n        Thread(target=myfunction, args=('MyStringHere',1)).start()\n    except Exception, errtxt:\n        print errtxt\n"
+        ], 
+        "score": 22, 
+        "id": 849759, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from threading import Thread\n\ndef myfunction(mystring,*args):\n    print mystring\n\nif __name__ == '__main__':\n\n    try:\n        t = Thread(None,myfunction,None,('MyStringHere',1))\n        t.start()\n        t.join()\n    except Exception as errtxt:\n        print errtxt\n"
+        ], 
+        "score": 14, 
+        "id": 849896, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import thread\n\ndef myfunction(mystring,*args):\n    print mystring\n\nif __name__ == '__main__':\n\n    try:\n\n        thread.start_new_thread(myfunction,('MyStringHere',1))\n\n    except Exception as errtxt:\n        print errtxt\n\nwhile 1:\n    pass\n"
+        ], 
+        "score": 0, 
+        "id": 20633107, 
+        "rank": 2
+      }
+    ], 
+    "title": "Simple threading in Python 2.6 using thread.start_new_thread()"
+  }, 
+  {
+    "accepted_answer_post_id": 8270146, 
+    "id": 8270092, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "sentence = ' hello  apple'\nsentence.strip()\n>>> 'hello  apple'\n", 
+          "sentence = ' hello  apple'\nsentence.replace(\" \", \"\")\n>>> 'helloapple'\n", 
+          "sentence = ' hello  apple'\n\" \".join(sentence.split())\n>>> 'hello apple'\n"
+        ], 
+        "score": 638, 
+        "id": 8270146, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "sentence = sentence.replace(' ', '')\n", 
+          "sentence = ''.join(sentence.split())\n", 
+          "import re\npattern = re.compile(r'\\s+')\nsentence = re.sub(pattern, '', sentence)\n", 
+          "sentence = sentence.strip()\n"
+        ], 
+        "score": 135, 
+        "id": 8270124, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "sentence = re.sub(r\"\\s+\", \"\", sentence, flags=re.UNICODE)\n"
+        ], 
+        "score": 21, 
+        "id": 28607213, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python remove all whitespace in a string"
+  }, 
+  {
+    "accepted_answer_post_id": 227472, 
+    "id": 227459, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> ord('a')\n97\n>>> chr(97)\n'a'\n>>> chr(ord('a') + 3)\n'd'\n>>>\n", 
+          ">>> unichr(97)\nu'a'\n>>> unichr(1234)\nu'\\u04d2'\n"
+        ], 
+        "score": 719, 
+        "id": 227472, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> ord(u'\u3042')\n12354\n"
+        ], 
+        "score": 115, 
+        "id": 227889, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "ord()\n"
+        ], 
+        "score": 34, 
+        "id": 227466, 
+        "rank": 2
+      }
+    ], 
+    "title": "ASCII value of a character in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 931095, 
+    "id": 931092, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> 'hello world'[::-1]\n'dlrow olleh'\n"
+        ], 
+        "score": 1624, 
+        "id": 931095, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 156, 
+        "id": 931099, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "string[subscript]\n", 
+          "    string[start:stop:step]\n", 
+          "    slice_obj = slice(start, stop, step)\n    string[slice_obj]\n", 
+          "def reverse_string_readable_answer(string):\n    return ''.join(reversed(string))\n", 
+          "'foo'[::-1]\n", 
+          "start = stop = None\nstep = -1\nreverse_slice = slice(start, stop, step)\n'foo'[reverse_slice]\n", 
+          "def reversed_string(a_string):\n    return a_string[::-1]\n", 
+          "reversed_string('foo')\n", 
+          "def reverse_a_string_slowly(a_string):\n    new_string = ''\n    index = len(a_string)\n    while index:\n        index -= 1                    # index = index - 1\n        new_string += a_string[index] # new_string = new_string + character\n    return new_string\n", 
+          "def reverse_a_string_more_slowly(a_string):\n    new_strings = []\n    index = len(a_string)\n    while index:\n        index -= 1                       \n        new_strings.append(a_string[index])\n    return ''.join(new_strings)\n", 
+          ">>> a_string = 'amanaplanacanalpanama' * 10\n>>> min(timeit.repeat(lambda: reverse_string_readable_answer(a_string)))\n10.38789987564087\n>>> min(timeit.repeat(lambda: reversed_string(a_string)))\n0.6622700691223145\n>>> min(timeit.repeat(lambda: reverse_a_string_slowly(a_string)))\n25.756799936294556\n>>> min(timeit.repeat(lambda: reverse_a_string_more_slowly(a_string)))\n38.73570013046265\n"
+        ], 
+        "score": 56, 
+        "id": 27843760, 
+        "rank": 2
+      }
+    ], 
+    "title": "Reverse a string in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 415519, 
+    "id": 415511, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> import datetime\n>>> datetime.datetime.now()\ndatetime(2009, 1, 6, 15, 8, 24, 78915)\n", 
+          ">>> datetime.datetime.time(datetime.datetime.now())\ndatetime.time(15, 8, 24, 78915)\n", 
+          ">>> datetime.datetime.now().time()\n", 
+          ">>> from datetime import datetime\n"
+        ], 
+        "score": 1183, 
+        "id": 415519, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> from time import gmtime, strftime\n>>> strftime(\"%Y-%m-%d %H:%M:%S\", gmtime())\n'2009-01-05 22:14:39'\n"
+        ], 
+        "score": 492, 
+        "id": 415525, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> from datetime import datetime\n>>> str(datetime.now())\n'2011-05-03 17:45:35.177000'\n"
+        ], 
+        "score": 225, 
+        "id": 5877368, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get current time in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 14043939, 
+    "id": 14043934, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> import datetime\n>>> t = datetime.datetime.now()\n>>> t - datetime.timedelta(hours=1, minutes=10)\ndatetime.datetime(2012, 12, 26, 17, 18, 52, 167840)\n", 
+          ">>> t = datetime.time(1, 2)\n>>> dt = datetime.datetime.combine(datetime.date.today(), t)\n>>> dt\ndatetime.datetime(2012, 12, 26, 1, 2)\n>>> dt -= datetime.timedelta(hours=5)\n>>> dt.time()\ndatetime.time(20, 2)\n"
+        ], 
+        "score": 21, 
+        "id": 14043939, 
+        "rank": 0
+      }
+    ], 
+    "title": "python time offset"
+  }, 
+  {
+    "accepted_answer_post_id": 3940144, 
+    "id": 3940128, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> L = [0,10,20,40]\n>>> L[::-1]\n[40, 20, 10, 0]\n"
+        ], 
+        "score": 679, 
+        "id": 3940137, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> array=[0,10,20,40]\n>>> for i in reversed(array):\n...     print i\n"
+        ], 
+        "score": 491, 
+        "id": 3940144, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> L = [0,10,20,40]\n>>> L.reverse()\n>>> L\n[40, 20, 10, 0]\n", 
+          ">>> L[::-1]\n[40, 20, 10, 0]\n"
+        ], 
+        "score": 181, 
+        "id": 3940149, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I reverse a list in python?"
+  }, 
+  {
+    "accepted_answer_post_id": 1949360, 
+    "id": 1949318, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> print urllib.urlopen(\"http://www.stackoverflow.com\").getcode()\n>>> 200\n"
+        ], 
+        "score": 45, 
+        "id": 1949360, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import httplib\nconn = httplib.HTTPConnection(\"www.python.org\")\nconn.request(\"HEAD\", \"/\")\nr1 = conn.getresponse()\nprint r1.status, r1.reason\n", 
+          "200 OK\n"
+        ], 
+        "score": 7, 
+        "id": 1949393, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import requests\n\ndef url_ok(url):\n    r = requests.head(url)\n    return r.status_code == 200\n"
+        ], 
+        "score": 5, 
+        "id": 15743618, 
+        "rank": 2
+      }
+    ], 
+    "title": "Checking if a website is up via Python"
+  }, 
+  {
+    "accepted_answer_post_id": 24065533, 
+    "id": 2052390, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "raise ValueError('A very specific bad thing happened')\n", 
+          "raise Exception('I know Python!') # don't, if you catch, likely to hide bugs.\n", 
+          "def demo_bad_catch():\n    try:\n        raise ValueError('represents a hidden bug, do not catch this')\n        raise Exception('This is the exception you expect to handle')\n    except Exception as error:\n        print('caught this error: ' + repr(error))\n\n>>> demo_bad_catch()\ncaught this error: ValueError('represents a hidden bug, do not catch this',)\n", 
+          "def demo_no_catch():\n    try:\n        raise Exception('general exceptions not caught by specific handling')\n    except ValueError as e:\n        print('we will not catch e')\n\n\n>>> demo_no_catch()\nTraceback (most recent call last):\n  File \"<stdin>\", line 1, in <module>\n  File \"<stdin>\", line 3, in demo_no_catch\nException: general exceptions not caught by specific handling\n", 
+          "raise ValueError('A very specific bad thing happened')\n", 
+          "raise ValueError('A very specific bad thing happened', 'foo', 'bar', 'baz') \n", 
+          "try:\n    some_code_that_may_raise_our_value_error()\nexcept ValueError as err:\n    print(err.args)\n", 
+          "('message', 'foo', 'bar', 'baz')    \n", 
+          "try:\n    do_something_in_app_that_breaks_easily()\nexcept AppError as error:\n    logger.error(error)\n    raise                 # just this!\n    # raise AppError      # Don't do this, you'll lose the stack trace!\n", 
+          "    raise AppError, error, sys.exc_info()[2] # avoid this.\n    # Equivalently, as error *is* the second object:\n    raise sys.exc_info()[0], sys.exc_info()[1], sys.exc_info()[2]\n", 
+          "    raise error.with_traceback(sys.exc_info()[2])\n", 
+          "    raise RuntimeError('specific message') from error\n", 
+          "raise ValueError, 'message' # Don't do this, it's deprecated!\n", 
+          "raise 'message' # really really wrong. don't do this.\n", 
+          "def api_func(foo):\n    '''foo should be either 'baz' or 'bar'. returns something very useful.'''\n    if foo not in _ALLOWED_ARGS:\n        raise ValueError('{foo} wrong, use \"baz\" or \"bar\"'.format(foo=repr(foo)))\n", 
+          "class MyAppLookupError(LookupError):\n    '''raise this when there's a lookup error for my app'''\n", 
+          "if important_key not in resource_dict and not ok_to_be_missing:\n    raise MyAppLookupError('resource is missing, and that is not ok.')\n"
+        ], 
+        "score": 829, 
+        "id": 24065533, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "raise Exception(\"I know python!\")\n"
+        ], 
+        "score": 568, 
+        "id": 2052396, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "if 0 < distance <= RADIUS:\n    #Do something.\nelif RADIUS < distance:\n    #Do something.\nelse:\n    raise AssertionError(\"Unexpected value of 'distance'!\", distance)\n"
+        ], 
+        "score": 15, 
+        "id": 30317038, 
+        "rank": 2
+      }
+    ], 
+    "title": "Manually raising (throwing) an exception in Python"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 2331943, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "try:\n    import json\nexcept ImportError:\n    import simplejson as json\n"
+        ], 
+        "score": 23, 
+        "id": 2331958, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import urllib2\nimport json\n\nu = urllib2.urlopen('http://www.reddit.com/.json')\nprint json.load(u)\nu.close()\n"
+        ], 
+        "score": 13, 
+        "id": 2331967, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 0, 
+        "id": 2331962, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to decode JSON with Python"
+  }, 
+  {
+    "accepted_answer_post_id": 273227, 
+    "id": 273192, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if not os.path.exists(directory):\n    os.makedirs(directory)\n"
+        ], 
+        "score": 2100, 
+        "id": 273227, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import os\nimport errno\n\ndef make_sure_path_exists(path):\n    try:\n        os.makedirs(path)\n    except OSError as exception:\n        if exception.errno != errno.EEXIST:\n            raise\n"
+        ], 
+        "score": 437, 
+        "id": 5032238, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "try: \n    os.makedirs(path)\nexcept OSError:\n    if not os.path.isdir(path):\n        raise\n", 
+          "import distutils.dir_util\ndistutils.dir_util.mkpath(path)\n", 
+          "os.makedirs(path, exist_ok=True)\n"
+        ], 
+        "score": 342, 
+        "id": 14364249, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to check if a directory exists and create it if necessary?"
+  }, 
+  {
+    "accepted_answer_post_id": 14931808, 
+    "id": 14931769, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import itertools\nlst = list(itertools.product([0, 1], repeat=3))\n", 
+          "n = 3\nlst = list(itertools.product([0, 1], repeat=n))\n", 
+          "lst = map(list, itertools.product([0, 1], repeat=n))\n", 
+          "lst = list(map(list, itertools.product([0, 1], repeat=n)))\n# OR\nlst = [list(i) for i in itertools.product([0, 1], repeat=n)]\n"
+        ], 
+        "score": 23, 
+        "id": 14931808, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "def per(n):\n    for i in range(1<<n):\n        s=bin(i)[2:]\n        s='0'*(n-len(s))+s\n        print map(int,list(s))\nper(3)\n", 
+          "[0, 0, 0]\n[0, 0, 1]\n[0, 1, 0]\n[0, 1, 1]\n[1, 0, 0]\n[1, 0, 1]\n[1, 1, 0]\n[1, 1, 1]\n"
+        ], 
+        "score": 2, 
+        "id": 14932354, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "bin = [0,1]\n[ (x,y,z) for x in bin for y in bin for z in bin ]\n"
+        ], 
+        "score": 1, 
+        "id": 14931812, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to get all combination of n binary value?"
+  }, 
+  {
+    "accepted_answer_post_id": 3519314, 
+    "id": 3518778, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from numpy import genfromtxt\nmy_data = genfromtxt('my_file.csv', delimiter=',')\n"
+        ], 
+        "score": 292, 
+        "id": 3519314, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import pandas as pd\ndf=pd.read_csv('myfile.csv', sep=',',header=None)\ndf.values\narray([[ 1. ,  2. ,  3. ],\n       [ 4. ,  5.5,  6. ]])\n", 
+          "1.0, 2, 3\n4, 5.5, 6\n\nimport numpy as np\nnp.genfromtxt('myfile.csv',delimiter=',')\n", 
+          "array([[ 1. ,  2. ,  3. ],\n       [ 4. ,  5.5,  6. ]])\n", 
+          "np.genfromtxt('myfile.csv',delimiter=',',dtype=None)\n", 
+          "array([(1.0, 2.0, 3), (4.0, 5.5, 6)], \n      dtype=[('f0', '<f8'), ('f1', '<f8'), ('f2', '<i4')])\n"
+        ], 
+        "score": 72, 
+        "id": 26296194, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 57, 
+        "id": 4724179, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to read csv into record array in numpy?"
+  }, 
+  {
+    "accepted_answer_post_id": 4020824, 
+    "id": 4020539, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> myString = \"spam\\\\neggs\"\n>>> decoded_string = bytes(myString, \"utf-8\").decode(\"unicode_escape\") # python3 \n>>> decoded_string = myString.decode('string_escape') # python2\n>>> print(decoded_string)\nspam\neggs\n"
+        ], 
+        "score": 80, 
+        "id": 4020824, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> s = 'na\u00efve \\\\t test'\n>>> print(s.encode('utf-8').decode('unicode_escape'))\nna\u00c3\u00afve   test\n", 
+          ">>> import codecs\n>>> print(codecs.decode(s, 'unicode_escape'))\nna\u00c3\u00afve   test\n", 
+          ">>> print(s.encode('latin-1').decode('unicode_escape'))\nna\u00efve    test\n", 
+          ">>> print('Ern\u0151 \\\\t Rubik'.encode('latin-1').decode('unicode_escape'))\nUnicodeEncodeError: 'latin-1' codec can't encode character '\\u0151'\nin position 3: ordinal not in range(256)\n", 
+          "import re\nimport codecs\n\nESCAPE_SEQUENCE_RE = re.compile(r'''\n    ( \\\\U........      # 8-digit hex escapes\n    | \\\\u....          # 4-digit hex escapes\n    | \\\\x..            # 2-digit hex escapes\n    | \\\\[0-7]{1,3}     # Octal escapes\n    | \\\\N\\{[^}]+\\}     # Unicode characters by name\n    | \\\\[\\\\'\"abfnrtv]  # Single-character escapes\n    )''', re.UNICODE | re.VERBOSE)\n\ndef decode_escapes(s):\n    def decode_match(match):\n        return codecs.decode(match.group(0), 'unicode-escape')\n\n    return ESCAPE_SEQUENCE_RE.sub(decode_match, s)\n", 
+          ">>> print(decode_escapes('Ern\u0151 \\\\t Rubik'))\nErn\u0151     Rubik\n"
+        ], 
+        "score": 53, 
+        "id": 24519338, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> import codecs\n>>> myString = \"spam\\\\neggs\"\n>>> print(codecs.escape_decode(bytes(myString, \"utf-8\"))[0].decode(\"utf-8\"))\nspam\neggs\n>>> myString = \"na\u00efve \\\\t test\"\n>>> print(codecs.escape_decode(bytes(myString, \"utf-8\"))[0].decode(\"utf-8\"))\nna\u00efve    test\n"
+        ], 
+        "score": 6, 
+        "id": 37059682, 
+        "rank": 2
+      }
+    ], 
+    "title": "Process escape sequences in a string in Python"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 21129020, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "as3:/usr/local/lib/python2.7/site-packages# cat sitecustomize.py\n# encoding=utf8  \nimport sys  \n\nreload(sys)  \nsys.setdefaultencoding('utf8')\n", 
+          "as3:~/ngokevin-site# python\nPython 2.7.6 (default, Dec  6 2013, 14:49:02)\n[GCC 4.4.5] on linux2\nType \"help\", \"copyright\", \"credits\" or \"license\" for more information.\n>>> import sys\n>>> reload(sys)\n<module 'sys' (built-in)>\n>>> sys.getdefaultencoding()\n'utf8'\n>>>\n"
+        ], 
+        "score": 282, 
+        "id": 21190382, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> my_u = u'my \u00fcnic\u00f4d\u00e9 str\u012fng'\n>>> type(my_u)\n<type 'unicode'>\n", 
+          "unicode('\u20ac')                       # explicit conversion without encoding\nu\"The currency is: {}\".format('\u20ac') # new style format string into Unicode string - Python will try to convert value string to Unicode first\nu'The currency is: %s' % '\u20ac'       # old style format string into Unicode string - Python will try to convert value string to Unicode first\nu'The currency is: ' + '\u20ac'         # append string to Unicode - Python will try to convert string to Unicode first\n", 
+          "u'Z\u00fcrich'\n", 
+          "# encoding: utf-8\n", 
+          "with io.open(\"my_utf8_file.txt\", \"r\", encoding=\"utf-8\") as my_file:\n     my_unicode_string = my_file.read() \n", 
+          "charset='utf8',\nuse_unicode=True\n", 
+          "psycopg2.extensions.register_type(psycopg2.extensions.UNICODE)\npsycopg2.extensions.register_type(psycopg2.extensions.UNICODEARRAY)\n"
+        ], 
+        "score": 142, 
+        "id": 35444608, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "source = unicode(source, 'utf-8')\n"
+        ], 
+        "score": 85, 
+        "id": 21129492, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to fix: \"UnicodeDecodeError: 'ascii' codec can't decode byte\""
+  }, 
+  {
+    "accepted_answer_post_id": 1857, 
+    "id": 1854, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> import os\n>>> print os.name\nposix\n>>> import platform\n>>> platform.system()\n'Linux'\n>>> platform.release()\n'2.6.22-15-generic'\n"
+        ], 
+        "score": 391, 
+        "id": 1857, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import os\n>>> os.name\n'nt'\n>>> import platform\n>>> platform.system()\n'Windows'\n>>> platform.release()\n'Vista'\n", 
+          ">>> import os\n>>> os.name\n'nt'\n>>> import platform\n>>> platform.system()\n'Windows'\n>>> platform.release()\n'10'\n"
+        ], 
+        "score": 122, 
+        "id": 1871, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> import os\n>>> os.name\n'posix'\n>>> import platform\n>>> platform.system()\n'Darwin'\n>>> platform.release()\n'8.11.1'\n"
+        ], 
+        "score": 95, 
+        "id": 1879, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python: What OS am I running on?"
+  }, 
+  {
+    "accepted_answer_post_id": 613218, 
+    "id": 613183, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import operator\nx = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}\nsorted_x = sorted(x.items(), key=operator.itemgetter(1))\n", 
+          "import operator\nx = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}\nsorted_x = sorted(x.items(), key=operator.itemgetter(0))\n"
+        ], 
+        "score": 2329, 
+        "id": 613218, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "d = defaultdict(int)\nfor w in text.split():\n  d[w] += 1\n", 
+          "for w in sorted(d, key=d.get, reverse=True):\n  print w, d[w]\n"
+        ], 
+        "score": 670, 
+        "id": 3177911, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 375, 
+        "id": 2258273, 
+        "rank": 2
+      }
+    ], 
+    "title": "Sort a Python dictionary by value"
+  }, 
+  {
+    "accepted_answer_post_id": 31818069, 
+    "id": 31818050, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "int(round(x))\n", 
+          "h = int(round(h))\n"
+        ], 
+        "score": 81, 
+        "id": 31818069, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> round(32.268907563, 3)\n32.269\n"
+        ], 
+        "score": 5, 
+        "id": 38115077, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> round(1.0005,3)\n1.0\n>>> round(2.0005,3)\n2.001\n>>> round(3.0005,3)\n3.001\n>>> round(4.0005,3)\n4.0\n>>> round(1.005,2)\n1.0\n>>> round(5.005,2)\n5.0\n>>> round(6.005,2)\n6.0\n>>> round(7.005,2)\n7.0\n>>> round(3.005,2)\n3.0\n>>> round(8.005,2)\n8.01\n", 
+          ">>> round(0.075,2)\n\n0.07\n\n>>> round(0.075+10**(-2*5),2)\n\n0.08\n", 
+          "def roundTraditional(val,digits):\n   return round(val+10**(-len(str(val))-1))\n"
+        ], 
+        "score": 2, 
+        "id": 38239574, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python 2.7: round number to nearest integer"
+  }, 
+  {
+    "accepted_answer_post_id": 3501408, 
+    "id": 3501382, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "isinstance( <var>, int )\n", 
+          "isinstance( <var>, ( int, long ) )\n", 
+          "class Spam( int ): pass\nx = Spam( 0 )\ntype( x ) == int # False\nisinstance( x, int ) # True\n", 
+          "try:\n    x += 1\nexcept TypeError:\n    ...\n"
+        ], 
+        "score": 484, 
+        "id": 3501408, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "for index in range(y): \n    # do something\n    if (index/x.).is_integer():\n        # do something special\n", 
+          ">>> float(5).is_integer()\nTrue\n>>> float(5.1).is_integer()\nFalse\n>>> float(5.0).is_integer()\nTrue\n", 
+          "def is_int(val):\n    if type(val) == int:\n        return True\n    else:\n        if val.is_integer():\n            return True\n        else:\n            return False\n"
+        ], 
+        "score": 41, 
+        "id": 9266979, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> import numbers\n>>> isinstance(3, numbers.Integral)\nTrue\n"
+        ], 
+        "score": 35, 
+        "id": 3646519, 
+        "rank": 2
+      }
+    ], 
+    "title": "Checking whether a variable is an integer or not"
+  }, 
+  {
+    "accepted_answer_post_id": 89243, 
+    "id": 89228, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from subprocess import call\ncall([\"ls\", \"-l\"])\n"
+        ], 
+        "score": 2242, 
+        "id": 89243, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "os.system(\"some_command < input_file | another_command > output_file\")  \n", 
+          "print subprocess.Popen(\"echo Hello World\", shell=True, stdout=subprocess.PIPE).stdout.read()\n", 
+          "print os.popen(\"echo Hello World\").read()\n", 
+          "return_code = subprocess.call(\"echo Hello World\", shell=True)  \n", 
+          "print subprocess.Popen(\"echo %s \" % user_input, stdout=PIPE).stdout.read()\n"
+        ], 
+        "score": 1912, 
+        "id": 92395, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import subprocess\n\np = subprocess.Popen('ls', shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)\nfor line in p.stdout.readlines():\n    print line,\nretval = p.wait()\n"
+        ], 
+        "score": 156, 
+        "id": 95246, 
+        "rank": 2
+      }
+    ], 
+    "title": "Calling an external command in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 493399, 
+    "id": 493386, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import sys\nsys.stdout.write('.')\n", 
+          "sys.stdout.flush()\n", 
+          "from __future__ import print_function\n", 
+          "print('.', end=\"\")\n", 
+          "print('.', end=\"\", flush=True)\n"
+        ], 
+        "score": 1156, 
+        "id": 493399, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> for i in range(10):\n...     print i,\n... else:\n...     print\n...\n0 1 2 3 4 5 6 7 8 9\n>>> \n"
+        ], 
+        "score": 169, 
+        "id": 11685717, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> strings = [ \"one\", \"two\", \"three\" ]\n>>>\n>>> for i in xrange(3):\n...     print \"Item %d: %s\" % (i, strings[i])\n...\nItem 0: one\nItem 1: two\nItem 2: three\n", 
+          ">>> print \".\" * 10\n..........\n"
+        ], 
+        "score": 149, 
+        "id": 493500, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to print in Python without newline or space?"
+  }, 
+  {
+    "accepted_answer_post_id": 311655, 
+    "id": 311627, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "for date in mylist :\n    print str(date)\n", 
+          "import datetime\nmylist = []\ntoday = datetime.date.today()\nmylist.append(today)\nprint mylist[0] # print the date object, not the container ;-)\n2008-11-22\n\n# It's better to always use str() because :\n\nprint \"This is a new day : \", mylist[0] # will work\nThis is a new day : 2008-11-22\n\nprint \"This is a new day : \" + mylist[0] # will crash\ncannot concatenate 'str' and 'datetime.date' objects\n\nprint \"This is a new day : \" + str(mylist[0]) \nThis is a new day : 2008-11-22\n", 
+          "print today.strftime('We are the %d, %b %Y')\n'We are the 22, Nov 2008'\n", 
+          "print \"We are the {:%d, %b %Y}\".format(today)\n'We are the 22, Nov 2008'\n"
+        ], 
+        "score": 508, 
+        "id": 311655, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import datetime\nprint datetime.datetime.now().strftime(\"%Y-%m-%d %H:%M\")\n", 
+          "import time\nprint time.strftime(\"%Y-%m-%d %H:%M\")\n"
+        ], 
+        "score": 130, 
+        "id": 14320620, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "    %a  Locale\u2019s abbreviated weekday name.\n    %A  Locale\u2019s full weekday name.      \n    %b  Locale\u2019s abbreviated month name.     \n    %B  Locale\u2019s full month name.\n    %c  Locale\u2019s appropriate date and time representation.   \n    %d  Day of the month as a decimal number [01,31].    \n    %f  Microsecond as a decimal number [0,999999], zero-padded on the left\n    %H  Hour (24-hour clock) as a decimal number [00,23].    \n    %I  Hour (12-hour clock) as a decimal number [01,12].    \n    %j  Day of the year as a decimal number [001,366].   \n    %m  Month as a decimal number [01,12].   \n    %M  Minute as a decimal number [00,59].      \n    %p  Locale\u2019s equivalent of either AM or PM.\n    %S  Second as a decimal number [00,61].\n    %U  Week number of the year (Sunday as the first day of the week)\n    %w  Weekday as a decimal number [0(Sunday),6].   \n    %W  Week number of the year (Monday as the first day of the week)\n    %x  Locale\u2019s appropriate date representation.    \n    %X  Locale\u2019s appropriate time representation.    \n    %y  Year without century as a decimal number [00,99].    \n    %Y  Year with century as a decimal number.   \n    %z  UTC offset in the form +HHMM or -HHMM.\n    %Z  Time zone name (empty string if the object is naive).    \n    %%  A literal '%' character.\n", 
+          "    import time\n    import datetime\n\n    print \"Time in seconds since the epoch: %s\" %time.time()\n    print \"Current date and time: \" , datetime.datetime.now()\n    print \"Or like this: \" ,datetime.datetime.now().strftime(\"%y-%m-%d-%H-%M\")\n\n\n    print \"Current year: \", datetime.date.today().strftime(\"%Y\")\n    print \"Month of year: \", datetime.date.today().strftime(\"%B\")\n    print \"Week number of the year: \", datetime.date.today().strftime(\"%W\")\n    print \"Weekday of the week: \", datetime.date.today().strftime(\"%w\")\n    print \"Day of year: \", datetime.date.today().strftime(\"%j\")\n    print \"Day of the month : \", datetime.date.today().strftime(\"%d\")\n    print \"Day of week: \", datetime.date.today().strftime(\"%A\")\n", 
+          "    Time in seconds since the epoch:    1349271346.46\n    Current date and time:              2012-10-03 15:35:46.461491\n    Or like this:                       12-10-03-15-35\n    Current year:                       2012\n    Month of year:                      October\n    Week number of the year:            40\n    Weekday of the week:                3\n    Day of year:                        277\n    Day of the month :                  03\n    Day of week:                        Wednesday\n"
+        ], 
+        "score": 62, 
+        "id": 18944849, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to print date in a regular format in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 1024851, 
+    "id": 1024847, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> d = {'key':'value'}\n>>> print d\n{'key': 'value'}\n>>> d['mynewkey'] = 'mynewvalue'\n>>> print d\n{'mynewkey': 'mynewvalue', 'key': 'value'}\n"
+        ], 
+        "score": 1633, 
+        "id": 1024851, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> x = {1:2}\n>>> print x\n{1: 2}\n\n>>> x.update({3:4})\n>>> print x\n{1: 2, 3: 4}\n"
+        ], 
+        "score": 667, 
+        "id": 1165836, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "### Making a dictionary ###\n\ndata = {}\n# OR\ndata = dict()\n\n### Initially adding values ###\n\ndata = {'a':1,'b':2,'c':3}\n# OR\ndata = dict(a=1, b=2, c=3)\n\n### Inserting/Updating value ###\n\ndata['a']=1  # updates if 'a' exists, else adds 'a'\n# OR\ndata.update({'a':1})\n# OR\ndata.update(dict(a=1))\n# OR\ndata.update(a=1)\n\n### Merging 2 dictionaries ###\n\ndata.update(data2)  # Where data2 is also a dict.\n\n### Deleting items in dictionary ###\n\ndel data[key] #Remove specific element in a dictionary\ndata.pop(key) #Removes the key & returns the value\ndata.clear() #Clear entire dictionary\n"
+        ], 
+        "score": 272, 
+        "id": 8381589, 
+        "rank": 2
+      }
+    ], 
+    "title": "Add key to a dictionary in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 120701, 
+    "id": 120656, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import os\n\nfor dirname, dirnames, filenames in os.walk('.'):\n    # print path to all subdirectories first.\n    for subdirname in dirnames:\n        print(os.path.join(dirname, subdirname))\n\n    # print path to all filenames.\n    for filename in filenames:\n        print(os.path.join(dirname, filename))\n\n    # Advanced usage:\n    # editing the 'dirnames' list will stop os.walk() from recursing into there.\n    if '.git' in dirnames:\n        # don't go into any .git directories.\n        dirnames.remove('.git')\n"
+        ], 
+        "score": 505, 
+        "id": 120701, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "os.listdir(path)\n"
+        ], 
+        "score": 373, 
+        "id": 120676, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import os\n\nfor filename in os.listdir(\"C:\\\\temp\"):\n    print  filename\n"
+        ], 
+        "score": 74, 
+        "id": 120692, 
+        "rank": 2
+      }
+    ], 
+    "title": "Directory listing in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 1823101, 
+    "id": 1823058, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "\"{:,}\".format(value)\n"
+        ], 
+        "score": 959, 
+        "id": 10742904, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import locale\n>>> locale.setlocale(locale.LC_ALL, 'en_US')\n'en_US'\n>>> locale.format(\"%d\", 1255000, grouping=True)\n'1,255,000'\n", 
+          "def intWithCommas(x):\n    if type(x) not in [type(0), type(0L)]:\n        raise TypeError(\"Parameter must be an integer.\")\n    if x < 0:\n        return '-' + intWithCommas(-x)\n    result = ''\n    while x >= 1000:\n        x, r = divmod(x, 1000)\n        result = \",%03d%s\" % (r, result)\n    return \"%d%s\" % (x, result)\n"
+        ], 
+        "score": 214, 
+        "id": 1823101, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "def group(number):\n    s = '%d' % number\n    groups = []\n    while s and s[-1].isdigit():\n        groups.append(s[-3:])\n        s = s[:-3]\n    return s + ','.join(reversed(groups))\n\n>>> group(-23432432434.34)\n'-23,432,432,434'\n", 
+          ">>> '{:20,.2f}'.format(f)\n'18,446,744,073,709,551,616.00'\n", 
+          ">>> format(1234567, ',d')\n'1,234,567'\n"
+        ], 
+        "score": 81, 
+        "id": 1823189, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to print number with commas as thousands separators?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 2150739, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import datetime\ndatetime.datetime.now().isoformat()\n", 
+          "import datetime\ndatetime.datetime.utcnow().isoformat()\n"
+        ], 
+        "score": 86, 
+        "id": 28147286, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "datetime.isoformat([sep])\n\nReturn a string representing the date and time in ISO 8601 format, YYYY-MM-DDTHH:MM:SS.mmmmmm or, if microsecond is 0, YYYY-MM-DDTHH:MM:SS\n\nIf utcoffset() does not return None, a 6-character string is appended, giving the UTC offset in (signed) hours and minutes: YYYY-MM-DDTHH:MM:SS.mmmmmm+HH:MM or, if microsecond is 0 YYYY-MM-DDTHH:MM:SS+HH:MM\n\nThe optional argument sep (default 'T') is a one-character separator, placed between the date and time portions of the result. For example,\n>>>\n\n>>> from datetime import tzinfo, timedelta, datetime\n>>> class TZ(tzinfo):\n...     def utcoffset(self, dt): return timedelta(minutes=-399)\n...\n>>> datetime(2002, 12, 25, tzinfo=TZ()).isoformat(' ')\n'2002-12-25 00:00:00-06:39'\n"
+        ], 
+        "score": 37, 
+        "id": 15142736, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "2010-12-16 17:22:15\n20101216T172215\n", 
+          ">>> from time import strftime\n>>> strftime(\"%Y-%m-%d %H:%M:%S\")\n'2010-03-03 21:16:45'\n", 
+          ">>> from datetime import datetime\n>>> datetime.strptime(\"2010-06-04 21:08:12\", \"%Y-%m-%d %H:%M:%S\")\ndatetime.datetime(2010, 6, 4, 21, 8, 12)\n", 
+          ">>> from mx.DateTime.ISO import ParseDateTimeUTC\n>>> from datetime import datetime\n>>> x = ParseDateTimeUTC(\"2010-06-04 21:08:12\")\n>>> datetime.fromtimestamp(x)\ndatetime.datetime(2010, 3, 6, 21, 8, 12)\n"
+        ], 
+        "score": 29, 
+        "id": 4462893, 
+        "rank": 2
+      }
+    ], 
+    "title": "ISO Time (ISO 8601) in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 4641871, 
+    "id": 4641765, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "foo = [1,2,3,4,5]\nfoo.append( 4 )\nfoo.append( [8,7] )    \nprint(foo)            #[1, 2, 3, 4, 5, 4, [8, 7]]\n", 
+          "foo = [1,2,3,4,5]\nfoo[3] = foo[3] + 4     \nprint(foo)            #[1,2,3,8,5]\n", 
+          "x = [2,5,10]\nx.insert(2, 77)\nprint(x)              #[2, 5, 77, 10]\n"
+        ], 
+        "score": 12, 
+        "id": 4641797, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> L = [0, 0, 0, 0]\n>>> things_to_add = ({'idx':1, 'amount': 1}, {'idx': 2, 'amount': 1})\n>>> for item in things_to_add:\n...     L[item['idx']] += item['amount']\n... \n>>> L\n[0, 1, 1, 0]\n", 
+          ">>> L = [0, 0, 0, 0]\n>>> things_to_add = [0, 1, 1, 0]\n>>> for idx, amount in enumerate(things_to_add):\n...     L[idx] += amount\n... \n>>> L\n[0, 1, 1, 0]\n", 
+          "L[:] = [sum(i) for i in zip(L, things_to_add)]\n", 
+          ">>> things_to_add = [(1, 1), (2, 1)]\n>>> for idx, amount in things_to_add:\n...     L[idx] += amount\n... \n>>> L\n[0, 1, 1, 0]\n"
+        ], 
+        "score": 6, 
+        "id": 4641871, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "fooList = [1,3,348,2]\nfooList.append(3)\nfooList.append(2734)\nprint(fooList) # [1,3,348,2,3,2734]\n"
+        ], 
+        "score": 1, 
+        "id": 4641787, 
+        "rank": 2
+      }
+    ], 
+    "title": "Add to integers in a list"
+  }, 
+  {
+    "accepted_answer_post_id": 1747827, 
+    "id": 1747817, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "d = dict((key, value) for (key, value) in iterable)\n", 
+          "d = {key: value for (key, value) in iterable}\n", 
+          "d = {value: foo(value) for value in sequence if bar(value)}\n\ndef key_value_gen(k):\n   yield chr(k+65)\n   yield chr((k+13)%26+65)\nd = dict(map(key_value_gen, range(26)))\n"
+        ], 
+        "score": 1250, 
+        "id": 1747827, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "d = {k:v for k, v in iterable}\n"
+        ], 
+        "score": 143, 
+        "id": 1747888, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> ts = [(1, 2), (3, 4), (5, 6)]\n>>> dict(ts)\n{1: 2, 3: 4, 5: 6}\n>>> gen = ((i, i+1) for i in range(1, 6, 2))\n>>> gen\n<generator object <genexpr> at 0xb7201c5c>\n>>> dict(gen)\n{1: 2, 3: 4, 5: 6}\n"
+        ], 
+        "score": 21, 
+        "id": 16863042, 
+        "rank": 2
+      }
+    ], 
+    "title": "Create a dictionary with list comprehension in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 2793341, 
+    "id": 2793324, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> a = ['a', 'b', 'c', 'd']\n>>> a.remove('b')\n>>> print a\n['a', 'c', 'd']\n", 
+          ">>> a = [1, 2, 3, 4, 2, 3, 4, 2, 7, 2]\n>>> a = [x for x in a if x != 2]\n>>> print a\n[1, 3, 4, 3, 4, 7]\n"
+        ], 
+        "score": 589, 
+        "id": 2793341, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "if c in a:\n    a.remove(c)\n", 
+          "try:\n    a.remove(c)\nexcept ValueError:\n    pass\n"
+        ], 
+        "score": 85, 
+        "id": 2793356, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "a=[1,2,3,4]\nif 6 in a:\n    a.remove(6)\n", 
+          "try:\n    a.remove(6)\nexcept:\n    pass\n"
+        ], 
+        "score": 40, 
+        "id": 2793345, 
+        "rank": 2
+      }
+    ], 
+    "title": "Is there a simple way to delete a list element by value in python?"
+  }, 
+  {
+    "accepted_answer_post_id": 3523128, 
+    "id": 3523048, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "final_choices = (another_choice,) + my_choices\n", 
+          "my_choices=[\n     ('1','first choice'),\n     ('2','second choice'),\n     ('3','third choice')\n]\n", 
+          "my_choices.insert(0, another_choice)\n"
+        ], 
+        "score": 31, 
+        "id": 3523128, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> foo = ((1,),(2,),(3,))\n>>> foo = ((0,),) + foo\n>>> foo\n((0,), (1,), (2,), (3,))\n"
+        ], 
+        "score": 6, 
+        "id": 3523139, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "\nfinal_choices = (another_choice,) + my_choices\n"
+        ], 
+        "score": 2, 
+        "id": 3523150, 
+        "rank": 2
+      }
+    ], 
+    "title": "Add another tuple to a tuple of tuples"
+  }, 
+  {
+    "accepted_answer_post_id": 123212, 
+    "id": 123198, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from shutil import copyfile\n\ncopyfile(src, dst)\n"
+        ], 
+        "score": 992, 
+        "id": 123212, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import shutil\nshutil.copy2('/dir/file.ext', '/new/dir/newname.ext')\n", 
+          "shutil.copy2('/dir/file.ext', '/new/dir')\n"
+        ], 
+        "score": 286, 
+        "id": 123238, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "-------------------------------------------------------------------------\n| Function          |Copies Metadata|Copies Permissions|Can Specify Buffer|\n-------------------------------------------------------------------------\n| shutil.copy       |      No       |        Yes       |        No        |\n-------------------------------------------------------------------------\n| shutil.copyfile   |      No       |         No       |        No        |\n-------------------------------------------------------------------------\n| shutil.copy2      |     Yes       |        Yes       |        No        |\n-------------------------------------------------------------------------\n| shutil.copyfileobj|      No       |         No       |       Yes        |\n-------------------------------------------------------------------------\n"
+        ], 
+        "score": 140, 
+        "id": 30359308, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I copy a file in python?"
+  }, 
+  {
+    "accepted_answer_post_id": 1602964, 
+    "id": 1602934, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "d = dict()\n\nfor i in xrange(100):\n    key = i % 10\n    if key in d:\n        d[key] += 1\n    else:\n        d[key] = 1\n", 
+          "d = dict()\n\nfor i in xrange(100):\n    key = i % 10\n    d[key] = d.get(key, 0) + 1\n", 
+          "from collections import defaultdict\n\nd = defaultdict(lambda: 0)\n\nfor i in xrange(100):\n    d[i % 10] += 1\n"
+        ], 
+        "score": 1292, 
+        "id": 1602964, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "if 'key1' in dict:\n  print \"blah\"\nelse:\n  print \"boo\"\n"
+        ], 
+        "score": 616, 
+        "id": 1602944, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "d = {'a': 1, 'b': 2}\n'a' in d # <== evaluates to True\n'c' in d # <== evaluates to False\n"
+        ], 
+        "score": 183, 
+        "id": 1602990, 
+        "rank": 2
+      }
+    ], 
+    "title": "Check if a given key already exists in a dictionary"
+  }, 
+  {
+    "accepted_answer_post_id": 9573259, 
+    "id": 9573244, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "if not myString:\n"
+        ], 
+        "score": 772, 
+        "id": 9573259, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "if not some_string:\n", 
+          "if some_string:\n"
+        ], 
+        "score": 163, 
+        "id": 9573283, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "if not my_string:\n", 
+          " >>> bool(\"\")\n False\n >>> bool(\"   \")\n True\n >>> bool(\"   \".strip())\n False\n"
+        ], 
+        "score": 93, 
+        "id": 9573278, 
+        "rank": 2
+      }
+    ], 
+    "title": "Most elegant way to check if the string is empty in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 743823, 
+    "id": 743806, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "words = text.split()      \n", 
+          "words = text.split(\",\")   \n"
+        ], 
+        "score": 205, 
+        "id": 743807, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "text.split()\n", 
+          "words.append(word)\n", 
+          "word.append(words)\n"
+        ], 
+        "score": 186, 
+        "id": 743823, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> line=\"a sentence with a few words\"\n>>> line.split()\n['a', 'sentence', 'with', 'a', 'few', 'words']\n>>> \n"
+        ], 
+        "score": 47, 
+        "id": 743824, 
+        "rank": 2
+      }
+    ], 
+    "title": "Split string into a list in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 518038, 
+    "id": 518021, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "my_list = [1,2,3,4,5]\nlen(my_list)\n", 
+          "my_tuple = (1,2,3,4,5)\nlen(my_tuple)\n", 
+          "my_string = 'hello world'\nlen(my_string)\n"
+        ], 
+        "score": 734, 
+        "id": 518038, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "l = [1,2,3,4]\ns = 'abcde'\nlen(l) #returns 4\nlen(s) #returns 5\n"
+        ], 
+        "score": 32, 
+        "id": 518061, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 19, 
+        "id": 518053, 
+        "rank": 2
+      }
+    ], 
+    "title": "Getting the length of an array in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 19343, 
+    "id": 19339, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])\n[('a', 'b', 'c', 'd'), (1, 2, 3, 4)]\n", 
+          "zip(('a', 1), ('b', 2), ('c', 3), ('d', 4))\n"
+        ], 
+        "score": 447, 
+        "id": 19343, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "result = ([ a for a,b in original ], [ b for a,b in original ])\n", 
+          "result = (( a for a,b in original ), ( b for a,b in original ))\n"
+        ], 
+        "score": 18, 
+        "id": 25193, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4)])\n[('a', 'b', 'c', 'd'), (1, 2, 3, 4)]\n", 
+          ">>> zip(*[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )])\n[('a', 'b', 'c', 'd', 'e')]\n", 
+          ">>> map(None, *[('a', 1), ('b', 2), ('c', 3), ('d', 4), ('e', )])\n[('a', 'b', 'c', 'd', 'e'), (1, 2, 3, 4, None)]\n"
+        ], 
+        "score": 15, 
+        "id": 4578299, 
+        "rank": 2
+      }
+    ], 
+    "title": "Transpose/Unzip Function (inverse of zip)?"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 510348, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import time\ntime.sleep(5) # delays for 5 seconds\n", 
+          "import time \nwhile True:\n    print \"This prints once a minute.\"\n    time.sleep(60)  # Delay for 1 minute (60 seconds)\n"
+        ], 
+        "score": 1218, 
+        "id": 510351, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "from time import sleep\nsleep(0.1) # Time in seconds.\n"
+        ], 
+        "score": 339, 
+        "id": 64486, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import time\ntime.sleep(60)\n", 
+          "time.sleep(time.localtime(time.time())[5])\n", 
+          "import time\ntime.sleep(0.1) \n"
+        ], 
+        "score": 45, 
+        "id": 510356, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I make a time delay in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 2151553, 
+    "id": 2151517, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> results_list = [[1,2,3], [1,2,4]]\n>>> results_union = set().union(*results_list)\n>>> print results_union\nset([1, 2, 3, 4])\n"
+        ], 
+        "score": 56, 
+        "id": 2151553, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "   import itertools\n\n   ...\n\n   return list(set(itertools.chain(*result_list)))\n"
+        ], 
+        "score": 8, 
+        "id": 2152138, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 3, 
+        "id": 2151551, 
+        "rank": 2
+      }
+    ], 
+    "title": "Pythonic Way to Create Union of All Values Contained in Multiple Lists"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 82831, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import os.path\nos.path.isfile(fname) \n", 
+          "from pathlib import Path\n\nmy_file = Path(\"/path/to/file\")\nif my_file.is_file():\n    # file exists\n"
+        ], 
+        "score": 2437, 
+        "id": 82852, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import os.path\nos.path.exists(file_path)\n"
+        ], 
+        "score": 991, 
+        "id": 82846, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> print os.path.isfile(\"/etc/password.txt\")\nTrue\n>>> print os.path.isfile(\"/etc\")\nFalse\n>>> print os.path.isfile(\"/does/not/exist\")\nFalse\n>>> print os.path.exists(\"/etc/password.txt\")\nTrue\n>>> print os.path.exists(\"/etc\")\nTrue\n>>> print os.path.exists(\"/does/not/exist\")\nFalse\n"
+        ], 
+        "score": 650, 
+        "id": 84173, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I check whether a file exists using Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 510364, 
+    "id": 510357, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "class _Getch:\n    \"\"\"Gets a single character from standard input.  Does not echo to the\nscreen.\"\"\"\n    def __init__(self):\n        try:\n            self.impl = _GetchWindows()\n        except ImportError:\n            self.impl = _GetchUnix()\n\n    def __call__(self): return self.impl()\n\n\nclass _GetchUnix:\n    def __init__(self):\n        import tty, sys\n\n    def __call__(self):\n        import sys, tty, termios\n        fd = sys.stdin.fileno()\n        old_settings = termios.tcgetattr(fd)\n        try:\n            tty.setraw(sys.stdin.fileno())\n            ch = sys.stdin.read(1)\n        finally:\n            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)\n        return ch\n\n\nclass _GetchWindows:\n    def __init__(self):\n        import msvcrt\n\n    def __call__(self):\n        import msvcrt\n        return msvcrt.getch()\n\n\ngetch = _Getch()\n"
+        ], 
+        "score": 116, 
+        "id": 510364, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "sys.stdin.read(1)\n", 
+          "class _Getch:\n    \"\"\"Gets a single character from standard input.  Does not echo to the screen.\"\"\"\n    def __init__(self):\n        try:\n            self.impl = _GetchWindows()\n        except ImportError:\n            self.impl = _GetchUnix()\n\n    def __call__(self): return self.impl()\n\n\nclass _GetchUnix:\n    def __init__(self):\n        import tty, sys\n\n    def __call__(self):\n        import sys, tty, termios\n        fd = sys.stdin.fileno()\n        old_settings = termios.tcgetattr(fd)\n        try:\n            tty.setraw(sys.stdin.fileno())\n            ch = sys.stdin.read(1)\n        finally:\n            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)\n        return ch\n\n\nclass _GetchWindows:\n    def __init__(self):\n        import msvcrt\n\n    def __call__(self):\n        import msvcrt\n        return msvcrt.getch()\n\n\ngetch = _Getch()\n"
+        ], 
+        "score": 58, 
+        "id": 510404, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "def _find_getch():\n    try:\n        import termios\n    except ImportError:\n        # Non-POSIX. Return msvcrt's (Windows') getch.\n        import msvcrt\n        return msvcrt.getch\n\n    # POSIX system. Create and return a getch that manipulates the tty.\n    import sys, tty\n    def _getch():\n        fd = sys.stdin.fileno()\n        old_settings = termios.tcgetattr(fd)\n        try:\n            tty.setraw(fd)\n            ch = sys.stdin.read(1)\n        finally:\n            termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)\n        return ch\n\n    return _getch\n\ngetch = _find_getch()\n"
+        ], 
+        "score": 36, 
+        "id": 21659588, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python read a single character from the user"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 1450393, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import fileinput\n\nfor line in fileinput.input():\n    pass\n"
+        ], 
+        "score": 645, 
+        "id": 1454400, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 440, 
+        "id": 1450398, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import sys\n\nfor line in sys.stdin:\n    print line\n"
+        ], 
+        "score": 216, 
+        "id": 3289051, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do you read from stdin in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 2759130, 
+    "id": 2759067, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "$ ls\ncheese_cheese_type.bar  cheese_cheese_type.foo\n$ python\n>>> import os\n>>> for filename in os.listdir(\".\"):\n...  if filename.startswith(\"cheese_\"):\n...    os.rename(filename, filename[7:])\n... \n>>> \n$ ls\ncheese_type.bar  cheese_type.foo\n"
+        ], 
+        "score": 460, 
+        "id": 2759130, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "#!/usr/bin/env python\nfrom os import rename, listdir\n\nbadprefix = \"cheese_\"\nfnames = listdir('.')\n\nfor fname in fnames:\n    if fname.startswith(badprefix*2):\n        rename(fname, fname.replace(badprefix, '', 1))\n"
+        ], 
+        "score": 29, 
+        "id": 2759103, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "from glob import glob\nfrom os import rename\nfor fname in glob('*.prj'):\n    rename(fname, fname[8:])\n"
+        ], 
+        "score": 11, 
+        "id": 2759308, 
+        "rank": 2
+      }
+    ], 
+    "title": "Rename Files in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 15411146, 
+    "id": 15411107, 
+    "answer_posts": [
+      {
+        "snippets": [
+          " mydict.pop(\"key\", None)\n"
+        ], 
+        "score": 239, 
+        "id": 15411146, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "try:\n    del mydict[key]\nexcept KeyError:\n    pass\n"
+        ], 
+        "score": 5, 
+        "id": 15411148, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "keys_to_remove = set(keys).intersection(set(mydict.keys()))\nfor key in keys_to_remove:\n    del mydict[key]\n", 
+          "keys_to_keep = set(mydict.keys()) - set(keys)\nnew_dict = {k: v for k, v in mydict.iteritems() if k in keys_to_keep}\n", 
+          "keys_to_keep = set(mydict.keys()) - set(keys)\nnew_dict = {k: mydict[k] for k in keys_to_keep}\n"
+        ], 
+        "score": 4, 
+        "id": 15411416, 
+        "rank": 2
+      }
+    ], 
+    "title": "Delete a dictionary item if the key exists"
+  }, 
+  {
+    "accepted_answer_post_id": 466376, 
+    "id": 466345, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "from datetime import datetime\n\ndate_object = datetime.strptime('Jun 1 2005  1:33PM', '%b %d %Y %I:%M%p')\n"
+        ], 
+        "score": 1420, 
+        "id": 466376, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 435, 
+        "id": 466366, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "from dateutil import parser\ndt = parser.parse(\"Aug 28 1999 12:00AM\")\n", 
+          "pip install python-dateutil\n"
+        ], 
+        "score": 413, 
+        "id": 470303, 
+        "rank": 2
+      }
+    ], 
+    "title": "Converting string into datetime"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 13368659, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "for i in range(256):\n    for j in range(256):\n        ip = \"192.168.%d.%d\" % (i, j)\n        print ip\n"
+        ], 
+        "score": 4, 
+        "id": 13368679, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "for i,j in product(range(256),range(256)):\n    print \"192.168.{0}.{1}\".format(i,j)\n"
+        ], 
+        "score": 4, 
+        "id": 13368863, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "from netaddr import iter_iprange\ngenerator = iter_iprange('192.168.1.1', '192.168.255.255', step=1)\ngenerator.next() # 192.168.1.1\ngenerator.next() # 192.168.1.2\n"
+        ], 
+        "score": 2, 
+        "id": 33801373, 
+        "rank": 2
+      }
+    ], 
+    "title": "How can I loop through an IP address range in python"
+  }, 
+  {
+    "accepted_answer_post_id": 10973638, 
+    "id": 10973614, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import json\n\narray = '{\"fruits\": [\"apple\", \"banana\", \"orange\"]}'\ndata  = json.loads(array)\nprint data['fruits']\n# the print displays:\n# [u'apple', u'banana', u'orange']\n"
+        ], 
+        "score": 47, 
+        "id": 10973638, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "\nimport json\narray = '{\"fruits\": [\"apple\", \"banana\", \"orange\"]}'\ndata  = json.loads(array)\nfruits_list = data['fruits']\nprint fruits_list\n"
+        ], 
+        "score": 7, 
+        "id": 10973648, 
+        "rank": 1
+      }
+    ], 
+    "title": "Convert JSON array to Python list"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 4135344, 
+    "answer_posts": [
+      {
+        "snippets": [], 
+        "score": 13, 
+        "id": 4136113, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "# Ubuntu\napt-get install wkhtmltopdf\n", 
+          "pip install pdfkit\npip install markdown\n", 
+          "from markdown import markdown\nimport pdfkit\n\ninput_filename = 'README.md'\noutput_filename = 'README.pdf'\n\nwith open(input_filename, 'r') as f:\n    html_text = markdown(f.read(), output_format='html4')\n\npdfkit.from_string(html_text, output_filename)\n"
+        ], 
+        "score": 4, 
+        "id": 31117621, 
+        "rank": 1
+      }
+    ], 
+    "title": "Is there any direct way to generate pdf from markdown file by python"
+  }, 
+  {
+    "accepted_answer_post_id": 8177090, 
+    "id": 8177079, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "list2.extend(list1)\n", 
+          "list2.append(list1)\n", 
+          ">>> a = range(5)\n>>> b = range(3)\n>>> c = range(2)\n>>> b.append(a)\n>>> b\n[0, 1, 2, [0, 1, 2, 3, 4]]\n>>> c.extend(a)\n>>> c\n[0, 1, 0, 1, 2, 3, 4]\n", 
+          "for line in mylog:\n    list1.append(line)\n", 
+          "list1.extend(mylog)\n"
+        ], 
+        "score": 160, 
+        "id": 8177090, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import itertools\n>>> p = ['a', 'b', 'c']\n>>> q = ['d', 'e', 'f']\n>>> r = ['g', 'h', 'i']\n>>> for x in itertools.chain(p, q, r):\n        print x.upper()\n"
+        ], 
+        "score": 5, 
+        "id": 8177108, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "for logs in mydir:\n\n    for line in mylog:\n        #...if the conditions are met\n        list1.append(line)\n\n    if any(True for line in list1 if \"string\" in line):\n        list2.extend(list1)\n    del list1\n\n    ....\n"
+        ], 
+        "score": 2, 
+        "id": 8177126, 
+        "rank": 2
+      }
+    ], 
+    "title": "Python: take the content of a list and append it to another list"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 455612, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "  >>> 125650429603636838/(2**53)\n  13.949999999999999\n\n  >>> 234042163/(2**24)\n  13.949999988079071\n\n  >>> a=13.946\n  >>> print(a)\n  13.946\n  >>> print(\"%.2f\" % a)\n  13.95\n  >>> round(a,2)\n  13.949999999999999\n  >>> print(\"%.2f\" % round(a,2))\n  13.95\n  >>> print(\"{0:.2f}\".format(a))\n  13.95\n  >>> print(\"{0:.2f}\".format(round(a,2)))\n  13.95\n  >>> print(\"{0:.15f}\".format(round(a,2)))\n  13.949999999999999\n"
+        ], 
+        "score": 705, 
+        "id": 455634, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "\"{0:.2f}\".format(13.949999999999999)\n", 
+          "float(\"{0:.2f}\".format(13.949999999999999))\n", 
+          ">>> x = 13.949999999999999999\n>>> x\n13.95\n>>> g = float(\"{0:.2f}\".format(x))\n>>> g\n13.95\n>>> x == g\nTrue\n>>> h = round(x, 2)\n>>> h\n13.95\n>>> x == h\nTrue\n"
+        ], 
+        "score": 256, 
+        "id": 6539677, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> \"%.2f\" % 3.14159\n'3.14'\n>>> \"%.2f\" % 13.9499999\n'13.95'\n"
+        ], 
+        "score": 70, 
+        "id": 455678, 
+        "rank": 2
+      }
+    ], 
+    "title": "Limiting floats to two decimal points"
+  }, 
+  {
+    "accepted_answer_post_id": 73673, 
+    "id": 73663, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import sys\nsys.exit()\n"
+        ], 
+        "score": 663, 
+        "id": 73673, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "#do stuff\nif this == that:\n  quit()\n"
+        ], 
+        "score": 93, 
+        "id": 14836329, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "raise SystemExit\n"
+        ], 
+        "score": 73, 
+        "id": 73680, 
+        "rank": 2
+      }
+    ], 
+    "title": "Terminating a Python script"
+  }, 
+  {
+    "accepted_answer_post_id": 319435, 
+    "id": 319426, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "string1 = 'Hello'\nstring2 = 'hello'\n\nif string1.lower() == string2.lower():\n    print \"The strings are the same (case insensitive)\"\nelse:\n    print \"The strings are not the same (case insensitive)\"\n"
+        ], 
+        "score": 319, 
+        "id": 319435, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "\"\u00df\".lower()\n#>>> '\u00df'\n\n\"\u00df\".upper().lower()\n#>>> 'ss'\n", 
+          "help(str.casefold)\n#>>> Help on method_descriptor:\n#>>>\n#>>> casefold(...)\n#>>>     S.casefold() -> str\n#>>>     \n#>>>     Return a version of S suitable for caseless comparisons.\n#>>>\n", 
+          "\"\u00ea\" == \"e\u0302\"\n#>>> False\n", 
+          "import unicodedata\n\n[unicodedata.name(char) for char in \"\u00ea\"]\n#>>> ['LATIN SMALL LETTER E WITH CIRCUMFLEX']\n\n[unicodedata.name(char) for char in \"e\u0302\"]\n#>>> ['LATIN SMALL LETTER E', 'COMBINING CIRCUMFLEX ACCENT']\n", 
+          "unicodedata.normalize(\"NFKD\", \"\u00ea\") == unicodedata.normalize(\"NFKD\", \"e\u0302\")\n#>>> True\n", 
+          "import unicodedata\n\ndef normalize_caseless(text):\n    return unicodedata.normalize(\"NFKD\", text.casefold())\n\ndef caseless_equal(left, right):\n    return normalize_caseless(left) == normalize_caseless(right)\n"
+        ], 
+        "score": 211, 
+        "id": 29247821, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "string1.lower() == string2.lower()\n", 
+          ">>> utf8_bytes = open(\"unicode.txt\", 'r').read()\n>>> print repr(utf8_bytes)\n'\\xce\\xa3\\xce\\xaf\\xcf\\x83\\xcf\\x85\\xcf\\x86\\xce\\xbf\\xcf\\x82\\n\\xce\\xa3\\xce\\x8a\\xce\\xa3\\xce\\xa5\\xce\\xa6\\xce\\x9f\\xce\\xa3\\n'\n>>> u = utf8_bytes.decode('utf8')\n>>> print u\n\u03a3\u03af\u03c3\u03c5\u03c6\u03bf\u03c2\n\u03a3\u038a\u03a3\u03a5\u03a6\u039f\u03a3\n\n>>> first, second = u.splitlines()\n>>> print first.lower()\n\u03c3\u03af\u03c3\u03c5\u03c6\u03bf\u03c2\n>>> print second.lower()\n\u03c3\u03af\u03c3\u03c5\u03c6\u03bf\u03c3\n>>> first.lower() == second.lower()\nFalse\n>>> first.upper() == second.upper()\nTrue\n", 
+          ">>> s = open('unicode.txt', encoding='utf8').read()\n>>> print(s)\n\u03a3\u03af\u03c3\u03c5\u03c6\u03bf\u03c2\n\u03a3\u038a\u03a3\u03a5\u03a6\u039f\u03a3\n\n>>> first, second = s.splitlines()\n>>> print(first.lower())\n\u03c3\u03af\u03c3\u03c5\u03c6\u03bf\u03c2\n>>> print(second.lower())\n\u03c3\u03af\u03c3\u03c5\u03c6\u03bf\u03c2\n>>> first.lower() == second.lower()\nTrue\n>>> first.upper() == second.upper()\nTrue\n"
+        ], 
+        "score": 45, 
+        "id": 11573384, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I do a case insensitive string comparison in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 13107, 
+    "id": 1476, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> 0b101111\n47\n", 
+          ">>> bin(173)\n'0b10101101'\n"
+        ], 
+        "score": 220, 
+        "id": 13107, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> print int('01010101111',2)\n687\n>>> print int('11111111',2)\n255\n"
+        ], 
+        "score": 61, 
+        "id": 1484, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> 0b0010101010\n170\n>>> 0B010101\n21\n", 
+          "integer      ::=  decinteger | bininteger | octinteger | hexinteger\ndecinteger   ::=  nonzerodigit ([\"_\"] digit)* | \"0\"+ ([\"_\"] \"0\")*\nbininteger   ::=  \"0\" (\"b\" | \"B\") ([\"_\"] bindigit)+\noctinteger   ::=  \"0\" (\"o\" | \"O\") ([\"_\"] octdigit)+\nhexinteger   ::=  \"0\" (\"x\" | \"X\") ([\"_\"] hexdigit)+\nnonzerodigit ::=  \"1\"...\"9\"\ndigit        ::=  \"0\"...\"9\"\nbindigit     ::=  \"0\" | \"1\"\noctdigit     ::=  \"0\"...\"7\"\nhexdigit     ::=  digit | \"a\"...\"f\" | \"A\"...\"F\"\n", 
+          "7     2147483647                        0o177    0b100110111\n3     79228162514264337593543950336     0o377    0xdeadbeef\n      100_000_000_000                   0b_1110_0101\n", 
+          ">>> int('010101', 2)\n21\n", 
+          ">>> int('0b0010101010', 2)\n170\n", 
+          ">>> int('10101', 0)\n10101\n>>> int('0b10101', 0)\n21\n", 
+          ">>> bin(21)\n'0b10101'\n", 
+          ">>> bin(int('010101', 2))\n'0b10101'\n", 
+          ">>> format(int('010101', 2), '{fill}{width}b'.format(width=10, fill=0))\n'0000010101'\n>>> format(int('010101', 2), '010b')\n'0000010101'\n"
+        ], 
+        "score": 5, 
+        "id": 37226387, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do you express binary literals in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 43663, 
+    "id": 42950, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> import calendar\n>>> calendar.monthrange(2002,1)\n(1, 31)\n>>> calendar.monthrange(2008,2)\n(4, 29)\n>>> calendar.monthrange(2100,2)\n(0, 28)\n", 
+          "calendar.monthrange(year, month)[1]\n", 
+          ">>> from calendar import monthrange\n>>> monthrange(2012, 2)\n(2, 29)\n"
+        ], 
+        "score": 639, 
+        "id": 43663, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import datetime\n>>> datetime.date (2000, 2, 1) - datetime.timedelta (days = 1)\ndatetime.date(2000, 1, 31)\n>>> \n"
+        ], 
+        "score": 50, 
+        "id": 42997, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import datetime\n\ndef last_day_of_month(any_day):\n    next_month = any_day.replace(day=28) + datetime.timedelta(days=4)  # this will never fail\n    return next_month - datetime.timedelta(days=next_month.day)\n", 
+          ">>> for month in range(1, 13):\n...     print last_day_of_month(datetime.date(2012, month, 1))\n...\n2012-01-31\n2012-02-29\n2012-03-31\n2012-04-30\n2012-05-31\n2012-06-30\n2012-07-31\n2012-08-31\n2012-09-30\n2012-10-31\n2012-11-30\n2012-12-31\n"
+        ], 
+        "score": 48, 
+        "id": 13565185, 
+        "rank": 2
+      }
+    ], 
+    "title": "Get Last Day of the Month in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 761825, 
+    "id": 761804, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> ' Hello '.strip()\n'Hello'\n>>> ' Hello'.strip()\n'Hello'\n>>> 'Bob has a cat'.strip()\n'Bob has a cat'\n>>> '          Hello        '.strip()  # ALL spaces at ends removed\n'Hello'\n", 
+          "def strip_one_space(s):\n    if s.endswith(\" \"): s = s[:-1]\n    if s.startswith(\" \"): s = s[1:]\n    return s\n\n>>> strip_one_space(\"   Hello \")\n'  Hello'\n", 
+          ">>> \"  Hello\\n\".strip(\" \")\n'Hello\\n'\n"
+        ], 
+        "score": 949, 
+        "id": 761825, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "myString.strip()\n"
+        ], 
+        "score": 165, 
+        "id": 6039813, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "# remove all leading/trailing commas, periods and hyphens\ntitle = title.strip(',.-')\n"
+        ], 
+        "score": 68, 
+        "id": 10192113, 
+        "rank": 2
+      }
+    ], 
+    "title": "Trimming a string in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 4476389, 
+    "id": 4476373, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import requests\nurl = 'https://...'\npayload = {'key1': 'value1', 'key2': 'value2'}\n\n# GET\nr = requests.get(url)\n\n# GET with params in URL\nr = requests.get(url, params=payload)\n\n# POST with form-encoded data\nr = requests.post(url, data=payload)\n\n# POST with JSON \nimport json\nr = requests.post(url, data=json.dumps(payload))\n\n# Response, status etc\nr.text\nr.status_code\n", 
+          ">>> from httplib2 import Http\n>>> from urllib import urlencode\n>>> h = Http()\n>>> data = dict(name=\"Joe\", comment=\"A test comment\")\n>>> resp, content = h.request(\"http://bitworking.org/news/223/Meet-Ares\", \"POST\", urlencode(data))\n>>> resp\n{'status': '200', 'transfer-encoding': 'chunked', 'vary': 'Accept-Encoding,User-Agent',\n 'server': 'Apache', 'connection': 'close', 'date': 'Tue, 31 Jul 2007 15:29:52 GMT', \n 'content-type': 'text/html'}\n"
+        ], 
+        "score": 67, 
+        "id": 4476389, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import requests\nget_response = requests.get(url='http://google.com')\npost_data = {'username':'joeb', 'password':'foobar'}\n# POST some form-encoded data:\npost_response = requests.post(url='http://httpbin.org/post', data=post_data)\n", 
+          "import json\npost_response = requests.post(url='http://httpbin.org/post', data=json.dumps(post_data))\n# If using requests v2.4.2 or later, pass the dict via the json parameter and it will be encoded directly:\npost_response = requests.post(url='http://httpbin.org/post', json=post_data)\n"
+        ], 
+        "score": 42, 
+        "id": 10022497, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "def URLRequest(url, params, method=\"GET\"):\n    if method == \"POST\":\n        return urllib2.Request(url, data=urllib.urlencode(params))\n    else:\n        return urllib2.Request(url + \"?\" + urllib.urlencode(params))\n"
+        ], 
+        "score": 30, 
+        "id": 4476392, 
+        "rank": 2
+      }
+    ], 
+    "title": "Simple URL GET/POST function in Python"
+  }, 
+  {
+    "accepted_answer_post_id": 248862, 
+    "id": 247770, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import a_module\nprint a_module.__file__\n", 
+          "import os\npath = os.path.dirname(amodule.__file__)\n", 
+          "path = os.path.abspath(amodule.__file__)\n"
+        ], 
+        "score": 442, 
+        "id": 248862, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> import os\n>>> import inspect\n>>> inspect.getfile(os)\n'/usr/lib64/python2.7/os.pyc'\n>>> inspect.getfile(inspect)\n'/usr/lib64/python2.7/inspect.pyc'\n>>> os.path.dirname(inspect.getfile(inspect))\n'/usr/lib64/python2.7'\n"
+        ], 
+        "score": 136, 
+        "id": 12154601, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "#/path1/foo.py\nimport bar\nprint bar.__file__\n", 
+          "#/path2/bar.py\nimport os\nprint os.getcwd()\nprint __file__\n", 
+          "/path1        # \"import bar\" causes the line \"print os.getcwd()\" to run\n/path2/bar.py # then \"print __file__\" runs\n/path2/bar.py # then the import statement finishes and \"print bar.__file__\" runs\n", 
+          "/path2                              # \"print os.getcwd()\" still works fine\nTraceback (most recent call last):  # but __file__ doesn't exist if bar.py is running as main\n  File \"/path2/bar.py\", line 3, in <module>\n    print __file__\nNameError: name '__file__' is not defined \n"
+        ], 
+        "score": 49, 
+        "id": 6416114, 
+        "rank": 2
+      }
+    ], 
+    "title": "Retrieving python module path"
+  }, 
+  {
+    "accepted_answer_post_id": 4907053, 
+    "id": 4906977, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import os\nprint os.environ['HOME']\n", 
+          "os.environ\n", 
+          "# using get will return `None` if a key is not present rather than raise a `KeyError`\nprint os.environ.get('KEY_THAT_MIGHT_EXIST')\n\n# os.getenv is equivalent, and can also give a default value instead of `None`\nprint os.getenv('KEY_THAT_MIGHT_EXIST', default_value)\n", 
+          "import sys\nprint sys.prefix\n"
+        ], 
+        "score": 1010, 
+        "id": 4907053, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "\"HOME\" in os.environ\n", 
+          "os.environ.has_key(\"HOME\")\n", 
+          "print os.environ.get('HOME','/home/username/')\n"
+        ], 
+        "score": 71, 
+        "id": 11447648, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import os\nprint os.environ\n"
+        ], 
+        "score": 15, 
+        "id": 4907002, 
+        "rank": 2
+      }
+    ], 
+    "title": "Access environment variables from Python"
+  }, 
+  {
+    "accepted_answer_post_id": 1186847, 
+    "id": 1186789, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "def some_func():\n    print 'in test 1, unproductive'\n\nif __name__ == '__main__':\n    # test1.py executed as script\n    # do something\n    some_func()\n", 
+          "import test1\n\ndef service_func():\n    print 'service func'\n\nif __name__ == '__main__':\n    # service.py executed as script\n    # do something\n    service_func()\n    test1.some_func()\n"
+        ], 
+        "score": 150, 
+        "id": 1186847, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "execfile(\"test2.py\")\n"
+        ], 
+        "score": 83, 
+        "id": 1186818, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "print \"test1.py\"\n", 
+          "import subprocess\n\nsubprocess.call(\"test1.py\", shell=True)\n"
+        ], 
+        "score": 36, 
+        "id": 11230471, 
+        "rank": 2
+      }
+    ], 
+    "title": "What is the best way to call a Python script from another Python script?"
+  }, 
+  {
+    "accepted_answer_post_id": 2407405, 
+    "id": 2407398, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> list_a = [1, 2, 3, 4]\n>>> list_b = [5, 6, 7, 8]\n>>> zip(list_a, list_b)\n[(1, 5), (2, 6), (3, 7), (4, 8)]\n"
+        ], 
+        "score": 198, 
+        "id": 2407405, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [], 
+        "score": 53, 
+        "id": 5146593, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [], 
+        "score": 8, 
+        "id": 2407425, 
+        "rank": 2
+      }
+    ], 
+    "title": "How to merge lists into a list of tuples in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 364599, 
+    "id": 364519, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> d = {\"x\":2, \"h\":15, \"a\":2222}\n>>> it = iter(sorted(d.iteritems()))\n>>> it.next()\n('a', 2222)\n>>> it.next()\n('h', 15)\n>>> it.next()\n('x', 2)\n>>>\n", 
+          ">>> d = {\"x\":2, \"h\":15, \"a\":2222}\n>>> for key, value in sorted(d.iteritems()):\n>>>     print(key, value)\n('a', 2222)\n('h', 15)\n('x', 2)\n>>>\n"
+        ], 
+        "score": 114, 
+        "id": 364599, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "return sorted(dict.iteritems())\n", 
+          "return iter(sorted(dict.iteritems()))\n"
+        ], 
+        "score": 71, 
+        "id": 364521, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "foo = {\n    'a':    1,\n    'b':    2,\n    'c':    3,\n    }\n\nprint foo\n>>> {'a': 1, 'c': 3, 'b': 2}\n\nprint foo.items()\n>>> [('a', 1), ('c', 3), ('b', 2)]\n\nprint sorted(foo.items())\n>>> [('a', 1), ('b', 2), ('c', 3)]\n", 
+          "for k,v in sorted(foo.items()):\n    print k, v\n", 
+          "for k in sorted(foo.keys()):\n    print k, foo[k]\n"
+        ], 
+        "score": 35, 
+        "id": 364588, 
+        "rank": 2
+      }
+    ], 
+    "title": "In Python, how do I iterate over a dictionary in sorted order?"
+  }, 
+  {
+    "accepted_answer_post_id": 1038845, 
+    "id": 1038824, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "url = 'abcdc.com'\nif url.endswith('.com'):\n    url = url[:-4]\n", 
+          "import re\nurl = 'abcdc.com'\nurl = re.sub('\\.com$', '', url)\n"
+        ], 
+        "score": 268, 
+        "id": 1038845, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "url = 'abcdc.com'\nprint url.replace('.com','')\n"
+        ], 
+        "score": 42, 
+        "id": 2393022, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "def strip_end(text, suffix):\n    if not text.endswith(suffix):\n        return text\n    return text[:len(text)-len(suffix)]\n"
+        ], 
+        "score": 27, 
+        "id": 1038999, 
+        "rank": 2
+      }
+    ], 
+    "title": "How do I remove a substring from the end of a string in Python?"
+  }, 
+  {
+    "accepted_answer_post_id": 19602990, 
+    "id": 19602931, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "import urllib\n\ntestfile = urllib.URLopener()\ntestfile.retrieve(\"http://randomsite.com/file.gz\", \"file.gz\")\n"
+        ], 
+        "score": 114, 
+        "id": 19602990, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "import urllib\nurllib.urlretrieve (\"http://randomsite.com/file.gz\", \"file.gz\")\n"
+        ], 
+        "score": 66, 
+        "id": 19603003, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          "import wget\n\nfile_url = 'http://johndoe.com/download.zip'\n\nfile_name = wget.download(file_url)\n"
+        ], 
+        "score": 21, 
+        "id": 25827767, 
+        "rank": 2
+      }
+    ], 
+    "title": "Basic http file downloading and saving to disk in python?"
+  }, 
+  {
+    "accepted_answer_post_id": 4588654, 
+    "id": 4588628, 
+    "answer_posts": [
+      {
+        "snippets": [
+          ">>> x = numpy.array([1,0,2,0,3,0,4,5,6,7,8])\n>>> numpy.where(x == 0)[0]\narray([1, 3, 5])\n"
+        ], 
+        "score": 97, 
+        "id": 4588654, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          ">>> a = np.asarray([0,1,2,3,4])\n>>> a == 0 # or whatver\narray([ True, False, False, False, False], dtype=bool)\n"
+        ], 
+        "score": 16, 
+        "id": 4588744, 
+        "rank": 1
+      }, 
+      {
+        "snippets": [
+          ">>> x = numpy.array([1,0,2,0,3,0,4,5,6,7,8])\n\n>>> x==0\narray([False, True, False, True, False, True, False, False, False, False, False], dtype=bool)\n\n>>> numpy.nonzero(x==0)[0]\narray([1, 3, 5])\n"
+        ], 
+        "score": 5, 
+        "id": 24553551, 
+        "rank": 2
+      }
+    ], 
+    "title": "Find indices of elements equal to zero from numpy array"
+  }, 
+  {
+    "accepted_answer_post_id": null, 
+    "id": 16387069, 
+    "answer_posts": [
+      {
+        "snippets": [
+          "Image.open(picture.jpg)\nImg.show\n", 
+          "from PIL import Image\n\n#...\n\nimg = Image.open('picture.jpg')\nimg.show()\n"
+        ], 
+        "score": 16, 
+        "id": 16387154, 
+        "rank": 0
+      }, 
+      {
+        "snippets": [
+          "if location == a2:\n    img = Image.open(\"picture.jpg\")\n    Img.show\n"
+        ], 
+        "score": 0, 
+        "id": 16388415, 
+        "rank": 1
+      }
+    ], 
+    "title": "Open images? Python"
+  }
+]
